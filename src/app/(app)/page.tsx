@@ -3,6 +3,7 @@ import { store } from "@/lib/storage";
 import { growth, summarize } from "@/lib/metrics";
 import { fmtDate, fmtNum, fmtPct } from "@/lib/format";
 import { Delta, RoleBadge } from "@/components/ui";
+import { Term } from "@/components/term";
 
 export const dynamic = "force-dynamic";
 
@@ -70,16 +71,16 @@ export default async function Home() {
                   </div>
                   <dl className="mt-4 grid grid-cols-3 gap-2 text-sm">
                     <div>
-                      <dt className="text-xs text-muted">팔로워</dt>
+                      <dt className="text-xs text-muted"><Term k="followers" /></dt>
                       <dd className="font-semibold">{fmtNum(s.followers)}</dd>
                       <dd className="text-xs"><Delta value={prevDelta} format={(n) => fmtNum(n)} /></dd>
                     </div>
                     <div>
-                      <dt className="text-xs text-muted">참여율(중앙)</dt>
+                      <dt className="text-xs text-muted"><Term k="medianEr">참여율(중앙)</Term></dt>
                       <dd className="font-semibold">{fmtPct(s.medianEr)}</dd>
                     </div>
                     <div>
-                      <dt className="text-xs text-muted">주간 게시</dt>
+                      <dt className="text-xs text-muted"><Term k="postsPerWeek">주간 게시</Term></dt>
                       <dd className="font-semibold">{s.postsPerWeek?.toFixed(1) ?? "–"}회</dd>
                     </div>
                   </dl>

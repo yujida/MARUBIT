@@ -8,6 +8,7 @@ import { FollowerChart } from "@/components/charts";
 import { BarList } from "@/components/bar-list";
 import { Heatmap } from "@/components/heatmap";
 import { PostsTable } from "@/components/posts-table";
+import { Term } from "@/components/term";
 
 export const dynamic = "force-dynamic";
 
@@ -49,34 +50,34 @@ export default async function ChannelPage(props: PageProps<"/channels/[handle]">
       </p>
 
       <div className="mt-6 grid grid-cols-2 gap-3 md:grid-cols-4">
-        <Kpi label="팔로워" value={fmtNum(s.followers)} sub={<>누적 <Delta value={g.followerDelta} format={fmtNum} /> · 주간 {fmtSignedPct(g.weeklyGrowthRate)}</>} />
-        <Kpi label="참여율 (중앙값)" value={fmtPct(s.medianEr)} sub={`평균 ${fmtPct(s.meanEr)}`} hint="(좋아요+댓글) ÷ 팔로워. 바이럴 1개에 휘둘리지 않도록 중앙값 사용" />
-        <Kpi label="릴스 조회율 (중앙값)" value={s.medianViewRate != null ? `${(s.medianViewRate * 100).toFixed(0)}%` : "–"} sub={`릴스 중앙 조회 ${fmtNum(s.medianReelViews)}`} hint="릴스 조회수 ÷ 팔로워. 100% 초과면 비팔로워 도달이 많다는 뜻" />
-        <Kpi label="게시 빈도" value={`${s.postsPerWeek?.toFixed(1) ?? "–"}회/주`} sub={`댓글/좋아요 ${fmtPct(s.commentToLikeRatio, 1)}`} hint="댓글/좋아요 비율이 높을수록 대화를 유발하는 콘텐츠" />
+        <Kpi label={<Term k="followers" />} value={fmtNum(s.followers)} sub={<><Term k="followerDelta">누적</Term> <Delta value={g.followerDelta} format={fmtNum} /> · <Term k="weeklyGrowth">주간</Term> {fmtSignedPct(g.weeklyGrowthRate)}</>} />
+        <Kpi label={<Term k="medianEr" />} value={fmtPct(s.medianEr)} sub={<><Term k="meanEr">평균</Term> {fmtPct(s.meanEr)}</>} />
+        <Kpi label={<Term k="viewRate">릴스 조회율 (중앙값)</Term>} value={s.medianViewRate != null ? `${(s.medianViewRate * 100).toFixed(0)}%` : "–"} sub={<><Term k="reelViews">릴스 중앙 조회</Term> {fmtNum(s.medianReelViews)}</>} />
+        <Kpi label={<Term k="postsPerWeek" />} value={`${s.postsPerWeek?.toFixed(1) ?? "–"}회/주`} sub={<><Term k="commentLike">댓글/좋아요</Term> {fmtPct(s.commentToLikeRatio, 1)}</>} />
       </div>
 
       {own && (ai || s.medianErReach != null) && (
         <div className="mt-3 grid grid-cols-2 gap-3 md:grid-cols-4">
-          <Kpi label="도달 기준 참여율 (중앙)" value={fmtPct(s.medianErReach)} hint="(좋아요+댓글+저장+공유) ÷ 도달" />
-          {ai && <Kpi label={`도달 계정 (${ai.periodDays}일)`} value={fmtNum(ai.accountsReached)} sub={ai.nonFollowerReachPct != null ? `비팔로워 ${ai.nonFollowerReachPct}%` : undefined} />}
-          {ai && <Kpi label={`참여 계정 (${ai.periodDays}일)`} value={fmtNum(ai.accountsEngaged)} />}
-          {ai && <Kpi label={`프로필 방문 (${ai.periodDays}일)`} value={fmtNum(ai.profileVisits)} sub={ai.followerChange != null ? `팔로워 ${ai.followerChange >= 0 ? "+" : ""}${fmtNum(ai.followerChange)}` : undefined} />}
+          <Kpi label={<Term k="erReach">도달 기준 참여율 (중앙)</Term>} value={fmtPct(s.medianErReach)} />
+          {ai && <Kpi label={<Term k="accountsReached">도달 계정 ({ai.periodDays}일)</Term>} value={fmtNum(ai.accountsReached)} sub={ai.nonFollowerReachPct != null ? <><Term k="nonFollowerReach">비팔로워</Term> {ai.nonFollowerReachPct}%</> : undefined} />}
+          {ai && <Kpi label={<Term k="accountsEngaged">참여 계정 ({ai.periodDays}일)</Term>} value={fmtNum(ai.accountsEngaged)} />}
+          {ai && <Kpi label={<Term k="profileVisits">프로필 방문 ({ai.periodDays}일)</Term>} value={fmtNum(ai.profileVisits)} sub={ai.followerChange != null ? `팔로워 ${ai.followerChange >= 0 ? "+" : ""}${fmtNum(ai.followerChange)}` : undefined} />}
         </div>
       )}
 
-      <Section title="팔로워 추이" desc="수집할 때마다 한 점씩 쌓입니다 (주 2회 권장)">
+      <Section title="팔로워 추이" desc={<>수집할 때마다 <Term k="snapshot">스냅샷</Term>이 한 점씩 쌓입니다 (주 2회 권장)</>}>
         <div className="card">
           {g.points.length > 1 ? <FollowerChart points={g.points} /> : <p className="text-sm text-muted">스냅샷이 2개 이상 쌓이면 추이가 표시됩니다.</p>}
         </div>
       </Section>
 
       <div className="grid gap-x-6 lg:grid-cols-2">
-        <Section title="포맷별 성과" desc="포맷별 중앙 참여율 (n = 게시물 수)">
+        <Section title={<><Term k="format">포맷</Term>별 성과</>} desc={<><Term k="format">포맷</Term>별 <Term k="medianEr">중앙 참여율</Term> (<Term k="n">n</Term> = 게시물 수)</>}>
           <div className="card">
             <BarList rows={s.byType.map((t) => ({ label: TYPE_LABEL[t.key as keyof typeof TYPE_LABEL], value: t.medianEr, note: `n=${t.count}` }))} format={(n) => fmtPct(n)} />
           </div>
         </Section>
-        <Section title="카테고리별 성과" desc="교육 · 대중문화 · 춤 등 (수집 시 분류 또는 키워드 규칙)">
+        <Section title={<><Term k="category">카테고리</Term>별 성과</>} desc={<>교육 · 대중문화 · 춤 등 · <Term k="medianEr">중앙 참여율</Term></>}>
           <div className="card">
             <BarList rows={s.byCategory.map((t) => ({ label: t.key, value: t.medianEr, note: `n=${t.count}` }))} format={(n) => fmtPct(n)} />
           </div>
@@ -84,12 +85,12 @@ export default async function ChannelPage(props: PageProps<"/channels/[handle]">
       </div>
 
       <div className="grid gap-x-6 lg:grid-cols-2">
-        <Section title="게시 시간대" desc="언제 올렸고, 그때 반응이 어땠는지">
+        <Section title={<Term k="heatmap" />} desc="언제 올렸고, 그때 반응이 어땠는지">
           <div className="card">
             <Heatmap cells={s.heatmap} />
           </div>
         </Section>
-        <Section title="캡션 길이별 성과">
+        <Section title={<><Term k="captionLength">캡션 길이</Term>별 성과</>} desc={<><Term k="medianEr">중앙 참여율</Term> 기준</>}>
           <div className="card">
             <BarList rows={s.byCaptionLength.map((t) => ({ label: t.key, value: t.medianEr, note: `n=${t.count}` }))} format={(n) => fmtPct(n)} />
             <p className="mt-3 text-xs text-muted">상관관계일 뿐 인과가 아닙니다. 게시물 수가 적은 구간은 참고만 하세요.</p>
@@ -97,12 +98,12 @@ export default async function ChannelPage(props: PageProps<"/channels/[handle]">
         </Section>
       </div>
 
-      <Section title="해시태그" desc="2회 이상 쓴 태그, 사용 횟수 순">
+      <Section title={<Term k="hashtag">해시태그</Term>} desc="2회 이상 쓴 태그, 사용 횟수 순">
         <div className="card overflow-x-auto p-0">
           {topTags.length ? (
             <table className="table">
               <thead>
-                <tr><th>태그</th><th className="text-right">사용</th><th className="text-right">중앙 참여율</th><th className="text-right">중앙 반응수</th></tr>
+                <tr><th>태그</th><th className="text-right">사용</th><th className="text-right"><Term k="medianEr">중앙 참여율</Term></th><th className="text-right"><Term k="interactions">중앙 반응수</Term></th></tr>
               </thead>
               <tbody>
                 {topTags.map((t) => (
@@ -121,7 +122,7 @@ export default async function ChannelPage(props: PageProps<"/channels/[handle]">
         </div>
       </Section>
 
-      <Section title="게시물" desc="중앙 대비 2배 이상은 초록, 절반 미만은 빨강">
+      <Section title="게시물" desc={<><Term k="vsMedian">중앙 대비</Term> 2배 이상은 초록, 절반 미만은 빨강</>}>
         <PostsTable rows={s.rows} own={own} />
       </Section>
 

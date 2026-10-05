@@ -4,26 +4,29 @@ import { useMemo, useState } from "react";
 import type { PostRow } from "@/lib/metrics";
 import { TYPE_LABEL } from "@/lib/metrics";
 import { fmtDate, fmtNum, fmtPct, fmtX } from "@/lib/format";
+import type { TermKey } from "@/lib/glossary";
+import { Term } from "./term";
 
 type Col = {
   key: string;
   label: string;
   value: (r: PostRow) => number | null;
   fmt: (n: number | null) => string;
+  term?: TermKey;
   ownOnly?: boolean;
 };
 
 const COLS: Col[] = [
   { key: "date", label: "게시일", value: (r) => (r.post.postedAt ? Date.parse(r.post.postedAt) : null), fmt: () => "" },
-  { key: "likes", label: "좋아요", value: (r) => r.post.likes, fmt: fmtNum },
-  { key: "comments", label: "댓글", value: (r) => r.post.comments, fmt: fmtNum },
-  { key: "views", label: "조회", value: (r) => r.post.views ?? r.post.insights?.views ?? null, fmt: fmtNum },
-  { key: "er", label: "참여율", value: (r) => r.er, fmt: (n) => fmtPct(n) },
-  { key: "vs", label: "중앙 대비", value: (r) => r.vsMedian, fmt: fmtX },
-  { key: "reach", label: "도달", value: (r) => r.post.insights?.reach ?? null, fmt: fmtNum, ownOnly: true },
-  { key: "saves", label: "저장", value: (r) => r.post.insights?.saves ?? null, fmt: fmtNum, ownOnly: true },
-  { key: "shares", label: "공유", value: (r) => r.post.insights?.shares ?? null, fmt: fmtNum, ownOnly: true },
-  { key: "erReach", label: "도달 참여율", value: (r) => r.erReach, fmt: (n) => fmtPct(n), ownOnly: true },
+  { key: "likes", term: "likes", label: "좋아요", value: (r) => r.post.likes, fmt: fmtNum },
+  { key: "comments", term: "comments", label: "댓글", value: (r) => r.post.comments, fmt: fmtNum },
+  { key: "views", term: "views", label: "조회", value: (r) => r.post.views ?? r.post.insights?.views ?? null, fmt: fmtNum },
+  { key: "er", term: "er", label: "참여율", value: (r) => r.er, fmt: (n) => fmtPct(n) },
+  { key: "vs", term: "vsMedian", label: "중앙 대비", value: (r) => r.vsMedian, fmt: fmtX },
+  { key: "reach", term: "reach", label: "도달", value: (r) => r.post.insights?.reach ?? null, fmt: fmtNum, ownOnly: true },
+  { key: "saves", term: "saves", label: "저장", value: (r) => r.post.insights?.saves ?? null, fmt: fmtNum, ownOnly: true },
+  { key: "shares", term: "shares", label: "공유", value: (r) => r.post.insights?.shares ?? null, fmt: fmtNum, ownOnly: true },
+  { key: "erReach", term: "erReach", label: "도달 참여율", value: (r) => r.erReach, fmt: (n) => fmtPct(n), ownOnly: true },
 ];
 
 export function PostsTable({ rows, own }: { rows: PostRow[]; own: boolean }) {
@@ -64,7 +67,7 @@ export function PostsTable({ rows, own }: { rows: PostRow[]; own: boolean }) {
             <th>게시물</th>
             {cols.map((c) => (
               <th key={c.key} className="cursor-pointer whitespace-nowrap text-right" onClick={() => setSort((s) => ({ key: c.key, desc: s.key === c.key ? !s.desc : true }))}>
-                {c.label}
+                {c.term ? <Term k={c.term} iconOnly>{c.label}</Term> : c.label}
                 {sort.key === c.key ? (sort.desc ? " ↓" : " ↑") : ""}
               </th>
             ))}

@@ -4,6 +4,8 @@ import { growth, summarize, TYPE_LABEL } from "@/lib/metrics";
 import { fmtNum, fmtPct, fmtSignedPct } from "@/lib/format";
 import { Section } from "@/components/ui";
 import { IndexedGrowthChart } from "@/components/charts";
+import { Term } from "@/components/term";
+import type { TermKey } from "@/lib/glossary";
 
 export const dynamic = "force-dynamic";
 const MAX = 5;
@@ -23,21 +25,23 @@ export default async function ComparePage(props: PageProps<"/compare">) {
     return { h, latest, s: summarize(latest), g: growth(snaps), snaps };
   });
 
-  const metrics: { label: string; get: (r: (typeof rows)[number]) => number | null; fmt: (n: number | null) => string; hint?: string }[] = [
-    { label: "팔로워", get: (r) => r.s.followers, fmt: fmtNum },
-    { label: "주간 팔로워 성장률", get: (r) => r.g.weeklyGrowthRate, fmt: (n) => fmtSignedPct(n) },
-    { label: "참여율 (중앙)", get: (r) => r.s.medianEr, fmt: (n) => fmtPct(n) },
-    { label: "릴스 조회율 (중앙)", get: (r) => r.s.medianViewRate, fmt: (n) => (n == null ? "–" : `${(n * 100).toFixed(0)}%`) },
-    { label: "릴스 중앙 조회수", get: (r) => r.s.medianReelViews, fmt: fmtNum },
-    { label: "중앙 반응수 (좋아요+댓글)", get: (r) => r.s.medianInteractions, fmt: fmtNum },
-    { label: "댓글/좋아요", get: (r) => r.s.commentToLikeRatio, fmt: (n) => fmtPct(n, 1) },
-    { label: "주간 게시 수", get: (r) => r.s.postsPerWeek, fmt: (n) => (n == null ? "–" : n.toFixed(1)) },
+  const metrics: { label: string; get: (r: (typeof rows)[number]) => number | null; fmt: (n: number | null) => string; term?: TermKey }[] = [
+    { term: "followers", label: "팔로워", get: (r) => r.s.followers, fmt: fmtNum },
+    { term: "weeklyGrowth", label: "주간 팔로워 성장률", get: (r) => r.g.weeklyGrowthRate, fmt: (n) => fmtSignedPct(n) },
+    { term: "medianEr", label: "참여율 (중앙)", get: (r) => r.s.medianEr, fmt: (n) => fmtPct(n) },
+    { term: "viewRate", label: "릴스 조회율 (중앙)", get: (r) => r.s.medianViewRate, fmt: (n) => (n == null ? "–" : `${(n * 100).toFixed(0)}%`) },
+    { term: "reelViews", label: "릴스 중앙 조회수", get: (r) => r.s.medianReelViews, fmt: fmtNum },
+    { term: "interactions", label: "중앙 반응수 (좋아요+댓글)", get: (r) => r.s.medianInteractions, fmt: fmtNum },
+    { term: "commentLike", label: "댓글/좋아요", get: (r) => r.s.commentToLikeRatio, fmt: (n) => fmtPct(n, 1) },
+    { term: "postsPerWeek", label: "주간 게시 수", get: (r) => r.s.postsPerWeek, fmt: (n) => (n == null ? "–" : n.toFixed(1)) },
     ...(["reel", "carousel", "image"] as const).map((t) => ({
+      term: "formatShare" as TermKey,
       label: `${TYPE_LABEL[t]} 비중`,
       get: (r: (typeof rows)[number]) => (r.s.postsAnalyzed ? (r.s.byType.find((b) => b.key === t)?.count ?? 0) / r.s.postsAnalyzed : null),
       fmt: (n: number | null) => fmtPct(n, 0),
     })),
     ...["춤", "교육", "대중문화"].map((c) => ({
+      term: "medianEr" as TermKey,
       label: `${c} 콘텐츠 참여율`,
       get: (r: (typeof rows)[number]) => r.s.byCategory.find((b) => b.key === c)?.medianEr ?? null,
       fmt: (n: number | null) => fmtPct(n),
@@ -65,7 +69,7 @@ export default async function ComparePage(props: PageProps<"/compare">) {
         <p className="mt-6 text-sm text-muted">비교할 계정이 없습니다. <Link className="text-accent underline" href="/collect">먼저 수집하세요.</Link></p>
       ) : (
         <>
-          <Section title="지표 비교" desc="각 행에서 가장 높은 값을 굵게 표시">
+          <Section title="지표 비교" desc="각 행에서 가장 높은 값을 굵게 표시 · 지표 이름에 마우스를 올리면 설명이 나와요">
             <div className="card overflow-x-auto p-0">
               <table className="table">
                 <thead>
@@ -84,7 +88,7 @@ export default async function ComparePage(props: PageProps<"/compare">) {
                     const best = Math.max(...vals.filter((v): v is number => v != null));
                     return (
                       <tr key={m.label}>
-                        <td className="whitespace-nowrap text-ink-2">{m.label}</td>
+                        <td className="whitespace-nowrap text-ink-2">{m.term ? <Term k={m.term}>{m.label}</Term> : m.label}</td>
                         {vals.map((v, i) => (
                           <td key={rows[i].h} className={`num text-right ${v === best && rows.length > 1 ? "font-semibold" : ""}`}>{m.fmt(v)}</td>
                         ))}

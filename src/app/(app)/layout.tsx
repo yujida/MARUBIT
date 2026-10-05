@@ -13,9 +13,9 @@ export default function AppLayout({ children }: LayoutProps<"/">) {
     <>
       <header className="border-b border-line bg-surface">
         <nav className="mx-auto flex max-w-6xl items-center gap-1 overflow-x-auto px-4 py-3">
-          <Link href="/" className="mr-4 font-bold tracking-tight">MARUBIT</Link>
+          <Link href="/" className="mr-2 shrink-0 font-bold tracking-tight sm:mr-4">MARUBIT</Link>
           {NAV.map((n) => (
-            <Link key={n.href} href={n.href} className="rounded-md px-3 py-1.5 text-sm text-ink-2 hover:bg-page hover:text-ink">
+            <Link key={n.href} href={n.href} className="shrink-0 whitespace-nowrap rounded-md px-3 py-1.5 text-sm text-ink-2 hover:bg-page hover:text-ink">
               {n.label}
             </Link>
           ))}

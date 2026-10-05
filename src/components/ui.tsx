@@ -1,8 +1,8 @@
 import type { ReactNode } from "react";
 
-export function Kpi({ label, value, sub, hint }: { label: string; value: ReactNode; sub?: ReactNode; hint?: string }) {
+export function Kpi({ label, value, sub }: { label: ReactNode; value: ReactNode; sub?: ReactNode }) {
   return (
-    <div className="card" title={hint}>
+    <div className="card">
       <div className="text-xs text-muted">{label}</div>
       <div className="mt-1 text-2xl font-semibold">{value}</div>
       {sub && <div className="mt-0.5 text-xs text-ink-2">{sub}</div>}
@@ -10,13 +10,13 @@ export function Kpi({ label, value, sub, hint }: { label: string; value: ReactNo
   );
 }
 
-export function Section({ title, desc, children, action }: { title: string; desc?: string; children: ReactNode; action?: ReactNode }) {
+export function Section({ title, desc, children, action }: { title: ReactNode; desc?: ReactNode; children: ReactNode; action?: ReactNode }) {
   return (
     <section className="mt-8">
       <div className="mb-3 flex items-end justify-between gap-4">
         <div>
           <h2 className="h2">{title}</h2>
-          {desc && <p className="mt-0.5 text-sm text-muted">{desc}</p>}
+          {desc && <div className="mt-0.5 text-sm text-muted">{desc}</div>}
         </div>
         {action}
       </div>
