@@ -1,0 +1,625 @@
+{
+  "schemaVersion": 1,
+  "handle": "sample_my_dance_class",
+  "collectedAt": "2026-08-13T01:00:00.000+00:00",
+  "source": "sample",
+  "role": "own",
+  "profile": {
+    "displayName": "(데모) 내 댄스 클래스",
+    "bio": "가상 데모 계정입니다",
+    "externalUrl": null,
+    "category": "교육",
+    "verified": false,
+    "posts": 300,
+    "followers": 8443,
+    "following": 180,
+    "highlights": 6
+  },
+  "accountInsights": {
+    "periodDays": 30,
+    "accountsReached": 33772,
+    "accountsEngaged": 2533,
+    "profileVisits": 1689,
+    "followerChange": 405,
+    "nonFollowerReachPct": 62
+  },
+  "posts": [
+    {
+      "shortcode": "myx001000",
+      "url": "https://www.instagram.com/p/sample0/",
+      "type": "reel",
+      "postedAt": "2026-08-12T10:41:03.735Z",
+      "caption": "이번 주 챌린지 안무 30초 버전 🔥\n\n#댄스 #dance #kpopdance",
+      "hashtags": [
+        "댄스",
+        "dance",
+        "kpopdance"
+      ],
+      "mentions": [],
+      "likes": 343,
+      "comments": 12,
+      "views": 14034,
+      "carouselCount": null,
+      "pinned": false,
+      "category": "춤",
+      "topic": null,
+      "hook": null,
+      "insights": {
+        "reach": 28069,
+        "views": 36490,
+        "saves": 21,
+        "shares": 41,
+        "profileVisits": 561,
+        "follows": 56,
+        "avgWatchTimeSec": 11
+      }
+    },
+    {
+      "shortcode": "myx011001",
+      "url": "https://www.instagram.com/p/sample1/",
+      "type": "reel",
+      "postedAt": "2026-08-10T12:21:10.980Z",
+      "caption": "초보도 따라하는 안무 3단계 분해\n\n#댄스 #챌린지 #kpopdance",
+      "hashtags": [
+        "댄스",
+        "챌린지",
+        "kpopdance"
+      ],
+      "mentions": [],
+      "likes": 438,
+      "comments": 17,
+      "views": 17910,
+      "carouselCount": null,
+      "pinned": false,
+      "category": "춤",
+      "topic": null,
+      "hook": null,
+      "insights": {
+        "reach": 35821,
+        "views": 46567,
+        "saves": 26,
+        "shares": 53,
+        "profileVisits": 716,
+        "follows": 72,
+        "avgWatchTimeSec": 8
+      }
+    },
+    {
+      "shortcode": "myx021002",
+      "url": "https://www.instagram.com/p/sample2/",
+      "type": "reel",
+      "postedAt": "2026-08-08T11:03:14.309Z",
+      "caption": "이번 주 챌린지 안무 30초 버전 🔥\n\n#dance #챌린지",
+      "hashtags": [
+        "dance",
+        "챌린지"
+      ],
+      "mentions": [],
+      "likes": 459,
+      "comments": 15,
+      "views": 18767,
+      "carouselCount": null,
+      "pinned": false,
+      "category": "춤",
+      "topic": null,
+      "hook": null,
+      "insights": {
+        "reach": 37535,
+        "views": 48796,
+        "saves": 28,
+        "shares": 55,
+        "profileVisits": 751,
+        "follows": 75,
+        "avgWatchTimeSec": 9
+      }
+    },
+    {
+      "shortcode": "myx031003",
+      "url": "https://www.instagram.com/p/sample3/",
+      "type": "reel",
+      "postedAt": "2026-08-05T09:14:53.304Z",
+      "caption": "초보도 따라하는 안무 3단계 분해\n\n#댄스 #dance #챌린지 #kpopdance",
+      "hashtags": [
+        "댄스",
+        "dance",
+        "챌린지",
+        "kpopdance"
+      ],
+      "mentions": [],
+      "likes": 240,
+      "comments": 6,
+      "views": 9810,
+      "carouselCount": null,
+      "pinned": false,
+      "category": "춤",
+      "topic": null,
+      "hook": null,
+      "insights": {
+        "reach": 19621,
+        "views": 25507,
+        "saves": 14,
+        "shares": 29,
+        "profileVisits": 392,
+        "follows": 39,
+        "avgWatchTimeSec": 9
+      }
+    },
+    {
+      "shortcode": "myx041004",
+      "url": "https://www.instagram.com/p/sample4/",
+      "type": "carousel",
+      "postedAt": "2026-08-02T10:08:44.528Z",
+      "caption": "초보도 따라하는 안무 3단계 분해\n\n#댄스 #dance #kpopdance",
+      "hashtags": [
+        "댄스",
+        "dance",
+        "kpopdance"
+      ],
+      "mentions": [],
+      "likes": 468,
+      "comments": 32,
+      "views": null,
+      "carouselCount": 8,
+      "pinned": false,
+      "category": "춤",
+      "topic": null,
+      "hook": null,
+      "insights": {
+        "reach": 9581,
+        "views": 12455,
+        "saves": 28,
+        "shares": 14,
+        "profileVisits": 192,
+        "follows": 19,
+        "avgWatchTimeSec": null
+      }
+    },
+    {
+      "shortcode": "myx051005",
+      "url": "https://www.instagram.com/p/sample5/",
+      "type": "carousel",
+      "postedAt": "2026-07-31T12:14:20.699Z",
+      "caption": "춤 영상 잘 찍는 꿀팁 5가지\n\n#춤배우기",
+      "hashtags": [
+        "춤배우기"
+      ],
+      "mentions": [],
+      "likes": 210,
+      "comments": 19,
+      "views": null,
+      "carouselCount": 3,
+      "pinned": false,
+      "category": "교육",
+      "topic": null,
+      "hook": null,
+      "insights": {
+        "reach": 4298,
+        "views": 5587,
+        "saves": 53,
+        "shares": 6,
+        "profileVisits": 86,
+        "follows": 9,
+        "avgWatchTimeSec": null
+      }
+    },
+    {
+      "shortcode": "myx061006",
+      "url": "https://www.instagram.com/p/sample6/",
+      "type": "reel",
+      "postedAt": "2026-07-29T10:46:41.656Z",
+      "caption": "이번 주 챌린지 안무 30초 버전 🔥\n\n#dance #챌린지",
+      "hashtags": [
+        "dance",
+        "챌린지"
+      ],
+      "mentions": [],
+      "likes": 557,
+      "comments": 27,
+      "views": 22789,
+      "carouselCount": null,
+      "pinned": false,
+      "category": "춤",
+      "topic": null,
+      "hook": null,
+      "insights": {
+        "reach": 45578,
+        "views": 59251,
+        "saves": 33,
+        "shares": 67,
+        "profileVisits": 912,
+        "follows": 91,
+        "avgWatchTimeSec": 12
+      }
+    },
+    {
+      "shortcode": "myx071007",
+      "url": "https://www.instagram.com/p/sample7/",
+      "type": "carousel",
+      "postedAt": "2026-07-26T11:49:04.756Z",
+      "caption": "이번 주 챌린지 안무 30초 버전 🔥\n\n#댄스 #kpopdance",
+      "hashtags": [
+        "댄스",
+        "kpopdance"
+      ],
+      "mentions": [],
+      "likes": 181,
+      "comments": 9,
+      "views": null,
+      "carouselCount": 3,
+      "pinned": false,
+      "category": "춤",
+      "topic": null,
+      "hook": null,
+      "insights": {
+        "reach": 3699,
+        "views": 4809,
+        "saves": 11,
+        "shares": 5,
+        "profileVisits": 74,
+        "follows": 7,
+        "avgWatchTimeSec": null
+      }
+    },
+    {
+      "shortcode": "myx081008",
+      "url": "https://www.instagram.com/p/sample8/",
+      "type": "reel",
+      "postedAt": "2026-07-24T09:38:24.087Z",
+      "caption": "커버댄스 풀버전은 프로필 링크에서\n\n#dance #챌린지 #kpopdance",
+      "hashtags": [
+        "dance",
+        "챌린지",
+        "kpopdance"
+      ],
+      "mentions": [],
+      "likes": 309,
+      "comments": 20,
+      "views": 12636,
+      "carouselCount": null,
+      "pinned": false,
+      "category": "춤",
+      "topic": null,
+      "hook": null,
+      "insights": {
+        "reach": 25271,
+        "views": 32852,
+        "saves": 19,
+        "shares": 37,
+        "profileVisits": 505,
+        "follows": 51,
+        "avgWatchTimeSec": 12
+      }
+    },
+    {
+      "shortcode": "myx091009",
+      "url": "https://www.instagram.com/p/sample9/",
+      "type": "reel",
+      "postedAt": "2026-07-21T10:24:16.032Z",
+      "caption": "이번 주 챌린지 안무 30초 버전 🔥\n\n#댄스 #dance #챌린지",
+      "hashtags": [
+        "댄스",
+        "dance",
+        "챌린지"
+      ],
+      "mentions": [],
+      "likes": 691,
+      "comments": 16,
+      "views": 28264,
+      "carouselCount": null,
+      "pinned": false,
+      "category": "춤",
+      "topic": null,
+      "hook": null,
+      "insights": {
+        "reach": 56529,
+        "views": 73488,
+        "saves": 41,
+        "shares": 83,
+        "profileVisits": 1131,
+        "follows": 113,
+        "avgWatchTimeSec": 9
+      }
+    },
+    {
+      "shortcode": "myx0101010",
+      "url": "https://www.instagram.com/p/sample10/",
+      "type": "reel",
+      "postedAt": "2026-07-19T12:56:00.562Z",
+      "caption": "초보도 따라하는 안무 3단계 분해\n\n#dance #챌린지 #kpopdance",
+      "hashtags": [
+        "dance",
+        "챌린지",
+        "kpopdance"
+      ],
+      "mentions": [],
+      "likes": 698,
+      "comments": 45,
+      "views": 28557,
+      "carouselCount": null,
+      "pinned": false,
+      "category": "춤",
+      "topic": null,
+      "hook": null,
+      "insights": {
+        "reach": 57114,
+        "views": 74248,
+        "saves": 42,
+        "shares": 84,
+        "profileVisits": 1142,
+        "follows": 114,
+        "avgWatchTimeSec": 7
+      }
+    },
+    {
+      "shortcode": "myx0111011",
+      "url": "https://www.instagram.com/p/sample11/",
+      "type": "reel",
+      "postedAt": "2026-07-16T09:56:18.556Z",
+      "caption": "초보도 따라하는 안무 3단계 분해\n\n#댄스 #챌린지 #kpopdance",
+      "hashtags": [
+        "댄스",
+        "챌린지",
+        "kpopdance"
+      ],
+      "mentions": [],
+      "likes": 478,
+      "comments": 33,
+      "views": 19543,
+      "carouselCount": null,
+      "pinned": false,
+      "category": "춤",
+      "topic": null,
+      "hook": null,
+      "insights": {
+        "reach": 39087,
+        "views": 50813,
+        "saves": 29,
+        "shares": 57,
+        "profileVisits": 782,
+        "follows": 78,
+        "avgWatchTimeSec": 12
+      }
+    },
+    {
+      "shortcode": "myx0121012",
+      "url": "https://www.instagram.com/p/sample12/",
+      "type": "reel",
+      "postedAt": "2026-07-15T12:28:04.188Z",
+      "caption": "초보도 따라하는 안무 3단계 분해\n\n#kpopdance",
+      "hashtags": [
+        "kpopdance"
+      ],
+      "mentions": [],
+      "likes": 748,
+      "comments": 18,
+      "views": 30614,
+      "carouselCount": null,
+      "pinned": false,
+      "category": "춤",
+      "topic": null,
+      "hook": null,
+      "insights": {
+        "reach": 61228,
+        "views": 79596,
+        "saves": 45,
+        "shares": 90,
+        "profileVisits": 1225,
+        "follows": 122,
+        "avgWatchTimeSec": 15
+      }
+    },
+    {
+      "shortcode": "myx0131013",
+      "url": "https://www.instagram.com/p/sample13/",
+      "type": "reel",
+      "postedAt": "2026-07-12T11:09:57.436Z",
+      "caption": "이번 컴백 무대 포인트 안무 리뷰\n\n#kpop #밈",
+      "hashtags": [
+        "kpop",
+        "밈"
+      ],
+      "mentions": [],
+      "likes": 313,
+      "comments": 21,
+      "views": 12792,
+      "carouselCount": null,
+      "pinned": false,
+      "category": "대중문화",
+      "topic": null,
+      "hook": null,
+      "insights": {
+        "reach": 25584,
+        "views": 33259,
+        "saves": 19,
+        "shares": 38,
+        "profileVisits": 512,
+        "follows": 51,
+        "avgWatchTimeSec": 7
+      }
+    },
+    {
+      "shortcode": "myx0141014",
+      "url": "https://www.instagram.com/p/sample14/",
+      "type": "reel",
+      "postedAt": "2026-07-09T09:37:25.684Z",
+      "caption": "초보도 따라하는 안무 3단계 분해\n\n#댄스 #dance #kpopdance",
+      "hashtags": [
+        "댄스",
+        "dance",
+        "kpopdance"
+      ],
+      "mentions": [],
+      "likes": 689,
+      "comments": 18,
+      "views": 28197,
+      "carouselCount": null,
+      "pinned": false,
+      "category": "춤",
+      "topic": null,
+      "hook": null,
+      "insights": {
+        "reach": 56395,
+        "views": 73314,
+        "saves": 41,
+        "shares": 83,
+        "profileVisits": 1128,
+        "follows": 113,
+        "avgWatchTimeSec": 7
+      }
+    },
+    {
+      "shortcode": "myx0151015",
+      "url": "https://www.instagram.com/p/sample15/",
+      "type": "reel",
+      "postedAt": "2026-07-07T03:48:10.392Z",
+      "caption": "초보도 따라하는 안무 3단계 분해\n\n#댄스 #dance #챌린지 #kpopdance",
+      "hashtags": [
+        "댄스",
+        "dance",
+        "챌린지",
+        "kpopdance"
+      ],
+      "mentions": [],
+      "likes": 227,
+      "comments": 9,
+      "views": 9281,
+      "carouselCount": null,
+      "pinned": false,
+      "category": "춤",
+      "topic": null,
+      "hook": null,
+      "insights": {
+        "reach": 18562,
+        "views": 24131,
+        "saves": 14,
+        "shares": 27,
+        "profileVisits": 371,
+        "follows": 37,
+        "avgWatchTimeSec": 7
+      }
+    },
+    {
+      "shortcode": "myx0161016",
+      "url": "https://www.instagram.com/p/sample16/",
+      "type": "reel",
+      "postedAt": "2026-07-05T12:30:47.022Z",
+      "caption": "초보도 따라하는 안무 3단계 분해\n\n#댄스 #dance #챌린지 #kpopdance",
+      "hashtags": [
+        "댄스",
+        "dance",
+        "챌린지",
+        "kpopdance"
+      ],
+      "mentions": [],
+      "likes": 643,
+      "comments": 32,
+      "views": 26295,
+      "carouselCount": null,
+      "pinned": false,
+      "category": "춤",
+      "topic": null,
+      "hook": null,
+      "insights": {
+        "reach": 52589,
+        "views": 68366,
+        "saves": 39,
+        "shares": 77,
+        "profileVisits": 1052,
+        "follows": 105,
+        "avgWatchTimeSec": 12
+      }
+    },
+    {
+      "shortcode": "myx0171017",
+      "url": "https://www.instagram.com/p/sample17/",
+      "type": "reel",
+      "postedAt": "2026-07-02T03:27:04.308Z",
+      "caption": "초보도 따라하는 안무 3단계 분해\n\n#댄스 #챌린지 #kpopdance",
+      "hashtags": [
+        "댄스",
+        "챌린지",
+        "kpopdance"
+      ],
+      "mentions": [],
+      "likes": 530,
+      "comments": 19,
+      "views": 21667,
+      "carouselCount": null,
+      "pinned": false,
+      "category": "춤",
+      "topic": null,
+      "hook": null,
+      "insights": {
+        "reach": 43334,
+        "views": 56334,
+        "saves": 32,
+        "shares": 64,
+        "profileVisits": 867,
+        "follows": 87,
+        "avgWatchTimeSec": 9
+      }
+    },
+    {
+      "shortcode": "myx0181018",
+      "url": "https://www.instagram.com/p/sample18/",
+      "type": "reel",
+      "postedAt": "2026-06-29T11:37:02.612Z",
+      "caption": "커버댄스 풀버전은 프로필 링크에서\n\n#댄스 #dance #챌린지 #kpopdance",
+      "hashtags": [
+        "댄스",
+        "dance",
+        "챌린지",
+        "kpopdance"
+      ],
+      "mentions": [],
+      "likes": 544,
+      "comments": 14,
+      "views": 22265,
+      "carouselCount": null,
+      "pinned": false,
+      "category": "춤",
+      "topic": null,
+      "hook": null,
+      "insights": {
+        "reach": 44530,
+        "views": 57889,
+        "saves": 33,
+        "shares": 65,
+        "profileVisits": 891,
+        "follows": 89,
+        "avgWatchTimeSec": 10
+      }
+    },
+    {
+      "shortcode": "myx0191019",
+      "url": "https://www.instagram.com/p/sample19/",
+      "type": "carousel",
+      "postedAt": "2026-06-27T10:29:57.518Z",
+      "caption": "요즘 뜨는 밈 댄스 모음\n\n#kpop #컴백 #밈",
+      "hashtags": [
+        "kpop",
+        "컴백",
+        "밈"
+      ],
+      "mentions": [],
+      "likes": 404,
+      "comments": 25,
+      "views": null,
+      "carouselCount": 7,
+      "pinned": false,
+      "category": "대중문화",
+      "topic": null,
+      "hook": null,
+      "insights": {
+        "reach": 8260,
+        "views": 10738,
+        "saves": 24,
+        "shares": 12,
+        "profileVisits": 165,
+        "follows": 17,
+        "avgWatchTimeSec": null
+      }
+    }
+  ],
+  "notes": "가상 데모 데이터"
+}
