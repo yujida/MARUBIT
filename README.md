@@ -36,4 +36,5 @@ Vercel + Neon Postgres + 비밀번호 보호 → [docs/DEPLOY.md](docs/DEPLOY.md
 
 ## 문서
 - [설계](docs/DESIGN.md)
+- [멀티 플랫폼 확장 설계 (초안)](docs/MULTI_PLATFORM_DESIGN.md)
 - [오픈소스 출처](NOTICE.md)
