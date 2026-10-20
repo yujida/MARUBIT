@@ -130,6 +130,8 @@ async function prepare(session, specs) {
         const p = path.join(cache, `${key}.png`);
         await sharp(src).png().toFile(p);
         out[key] = p;
+      } else if (spec.fallback === "none") {
+        out[key] = null;
       } else if (spec.fallback === "gradient") {
         out[key] = await svgPng(gradientSvg(spec.seed || 0), path.join(cache, `${key}_grad.png`));
         out[`${key}_isFallback`] = true;

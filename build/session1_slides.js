@@ -34,6 +34,7 @@ const IMAGE_SPECS = {
   img15: { kind: "photo", ratio: [1024, 1536], label: "완성 장면 9:16" },
   img16: { kind: "panels", cols: 2, rows: 1, panelRatio: [900, 900], label: "심도 비교" },
   img17: { kind: "photo", ratio: [1536, 1024], label: "화이트밸런스 기준" },
+  img18: { kind: "photo", fallback: "none" },
 };
 
 async function main() {
@@ -135,13 +136,17 @@ async function main() {
 "연습용으로 만들고 버리는 영상은 없습니다. 전부 여러분 채널에 남아요."`);
     const cx = 3.35;
     k.card(s, M, 1.75, 5.2, 4.85, { fill: C.text2 });
-    s.addShape(S.triangle, { x: cx - 1.0, y: 2.25, w: 2.0, h: 1.4, fill: { color: "2E7D57" }, line: { type: "none" } });
-    s.addShape(S.triangle, { x: cx - 1.45, y: 2.95, w: 2.9, h: 1.65, fill: { color: "2A7050" }, line: { type: "none" } });
-    s.addShape(S.triangle, { x: cx - 1.9, y: 3.75, w: 3.8, h: 1.75, fill: { color: "25654A" }, line: { type: "none" } });
-    s.addShape(S.rect, { x: cx - 0.2, y: 5.5, w: 0.4, h: 0.35, fill: { color: "8A7A62" }, line: { type: "none" } });
-    s.addShape(S.trapezoid, { x: cx - 0.7, y: 5.85, w: 1.4, h: 0.5, fill: { color: C.accent3 }, line: { type: "none" }, flipV: true });
-    s.addShape(S.star5, { x: cx - 0.33, y: 1.9, w: 0.66, h: 0.62, fill: { color: C.accent1 }, line: { type: "none" } });
-    [[cx - 0.15, 3.2, C.accent3], [cx - 0.75, 4.1, "E8C46A"], [cx + 0.45, 4.15, C.accent4], [cx - 1.3, 5.0, C.accent4], [cx + 0.95, 4.95, C.accent3], [cx - 0.2, 4.9, "E8C46A"]].forEach(([x, y, col]) => s.addShape(S.ellipse, { x, y, w: 0.3, h: 0.3, fill: { color: col }, line: { type: "none" } }));
+    // img18(트리 일러스트)이 있으면 그림으로, 없으면 도형으로 그린다.
+    if (img.img18) k.photo(s, img.img18, M, 1.75, 5.2, 4.85, { alt: "화분부터 별까지 자라는 크리스마스 트리" });
+    else {
+      s.addShape(S.triangle, { x: cx - 1.0, y: 2.25, w: 2.0, h: 1.4, fill: { color: "2E7D57" }, line: { type: "none" } });
+      s.addShape(S.triangle, { x: cx - 1.45, y: 2.95, w: 2.9, h: 1.65, fill: { color: "2A7050" }, line: { type: "none" } });
+      s.addShape(S.triangle, { x: cx - 1.9, y: 3.75, w: 3.8, h: 1.75, fill: { color: "25654A" }, line: { type: "none" } });
+      s.addShape(S.rect, { x: cx - 0.2, y: 5.5, w: 0.4, h: 0.35, fill: { color: "8A7A62" }, line: { type: "none" } });
+      s.addShape(S.trapezoid, { x: cx - 0.7, y: 5.85, w: 1.4, h: 0.5, fill: { color: C.accent3 }, line: { type: "none" }, flipV: true });
+      s.addShape(S.star5, { x: cx - 0.33, y: 1.9, w: 0.66, h: 0.62, fill: { color: C.accent1 }, line: { type: "none" } });
+      [[cx - 0.15, 3.2, C.accent3], [cx - 0.75, 4.1, "E8C46A"], [cx + 0.45, 4.15, C.accent4], [cx - 1.3, 5.0, C.accent4], [cx + 0.95, 4.95, C.accent3], [cx - 0.2, 4.9, "E8C46A"]].forEach(([x, y, col]) => s.addShape(S.ellipse, { x, y, w: 0.3, h: 0.3, fill: { color: col }, line: { type: "none" } }));
+    }
     const rows = [
       ["별", "5회 · 12/1", "브랜딩 · 후킹으로 대표작 리뉴얼", C.accent1],
       ["오너먼트", "3·4회 · 11/19 · 11/26", "숏폼 · 브이로그 · 정보성 · 스트리머형 · AI 영상", C.accent3],
