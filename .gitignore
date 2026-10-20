@@ -1,3 +1,4 @@
 # 수강생 이름 등 개인정보가 들어가는 데이터와 산출물 (공개 레포에 올리지 않음)
 private/
 node_modules/
+build/.cache/
