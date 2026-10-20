@@ -13,7 +13,7 @@
     "posts": 302,
     "followers": 53040,
     "following": 180,
-    "highlights": 6
+    "highlights": 3
   },
   "accountInsights": null,
   "posts": [
@@ -435,6 +435,53 @@
       "topic": null,
       "hook": null,
       "insights": null
+    }
+  ],
+  "stories": [
+    {
+      "id": "kpos10_0",
+      "postedAt": "2026-08-16T12:00:00.000Z",
+      "type": "video",
+      "durationSec": 12,
+      "text": "오늘 연습 영상 비하인드",
+      "stickers": [
+        "music"
+      ],
+      "linkUrl": null,
+      "isReshare": false,
+      "category": "춤",
+      "topic": "오늘 연습 영상 비하인드",
+      "insights": null
+    },
+    {
+      "id": "kpos10_1",
+      "postedAt": "2026-08-16T12:04:00.000Z",
+      "type": "video",
+      "durationSec": 8,
+      "text": "신규 수강 신청 링크",
+      "stickers": [
+        "link",
+        "countdown"
+      ],
+      "linkUrl": "https://example.com/class",
+      "isReshare": false,
+      "category": "홍보",
+      "topic": "신규 수강 신청 링크",
+      "insights": null
+    }
+  ],
+  "highlights": [
+    {
+      "title": "COVER",
+      "itemCount": null
+    },
+    {
+      "title": "멤버",
+      "itemCount": null
+    },
+    {
+      "title": "촬영 비하인드",
+      "itemCount": null
     }
   ],
   "notes": "가상 데모 데이터"

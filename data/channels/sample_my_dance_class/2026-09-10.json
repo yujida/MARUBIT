@@ -13,7 +13,7 @@
     "posts": 308,
     "followers": 8856,
     "following": 180,
-    "highlights": 6
+    "highlights": 4
   },
   "accountInsights": {
     "periodDays": 30,
@@ -619,6 +619,193 @@
         "follows": 17,
         "avgWatchTimeSec": null
       }
+    }
+  ],
+  "stories": [
+    {
+      "id": "my_s33_0",
+      "postedAt": "2026-09-08T12:00:00.000Z",
+      "type": "video",
+      "durationSec": 10,
+      "text": "이 동작 어려운 사람 손!",
+      "stickers": [
+        "music"
+      ],
+      "linkUrl": null,
+      "isReshare": true,
+      "category": "춤",
+      "topic": "이 동작 어려운 사람 손!",
+      "insights": {
+        "reach": 1131,
+        "views": 1222,
+        "replies": 3,
+        "shares": 0,
+        "profileVisits": 11,
+        "follows": 1,
+        "linkClicks": null,
+        "stickerTaps": null,
+        "forwardTaps": 231,
+        "backTaps": 12,
+        "exits": 72,
+        "nextStory": 37
+      }
+    },
+    {
+      "id": "my_s33_1",
+      "postedAt": "2026-09-08T12:04:00.000Z",
+      "type": "video",
+      "durationSec": 9,
+      "text": "퀴즈: 이 동작 이름은?",
+      "stickers": [
+        "quiz"
+      ],
+      "linkUrl": null,
+      "isReshare": false,
+      "category": "교육",
+      "topic": "퀴즈: 이 동작 이름은?",
+      "insights": {
+        "reach": 944,
+        "views": 1020,
+        "replies": 18,
+        "shares": 2,
+        "profileVisits": 9,
+        "follows": 0,
+        "linkClicks": null,
+        "stickerTaps": 100,
+        "forwardTaps": 195,
+        "backTaps": 10,
+        "exits": 110,
+        "nextStory": 31
+      }
+    },
+    {
+      "id": "my_s33_2",
+      "postedAt": "2026-09-08T12:08:00.000Z",
+      "type": "image",
+      "durationSec": null,
+      "text": "신규 수강 신청 링크",
+      "stickers": [
+        "link",
+        "countdown"
+      ],
+      "linkUrl": "https://example.com/class",
+      "isReshare": false,
+      "category": "홍보",
+      "topic": "신규 수강 신청 링크",
+      "insights": {
+        "reach": 755,
+        "views": 815,
+        "replies": 4,
+        "shares": 0,
+        "profileVisits": 8,
+        "follows": 0,
+        "linkClicks": 30,
+        "stickerTaps": null,
+        "forwardTaps": 225,
+        "backTaps": 8,
+        "exits": 128,
+        "nextStory": 24
+      }
+    },
+    {
+      "id": "my_s34_0",
+      "postedAt": "2026-09-09T12:00:00.000Z",
+      "type": "image",
+      "durationSec": null,
+      "text": "새 안무 10초 미리보기",
+      "stickers": [
+        "slider"
+      ],
+      "linkUrl": null,
+      "isReshare": false,
+      "category": "춤",
+      "topic": "새 안무 10초 미리보기",
+      "insights": {
+        "reach": 1012,
+        "views": 1093,
+        "replies": 15,
+        "shares": 0,
+        "profileVisits": 10,
+        "follows": 1,
+        "linkClicks": null,
+        "stickerTaps": 82,
+        "forwardTaps": 326,
+        "backTaps": 11,
+        "exits": 71,
+        "nextStory": 33
+      }
+    },
+    {
+      "id": "my_s34_1",
+      "postedAt": "2026-09-09T12:04:00.000Z",
+      "type": "image",
+      "durationSec": null,
+      "text": "Q&A: 몸치도 배울 수 있나요?",
+      "stickers": [],
+      "linkUrl": null,
+      "isReshare": false,
+      "category": "교육",
+      "topic": "Q&A: 몸치도 배울 수 있나요?",
+      "insights": {
+        "reach": 817,
+        "views": 882,
+        "replies": 2,
+        "shares": 0,
+        "profileVisits": 8,
+        "follows": 0,
+        "linkClicks": null,
+        "stickerTaps": null,
+        "forwardTaps": 167,
+        "backTaps": 9,
+        "exits": 44,
+        "nextStory": 26
+      }
+    },
+    {
+      "id": "my_s34_2",
+      "postedAt": "2026-09-09T12:08:00.000Z",
+      "type": "video",
+      "durationSec": 13,
+      "text": "오늘 연습 영상 비하인드",
+      "stickers": [
+        "music"
+      ],
+      "linkUrl": null,
+      "isReshare": false,
+      "category": "춤",
+      "topic": "오늘 연습 영상 비하인드",
+      "insights": {
+        "reach": 662,
+        "views": 715,
+        "replies": 3,
+        "shares": 1,
+        "profileVisits": 7,
+        "follows": 0,
+        "linkClicks": null,
+        "stickerTaps": null,
+        "forwardTaps": 170,
+        "backTaps": 7,
+        "exits": 82,
+        "nextStory": 21
+      }
+    }
+  ],
+  "highlights": [
+    {
+      "title": "수업 후기",
+      "itemCount": 24
+    },
+    {
+      "title": "시간표",
+      "itemCount": 6
+    },
+    {
+      "title": "Q&A",
+      "itemCount": 15
+    },
+    {
+      "title": "공연",
+      "itemCount": 9
     }
   ],
   "notes": "가상 데모 데이터"

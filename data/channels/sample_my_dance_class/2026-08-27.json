@@ -13,7 +13,7 @@
     "posts": 304,
     "followers": 8647,
     "following": 180,
-    "highlights": 6
+    "highlights": 4
   },
   "accountInsights": {
     "periodDays": 30,
@@ -619,6 +619,80 @@
         "follows": 17,
         "avgWatchTimeSec": null
       }
+    }
+  ],
+  "stories": [
+    {
+      "id": "my_s20_0",
+      "postedAt": "2026-08-26T12:00:00.000Z",
+      "type": "video",
+      "durationSec": 11,
+      "text": "오늘 연습 영상 비하인드",
+      "stickers": [],
+      "linkUrl": null,
+      "isReshare": true,
+      "category": "춤",
+      "topic": "오늘 연습 영상 비하인드",
+      "insights": {
+        "reach": 863,
+        "views": 932,
+        "replies": 4,
+        "shares": 2,
+        "profileVisits": 9,
+        "follows": 0,
+        "linkClicks": null,
+        "stickerTaps": null,
+        "forwardTaps": 317,
+        "backTaps": 9,
+        "exits": 74,
+        "nextStory": 28
+      }
+    },
+    {
+      "id": "my_s20_1",
+      "postedAt": "2026-08-26T12:04:00.000Z",
+      "type": "image",
+      "durationSec": null,
+      "text": "새 안무 10초 미리보기",
+      "stickers": [
+        "slider"
+      ],
+      "linkUrl": null,
+      "isReshare": false,
+      "category": "춤",
+      "topic": "새 안무 10초 미리보기",
+      "insights": {
+        "reach": 782,
+        "views": 844,
+        "replies": 14,
+        "shares": 2,
+        "profileVisits": 8,
+        "follows": 0,
+        "linkClicks": null,
+        "stickerTaps": 100,
+        "forwardTaps": 157,
+        "backTaps": 8,
+        "exits": 80,
+        "nextStory": 25
+      }
+    }
+  ],
+  "highlights": [
+    {
+      "title": "수업 후기",
+      "itemCount": 24
+    },
+    {
+      "title": "시간표",
+      "itemCount": 6
+    },
+    {
+      "title": "Q&A",
+      "itemCount": 15
+    },
+    {
+      "title": "공연",
+      "itemCount": 9
     }
   ],
   "notes": "가상 데모 데이터"

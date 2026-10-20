@@ -13,7 +13,7 @@
     "posts": 314,
     "followers": 9132,
     "following": 180,
-    "highlights": 6
+    "highlights": 4
   },
   "accountInsights": {
     "periodDays": 30,
@@ -619,6 +619,196 @@
         "follows": 18,
         "avgWatchTimeSec": null
       }
+    }
+  ],
+  "stories": [
+    {
+      "id": "my_s49_0",
+      "postedAt": "2026-09-24T03:00:00.000Z",
+      "type": "image",
+      "durationSec": null,
+      "text": "신규 수강 신청 링크",
+      "stickers": [
+        "link",
+        "countdown"
+      ],
+      "linkUrl": "https://example.com/class",
+      "isReshare": true,
+      "category": "홍보",
+      "topic": "신규 수강 신청 링크",
+      "insights": {
+        "reach": 768,
+        "views": 829,
+        "replies": 2,
+        "shares": 1,
+        "profileVisits": 8,
+        "follows": 0,
+        "linkClicks": 42,
+        "stickerTaps": null,
+        "forwardTaps": 142,
+        "backTaps": 8,
+        "exits": 106,
+        "nextStory": 25
+      }
+    },
+    {
+      "id": "my_s50_0",
+      "postedAt": "2026-09-25T03:00:00.000Z",
+      "type": "image",
+      "durationSec": null,
+      "text": "Q&A: 몸치도 배울 수 있나요?",
+      "stickers": [
+        "quiz"
+      ],
+      "linkUrl": null,
+      "isReshare": true,
+      "category": "교육",
+      "topic": "Q&A: 몸치도 배울 수 있나요?",
+      "insights": {
+        "reach": 1028,
+        "views": 1111,
+        "replies": 17,
+        "shares": 3,
+        "profileVisits": 10,
+        "follows": 0,
+        "linkClicks": null,
+        "stickerTaps": 87,
+        "forwardTaps": 198,
+        "backTaps": 11,
+        "exits": 113,
+        "nextStory": 33
+      }
+    },
+    {
+      "id": "my_s50_1",
+      "postedAt": "2026-09-25T03:04:00.000Z",
+      "type": "video",
+      "durationSec": 10,
+      "text": "이번 컴백 무대 어땠어요?",
+      "stickers": [
+        "poll"
+      ],
+      "linkUrl": null,
+      "isReshare": false,
+      "category": "대중문화",
+      "topic": "이번 컴백 무대 어땠어요?",
+      "insights": {
+        "reach": 851,
+        "views": 919,
+        "replies": 25,
+        "shares": 0,
+        "profileVisits": 9,
+        "follows": 0,
+        "linkClicks": null,
+        "stickerTaps": 104,
+        "forwardTaps": 259,
+        "backTaps": 9,
+        "exits": 65,
+        "nextStory": 28
+      }
+    },
+    {
+      "id": "my_s50_2",
+      "postedAt": "2026-09-25T03:08:00.000Z",
+      "type": "image",
+      "durationSec": null,
+      "text": "이번 컴백 무대 어땠어요?",
+      "stickers": [
+        "music"
+      ],
+      "linkUrl": null,
+      "isReshare": false,
+      "category": "대중문화",
+      "topic": "이번 컴백 무대 어땠어요?",
+      "insights": {
+        "reach": 688,
+        "views": 743,
+        "replies": 2,
+        "shares": 0,
+        "profileVisits": 7,
+        "follows": 0,
+        "linkClicks": null,
+        "stickerTaps": null,
+        "forwardTaps": 136,
+        "backTaps": 7,
+        "exits": 66,
+        "nextStory": 22
+      }
+    },
+    {
+      "id": "my_s50_3",
+      "postedAt": "2026-09-25T03:12:00.000Z",
+      "type": "image",
+      "durationSec": null,
+      "text": "이번 컴백 무대 어땠어요?",
+      "stickers": [
+        "music"
+      ],
+      "linkUrl": null,
+      "isReshare": false,
+      "category": "대중문화",
+      "topic": "이번 컴백 무대 어땠어요?",
+      "insights": {
+        "reach": 618,
+        "views": 668,
+        "replies": 3,
+        "shares": 1,
+        "profileVisits": 6,
+        "follows": 0,
+        "linkClicks": null,
+        "stickerTaps": null,
+        "forwardTaps": 134,
+        "backTaps": 7,
+        "exits": 43,
+        "nextStory": 20
+      }
+    },
+    {
+      "id": "my_s50_4",
+      "postedAt": "2026-09-25T03:16:00.000Z",
+      "type": "image",
+      "durationSec": null,
+      "text": "신규 수강 신청 링크",
+      "stickers": [
+        "link",
+        "countdown"
+      ],
+      "linkUrl": "https://example.com/class",
+      "isReshare": false,
+      "category": "홍보",
+      "topic": "신규 수강 신청 링크",
+      "insights": {
+        "reach": 563,
+        "views": 608,
+        "replies": 1,
+        "shares": 1,
+        "profileVisits": 6,
+        "follows": 0,
+        "linkClicks": 21,
+        "stickerTaps": null,
+        "forwardTaps": 201,
+        "backTaps": 6,
+        "exits": 96,
+        "nextStory": 18
+      }
+    }
+  ],
+  "highlights": [
+    {
+      "title": "수업 후기",
+      "itemCount": 24
+    },
+    {
+      "title": "시간표",
+      "itemCount": 6
+    },
+    {
+      "title": "Q&A",
+      "itemCount": 15
+    },
+    {
+      "title": "공연",
+      "itemCount": 9
     }
   ],
   "notes": "가상 데모 데이터"

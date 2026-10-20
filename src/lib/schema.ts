@@ -64,6 +64,54 @@ export const accountInsightsSchema = z.object({
   nonFollowerReachPct: z.number().min(0).max(100).nullable().optional().default(null),
 });
 
+/* ---------------- 스토리 ---------------- */
+
+export const STORY_STICKERS = [
+  "poll", "quiz", "question", "slider", "link", "mention", "hashtag",
+  "location", "music", "countdown", "add_yours", "product", "gif", "other",
+] as const;
+export type StorySticker = (typeof STORY_STICKERS)[number];
+
+export const storyInsightsSchema = z.object({
+  reach: optCount,
+  views: optCount,
+  replies: optCount,
+  shares: optCount,
+  profileVisits: optCount,
+  follows: optCount,
+  linkClicks: optCount,
+  stickerTaps: optCount,
+  forwardTaps: optCount,
+  backTaps: optCount,
+  exits: optCount,
+  nextStory: optCount,
+});
+
+/** 스토리 1장(프레임). 스토리는 24시간 뒤 사라지므로 수집 시점에 보인 것만 기록된다. */
+export const storySchema = z.object({
+  id: z.string().nullable().optional().default(null),
+  postedAt: z.string().datetime({ offset: true }).nullable(),
+  type: z.enum(["image", "video"]),
+  durationSec: z.number().nonnegative().nullable().optional().default(null),
+  text: z.string().nullable().optional().default(null),
+  stickers: z.array(z.enum(STORY_STICKERS).catch("other")).optional().default([]),
+  linkUrl: z.string().nullable().optional().default(null),
+  isReshare: z.boolean().optional().default(false),
+  category: z.string().nullable().optional().default(null),
+  topic: z.string().nullable().optional().default(null),
+  insights: storyInsightsSchema.nullable().optional().default(null),
+});
+
+export const highlightSchema = z.object({
+  title: z.string(),
+  itemCount: optCount,
+});
+
+export type Story = z.infer<typeof storySchema>;
+export type Highlight = z.infer<typeof highlightSchema>;
+
+/* ---------------- 스냅샷 ---------------- */
+
 export const snapshotSchema = z.object({
   schemaVersion: z.literal(1),
   handle: z
@@ -86,6 +134,9 @@ export const snapshotSchema = z.object({
   }),
   accountInsights: accountInsightsSchema.nullable().optional().default(null),
   posts: z.array(postSchema).max(60),
+  /** null = 이번 수집에서 스토리를 보지 않음, [] = 확인했지만 올라온 스토리가 없음 */
+  stories: z.array(storySchema).max(100).nullable().optional().default(null),
+  highlights: z.array(highlightSchema).max(100).nullable().optional().default(null),
   notes: z.string().nullable().optional().default(null),
 });
 

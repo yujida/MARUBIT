@@ -13,7 +13,7 @@
     "posts": 302,
     "followers": 8544,
     "following": 180,
-    "highlights": 6
+    "highlights": 4
   },
   "accountInsights": {
     "periodDays": 30,
@@ -619,6 +619,52 @@
         "follows": 17,
         "avgWatchTimeSec": null
       }
+    }
+  ],
+  "stories": [
+    {
+      "id": "my_s11_0",
+      "postedAt": "2026-08-17T03:00:00.000Z",
+      "type": "image",
+      "durationSec": null,
+      "text": "Q&A: 몸치도 배울 수 있나요?",
+      "stickers": [],
+      "linkUrl": null,
+      "isReshare": false,
+      "category": "교육",
+      "topic": "Q&A: 몸치도 배울 수 있나요?",
+      "insights": {
+        "reach": 1186,
+        "views": 1281,
+        "replies": 3,
+        "shares": 0,
+        "profileVisits": 12,
+        "follows": 0,
+        "linkClicks": null,
+        "stickerTaps": null,
+        "forwardTaps": 293,
+        "backTaps": 13,
+        "exits": 134,
+        "nextStory": 38
+      }
+    }
+  ],
+  "highlights": [
+    {
+      "title": "수업 후기",
+      "itemCount": 24
+    },
+    {
+      "title": "시간표",
+      "itemCount": 6
+    },
+    {
+      "title": "Q&A",
+      "itemCount": 15
+    },
+    {
+      "title": "공연",
+      "itemCount": 9
     }
   ],
   "notes": "가상 데모 데이터"

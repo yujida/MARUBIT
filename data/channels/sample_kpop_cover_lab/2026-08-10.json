@@ -13,7 +13,7 @@
     "posts": 300,
     "followers": 52000,
     "following": 180,
-    "highlights": 6
+    "highlights": 3
   },
   "accountInsights": null,
   "posts": [
@@ -435,6 +435,68 @@
       "topic": null,
       "hook": null,
       "insights": null
+    }
+  ],
+  "stories": [
+    {
+      "id": "kpos3_0",
+      "postedAt": "2026-08-09T03:00:00.000Z",
+      "type": "video",
+      "durationSec": 11,
+      "text": "Q&A: 몸치도 배울 수 있나요?",
+      "stickers": [
+        "question"
+      ],
+      "linkUrl": null,
+      "isReshare": true,
+      "category": "교육",
+      "topic": "Q&A: 몸치도 배울 수 있나요?",
+      "insights": null
+    },
+    {
+      "id": "kpos3_1",
+      "postedAt": "2026-08-09T03:04:00.000Z",
+      "type": "image",
+      "durationSec": null,
+      "text": "이 동작 어려운 사람 손!",
+      "stickers": [
+        "slider"
+      ],
+      "linkUrl": null,
+      "isReshare": false,
+      "category": "춤",
+      "topic": "이 동작 어려운 사람 손!",
+      "insights": null
+    },
+    {
+      "id": "kpos3_2",
+      "postedAt": "2026-08-09T03:08:00.000Z",
+      "type": "image",
+      "durationSec": null,
+      "text": "신규 수강 신청 링크",
+      "stickers": [
+        "link",
+        "countdown"
+      ],
+      "linkUrl": "https://example.com/class",
+      "isReshare": false,
+      "category": "홍보",
+      "topic": "신규 수강 신청 링크",
+      "insights": null
+    }
+  ],
+  "highlights": [
+    {
+      "title": "COVER",
+      "itemCount": null
+    },
+    {
+      "title": "멤버",
+      "itemCount": null
+    },
+    {
+      "title": "촬영 비하인드",
+      "itemCount": null
     }
   ],
   "notes": "가상 데모 데이터"

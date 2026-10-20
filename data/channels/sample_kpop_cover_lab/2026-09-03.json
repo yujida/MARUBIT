@@ -13,7 +13,7 @@
     "posts": 306,
     "followers": 55653,
     "following": 180,
-    "highlights": 6
+    "highlights": 3
   },
   "accountInsights": null,
   "posts": [
@@ -435,6 +435,104 @@
       "topic": null,
       "hook": null,
       "insights": null
+    }
+  ],
+  "stories": [
+    {
+      "id": "kpos27_0",
+      "postedAt": "2026-09-02T03:00:00.000Z",
+      "type": "video",
+      "durationSec": 9,
+      "text": "Q&A: 몸치도 배울 수 있나요?",
+      "stickers": [],
+      "linkUrl": null,
+      "isReshare": true,
+      "category": "교육",
+      "topic": "Q&A: 몸치도 배울 수 있나요?",
+      "insights": null
+    },
+    {
+      "id": "kpos27_1",
+      "postedAt": "2026-09-02T03:04:00.000Z",
+      "type": "video",
+      "durationSec": 13,
+      "text": "이번 컴백 무대 어땠어요?",
+      "stickers": [
+        "poll"
+      ],
+      "linkUrl": null,
+      "isReshare": false,
+      "category": "대중문화",
+      "topic": "이번 컴백 무대 어땠어요?",
+      "insights": null
+    },
+    {
+      "id": "kpos27_2",
+      "postedAt": "2026-09-02T03:08:00.000Z",
+      "type": "image",
+      "durationSec": null,
+      "text": "퀴즈: 이 동작 이름은?",
+      "stickers": [],
+      "linkUrl": null,
+      "isReshare": false,
+      "category": "교육",
+      "topic": "퀴즈: 이 동작 이름은?",
+      "insights": null
+    },
+    {
+      "id": "kpos27_3",
+      "postedAt": "2026-09-02T03:12:00.000Z",
+      "type": "video",
+      "durationSec": 13,
+      "text": "이 동작 어려운 사람 손!",
+      "stickers": [],
+      "linkUrl": null,
+      "isReshare": false,
+      "category": "춤",
+      "topic": "이 동작 어려운 사람 손!",
+      "insights": null
+    },
+    {
+      "id": "kpos27_4",
+      "postedAt": "2026-09-02T03:16:00.000Z",
+      "type": "video",
+      "durationSec": 14,
+      "text": "요즘 챌린지 TOP3 투표",
+      "stickers": [],
+      "linkUrl": null,
+      "isReshare": false,
+      "category": "대중문화",
+      "topic": "요즘 챌린지 TOP3 투표",
+      "insights": null
+    },
+    {
+      "id": "kpos27_5",
+      "postedAt": "2026-09-02T03:20:00.000Z",
+      "type": "image",
+      "durationSec": null,
+      "text": "요즘 챌린지 TOP3 투표",
+      "stickers": [
+        "poll"
+      ],
+      "linkUrl": null,
+      "isReshare": false,
+      "category": "대중문화",
+      "topic": "요즘 챌린지 TOP3 투표",
+      "insights": null
+    }
+  ],
+  "highlights": [
+    {
+      "title": "COVER",
+      "itemCount": null
+    },
+    {
+      "title": "멤버",
+      "itemCount": null
+    },
+    {
+      "title": "촬영 비하인드",
+      "itemCount": null
     }
   ],
   "notes": "가상 데모 데이터"

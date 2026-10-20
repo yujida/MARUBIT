@@ -3,12 +3,13 @@ import { notFound } from "next/navigation";
 import { store } from "@/lib/storage";
 import { growth, summarize, TYPE_LABEL } from "@/lib/metrics";
 import { fmtDate, fmtNum, fmtPct, fmtSignedPct } from "@/lib/format";
-import { Delta, Kpi, RoleBadge, Section } from "@/components/ui";
+import { Delta, Kpi, Section } from "@/components/ui";
 import { FollowerChart } from "@/components/charts";
 import { BarList } from "@/components/bar-list";
 import { Heatmap } from "@/components/heatmap";
 import { PostsTable } from "@/components/posts-table";
 import { Term } from "@/components/term";
+import { ChannelHeader } from "./channel-header";
 
 export const dynamic = "force-dynamic";
 
@@ -27,27 +28,16 @@ export default async function ChannelPage(props: PageProps<"/channels/[handle]">
 
   return (
     <div>
-      <div className="flex flex-wrap items-start justify-between gap-3">
-        <div>
-          <div className="flex items-center gap-2">
-            <h1 className="text-2xl font-bold">{latest.profile.displayName ?? handle}</h1>
-            <RoleBadge role={latest.role} />
-            {latest.source === "sample" && <span className="badge">데모</span>}
-          </div>
-          <a href={`https://www.instagram.com/${handle}/`} target="_blank" rel="noreferrer" className="text-sm text-muted hover:text-accent">
-            @{handle} ↗
-          </a>
-          {latest.profile.bio && <p className="mt-2 max-w-2xl whitespace-pre-line text-sm text-ink-2">{latest.profile.bio}</p>}
-        </div>
-        <div className="flex gap-2">
-          <Link href={`/collect?handle=${handle}&role=${latest.role}`} className="btn">다시 수집</Link>
-          <Link href={`/channels/${handle}/analyze`} className="btn-primary">AI 분석 리포트</Link>
-        </div>
-      </div>
-      <p className="mt-2 text-xs text-muted">
-        최근 수집 {fmtDate(latest.collectedAt, true)} · 분석 게시물 {s.postsAnalyzed}개 · 스냅샷 {snaps.length}개
-        {s.likesHiddenCount > 0 && ` · 좋아요 숨김 ${s.likesHiddenCount}개는 참여율 계산 제외`}
-      </p>
+      <ChannelHeader
+        latest={latest}
+        active="feed"
+        meta={
+          <>
+            최근 수집 {fmtDate(latest.collectedAt, true)} · 분석 게시물 {s.postsAnalyzed}개 · 스냅샷 {snaps.length}개
+            {s.likesHiddenCount > 0 && ` · 좋아요 숨김 ${s.likesHiddenCount}개는 참여율 계산 제외`}
+          </>
+        }
+      />
 
       <div className="mt-6 grid grid-cols-2 gap-3 md:grid-cols-4">
         <Kpi label={<Term k="followers" />} value={fmtNum(s.followers)} sub={<><Term k="followerDelta">누적</Term> <Delta value={g.followerDelta} format={fmtNum} /> · <Term k="weeklyGrowth">주간</Term> {fmtSignedPct(g.weeklyGrowthRate)}</>} />

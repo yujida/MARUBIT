@@ -12,7 +12,7 @@ MARUBIT은 인스타 로그인 문제를 피하기 위해 **사용자가 이미 
 
 1. 프롬프트 만들기 — 둘 중 하나
    - 사이트: `/collect?handle=<계정>&role=own|competitor` 에서 복사
-   - 터미널: `npm run prompt -- collect <계정> own|competitor [게시물수=20]` (`SITE_URL`을 배포 주소로 지정하면 가져오기 링크가 그 주소로 들어간다)
+   - 터미널: `npm run prompt -- collect <계정> own|competitor [게시물수=20] [--stories]` (`SITE_URL`을 배포 주소로 지정하면 가져오기 링크가 그 주소로 들어간다)
 2. 사용자가 Chrome에서 인스타그램에 로그인한 상태로 **Claude in Chrome**에 프롬프트를 붙여 넣는다.
 3. Claude in Chrome이 결과 JSON을 사이트 `/import`에 저장한다. 접근이 안 되면 JSON을 받아 아래 중 하나로 저장:
    - 로컬: `data/channels/<handle>/<YYYY-MM-DD>.json` 에 저장 (git에는 sample_* 만 커밋됨)
@@ -24,3 +24,4 @@ MARUBIT은 인스타 로그인 문제를 피하기 위해 **사용자가 이미 
 - 보안 확인/차단 화면이 뜨면 즉시 중단
 - 화면에서 확인 못 한 값은 null (추정 금지)
 - 비공개 계정은 수집하지 않는다
+- 스토리: 내 계정은 보관함 + Meta Business Suite 인사이트에서 수집. 경쟁 계정 스토리는 열면 상대 조회자 목록에 표시되므로 사용자가 허용(`stories=1`, `--stories`)했을 때만 열고, 스티커·답장·반응은 절대 누르지 않는다

@@ -13,7 +13,7 @@
     "posts": 300,
     "followers": 21054,
     "following": 180,
-    "highlights": 6
+    "highlights": 2
   },
   "accountInsights": null,
   "posts": [
@@ -437,6 +437,17 @@
       "topic": null,
       "hook": null,
       "insights": null
+    }
+  ],
+  "stories": null,
+  "highlights": [
+    {
+      "title": "강의 안내",
+      "itemCount": null
+    },
+    {
+      "title": "수강생 질문",
+      "itemCount": null
     }
   ],
   "notes": "가상 데모 데이터"

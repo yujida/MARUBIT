@@ -13,7 +13,7 @@
     "posts": 300,
     "followers": 8443,
     "following": 180,
-    "highlights": 6
+    "highlights": 4
   },
   "accountInsights": {
     "periodDays": 30,
@@ -619,6 +619,271 @@
         "follows": 17,
         "avgWatchTimeSec": null
       }
+    }
+  ],
+  "stories": [
+    {
+      "id": "my_s4_0",
+      "postedAt": "2026-08-10T03:00:00.000Z",
+      "type": "video",
+      "durationSec": 8,
+      "text": "오늘 연습 영상 비하인드",
+      "stickers": [],
+      "linkUrl": null,
+      "isReshare": false,
+      "category": "춤",
+      "topic": "오늘 연습 영상 비하인드",
+      "insights": {
+        "reach": 1148,
+        "views": 1240,
+        "replies": 6,
+        "shares": 0,
+        "profileVisits": 11,
+        "follows": 0,
+        "linkClicks": null,
+        "stickerTaps": null,
+        "forwardTaps": 334,
+        "backTaps": 12,
+        "exits": 137,
+        "nextStory": 37
+      }
+    },
+    {
+      "id": "my_s4_1",
+      "postedAt": "2026-08-10T03:04:00.000Z",
+      "type": "video",
+      "durationSec": 9,
+      "text": "요즘 챌린지 TOP3 투표",
+      "stickers": [],
+      "linkUrl": null,
+      "isReshare": false,
+      "category": "대중문화",
+      "topic": "요즘 챌린지 TOP3 투표",
+      "insights": {
+        "reach": 1053,
+        "views": 1138,
+        "replies": 4,
+        "shares": 3,
+        "profileVisits": 11,
+        "follows": 0,
+        "linkClicks": null,
+        "stickerTaps": null,
+        "forwardTaps": 319,
+        "backTaps": 11,
+        "exits": 68,
+        "nextStory": 34
+      }
+    },
+    {
+      "id": "my_s4_2",
+      "postedAt": "2026-08-10T03:08:00.000Z",
+      "type": "image",
+      "durationSec": null,
+      "text": "오늘 연습 영상 비하인드",
+      "stickers": [
+        "slider"
+      ],
+      "linkUrl": null,
+      "isReshare": false,
+      "category": "춤",
+      "topic": "오늘 연습 영상 비하인드",
+      "insights": {
+        "reach": 915,
+        "views": 988,
+        "replies": 27,
+        "shares": 2,
+        "profileVisits": 9,
+        "follows": 0,
+        "linkClicks": null,
+        "stickerTaps": 63,
+        "forwardTaps": 334,
+        "backTaps": 10,
+        "exits": 52,
+        "nextStory": 30
+      }
+    },
+    {
+      "id": "my_s4_3",
+      "postedAt": "2026-08-10T03:12:00.000Z",
+      "type": "video",
+      "durationSec": 12,
+      "text": "이번 컴백 무대 어땠어요?",
+      "stickers": [],
+      "linkUrl": null,
+      "isReshare": false,
+      "category": "대중문화",
+      "topic": "이번 컴백 무대 어땠어요?",
+      "insights": {
+        "reach": 816,
+        "views": 881,
+        "replies": 4,
+        "shares": 1,
+        "profileVisits": 8,
+        "follows": 0,
+        "linkClicks": null,
+        "stickerTaps": null,
+        "forwardTaps": 291,
+        "backTaps": 9,
+        "exits": 46,
+        "nextStory": 26
+      }
+    },
+    {
+      "id": "my_s4_4",
+      "postedAt": "2026-08-10T03:16:00.000Z",
+      "type": "video",
+      "durationSec": 9,
+      "text": "원데이 클래스 마감 D-1",
+      "stickers": [
+        "link"
+      ],
+      "linkUrl": "https://example.com/class",
+      "isReshare": false,
+      "category": "홍보",
+      "topic": "원데이 클래스 마감 D-1",
+      "insights": {
+        "reach": 661,
+        "views": 714,
+        "replies": 3,
+        "shares": 2,
+        "profileVisits": 7,
+        "follows": 0,
+        "linkClicks": 22,
+        "stickerTaps": null,
+        "forwardTaps": 154,
+        "backTaps": 7,
+        "exits": 85,
+        "nextStory": 21
+      }
+    },
+    {
+      "id": "my_s5_0",
+      "postedAt": "2026-08-11T03:00:00.000Z",
+      "type": "video",
+      "durationSec": 11,
+      "text": "리듬 타는 법 1분 요약",
+      "stickers": [],
+      "linkUrl": null,
+      "isReshare": false,
+      "category": "교육",
+      "topic": "리듬 타는 법 1분 요약",
+      "insights": {
+        "reach": 1141,
+        "views": 1232,
+        "replies": 5,
+        "shares": 3,
+        "profileVisits": 11,
+        "follows": 1,
+        "linkClicks": null,
+        "stickerTaps": null,
+        "forwardTaps": 256,
+        "backTaps": 12,
+        "exits": 103,
+        "nextStory": 37
+      }
+    },
+    {
+      "id": "my_s5_1",
+      "postedAt": "2026-08-11T03:04:00.000Z",
+      "type": "video",
+      "durationSec": 8,
+      "text": "오늘 연습 영상 비하인드",
+      "stickers": [
+        "mention"
+      ],
+      "linkUrl": null,
+      "isReshare": false,
+      "category": "춤",
+      "topic": "오늘 연습 영상 비하인드",
+      "insights": {
+        "reach": 959,
+        "views": 1036,
+        "replies": 2,
+        "shares": 3,
+        "profileVisits": 10,
+        "follows": 0,
+        "linkClicks": null,
+        "stickerTaps": null,
+        "forwardTaps": 160,
+        "backTaps": 10,
+        "exits": 102,
+        "nextStory": 31
+      }
+    },
+    {
+      "id": "my_s5_2",
+      "postedAt": "2026-08-11T03:08:00.000Z",
+      "type": "video",
+      "durationSec": 12,
+      "text": "요즘 챌린지 TOP3 투표",
+      "stickers": [
+        "music"
+      ],
+      "linkUrl": null,
+      "isReshare": false,
+      "category": "대중문화",
+      "topic": "요즘 챌린지 TOP3 투표",
+      "insights": {
+        "reach": 824,
+        "views": 890,
+        "replies": 4,
+        "shares": 1,
+        "profileVisits": 8,
+        "follows": 1,
+        "linkClicks": null,
+        "stickerTaps": null,
+        "forwardTaps": 170,
+        "backTaps": 9,
+        "exits": 82,
+        "nextStory": 27
+      }
+    },
+    {
+      "id": "my_s5_3",
+      "postedAt": "2026-08-11T03:12:00.000Z",
+      "type": "image",
+      "durationSec": null,
+      "text": "원데이 클래스 마감 D-1",
+      "stickers": [
+        "link",
+        "countdown"
+      ],
+      "linkUrl": "https://example.com/class",
+      "isReshare": false,
+      "category": "홍보",
+      "topic": "원데이 클래스 마감 D-1",
+      "insights": {
+        "reach": 689,
+        "views": 744,
+        "replies": 2,
+        "shares": 0,
+        "profileVisits": 7,
+        "follows": 0,
+        "linkClicks": 22,
+        "stickerTaps": null,
+        "forwardTaps": 216,
+        "backTaps": 7,
+        "exits": 118,
+        "nextStory": 22
+      }
+    }
+  ],
+  "highlights": [
+    {
+      "title": "수업 후기",
+      "itemCount": 24
+    },
+    {
+      "title": "시간표",
+      "itemCount": 6
+    },
+    {
+      "title": "Q&A",
+      "itemCount": 15
+    },
+    {
+      "title": "공연",
+      "itemCount": 9
     }
   ],
   "notes": "가상 데모 데이터"

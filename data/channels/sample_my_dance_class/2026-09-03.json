@@ -13,7 +13,7 @@
     "posts": 306,
     "followers": 8751,
     "following": 180,
-    "highlights": 6
+    "highlights": 4
   },
   "accountInsights": {
     "periodDays": 30,
@@ -619,6 +619,246 @@
         "follows": 17,
         "avgWatchTimeSec": null
       }
+    }
+  ],
+  "stories": [
+    {
+      "id": "my_s25_0",
+      "postedAt": "2026-08-31T12:00:00.000Z",
+      "type": "image",
+      "durationSec": null,
+      "text": "이 동작 어려운 사람 손!",
+      "stickers": [],
+      "linkUrl": null,
+      "isReshare": true,
+      "category": "춤",
+      "topic": "이 동작 어려운 사람 손!",
+      "insights": {
+        "reach": 1078,
+        "views": 1164,
+        "replies": 3,
+        "shares": 2,
+        "profileVisits": 11,
+        "follows": 1,
+        "linkClicks": null,
+        "stickerTaps": null,
+        "forwardTaps": 227,
+        "backTaps": 12,
+        "exits": 77,
+        "nextStory": 35
+      }
+    },
+    {
+      "id": "my_s25_1",
+      "postedAt": "2026-08-31T12:04:00.000Z",
+      "type": "video",
+      "durationSec": 11,
+      "text": "이번 컴백 무대 어땠어요?",
+      "stickers": [
+        "poll"
+      ],
+      "linkUrl": null,
+      "isReshare": false,
+      "category": "대중문화",
+      "topic": "이번 컴백 무대 어땠어요?",
+      "insights": {
+        "reach": 859,
+        "views": 928,
+        "replies": 11,
+        "shares": 1,
+        "profileVisits": 9,
+        "follows": 1,
+        "linkClicks": null,
+        "stickerTaps": 50,
+        "forwardTaps": 199,
+        "backTaps": 9,
+        "exits": 102,
+        "nextStory": 28
+      }
+    },
+    {
+      "id": "my_s26_0",
+      "postedAt": "2026-09-01T12:00:00.000Z",
+      "type": "video",
+      "durationSec": 8,
+      "text": "리듬 타는 법 1분 요약",
+      "stickers": [
+        "question"
+      ],
+      "linkUrl": null,
+      "isReshare": false,
+      "category": "교육",
+      "topic": "리듬 타는 법 1분 요약",
+      "insights": {
+        "reach": 1043,
+        "views": 1126,
+        "replies": 22,
+        "shares": 1,
+        "profileVisits": 10,
+        "follows": 1,
+        "linkClicks": null,
+        "stickerTaps": 90,
+        "forwardTaps": 269,
+        "backTaps": 11,
+        "exits": 85,
+        "nextStory": 34
+      }
+    },
+    {
+      "id": "my_s26_1",
+      "postedAt": "2026-09-01T12:04:00.000Z",
+      "type": "video",
+      "durationSec": 8,
+      "text": "요즘 챌린지 TOP3 투표",
+      "stickers": [
+        "poll"
+      ],
+      "linkUrl": null,
+      "isReshare": false,
+      "category": "대중문화",
+      "topic": "요즘 챌린지 TOP3 투표",
+      "insights": {
+        "reach": 929,
+        "views": 1004,
+        "replies": 21,
+        "shares": 3,
+        "profileVisits": 9,
+        "follows": 0,
+        "linkClicks": null,
+        "stickerTaps": 51,
+        "forwardTaps": 246,
+        "backTaps": 10,
+        "exits": 116,
+        "nextStory": 30
+      }
+    },
+    {
+      "id": "my_s26_2",
+      "postedAt": "2026-09-01T12:08:00.000Z",
+      "type": "video",
+      "durationSec": 13,
+      "text": "요즘 챌린지 TOP3 투표",
+      "stickers": [
+        "music"
+      ],
+      "linkUrl": null,
+      "isReshare": false,
+      "category": "대중문화",
+      "topic": "요즘 챌린지 TOP3 투표",
+      "insights": {
+        "reach": 820,
+        "views": 885,
+        "replies": 4,
+        "shares": 1,
+        "profileVisits": 8,
+        "follows": 0,
+        "linkClicks": null,
+        "stickerTaps": null,
+        "forwardTaps": 304,
+        "backTaps": 9,
+        "exits": 89,
+        "nextStory": 27
+      }
+    },
+    {
+      "id": "my_s26_3",
+      "postedAt": "2026-09-01T12:12:00.000Z",
+      "type": "image",
+      "durationSec": null,
+      "text": "이번 컴백 무대 어땠어요?",
+      "stickers": [
+        "music"
+      ],
+      "linkUrl": null,
+      "isReshare": false,
+      "category": "대중문화",
+      "topic": "이번 컴백 무대 어땠어요?",
+      "insights": {
+        "reach": 657,
+        "views": 710,
+        "replies": 4,
+        "shares": 1,
+        "profileVisits": 7,
+        "follows": 0,
+        "linkClicks": null,
+        "stickerTaps": null,
+        "forwardTaps": 225,
+        "backTaps": 7,
+        "exits": 55,
+        "nextStory": 21
+      }
+    },
+    {
+      "id": "my_s26_4",
+      "postedAt": "2026-09-01T12:16:00.000Z",
+      "type": "video",
+      "durationSec": 8,
+      "text": "이 동작 어려운 사람 손!",
+      "stickers": [
+        "music"
+      ],
+      "linkUrl": null,
+      "isReshare": false,
+      "category": "춤",
+      "topic": "이 동작 어려운 사람 손!",
+      "insights": {
+        "reach": 558,
+        "views": 603,
+        "replies": 2,
+        "shares": 2,
+        "profileVisits": 6,
+        "follows": 0,
+        "linkClicks": null,
+        "stickerTaps": null,
+        "forwardTaps": 99,
+        "backTaps": 6,
+        "exits": 30,
+        "nextStory": 18
+      }
+    },
+    {
+      "id": "my_s26_5",
+      "postedAt": "2026-09-01T12:20:00.000Z",
+      "type": "video",
+      "durationSec": 13,
+      "text": "퀴즈: 이 동작 이름은?",
+      "stickers": [],
+      "linkUrl": null,
+      "isReshare": false,
+      "category": "교육",
+      "topic": "퀴즈: 이 동작 이름은?",
+      "insights": {
+        "reach": 513,
+        "views": 554,
+        "replies": 1,
+        "shares": 1,
+        "profileVisits": 5,
+        "follows": 0,
+        "linkClicks": null,
+        "stickerTaps": null,
+        "forwardTaps": 156,
+        "backTaps": 6,
+        "exits": 46,
+        "nextStory": 17
+      }
+    }
+  ],
+  "highlights": [
+    {
+      "title": "수업 후기",
+      "itemCount": 24
+    },
+    {
+      "title": "시간표",
+      "itemCount": 6
+    },
+    {
+      "title": "Q&A",
+      "itemCount": 15
+    },
+    {
+      "title": "공연",
+      "itemCount": 9
     }
   ],
   "notes": "가상 데모 데이터"

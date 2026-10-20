@@ -1,6 +1,6 @@
 /**
  * 사이트 없이 터미널에서 프롬프트를 만든다 (로컬 data/ 기준).
- *   npm run prompt -- collect <handle> [own|competitor] [게시물수]
+ *   npm run prompt -- collect <handle> [own|competitor] [게시물수] [--stories]
  *   npm run prompt -- analyze <handle> [비교계정 ...]
  */
 import { readdirSync, readFileSync } from "node:fs";
@@ -21,7 +21,15 @@ function load(h: string): Snapshot[] {
 
 if (cmd === "collect" && handle) {
   const role = rest[0] === "own" ? "own" : "competitor";
-  console.log(collectPrompt({ handle: handle.replace(/^@/, "").toLowerCase(), role, postCount: Number(rest[1]) || undefined, siteUrl: site }));
+  console.log(
+    collectPrompt({
+      handle: handle.replace(/^@/, "").toLowerCase(),
+      role,
+      postCount: Number(rest[1]) || undefined,
+      siteUrl: site,
+      includeStories: rest.includes("--stories"),
+    }),
+  );
 } else if (cmd === "analyze" && handle) {
   console.log(analyzePrompt(load(handle), rest.map(load)));
 } else {

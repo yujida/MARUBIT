@@ -13,7 +13,7 @@
     "posts": 308,
     "followers": 8811,
     "following": 180,
-    "highlights": 6
+    "highlights": 4
   },
   "accountInsights": {
     "periodDays": 30,
@@ -619,6 +619,270 @@
         "follows": 17,
         "avgWatchTimeSec": null
       }
+    }
+  ],
+  "stories": [
+    {
+      "id": "my_s28_0",
+      "postedAt": "2026-09-03T03:00:00.000Z",
+      "type": "video",
+      "durationSec": 8,
+      "text": "이 동작 어려운 사람 손!",
+      "stickers": [
+        "mention"
+      ],
+      "linkUrl": null,
+      "isReshare": true,
+      "category": "춤",
+      "topic": "이 동작 어려운 사람 손!",
+      "insights": {
+        "reach": 1013,
+        "views": 1094,
+        "replies": 6,
+        "shares": 1,
+        "profileVisits": 10,
+        "follows": 0,
+        "linkClicks": null,
+        "stickerTaps": null,
+        "forwardTaps": 329,
+        "backTaps": 11,
+        "exits": 108,
+        "nextStory": 33
+      }
+    },
+    {
+      "id": "my_s29_0",
+      "postedAt": "2026-09-04T03:00:00.000Z",
+      "type": "video",
+      "durationSec": 9,
+      "text": "새 안무 10초 미리보기",
+      "stickers": [],
+      "linkUrl": null,
+      "isReshare": true,
+      "category": "춤",
+      "topic": "새 안무 10초 미리보기",
+      "insights": {
+        "reach": 987,
+        "views": 1065,
+        "replies": 5,
+        "shares": 3,
+        "profileVisits": 10,
+        "follows": 0,
+        "linkClicks": null,
+        "stickerTaps": null,
+        "forwardTaps": 302,
+        "backTaps": 11,
+        "exits": 69,
+        "nextStory": 32
+      }
+    },
+    {
+      "id": "my_s29_1",
+      "postedAt": "2026-09-04T03:04:00.000Z",
+      "type": "video",
+      "durationSec": 9,
+      "text": "이 동작 어려운 사람 손!",
+      "stickers": [],
+      "linkUrl": null,
+      "isReshare": false,
+      "category": "춤",
+      "topic": "이 동작 어려운 사람 손!",
+      "insights": {
+        "reach": 820,
+        "views": 886,
+        "replies": 2,
+        "shares": 2,
+        "profileVisits": 8,
+        "follows": 0,
+        "linkClicks": null,
+        "stickerTaps": null,
+        "forwardTaps": 245,
+        "backTaps": 9,
+        "exits": 62,
+        "nextStory": 27
+      }
+    },
+    {
+      "id": "my_s30_0",
+      "postedAt": "2026-09-05T12:00:00.000Z",
+      "type": "video",
+      "durationSec": 9,
+      "text": "새 안무 10초 미리보기",
+      "stickers": [
+        "mention"
+      ],
+      "linkUrl": null,
+      "isReshare": false,
+      "category": "춤",
+      "topic": "새 안무 10초 미리보기",
+      "insights": {
+        "reach": 890,
+        "views": 961,
+        "replies": 5,
+        "shares": 2,
+        "profileVisits": 9,
+        "follows": 0,
+        "linkClicks": null,
+        "stickerTaps": null,
+        "forwardTaps": 174,
+        "backTaps": 10,
+        "exits": 62,
+        "nextStory": 29
+      }
+    },
+    {
+      "id": "my_s31_0",
+      "postedAt": "2026-09-06T12:00:00.000Z",
+      "type": "video",
+      "durationSec": 10,
+      "text": "Q&A: 몸치도 배울 수 있나요?",
+      "stickers": [
+        "quiz"
+      ],
+      "linkUrl": null,
+      "isReshare": false,
+      "category": "교육",
+      "topic": "Q&A: 몸치도 배울 수 있나요?",
+      "insights": {
+        "reach": 820,
+        "views": 886,
+        "replies": 15,
+        "shares": 0,
+        "profileVisits": 8,
+        "follows": 1,
+        "linkClicks": null,
+        "stickerTaps": 106,
+        "forwardTaps": 259,
+        "backTaps": 9,
+        "exits": 75,
+        "nextStory": 27
+      }
+    },
+    {
+      "id": "my_s31_1",
+      "postedAt": "2026-09-06T12:04:00.000Z",
+      "type": "image",
+      "durationSec": null,
+      "text": "요즘 챌린지 TOP3 투표",
+      "stickers": [
+        "music"
+      ],
+      "linkUrl": null,
+      "isReshare": false,
+      "category": "대중문화",
+      "topic": "요즘 챌린지 TOP3 투표",
+      "insights": {
+        "reach": 746,
+        "views": 806,
+        "replies": 4,
+        "shares": 2,
+        "profileVisits": 7,
+        "follows": 0,
+        "linkClicks": null,
+        "stickerTaps": null,
+        "forwardTaps": 182,
+        "backTaps": 8,
+        "exits": 84,
+        "nextStory": 24
+      }
+    },
+    {
+      "id": "my_s31_2",
+      "postedAt": "2026-09-06T12:08:00.000Z",
+      "type": "image",
+      "durationSec": null,
+      "text": "오늘 연습 영상 비하인드",
+      "stickers": [
+        "slider"
+      ],
+      "linkUrl": null,
+      "isReshare": false,
+      "category": "춤",
+      "topic": "오늘 연습 영상 비하인드",
+      "insights": {
+        "reach": 673,
+        "views": 727,
+        "replies": 8,
+        "shares": 2,
+        "profileVisits": 7,
+        "follows": 0,
+        "linkClicks": null,
+        "stickerTaps": 46,
+        "forwardTaps": 197,
+        "backTaps": 7,
+        "exits": 87,
+        "nextStory": 22
+      }
+    },
+    {
+      "id": "my_s31_3",
+      "postedAt": "2026-09-06T12:12:00.000Z",
+      "type": "video",
+      "durationSec": 13,
+      "text": "오늘 연습 영상 비하인드",
+      "stickers": [],
+      "linkUrl": null,
+      "isReshare": false,
+      "category": "춤",
+      "topic": "오늘 연습 영상 비하인드",
+      "insights": {
+        "reach": 527,
+        "views": 569,
+        "replies": 3,
+        "shares": 1,
+        "profileVisits": 5,
+        "follows": 0,
+        "linkClicks": null,
+        "stickerTaps": null,
+        "forwardTaps": 192,
+        "backTaps": 6,
+        "exits": 46,
+        "nextStory": 17
+      }
+    },
+    {
+      "id": "my_s31_4",
+      "postedAt": "2026-09-06T12:16:00.000Z",
+      "type": "image",
+      "durationSec": null,
+      "text": "새 안무 10초 미리보기",
+      "stickers": [],
+      "linkUrl": null,
+      "isReshare": false,
+      "category": "춤",
+      "topic": "새 안무 10초 미리보기",
+      "insights": {
+        "reach": 430,
+        "views": 464,
+        "replies": 2,
+        "shares": 1,
+        "profileVisits": 4,
+        "follows": 0,
+        "linkClicks": null,
+        "stickerTaps": null,
+        "forwardTaps": 95,
+        "backTaps": 5,
+        "exits": 39,
+        "nextStory": 14
+      }
+    }
+  ],
+  "highlights": [
+    {
+      "title": "수업 후기",
+      "itemCount": 24
+    },
+    {
+      "title": "시간표",
+      "itemCount": 6
+    },
+    {
+      "title": "Q&A",
+      "itemCount": 15
+    },
+    {
+      "title": "공연",
+      "itemCount": 9
     }
   ],
   "notes": "가상 데모 데이터"

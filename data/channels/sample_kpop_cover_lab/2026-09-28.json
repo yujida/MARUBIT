@@ -13,7 +13,7 @@
     "posts": 314,
     "followers": 59732,
     "following": 180,
-    "highlights": 6
+    "highlights": 3
   },
   "accountInsights": null,
   "posts": [
@@ -435,6 +435,82 @@
       "topic": null,
       "hook": null,
       "insights": null
+    }
+  ],
+  "stories": [
+    {
+      "id": "kpos52_0",
+      "postedAt": "2026-09-27T03:00:00.000Z",
+      "type": "video",
+      "durationSec": 10,
+      "text": "새 안무 10초 미리보기",
+      "stickers": [
+        "music"
+      ],
+      "linkUrl": null,
+      "isReshare": false,
+      "category": "춤",
+      "topic": "새 안무 10초 미리보기",
+      "insights": null
+    },
+    {
+      "id": "kpos52_1",
+      "postedAt": "2026-09-27T03:04:00.000Z",
+      "type": "image",
+      "durationSec": null,
+      "text": "퀴즈: 이 동작 이름은?",
+      "stickers": [
+        "question"
+      ],
+      "linkUrl": null,
+      "isReshare": false,
+      "category": "교육",
+      "topic": "퀴즈: 이 동작 이름은?",
+      "insights": null
+    },
+    {
+      "id": "kpos52_2",
+      "postedAt": "2026-09-27T03:08:00.000Z",
+      "type": "image",
+      "durationSec": null,
+      "text": "새 안무 10초 미리보기",
+      "stickers": [
+        "music"
+      ],
+      "linkUrl": null,
+      "isReshare": false,
+      "category": "춤",
+      "topic": "새 안무 10초 미리보기",
+      "insights": null
+    },
+    {
+      "id": "kpos52_3",
+      "postedAt": "2026-09-27T03:12:00.000Z",
+      "type": "image",
+      "durationSec": null,
+      "text": "이 동작 어려운 사람 손!",
+      "stickers": [
+        "mention"
+      ],
+      "linkUrl": null,
+      "isReshare": false,
+      "category": "춤",
+      "topic": "이 동작 어려운 사람 손!",
+      "insights": null
+    }
+  ],
+  "highlights": [
+    {
+      "title": "COVER",
+      "itemCount": null
+    },
+    {
+      "title": "멤버",
+      "itemCount": null
+    },
+    {
+      "title": "촬영 비하인드",
+      "itemCount": null
     }
   ],
   "notes": "가상 데모 데이터"

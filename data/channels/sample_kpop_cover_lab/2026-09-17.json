@@ -13,7 +13,7 @@
     "posts": 310,
     "followers": 57902,
     "following": 180,
-    "highlights": 6
+    "highlights": 3
   },
   "accountInsights": null,
   "posts": [
@@ -435,6 +435,35 @@
       "topic": null,
       "hook": null,
       "insights": null
+    }
+  ],
+  "stories": [
+    {
+      "id": "kpos41_0",
+      "postedAt": "2026-09-16T03:00:00.000Z",
+      "type": "video",
+      "durationSec": 11,
+      "text": "이번 컴백 무대 어땠어요?",
+      "stickers": [],
+      "linkUrl": null,
+      "isReshare": false,
+      "category": "대중문화",
+      "topic": "이번 컴백 무대 어땠어요?",
+      "insights": null
+    }
+  ],
+  "highlights": [
+    {
+      "title": "COVER",
+      "itemCount": null
+    },
+    {
+      "title": "멤버",
+      "itemCount": null
+    },
+    {
+      "title": "촬영 비하인드",
+      "itemCount": null
     }
   ],
   "notes": "가상 데모 데이터"

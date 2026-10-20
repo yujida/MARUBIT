@@ -13,7 +13,7 @@
     "posts": 304,
     "followers": 8603,
     "following": 180,
-    "highlights": 6
+    "highlights": 4
   },
   "accountInsights": {
     "periodDays": 30,
@@ -619,6 +619,556 @@
         "follows": 17,
         "avgWatchTimeSec": null
       }
+    }
+  ],
+  "stories": [
+    {
+      "id": "my_s14_0",
+      "postedAt": "2026-08-20T12:00:00.000Z",
+      "type": "video",
+      "durationSec": 10,
+      "text": "퀴즈: 이 동작 이름은?",
+      "stickers": [],
+      "linkUrl": null,
+      "isReshare": false,
+      "category": "교육",
+      "topic": "퀴즈: 이 동작 이름은?",
+      "insights": {
+        "reach": 1042,
+        "views": 1125,
+        "replies": 6,
+        "shares": 1,
+        "profileVisits": 10,
+        "follows": 1,
+        "linkClicks": null,
+        "stickerTaps": null,
+        "forwardTaps": 191,
+        "backTaps": 11,
+        "exits": 103,
+        "nextStory": 34
+      }
+    },
+    {
+      "id": "my_s14_1",
+      "postedAt": "2026-08-20T12:04:00.000Z",
+      "type": "video",
+      "durationSec": 8,
+      "text": "이번 컴백 무대 어땠어요?",
+      "stickers": [
+        "music"
+      ],
+      "linkUrl": null,
+      "isReshare": false,
+      "category": "대중문화",
+      "topic": "이번 컴백 무대 어땠어요?",
+      "insights": {
+        "reach": 950,
+        "views": 1026,
+        "replies": 4,
+        "shares": 1,
+        "profileVisits": 10,
+        "follows": 0,
+        "linkClicks": null,
+        "stickerTaps": null,
+        "forwardTaps": 321,
+        "backTaps": 10,
+        "exits": 119,
+        "nextStory": 31
+      }
+    },
+    {
+      "id": "my_s14_2",
+      "postedAt": "2026-08-20T12:08:00.000Z",
+      "type": "video",
+      "durationSec": 14,
+      "text": "요즘 챌린지 TOP3 투표",
+      "stickers": [
+        "music"
+      ],
+      "linkUrl": null,
+      "isReshare": false,
+      "category": "대중문화",
+      "topic": "요즘 챌린지 TOP3 투표",
+      "insights": {
+        "reach": 775,
+        "views": 837,
+        "replies": 4,
+        "shares": 1,
+        "profileVisits": 8,
+        "follows": 0,
+        "linkClicks": null,
+        "stickerTaps": null,
+        "forwardTaps": 129,
+        "backTaps": 8,
+        "exits": 91,
+        "nextStory": 25
+      }
+    },
+    {
+      "id": "my_s14_3",
+      "postedAt": "2026-08-20T12:12:00.000Z",
+      "type": "image",
+      "durationSec": null,
+      "text": "퀴즈: 이 동작 이름은?",
+      "stickers": [
+        "question"
+      ],
+      "linkUrl": null,
+      "isReshare": false,
+      "category": "교육",
+      "topic": "퀴즈: 이 동작 이름은?",
+      "insights": {
+        "reach": 631,
+        "views": 681,
+        "replies": 18,
+        "shares": 0,
+        "profileVisits": 6,
+        "follows": 0,
+        "linkClicks": null,
+        "stickerTaps": 74,
+        "forwardTaps": 144,
+        "backTaps": 7,
+        "exits": 80,
+        "nextStory": 20
+      }
+    },
+    {
+      "id": "my_s14_4",
+      "postedAt": "2026-08-20T12:16:00.000Z",
+      "type": "image",
+      "durationSec": null,
+      "text": "이 동작 어려운 사람 손!",
+      "stickers": [
+        "slider"
+      ],
+      "linkUrl": null,
+      "isReshare": false,
+      "category": "춤",
+      "topic": "이 동작 어려운 사람 손!",
+      "insights": {
+        "reach": 537,
+        "views": 580,
+        "replies": 7,
+        "shares": 1,
+        "profileVisits": 5,
+        "follows": 0,
+        "linkClicks": null,
+        "stickerTaps": 49,
+        "forwardTaps": 178,
+        "backTaps": 6,
+        "exits": 46,
+        "nextStory": 17
+      }
+    },
+    {
+      "id": "my_s15_0",
+      "postedAt": "2026-08-21T12:00:00.000Z",
+      "type": "video",
+      "durationSec": 12,
+      "text": "리듬 타는 법 1분 요약",
+      "stickers": [
+        "question"
+      ],
+      "linkUrl": null,
+      "isReshare": false,
+      "category": "교육",
+      "topic": "리듬 타는 법 1분 요약",
+      "insights": {
+        "reach": 776,
+        "views": 839,
+        "replies": 20,
+        "shares": 1,
+        "profileVisits": 8,
+        "follows": 0,
+        "linkClicks": null,
+        "stickerTaps": 67,
+        "forwardTaps": 140,
+        "backTaps": 8,
+        "exits": 91,
+        "nextStory": 25
+      }
+    },
+    {
+      "id": "my_s15_1",
+      "postedAt": "2026-08-21T12:04:00.000Z",
+      "type": "video",
+      "durationSec": 8,
+      "text": "퀴즈: 이 동작 이름은?",
+      "stickers": [
+        "quiz"
+      ],
+      "linkUrl": null,
+      "isReshare": false,
+      "category": "교육",
+      "topic": "퀴즈: 이 동작 이름은?",
+      "insights": {
+        "reach": 637,
+        "views": 688,
+        "replies": 9,
+        "shares": 1,
+        "profileVisits": 6,
+        "follows": 0,
+        "linkClicks": null,
+        "stickerTaps": 62,
+        "forwardTaps": 160,
+        "backTaps": 7,
+        "exits": 65,
+        "nextStory": 21
+      }
+    },
+    {
+      "id": "my_s15_2",
+      "postedAt": "2026-08-21T12:08:00.000Z",
+      "type": "image",
+      "durationSec": null,
+      "text": "오늘 연습 영상 비하인드",
+      "stickers": [
+        "slider"
+      ],
+      "linkUrl": null,
+      "isReshare": false,
+      "category": "춤",
+      "topic": "오늘 연습 영상 비하인드",
+      "insights": {
+        "reach": 521,
+        "views": 563,
+        "replies": 13,
+        "shares": 1,
+        "profileVisits": 5,
+        "follows": 0,
+        "linkClicks": null,
+        "stickerTaps": 37,
+        "forwardTaps": 111,
+        "backTaps": 6,
+        "exits": 48,
+        "nextStory": 17
+      }
+    },
+    {
+      "id": "my_s15_3",
+      "postedAt": "2026-08-21T12:12:00.000Z",
+      "type": "image",
+      "durationSec": null,
+      "text": "리듬 타는 법 1분 요약",
+      "stickers": [],
+      "linkUrl": null,
+      "isReshare": false,
+      "category": "교육",
+      "topic": "리듬 타는 법 1분 요약",
+      "insights": {
+        "reach": 439,
+        "views": 475,
+        "replies": 1,
+        "shares": 0,
+        "profileVisits": 4,
+        "follows": 0,
+        "linkClicks": null,
+        "stickerTaps": null,
+        "forwardTaps": 142,
+        "backTaps": 5,
+        "exits": 37,
+        "nextStory": 14
+      }
+    },
+    {
+      "id": "my_s15_4",
+      "postedAt": "2026-08-21T12:16:00.000Z",
+      "type": "video",
+      "durationSec": 8,
+      "text": "이번 컴백 무대 어땠어요?",
+      "stickers": [
+        "poll"
+      ],
+      "linkUrl": null,
+      "isReshare": false,
+      "category": "대중문화",
+      "topic": "이번 컴백 무대 어땠어요?",
+      "insights": {
+        "reach": 399,
+        "views": 431,
+        "replies": 7,
+        "shares": 1,
+        "profileVisits": 4,
+        "follows": 0,
+        "linkClicks": null,
+        "stickerTaps": 39,
+        "forwardTaps": 132,
+        "backTaps": 4,
+        "exits": 51,
+        "nextStory": 13
+      }
+    },
+    {
+      "id": "my_s15_5",
+      "postedAt": "2026-08-21T12:20:00.000Z",
+      "type": "image",
+      "durationSec": null,
+      "text": "원데이 클래스 마감 D-1",
+      "stickers": [
+        "link",
+        "countdown"
+      ],
+      "linkUrl": "https://example.com/class",
+      "isReshare": false,
+      "category": "홍보",
+      "topic": "원데이 클래스 마감 D-1",
+      "insights": {
+        "reach": 344,
+        "views": 372,
+        "replies": 2,
+        "shares": 0,
+        "profileVisits": 3,
+        "follows": 0,
+        "linkClicks": 20,
+        "stickerTaps": null,
+        "forwardTaps": 97,
+        "backTaps": 4,
+        "exits": 47,
+        "nextStory": 11
+      }
+    },
+    {
+      "id": "my_s16_0",
+      "postedAt": "2026-08-22T12:00:00.000Z",
+      "type": "video",
+      "durationSec": 9,
+      "text": "오늘 연습 영상 비하인드",
+      "stickers": [
+        "music"
+      ],
+      "linkUrl": null,
+      "isReshare": false,
+      "category": "춤",
+      "topic": "오늘 연습 영상 비하인드",
+      "insights": {
+        "reach": 1197,
+        "views": 1292,
+        "replies": 5,
+        "shares": 3,
+        "profileVisits": 12,
+        "follows": 0,
+        "linkClicks": null,
+        "stickerTaps": null,
+        "forwardTaps": 274,
+        "backTaps": 13,
+        "exits": 99,
+        "nextStory": 39
+      }
+    },
+    {
+      "id": "my_s16_1",
+      "postedAt": "2026-08-22T12:04:00.000Z",
+      "type": "image",
+      "durationSec": null,
+      "text": "신규 수강 신청 링크",
+      "stickers": [
+        "link",
+        "countdown"
+      ],
+      "linkUrl": "https://example.com/class",
+      "isReshare": false,
+      "category": "홍보",
+      "topic": "신규 수강 신청 링크",
+      "insights": {
+        "reach": 933,
+        "views": 1008,
+        "replies": 4,
+        "shares": 1,
+        "profileVisits": 9,
+        "follows": 1,
+        "linkClicks": 48,
+        "stickerTaps": null,
+        "forwardTaps": 204,
+        "backTaps": 10,
+        "exits": 147,
+        "nextStory": 30
+      }
+    },
+    {
+      "id": "my_s17_0",
+      "postedAt": "2026-08-23T03:00:00.000Z",
+      "type": "image",
+      "durationSec": null,
+      "text": "리듬 타는 법 1분 요약",
+      "stickers": [
+        "question"
+      ],
+      "linkUrl": null,
+      "isReshare": false,
+      "category": "교육",
+      "topic": "리듬 타는 법 1분 요약",
+      "insights": {
+        "reach": 1065,
+        "views": 1151,
+        "replies": 24,
+        "shares": 2,
+        "profileVisits": 11,
+        "follows": 1,
+        "linkClicks": null,
+        "stickerTaps": 76,
+        "forwardTaps": 318,
+        "backTaps": 12,
+        "exits": 130,
+        "nextStory": 35
+      }
+    },
+    {
+      "id": "my_s17_1",
+      "postedAt": "2026-08-23T03:04:00.000Z",
+      "type": "image",
+      "durationSec": null,
+      "text": "오늘 연습 영상 비하인드",
+      "stickers": [
+        "music"
+      ],
+      "linkUrl": null,
+      "isReshare": false,
+      "category": "춤",
+      "topic": "오늘 연습 영상 비하인드",
+      "insights": {
+        "reach": 917,
+        "views": 990,
+        "replies": 3,
+        "shares": 1,
+        "profileVisits": 9,
+        "follows": 0,
+        "linkClicks": null,
+        "stickerTaps": null,
+        "forwardTaps": 197,
+        "backTaps": 10,
+        "exits": 112,
+        "nextStory": 30
+      }
+    },
+    {
+      "id": "my_s17_2",
+      "postedAt": "2026-08-23T03:08:00.000Z",
+      "type": "video",
+      "durationSec": 9,
+      "text": "오늘 연습 영상 비하인드",
+      "stickers": [
+        "slider"
+      ],
+      "linkUrl": null,
+      "isReshare": false,
+      "category": "춤",
+      "topic": "오늘 연습 영상 비하인드",
+      "insights": {
+        "reach": 768,
+        "views": 829,
+        "replies": 17,
+        "shares": 0,
+        "profileVisits": 8,
+        "follows": 0,
+        "linkClicks": null,
+        "stickerTaps": 40,
+        "forwardTaps": 245,
+        "backTaps": 8,
+        "exits": 90,
+        "nextStory": 25
+      }
+    },
+    {
+      "id": "my_s17_3",
+      "postedAt": "2026-08-23T03:12:00.000Z",
+      "type": "video",
+      "durationSec": 11,
+      "text": "요즘 챌린지 TOP3 투표",
+      "stickers": [
+        "music"
+      ],
+      "linkUrl": null,
+      "isReshare": false,
+      "category": "대중문화",
+      "topic": "요즘 챌린지 TOP3 투표",
+      "insights": {
+        "reach": 601,
+        "views": 649,
+        "replies": 1,
+        "shares": 1,
+        "profileVisits": 6,
+        "follows": 0,
+        "linkClicks": null,
+        "stickerTaps": null,
+        "forwardTaps": 191,
+        "backTaps": 6,
+        "exits": 33,
+        "nextStory": 19
+      }
+    },
+    {
+      "id": "my_s17_4",
+      "postedAt": "2026-08-23T03:16:00.000Z",
+      "type": "image",
+      "durationSec": null,
+      "text": "새 안무 10초 미리보기",
+      "stickers": [
+        "mention"
+      ],
+      "linkUrl": null,
+      "isReshare": false,
+      "category": "춤",
+      "topic": "새 안무 10초 미리보기",
+      "insights": {
+        "reach": 510,
+        "views": 550,
+        "replies": 1,
+        "shares": 1,
+        "profileVisits": 5,
+        "follows": 0,
+        "linkClicks": null,
+        "stickerTaps": null,
+        "forwardTaps": 139,
+        "backTaps": 6,
+        "exits": 65,
+        "nextStory": 17
+      }
+    },
+    {
+      "id": "my_s17_5",
+      "postedAt": "2026-08-23T03:20:00.000Z",
+      "type": "video",
+      "durationSec": 11,
+      "text": "퀴즈: 이 동작 이름은?",
+      "stickers": [
+        "quiz"
+      ],
+      "linkUrl": null,
+      "isReshare": false,
+      "category": "교육",
+      "topic": "퀴즈: 이 동작 이름은?",
+      "insights": {
+        "reach": 435,
+        "views": 469,
+        "replies": 8,
+        "shares": 1,
+        "profileVisits": 4,
+        "follows": 0,
+        "linkClicks": null,
+        "stickerTaps": 23,
+        "forwardTaps": 108,
+        "backTaps": 5,
+        "exits": 52,
+        "nextStory": 14
+      }
+    }
+  ],
+  "highlights": [
+    {
+      "title": "수업 후기",
+      "itemCount": 24
+    },
+    {
+      "title": "시간표",
+      "itemCount": 6
+    },
+    {
+      "title": "Q&A",
+      "itemCount": 15
+    },
+    {
+      "title": "공연",
+      "itemCount": 9
     }
   ],
   "notes": "가상 데모 데이터"

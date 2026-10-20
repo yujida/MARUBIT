@@ -13,7 +13,7 @@
     "posts": 304,
     "followers": 54101,
     "following": 180,
-    "highlights": 6
+    "highlights": 3
   },
   "accountInsights": null,
   "posts": [
@@ -435,6 +435,83 @@
       "topic": null,
       "hook": null,
       "insights": null
+    }
+  ],
+  "stories": [
+    {
+      "id": "kpos17_0",
+      "postedAt": "2026-08-23T12:00:00.000Z",
+      "type": "video",
+      "durationSec": 10,
+      "text": "이번 컴백 무대 어땠어요?",
+      "stickers": [
+        "music"
+      ],
+      "linkUrl": null,
+      "isReshare": false,
+      "category": "대중문화",
+      "topic": "이번 컴백 무대 어땠어요?",
+      "insights": null
+    },
+    {
+      "id": "kpos17_1",
+      "postedAt": "2026-08-23T12:04:00.000Z",
+      "type": "image",
+      "durationSec": null,
+      "text": "새 안무 10초 미리보기",
+      "stickers": [
+        "mention"
+      ],
+      "linkUrl": null,
+      "isReshare": false,
+      "category": "춤",
+      "topic": "새 안무 10초 미리보기",
+      "insights": null
+    },
+    {
+      "id": "kpos17_2",
+      "postedAt": "2026-08-23T12:08:00.000Z",
+      "type": "video",
+      "durationSec": 8,
+      "text": "이 동작 어려운 사람 손!",
+      "stickers": [
+        "music"
+      ],
+      "linkUrl": null,
+      "isReshare": false,
+      "category": "춤",
+      "topic": "이 동작 어려운 사람 손!",
+      "insights": null
+    },
+    {
+      "id": "kpos17_3",
+      "postedAt": "2026-08-23T12:12:00.000Z",
+      "type": "video",
+      "durationSec": 9,
+      "text": "원데이 클래스 마감 D-1",
+      "stickers": [
+        "link",
+        "countdown"
+      ],
+      "linkUrl": "https://example.com/class",
+      "isReshare": false,
+      "category": "홍보",
+      "topic": "원데이 클래스 마감 D-1",
+      "insights": null
+    }
+  ],
+  "highlights": [
+    {
+      "title": "COVER",
+      "itemCount": null
+    },
+    {
+      "title": "멤버",
+      "itemCount": null
+    },
+    {
+      "title": "촬영 비하인드",
+      "itemCount": null
     }
   ],
   "notes": "가상 데모 데이터"
