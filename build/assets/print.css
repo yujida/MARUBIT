@@ -44,7 +44,9 @@ p { margin: 0 0 2.5mm; }
 .grid3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4mm; }
 .grid4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 3mm; }
 
-table { width: 100%; border-collapse: collapse; margin: 0 0 4mm; font-size: 9.8pt; break-inside: avoid; }
+table { width: 100%; border-collapse: collapse; margin: 0 0 4mm; font-size: 9.8pt; }
+tr { break-inside: avoid; }
+h1, h2, h3 { break-after: avoid; }
 th { background: var(--pine); color: #fff; font-weight: 600; text-align: left; padding: 2mm 2.5mm; }
 td { border-bottom: 1px solid var(--line); padding: 2mm 2.5mm; vertical-align: top; }
 tr:nth-child(even) td { background: #f7faf8; }
