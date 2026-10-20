@@ -1,0 +1,74 @@
+/* 인쇄용 문서(워크북·진행안·크루 키트·전자책) 공통 스타일. A4, Pretendard. */
+@font-face { font-family: "Pretendard"; font-weight: 400; src: url("fonts/Pretendard-Regular.woff2") format("woff2"); }
+@font-face { font-family: "Pretendard"; font-weight: 500; src: url("fonts/Pretendard-Medium.woff2") format("woff2"); }
+@font-face { font-family: "Pretendard"; font-weight: 600; src: url("fonts/Pretendard-SemiBold.woff2") format("woff2"); }
+@font-face { font-family: "Pretendard"; font-weight: 700; src: url("fonts/Pretendard-Bold.woff2") format("woff2"); }
+@font-face { font-family: "Pretendard"; font-weight: 800; src: url("fonts/Pretendard-ExtraBold.woff2") format("woff2"); }
+
+:root {
+  --ink: #1c2420;
+  --pine: #173a2b;
+  --mist: #eef3f0;
+  --gold: #e0a526;
+  --green: #2e7d57;
+  --red: #c8423b;
+  --blue: #2f6e9e;
+  --sage: #7a8c83;
+  --pale: #f3dfa2;
+  --line: #cfd9d3;
+}
+
+@page { size: A4; margin: 16mm 15mm 16mm 15mm; }
+* { box-sizing: border-box; }
+html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+body { font-family: "Pretendard", sans-serif; color: var(--ink); font-size: 10.5pt; line-height: 1.6; margin: 0; word-break: keep-all; }
+
+.page { page-break-after: always; break-after: page; position: relative; }
+.page:last-child { page-break-after: auto; break-after: auto; }
+
+h1 { font-size: 22pt; font-weight: 800; color: var(--pine); margin: 0 0 4mm; line-height: 1.25; }
+h2 { font-size: 15pt; font-weight: 700; color: var(--pine); margin: 6mm 0 2.5mm; line-height: 1.3; }
+h3 { font-size: 11.5pt; font-weight: 700; color: var(--pine); margin: 4mm 0 1.5mm; }
+p { margin: 0 0 2.5mm; }
+.lead { font-size: 11.5pt; color: var(--ink); margin-bottom: 5mm; }
+.muted { color: var(--sage); font-size: 9pt; }
+.kicker { font-size: 9.5pt; font-weight: 700; color: var(--green); letter-spacing: 0.02em; margin-bottom: 1mm; }
+
+.box { background: var(--mist); border-radius: 3mm; padding: 4mm 5mm; margin: 0 0 4mm; break-inside: avoid; }
+.box.gold { background: #fbf1d3; }
+.box.dark { background: var(--pine); color: #fff; }
+.box.dark h3, .box.dark strong { color: var(--pale); }
+.box.line { background: #fff; border: 1.2px solid var(--line); }
+
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 4mm; }
+.grid3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4mm; }
+.grid4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 3mm; }
+
+table { width: 100%; border-collapse: collapse; margin: 0 0 4mm; font-size: 9.8pt; break-inside: avoid; }
+th { background: var(--pine); color: #fff; font-weight: 600; text-align: left; padding: 2mm 2.5mm; }
+td { border-bottom: 1px solid var(--line); padding: 2mm 2.5mm; vertical-align: top; }
+tr:nth-child(even) td { background: #f7faf8; }
+td.write { height: 13mm; }
+
+.lines div { border-bottom: 1px solid var(--line); height: 10mm; }
+.blank { display: inline-block; border-bottom: 1.2px solid var(--ink); min-width: 28mm; height: 1.1em; vertical-align: bottom; }
+.check { list-style: none; padding: 0; margin: 0 0 3mm; }
+.check li { padding-left: 7mm; position: relative; margin-bottom: 1.6mm; }
+.check li::before { content: ""; position: absolute; left: 0; top: 0.3em; width: 3.6mm; height: 3.6mm; border: 1.3px solid var(--pine); border-radius: 0.8mm; }
+ul.tight { margin: 0 0 3mm; padding-left: 5mm; }
+ul.tight li { margin-bottom: 1mm; }
+.prompt { background: #fff; border: 1.2px dashed var(--blue); border-radius: 2.5mm; padding: 3mm 4mm; font-size: 10pt; margin: 0 0 4mm; break-inside: avoid; }
+.prompt::before { content: "ChatGPT에 복사해 쓰기"; display: block; font-size: 8.5pt; font-weight: 700; color: var(--blue); margin-bottom: 1mm; }
+
+.dot { display: inline-block; width: 7mm; height: 7mm; border-radius: 50%; color: #fff; font-weight: 700; text-align: center; line-height: 7mm; font-size: 9.5pt; margin-right: 2mm; vertical-align: middle; }
+.dot.g { background: var(--green); } .dot.r { background: var(--red); } .dot.b { background: var(--blue); } .dot.y { background: var(--gold); color: var(--pine); } .dot.p { background: var(--pine); }
+
+.foot { position: absolute; bottom: -9mm; left: 0; right: 0; font-size: 8pt; color: var(--sage); display: flex; justify-content: space-between; }
+
+.cover { height: 263mm; background: var(--pine); color: #fff; border-radius: 4mm; padding: 22mm 18mm; display: flex; flex-direction: column; }
+.cover .series { color: var(--pale); font-size: 11pt; font-weight: 600; }
+.cover h1 { color: #fff; font-size: 34pt; margin-top: 50mm; }
+.cover .sub { color: var(--gold); font-size: 15pt; font-weight: 600; }
+.cover .meta { margin-top: auto; color: var(--pale); font-size: 10.5pt; }
+.cover .fill { margin-top: 14mm; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6mm; }
+.cover .fill div { border-bottom: 1.2px solid var(--pale); padding-bottom: 2mm; color: var(--pale); font-size: 10pt; height: 14mm; }
