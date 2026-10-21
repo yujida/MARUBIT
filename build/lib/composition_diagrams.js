@@ -20,9 +20,9 @@ const person = (cx, foot, h, fill = LIGHT) => {
   return `<circle cx="${cx}" cy="${top + r}" r="${r}" fill="${fill}"/>
   <rect x="${cx - bw / 2}" y="${top + r * 2.25}" width="${bw}" height="${foot - top - r * 2.25}" rx="${bw * 0.38}" fill="${fill}"/>`;
 };
-const gridLines = (op = 0.4) =>
-  [1, 2].map((t) => `<line x1="${(VW * t) / 3}" y1="0" x2="${(VW * t) / 3}" y2="${VH}" stroke="#fff" stroke-opacity="${op}" stroke-width="3"/>
-  <line x1="0" y1="${(VH * t) / 3}" x2="${VW}" y2="${(VH * t) / 3}" stroke="#fff" stroke-opacity="${op}" stroke-width="3"/>`).join("");
+const gridLines = (op = 0.4, w = VW, h = VH) =>
+  [1, 2].map((t) => `<line x1="${(w * t) / 3}" y1="0" x2="${(w * t) / 3}" y2="${h}" stroke="#fff" stroke-opacity="${op}" stroke-width="3"/>
+  <line x1="0" y1="${(h * t) / 3}" x2="${w}" y2="${(h * t) / 3}" stroke="#fff" stroke-opacity="${op}" stroke-width="3"/>`).join("");
 const dash = `stroke="${GOLD}" stroke-width="7" stroke-dasharray="22 14" fill="none" stroke-linecap="round"`;
 const solid = `stroke="${GOLD}" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"`;
 
@@ -181,4 +181,53 @@ async function render(key, outDir, { scene = true } = {}) {
   return out;
 }
 
-module.exports = { render, KEYS: Object.keys(D) };
+// 점들을 부드럽게 잇는 곡선(Catmull-Rom → 3차 베지어)
+function smooth(pts) {
+  let d = `M${pts[0][0]} ${pts[0][1]}`;
+  for (let i = 0; i < pts.length - 1; i++) {
+    const p0 = pts[i - 1] || pts[i], p1 = pts[i], p2 = pts[i + 1], p3 = pts[i + 2] || p2;
+    const c1 = [p1[0] + (p2[0] - p0[0]) / 6, p1[1] + (p2[1] - p0[1]) / 6], c2 = [p2[0] - (p3[0] - p1[0]) / 6, p2[1] - (p3[1] - p1[1]) / 6];
+    d += ` C${c1[0]} ${c1[1]}, ${c2[0]} ${c2[1]}, ${p2[0]} ${p2[1]}`;
+  }
+  return d;
+}
+
+// 실제 예시 사진 위에 얹는 구도선. 사진마다 주인공 위치가 달라서 사진 좌표(0~1)로 따로 잡는다.
+const PHOTO = {
+  thirds: (P) => gridLines(0.55, P.w, P.h) + `<line x1="0" y1="${P.y(0.68)}" x2="${P.w}" y2="${P.y(0.68)}" ${dash}/><circle cx="${P.x(0.667)}" cy="${P.y(0.333)}" r="22" fill="${GOLD}"/>`,
+  power: (P) => gridLines(0.45, P.w, P.h) + [[0.333, 0.333], [0.667, 0.333], [0.333, 0.667], [0.667, 0.667]].map(([x, y], i) =>
+    `<circle cx="${P.x(x)}" cy="${P.y(y)}" r="34" stroke="${GOLD}" stroke-width="7" fill="${i === 0 ? GOLD : "none"}" fill-opacity="0.35"/>`).join("") +
+    `<line x1="${P.x(0.42)}" y1="${P.y(0.333)}" x2="${P.x(0.88)}" y2="${P.y(0.333)}" ${dash} marker-end="url(#ah)"/>`,
+  golden: (P) => {
+    const gw = P.w * 1.05, gh = gw / 1.618, probe = goldenSpiral(0, 0, gw, gh);
+    const ox = P.x(0.635) - probe.eye[0], oy = P.y(0.475) - probe.eye[1];
+    const sp = goldenSpiral(ox, oy, gw, gh);
+    return [0.382, 0.618].map((t) => `<line x1="${P.x(t)}" y1="0" x2="${P.x(t)}" y2="${P.h}" stroke="#fff" stroke-opacity="0.5" stroke-width="3"/><line x1="0" y1="${P.y(t)}" x2="${P.w}" y2="${P.y(t)}" stroke="#fff" stroke-opacity="0.5" stroke-width="3"/>`).join("") + `<path d="${sp.d}" ${solid}/>`;
+  },
+  horizon: (P) => `<line x1="0" y1="${P.y(0.665)}" x2="${P.w}" y2="${P.y(0.665)}" ${solid}/>` +
+    [0.105, 0.49, 0.893].map((x) => `<line x1="${P.x(x)}" y1="${P.y(0.33)}" x2="${P.x(x)}" y2="${P.y(0.75)}" ${dash}/>`).join(""),
+  diagonal: (P) => `<line x1="${P.x(0.04)}" y1="${P.y(0.97)}" x2="${P.x(0.95)}" y2="${P.y(0.06)}" ${dash} marker-end="url(#ah)"/>`,
+  triangle: (P) => `<polygon points="${P.x(0.47)},${P.y(0.15)} ${P.x(0.29)},${P.y(0.47)} ${P.x(0.73)},${P.y(0.40)}" ${solid}/>` +
+    [[0.47, 0.15], [0.29, 0.47], [0.73, 0.40]].map(([x, y]) => `<circle cx="${P.x(x)}" cy="${P.y(y)}" r="16" fill="${GOLD}"/>`).join(""),
+  circle: (P) => `<circle cx="${P.x(0.5)}" cy="${P.y(0.49)}" r="${P.w * 0.3}" ${dash}/>`,
+  scurve: (P) => `<path d="${smooth([[0.68, 1.0], [0.6, 0.82], [0.47, 0.68], [0.41, 0.58], [0.47, 0.49], [0.6, 0.4], [0.62, 0.32], [0.61, 0.26]].map(([x, y]) => [P.x(x), P.y(y)]))}" ${dash}/>`,
+  leading: (P) => [[0, 0], [1, 0], [0, 1], [1, 1], [0.3, 1], [0.72, 1]].map(([x, y]) => `<line x1="${P.x(x)}" y1="${P.y(y)}" x2="${P.x(0.49)}" y2="${P.y(0.45)}" ${dash}/>`).join("") +
+    `<circle cx="${P.x(0.49)}" cy="${P.y(0.45)}" r="20" fill="${GOLD}"/>`,
+  frame: (P) => `<rect x="${P.x(0.345)}" y="${P.y(0.01)}" width="${P.x(0.34)}" height="${P.y(0.98)}" ${solid}/>`,
+};
+
+async function renderPhotoGuides(key, aspect, outDir) {
+  fs.mkdirSync(outDir, { recursive: true });
+  // 칸(3:2)에 높이로 맞춰 들어가는 사진은 높이를 1000으로 잡아, 화면에 보이는 선 굵기를 사진마다 같게 한다
+  const w = aspect < 1.5 ? Math.round(1000 * aspect) : 1500, h = Math.round(w / aspect);
+  const P = { w, h, x: (v) => v * w, y: (v) => v * h };
+  // 사진 위에서는 선을 굵게 하고 옅은 그림자를 깔아 밝은 배경에서도 보이게 한다
+  const body = PHOTO[key](P).replace(/stroke-width="7"/g, 'stroke-width="13"').replace(/stroke-width="3"/g, 'stroke-width="4"');
+  const shadow = `<filter id="sh" x="-5%" y="-5%" width="110%" height="110%"><feGaussianBlur in="SourceAlpha" stdDeviation="5"/><feOffset dx="0" dy="2"/><feComponentTransfer><feFuncA type="linear" slope="0.55"/></feComponentTransfer><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>`;
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}">${bg}<defs>${shadow}</defs><g filter="url(#sh)">${body}</g></svg>`;
+  const out = path.join(outDir, `photo_${key}_lines.png`);
+  await sharp(Buffer.from(svg)).png().toFile(out);
+  return out;
+}
+
+module.exports = { render, renderPhotoGuides, KEYS: Object.keys(D) };

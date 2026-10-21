@@ -2,7 +2,8 @@
 // 예시 사진(img19~img28)이 있으면 사진 + 구도선, 없으면 도식만 쓴다.
 const path = require("path");
 const { W, M } = require("./deck");
-const { render } = require("./composition_diagrams");
+const sharp = require("sharp");
+const { render, renderPhotoGuides } = require("./composition_diagrams");
 
 const CW = W - 2 * M;
 const CACHE = path.join(__dirname, "..", ".cache", "s1", "comp");
@@ -111,18 +112,23 @@ const IMAGE_SPECS = Object.fromEntries(TECH.map((t) => [t.img, { kind: "photo", 
 
 async function make({ k, C, content, img }) {
   const { S } = k;
-  const dia = {}, lines = {};
+  const dia = {}, lines = {}, aspect = {};
   for (const t of TECH) {
     dia[t.key] = await render(t.key, CACHE);
-    lines[t.key] = await render(t.key, CACHE, { scene: false });
+    if (!img[t.img]) continue;
+    const m = await sharp(img[t.img]).metadata();
+    aspect[t.key] = m.width / m.height;
+    lines[t.key] = await renderPhotoGuides(t.key, aspect[t.key], CACHE);
   }
   for (const [key] of BONUS) dia[key] = await render(key, CACHE);
-  // 도식 또는 (예시 사진 + 구도선)
+  // 도식 또는 (예시 사진 + 그 사진에 맞춘 구도선). 사진은 원래 비율 그대로 칸 안에 맞춰 놓는다.
   const visual = (s, t, x, y, w, h) => {
-    if (img[t.img]) {
-      k.photo(s, img[t.img], x, y, w, h, { alt: `${t.name} 예시 사진` });
-      s.addImage({ path: lines[t.key], x, y, w, h, altText: `${t.name} 구도선` });
-    } else s.addImage({ path: dia[t.key], x, y, w, h, altText: `${t.name} 구도 도식` });
+    if (!img[t.img]) return s.addImage({ path: dia[t.key], x, y, w, h, altText: `${t.name} 구도 도식` });
+    k.card(s, x, y, w, h, { fill: C.text2 });
+    const a = aspect[t.key];
+    const pw = Math.min(w, h * a), ph = pw / a, px = x + (w - pw) / 2, py = y + (h - ph) / 2;
+    s.addImage({ path: img[t.img], x: px, y: py, w: pw, h: ph, altText: `${t.name} 예시 사진` });
+    s.addImage({ path: lines[t.key], x: px, y: py, w: pw, h: ph, altText: `${t.name} 구도선` });
   };
   return {
     overview: async () => {
