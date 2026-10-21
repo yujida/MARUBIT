@@ -62,8 +62,16 @@ async function main() {
     if (notes) s.addNotes(notes.trim());
     return s;
   };
-  const fullBleed = (s, file) => {
-    s.addImage({ path: file, x: 0, y: 0, w: W, h: H, sizing: { type: "cover", w: W, h: H } });
+  // 가로 사진은 화면 가득 + 왼쪽 어둡게, 세로 사진은 오른쪽에 세워 두고 왼쪽 가장자리를 배경에 녹인다
+  const fullBleed = (s, key) => {
+    const a = img.aspect[key];
+    if (a && a < 1.2) {
+      const w = Math.min(H * a, 4.3), x = W - w;
+      s.addImage({ path: img[key], x, y: 0, w, h: H, sizing: { type: "cover", w, h: H } });
+      s.addImage({ path: img.edge, x: x - 0.02, y: 0, w: 1.6, h: H });
+      return;
+    }
+    s.addImage({ path: img[key], x: 0, y: 0, w: W, h: H, sizing: { type: "cover", w: W, h: H } });
     s.addImage({ path: img.overlay, x: 0, y: 0, w: W, h: H });
   };
   const divider = (n, title, sub, imgKey, notes) => {
@@ -72,7 +80,7 @@ async function main() {
     sec = `${n}교시 ${title}`;
     pres.addSection({ title: sec });
     const s = pres.addSlide({ masterName: "DIVIDER", sectionTitle: sec });
-    fullBleed(s, img[imgKey]);
+    fullBleed(s, imgKey);
     k.text(s, String(n).padStart(2, "0"), { x: M, y: 1.45, w: 4, h: 1.9, fontSize: 110, bold: true, color: C.accent1, valign: "bottom" });
     k.text(s, `${n}교시`, { x: M + 0.08, y: 1.15, w: 3, h: 0.35, fontSize: 14, bold: true, color: C.accent6, charSpacing: 2 });
     s.addText(title, { placeholder: "title" });
@@ -96,7 +104,7 @@ async function main() {
   pres.addSection({ title: sec });
   {
     const s = pres.addSlide({ masterName: "COVER", sectionTitle: sec });
-    fullBleed(s, img.img01);
+    fullBleed(s, "img01");
     k.text(s, "AI콘텐츠 크리에이터 실무 · 촬영편집", { x: M, y: 1.7, w: 8, h: 0.4, fontSize: 15, bold: true, color: C.accent1, charSpacing: 1 });
     s.addText("1회차\n보는 눈", { placeholder: "title" });
     s.addText("프로처럼 보고, 정석대로 찍는 날", { placeholder: "body" });
@@ -865,7 +873,7 @@ AI는 후보만. 내 이야기와 맞는 단어만 가져오기(워크북 p.2). 
   }
   {
     const s = pres.addSlide({ masterName: "COVER", sectionTitle: sec });
-    fullBleed(s, img.img01);
+    fullBleed(s, "img01");
     s.addText("AI는 장비,\n연출은 당신", { placeholder: "title" });
     s.addText("오늘 기른 '보는 눈'이 6번의 수업 내내 모든 것의 바닥이 됩니다", { placeholder: "body" });
     s.addNotes(`[17:25] 마무리 인사. 크루장은 크루 전원이 드라이브 업로드를 마쳤는지 확인하고 해산. 크루 트리 현황판에 첫 오너먼트(베스트 컷) 붙이기.

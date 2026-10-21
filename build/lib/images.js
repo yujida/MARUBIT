@@ -109,6 +109,14 @@ function overlaySvg() {
 </svg>`;
 }
 
+// 세로 사진의 왼쪽 가장자리를 배경색으로 녹이는 그라데이션
+function edgeSvg() {
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="400" height="10">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="${INK}" stop-opacity="1"/><stop offset="1" stop-color="${INK}" stop-opacity="0"/></linearGradient></defs>
+  <rect width="400" height="10" fill="url(#g)"/>
+</svg>`;
+}
+
 // specs: { key: { kind: "photo" | "panels", cols, rows, ratio: [w,h], label } }
 async function prepare(session, specs) {
   const root = path.join(__dirname, "..");
@@ -146,6 +154,14 @@ async function prepare(session, specs) {
     }
   }
   out.overlay = await svgPng(overlaySvg(), path.join(cache, "overlay.png"));
+  out.edge = await svgPng(edgeSvg(), path.join(cache, "edge.png"));
+  // 실제 사진의 가로:세로 비율 (세로 사진은 교시 구분 슬라이드에서 오른쪽에만 놓는다)
+  out.aspect = {};
+  for (const key of Object.keys(specs)) {
+    if (out.missing.includes(key) || specs[key].kind !== "photo" || !out[key]) continue;
+    const m = await sharp(out[key]).metadata();
+    out.aspect[key] = m.width / m.height;
+  }
   return out;
 }
 
