@@ -15,6 +15,12 @@
   .toc li { margin-bottom: 1.2mm; }
   figure { margin: 2mm 0 5mm; text-align: center; break-inside: avoid; }
   figcaption { font-size: 8.8pt; color: var(--sage); margin-top: 1mm; }
+  /* 도식 이미지는 슬라이드 빌드(session1_slides.js)가 build/.cache/s1/에 만든 것을 쓴다 */
+  .thumbs { display: grid; gap: 2.5mm; margin: 2mm 0 4mm; break-inside: avoid; }
+  .thumbs.c5 { grid-template-columns: repeat(5, 1fr); } .thumbs.c4 { grid-template-columns: repeat(4, 1fr); } .thumbs.c2 { grid-template-columns: 1fr 1fr; }
+  .thumbs img { width: 100%; display: block; border-radius: 1.5mm; }
+  .thumbs div { font-size: 8.5pt; font-weight: 700; color: var(--pine); text-align: center; }
+  figure img.wide { width: 100%; border-radius: 1.5mm; }
 </style>
 </head>
 <body>
@@ -30,18 +36,21 @@
 
 <section class="page">
   <h1>이 장에서 다루는 것</h1>
-  <p class="lead">좋은 영상은 장비보다 "보는 눈"에서 나옵니다. 프로가 일하는 순서를 먼저 보고, 그 출발점인 카메라와 화면의 문법을 정석대로 정리합니다. 여기서 익힌 용어는 4회차에 AI 영상 프롬프트로 그대로 다시 씁니다.</p>
+  <p class="lead">좋은 영상은 장비보다 "보는 눈"에서 나옵니다. 프로가 일하는 순서를 먼저 보고, 그 출발점인 카메라와 화면의 문법을 정석대로 정리한 뒤, 영화 현장에서 실제로 쓰는 기법과 일하는 방식까지 폰으로 할 수 있는 만큼 담았습니다. 여기서 익힌 용어는 4회차에 AI 영상 프롬프트로 그대로 다시 씁니다.</p>
   <ol class="toc">
     <li>프로의 제작 공정 7단계</li>
     <li>노출: 조리개 · 셔터스피드 · ISO</li>
     <li>화이트밸런스와 색</li>
-    <li>초점 · 심도 · 폰의 렌즈</li>
+    <li>초점 · 심도 · 렌즈, 그리고 초점 이동</li>
     <li>영상만의 규칙: 프레임레이트 · 셔터 · 해상도 · 파일 형식</li>
-    <li>화면의 언어: 샷 크기 · 앵글 · 구도</li>
+    <li>화면의 언어: 샷 크기 · 앵글</li>
+    <li>구도 10가지와 +4</li>
     <li>빛 다루기</li>
-    <li>움직임과 안정</li>
-    <li>컷의 문법</li>
+    <li>움직임: 안정에서 현장 무빙까지</li>
+    <li>컷의 문법과 커버리지</li>
     <li>소리</li>
+    <li>현장 실무: 노출 도구 · 180도 셔터 · 색 지키기</li>
+    <li>현장 운영: 콜 순서 · 슬레이트 · 숏리스트 · 연속성 · 백업</li>
     <li>AI와 함께 촬영 준비하기</li>
     <li>촬영 전 체크리스트</li>
   </ol>
@@ -90,7 +99,7 @@
     <li>자동 화이트밸런스는 찍는 도중에도 색을 바꿀 수 있습니다. 컷마다 피부색이 다르면 편집할 때 맞추느라 시간이 듭니다. 프로 모드에서 고정하거나, 같은 장소에서는 같은 설정으로 찍으세요.</li>
     <li>색이 다른 빛을 섞지 마세요. 창가 햇빛 + 천장 형광등이면 얼굴 한쪽은 파랗고 한쪽은 노랗게 됩니다. 한쪽 빛을 끄거나 가리세요.</li>
   </ul>
-  <h2><span class="num">4</span>초점 · 심도 · 폰의 렌즈</h2>
+  <h2><span class="num">4</span>초점 · 심도 · 렌즈, 그리고 초점 이동</h2>
   <p>초점은 "보여주고 싶은 곳"입니다. 사람이면 눈, 제품이면 로고나 질감, 음식이면 가장 먹음직스러운 부분에 맞춥니다. 선명하게 보이는 앞뒤 범위를 <strong>심도</strong>라고 하며, 얕으면 주인공만 선명하고 깊으면 전부 선명합니다.</p>
   <table>
     <tr><th style="width:20mm">렌즈</th><th>특징</th><th>이럴 때</th></tr>
@@ -99,12 +108,25 @@
     <tr><td>2~3x 망원</td><td>얼굴 비율이 자연스럽고 배경이 가까워 보인다</td><td>인물, 제품 디테일, 배경 정리</td></tr>
   </table>
   <div class="tip">렌즈 배율 사이(예: 1.5x)는 디지털 줌이라 화질이 떨어집니다. "줌 말고 발로." 사람 얼굴을 0.5x로 가까이 찍으면 코가 커 보이니 1x 이상에서 한 걸음 물러나 찍으세요.</div>
+  <h3>화각이 감정을 바꾼다</h3>
+  <figure><img class="wide" src="../.cache/s1/film/film_lens.png" alt="광각 · 표준 · 망원 비교"><figcaption>인물 크기를 같게 맞추고 카메라 거리만 바꾼 비교. 왼쪽부터 0.5x 광각, 1x 표준, 3x 망원. 망원으로 갈수록 배경이 크게 당겨집니다(압축).</figcaption></figure>
+  <p>같은 크기로 찍어도 광각은 배경이 작고 멀어져 공간이 넓고 역동적으로 보이고, 망원은 배경이 가까이 당겨져 인물이 도드라지고 관찰하는 시선이 됩니다. 인물 클로즈업은 2~3x로 조금 떨어져 찍으면 얼굴 왜곡이 줄고, 좁은 방이나 공간 소개는 0.5x가 좋습니다.</p>
+  <h3>줌과 달리는 다르다</h3>
+  <p>줌은 화면을 확대할 뿐이라 배경과 인물의 관계(원근)가 그대로여서 평면적입니다. 달리는 카메라가 실제로 움직이기 때문에 관계가 바뀌어 입체적입니다. 현장에서 '다가가기'를 줌 대신 달리로 하는 이유입니다. 둘을 반대로 섞으면(물러나며 줌인) 인물 크기는 그대로인데 배경만 늘었다 줄었다 하는 <strong>돌리 줌</strong>이 됩니다. 히치콕의 〈현기증〉(1958)으로 유명해져 'Vertigo effect'라고도 부릅니다.</p>
+  <h3>초점 이동 (랙 포커스)</h3>
+  <figure><img class="wide" src="../.cache/s1/film/film_rack.png" alt="초점 이동 전후" style="width:62%"><figcaption>앞사람에 맞던 초점을 뒷사람으로 옮기면 "이제 이걸 보세요"라고 말하는 셈입니다.</figcaption></figure>
+  <ul class="tight">
+    <li><strong>녹화 중 화면 탭</strong>: 가장 쉽습니다. 옮겨 가는 속도는 폰이 정합니다.</li>
+    <li><strong>아이폰 시네마틱 모드</strong>: 찍은 뒤 편집에서 초점을 옮길 수 있습니다.</li>
+    <li><strong>수동 카메라 앱</strong>: 초점 링을 직접 천천히 돌립니다(갤럭시 '프로 동영상', Blackmagic Camera).</li>
+  </ul>
+  <p>효과를 키우려면 심도를 얕게: 앞 물체에 가까이, 배경은 멀리, 2~3x 망원으로 찍으세요.</p>
 
   <h2><span class="num">5</span>영상만의 규칙</h2>
   <h3>프레임레이트</h3>
   <p>영상은 1초에 여러 장의 사진을 이어 붙인 것입니다. 24fps는 영화 같은 느낌, 30fps는 SNS 기본, 60fps는 매끄러운 움직임과 슬로모션 재료입니다. 60fps로 찍어 편집에서 절반 속도로 늦추면 부드러운 슬로모션이 됩니다. 이 과정의 기본값은 <strong>1080p 30fps</strong>입니다.</p>
   <h3>셔터 2배 규칙</h3>
-  <p>영상의 셔터는 프레임의 약 2배가 기준입니다(30fps → 1/60초, 60fps → 1/120초). 이보다 훨씬 빠르면 움직임이 뚝뚝 끊겨 보입니다. 실내 조명 아래서 화면에 줄이 흐르면 셔터를 1/60이나 1/120으로 맞추면 대개 사라집니다.</p>
+  <p>영상의 셔터는 프레임의 약 2배가 기준입니다(30fps → 1/60초, 60fps → 1/120초). 이보다 훨씬 빠르면 움직임이 뚝뚝 끊겨 보입니다. 현장에서는 이를 '180도 셔터'라고 부르며, 밝은 야외에서도 지키기 위해 ND 필터를 씁니다(12장). 실내 조명 아래서 화면에 줄이 흐르면 셔터를 1/60이나 1/120으로 맞추면 대개 사라집니다.</p>
   <h3>해상도와 파일 형식</h3>
   <ul class="tight">
     <li><strong>4K</strong>는 화질이 좋지만 파일이 1080p의 약 4배이고 편집 PC가 느려집니다. 크게 확대할 장면이 아니라면 1080p로 충분합니다.</li>
@@ -113,7 +135,7 @@
   </ul>
   <h3>초점 · 노출 잠금</h3>
   <p>찍을 대상을 화면에서 길게 누르면 초점과 노출이 잠깁니다(아이폰 AE/AF 잠금, 갤럭시 자물쇠 표시). 잠그지 않으면 사람이 지나갈 때마다 밝기와 초점이 출렁입니다. 프로와 아마추어 영상의 가장 쉬운 차이입니다.</p>
-  <h2><span class="num">6</span>화면의 언어: 샷 크기 · 앵글 · 구도</h2>
+  <h2><span class="num">6</span>화면의 언어: 샷 크기 · 앵글</h2>
   <h3>샷 크기</h3>
   <table>
     <tr><th>샷</th><th>영어 (프롬프트용)</th><th>보여주는 것</th></tr>
@@ -126,16 +148,48 @@
   <p>장면을 소개할 때는 <strong>어디서(와이드) → 누가 무엇을(미디엄) → 어떤 감정으로(클로즈업)</strong> 순서가 가장 자연스럽습니다. 같은 크기의 컷을 연달아 붙이면 화면이 튀어 보이니, 붙일 때는 크기를 바꾸세요.</p>
   <h3>앵글</h3>
   <p>하이앵글(내려다보기)은 작고 귀엽게, 아이레벨(눈높이)은 자연스럽게, 로우앵글(올려다보기)은 크고 당당하게 보입니다. 탑뷰(바로 위)는 음식 · 책상 · 손 작업을 보여주는 정보성 콘텐츠의 기본이고, 기울인 더치 앵글은 불안하고 역동적인 느낌이라 가끔만 씁니다.</p>
-  <h3>구도</h3>
+  <h2><span class="num">7</span>구도 10가지와 +4</h2>
+  <p>구도는 외우는 규칙이 아니라 <strong>보는 사람의 시선을 어디로 보낼지 정하는 선택</strong>입니다. 화면 안에서 점(어디에 둘까) · 선(어디로 이끌까) · 도형(어떻게 묶을까)을 찾는 연습이라고 생각하세요. 영어 이름은 4회차 AI 영상 프롬프트에 그대로 씁니다.</p>
+  <div class="thumbs c5">
+    <div><img src="../.cache/s1/comp/comp_thirds.png" alt="삼분할">01 삼분할</div>
+    <div><img src="../.cache/s1/comp/comp_power.png" alt="교차점">02 교차점</div>
+    <div><img src="../.cache/s1/comp/comp_golden.png" alt="황금비 · 황금나선">03 황금비 · 황금나선</div>
+    <div><img src="../.cache/s1/comp/comp_horizon.png" alt="수평선 · 수직선">04 수평선 · 수직선</div>
+    <div><img src="../.cache/s1/comp/comp_diagonal.png" alt="사선">05 사선</div>
+    <div><img src="../.cache/s1/comp/comp_triangle.png" alt="삼각형">06 삼각형</div>
+    <div><img src="../.cache/s1/comp/comp_circle.png" alt="원형">07 원형</div>
+    <div><img src="../.cache/s1/comp/comp_scurve.png" alt="S자 곡선">08 S자 곡선</div>
+    <div><img src="../.cache/s1/comp/comp_leading.png" alt="유도선 · 소실점">09 유도선 · 소실점</div>
+    <div><img src="../.cache/s1/comp/comp_frame.png" alt="프레임 속 프레임">10 프레임 속 프레임</div>
+  </div>
+  <table>
+    <tr><th style="width:36mm">구도</th><th>이렇게 놓는다</th><th style="width:24mm">주는 느낌</th><th style="width:32mm">이런 콘텐츠에</th></tr>
+    <tr><td><strong>삼분할</strong><br><span class="muted">Rule of Thirds</span></td><td>3등분 선 위에 주인공, 수평선은 가로선에</td><td>자연스러운 균형</td><td>인터뷰 · 브이로그 전반</td></tr>
+    <tr><td><strong>교차점</strong><br><span class="muted">Power Points</span></td><td>선이 만나는 네 점에 눈 · 핵심 부분. 보는 방향 반대편 점을</td><td>주인공 강조</td><td>인물 · 제품 컷</td></tr>
+    <tr><td><strong>황금비 · 황금나선</strong><br><span class="muted">Golden Ratio</span></td><td>약 38% · 62% 자리, 나선이 말려 드는 끝에 주인공</td><td>우아한 흐름</td><td>음식 · 공간 · 감성</td></tr>
+    <tr><td><strong>수평선 · 수직선</strong><br><span class="muted">Horizontal · Vertical</span></td><td>수평선은 위나 아래 1/3, 기울지 않게(수평계)</td><td>안정 · 고요 · 높이</td><td>풍경 · 공간 소개</td></tr>
+    <tr><td><strong>사선</strong><br><span class="muted">Diagonal</span></td><td>계단 · 난간 · 그림자가 모서리에서 모서리로</td><td>움직임 · 에너지</td><td>운동 · 여행 · 인트로</td></tr>
+    <tr><td><strong>삼각형</strong><br><span class="muted">Triangle</span></td><td>셋을 높이를 다르게, 가운데를 높게</td><td>안정 · 관계</td><td>단체 · 정물 · 대화</td></tr>
+    <tr><td><strong>원형</strong><br><span class="muted">Circular</span></td><td>동그라미를 위에서, 가운데에 주인공</td><td>집중 · 완결</td><td>음식 · 제품 탑뷰</td></tr>
+    <tr><td><strong>S자 곡선</strong><br><span class="muted">S-Curve</span></td><td>아래 가까이에서 위로 멀어지는 곡선</td><td>여유 · 여정</td><td>여행 · 산책 브이로그</td></tr>
+    <tr><td><strong>유도선 · 소실점</strong><br><span class="muted">Leading Lines</span></td><td>선이 모이는 곳에 주인공, 폰은 낮게</td><td>깊이 · 집중</td><td>오프닝 · 장소 소개</td></tr>
+    <tr><td><strong>프레임 속 프레임</strong><br><span class="muted">Frame within a Frame</span></td><td>문 · 창 · 어깨 너머로 한 번 더 감싸기</td><td>몰입 · 엿보기</td><td>스토리 · 인물</td></tr>
+  </table>
+  <div class="thumbs c4">
+    <div><img src="../.cache/s1/comp/comp_symmetry.png" alt="대칭">대칭 · 중앙</div>
+    <div><img src="../.cache/s1/comp/comp_negative.png" alt="여백">여백</div>
+    <div><img src="../.cache/s1/comp/comp_layers.png" alt="전경 겹치기">전경 겹치기</div>
+    <div><img src="../.cache/s1/comp/comp_pattern.png" alt="패턴과 깨기">패턴과 깨기</div>
+  </div>
   <ul class="tight">
-    <li><strong>삼분할</strong>: 화면을 가로세로 3등분한 선 위, 특히 선이 만나는 네 점에 주인공을. 사람은 눈을 위쪽 선에 맞추면 안정적입니다.</li>
-    <li><strong>대칭</strong>: 복도, 건물 정면처럼 양쪽이 같은 곳에서는 가운데가 가장 힘 있습니다.</li>
-    <li><strong>리딩 라인</strong>: 길, 난간, 책상 모서리 같은 선이 주인공을 가리키게.</li>
+    <li><strong>대칭 · 중앙</strong>(symmetry): 복도 · 건물 정면처럼 양쪽이 같은 곳은 가운데가 가장 힘 있습니다.</li>
+    <li><strong>여백</strong>(negative space): 빈 하늘 · 벽을 넓게. 고요함 · 외로움 · 미니멀, 자막 자리도 됩니다.</li>
+    <li><strong>전경 겹치기</strong>(foreground layers): 앞에 흐린 잎 · 화분 · 어깨를 걸치면 앞 · 중간 · 뒤 세 겹의 깊이가 생깁니다.</li>
+    <li><strong>패턴과 깨기</strong>(pattern &amp; break): 반복되는 의자 · 컵 사이에 하나만 다르게 두면 눈이 그 하나로 갑니다.</li>
     <li><strong>헤드룸과 시선 여백</strong>: 머리 위는 손가락 한두 개만큼, 사람이 보는 쪽과 가는 쪽에는 공간을.</li>
-    <li><strong>깊이</strong>: 앞에 화분이나 어깨를 살짝 걸치면(전경) 평면 화면에 깊이가 생깁니다. 문 · 창문으로 주인공을 한 번 더 감싸는 "프레임 속 프레임"도 효과적입니다.</li>
   </ul>
-  <div class="tip">세로 영상(9:16)은 위 · 아래 · 오른쪽에 버튼과 캡션, 프로필이 덮입니다. 얼굴과 자막은 화면 가운데 쪽에 두세요. 업로드 전에 폰에서 한 번 재생해 가려지는 곳이 없는지 확인하는 습관이 가장 확실합니다.</div>
-  <h2><span class="num">7</span>빛 다루기</h2>
+  <div class="tip">찍을 땐 삼분할 격자로 빠르게, 고르고 자를 땐 황금비로 다듬으세요. 세로 영상(9:16)은 위 · 아래 · 오른쪽에 버튼과 캡션, 프로필이 덮입니다. 교차점은 위쪽 두 점을 얼굴 자리로 쓰고, 오른쪽 아래 점은 피하세요. 업로드 전에 폰에서 한 번 재생해 가려지는 곳이 없는지 확인하는 습관이 가장 확실합니다.</div>
+  <h2><span class="num">8</span>빛 다루기</h2>
   <p>같은 얼굴도 빛의 방향에 따라 다른 사람이 됩니다. 순광(정면)은 밝고 선명하고, 측광(옆)은 입체감과 분위기를 주며, 역광(뒤)은 얼굴이 어두워지는 대신 윤곽이 예쁘게 빛납니다. 직사광을 피한 그늘은 피부를 가장 부드럽게 보여줍니다.</p>
   <figure>
     <svg viewBox="0 0 420 220" width="120mm" role="img" aria-label="3점 조명 배치도">
@@ -160,8 +214,16 @@
     <li><strong>백 라이트</strong>: 뒤에서 머리와 어깨 윤곽을 살려 배경과 분리.</li>
   </ul>
   <div class="tip">역광으로 얼굴이 어둡다면 흰 종이나 우드락을 얼굴 앞 아래쪽에 들어 빛을 튕겨 주세요. 앱의 자동 밝기 보정은 얼굴과 함께 배경 하늘까지 밝혀 하얗게 날려 버리지만, 반사판은 얼굴만 살립니다.</div>
+  <h3>현장 조명팀이 쓰는 다섯 가지</h3>
+  <ul class="tight">
+    <li><strong>모티베이티드 라이트</strong>(motivated light): 화면 속 창문 · 스탠드 쪽에서 빛이 오게. 빛에 '이유'가 있으면 자연스럽습니다.</li>
+    <li><strong>네거티브 필</strong>(negative fill): 검은 천 · 어두운 옷으로 한쪽 빛을 막아 입체감을. 조명은 더하기만이 아니라 빼기입니다.</li>
+    <li><strong>림 · 역광</strong>(rim / backlight): 뒤에서 오는 빛으로 머리 · 어깨 윤곽을 살려 배경과 분리.</li>
+    <li><strong>실용 조명</strong>(practicals): 화면 안에 보이는 스탠드 · 전구 · 모니터. 분위기와 깊이를 동시에.</li>
+    <li><strong>매직아워</strong>(golden / blue hour): 해 뜬 직후 · 해 지기 직전의 부드러운 금빛, 해 진 직후의 푸른빛.</li>
+  </ul>
 
-  <h2><span class="num">8</span>움직임과 안정</h2>
+  <h2><span class="num">9</span>움직임: 안정에서 현장 무빙까지</h2>
   <p>흔들림은 자세로 먼저 잡고, 앱의 손떨림 보정은 그다음입니다. 보정은 화면 가장자리를 잘라 내기 때문에 화질이 떨어지고 가끔 화면이 일렁입니다.</p>
   <ul class="tight">
     <li>두 손으로 잡고 팔꿈치를 몸에 붙이기, 벽 · 기둥 · 책상에 기대기.</li>
@@ -169,7 +231,31 @@
     <li>카메라 움직임 다섯 가지: 고정(static), 팬(pan, 좌우), 틸트(tilt, 위아래), 다가가기(push-in), 따라가기(tracking).</li>
     <li>세 가지 약속: <strong>한 클립에 한 움직임</strong>, <strong>생각보다 두 배 천천히</strong>, <strong>시작과 끝에 2초씩 멈추기</strong>(편집에서 자를 자리).</li>
   </ul>
-  <h2><span class="num">9</span>컷의 문법</h2>
+  <h3>현장 무빙 8가지</h3>
+  <p>팬 · 틸트가 '고개만 돌리기'라면, 현장 무빙은 '카메라가 몸째 움직이기'입니다. 아래 그림은 위에서 내려다본 평면도로, 흰 원이 사람, 금색 부채꼴이 카메라가 보는 범위, 흐린 카메라가 출발 위치입니다.</p>
+  <div class="thumbs c4">
+    <div><img src="../.cache/s1/film/film_dolly.png" alt="달리 인 · 아웃">달리 인 · 아웃</div>
+    <div><img src="../.cache/s1/film/film_truck.png" alt="트럭">트럭</div>
+    <div><img src="../.cache/s1/film/film_pedestal.png" alt="페디스털 · 크레인">페디스털 · 크레인</div>
+    <div><img src="../.cache/s1/film/film_arc.png" alt="아크">아크</div>
+    <div><img src="../.cache/s1/film/film_reveal.png" alt="리빌">리빌</div>
+    <div><img src="../.cache/s1/film/film_whip.png" alt="휩 팬">휩 팬</div>
+    <div><img src="../.cache/s1/film/film_dollyzoom.png" alt="돌리 줌">돌리 줌</div>
+    <div><img src="../.cache/s1/film/film_oner.png" alt="롱테이크">롱테이크</div>
+  </div>
+  <table>
+    <tr><th style="width:36mm">무빙</th><th>효과</th><th style="width:52mm">폰 · 짐벌로</th></tr>
+    <tr><td><strong>달리 인 · 아웃</strong><br><span class="muted">Dolly In / Out</span></td><td>다가가면 몰입 · 긴장, 물러나면 고립 · 마무리</td><td>짐벌 들고 천천히 걷기. 줌 대신 발로</td></tr>
+    <tr><td><strong>트럭</strong><br><span class="muted">Truck · Crab</span></td><td>옆으로 나란히, 전경이 지나가며 깊이</td><td>전경을 끼고 옆걸음, 바퀴 의자</td></tr>
+    <tr><td><strong>페디스털 · 크레인</strong><br><span class="muted">Pedestal · Crane</span></td><td>높이를 바꿔 공간 공개 · 인물로 진입</td><td>무릎 → 머리 위로. 틸트 말고 높이만</td></tr>
+    <tr><td><strong>아크</strong><br><span class="muted">Arc · Orbit</span></td><td>둘러 돌며 결심 · 고백 · 제품 공개</td><td>같은 거리를 지키며 반 바퀴</td></tr>
+    <tr><td><strong>리빌</strong><br><span class="muted">Reveal</span></td><td>가림 뒤에서 나오며 궁금증 → 해소</td><td>벽 · 컵 뒤에서 옆이나 위로 빠지기</td></tr>
+    <tr><td><strong>휩 팬</strong><br><span class="muted">Whip Pan</span></td><td>아주 빠른 팬으로 장면 전환 · 에너지</td><td>두 장면을 같은 방향으로 휩</td></tr>
+    <tr><td><strong>돌리 줌</strong><br><span class="muted">Dolly Zoom</span></td><td>인물은 그대로, 배경만 늘었다 줄었다</td><td>짐벌 앱의 돌리 줌 기능</td></tr>
+    <tr><td><strong>롱테이크</strong><br><span class="muted">Long Take · Oner</span></td><td>끊지 않고 한 번에, 현장감 · 긴장</td><td>동선 리허설 후 0.5x + 짐벌</td></tr>
+  </table>
+  <div class="tip">무빙은 '왜 움직이는지'가 먼저입니다. 이유 없는 움직임은 흔들림일 뿐이고, 멋진 무빙도 한 영상에 한두 번이면 충분합니다. 빠른 휩 팬 말고는 생각보다 두 배 천천히.</div>
+  <h2><span class="num">10</span>컷의 문법과 커버리지</h2>
   <h3>5샷 시퀀스</h3>
   <p>무엇을 찍을지 모를 때 꺼내는 공식입니다. 한 행동을 다섯 컷으로 찍으면 편집에서 이야기가 됩니다.</p>
   <table>
@@ -188,32 +274,133 @@
     <li><strong>B롤</strong>: 이야기 사이에 끼우는 분위기 컷(손, 소품, 공간). 말을 잘라 낸 자리를 덮어 주는 편집의 구원투수라 넉넉히 찍어 두세요.</li>
   </ul>
   <div class="tip">컷마다 7초 이상, 두 번씩 찍으세요. 편집할 때 "한 컷만 더 있었으면"이 가장 흔한 후회입니다. 찍는 데 10초 더 쓰는 것이 편집에서 10분을 아낍니다.</div>
+  <h3>커버리지: 한 장면을 여러 각도로</h3>
+  <p>커버리지는 편집자가 고를 수 있게 같은 장면을 여러 각도 · 크기로 확보하는 것입니다. 한 컷이 망가져도 다른 각도로 살릴 수 있는 보험이기도 합니다. 조명과 세팅을 덜 바꾸도록 보통 넓은 것에서 좁은 것으로 찍습니다.</p>
+  <table>
+    <tr><th style="width:8mm">#</th><th style="width:44mm">컷</th><th>무엇을</th></tr>
+    <tr><td>1</td><td>마스터 (master shot)</td><td>장면 전체를 처음부터 끝까지 넓게</td></tr>
+    <tr><td>2</td><td>미디엄 (medium)</td><td>두 사람 · 상반신, 관계가 보이게</td></tr>
+    <tr><td>3</td><td>어깨 너머 (over the shoulder)</td><td>상대 어깨 너머로 말하는 사람</td></tr>
+    <tr><td>4</td><td>클로즈업 (close-up)</td><td>표정 · 리액션, 가장 감정적인 컷</td></tr>
+    <tr><td>5</td><td>인서트 (insert)</td><td>마스터 안에 있던 행동의 디테일: 손 · 컵 · 화면</td></tr>
+    <tr><td>6</td><td>컷어웨이 (cutaway)</td><td>마스터에 없던 것: 창밖 · 시계 · 주변</td></tr>
+  </table>
+  <div class="thumbs c2">
+    <div><img src="../.cache/s1/film/film_coverage.png" alt="대화 장면 카메라 배치">대화 장면 다섯 자리 (빨간 점선 = 180도 선)</div>
+    <div><img src="../.cache/s1/film/film_interview.png" alt="인터뷰 두 대 배치">인터뷰 두 대 (A 와이드 · B 타이트, 금색 = 창문)</div>
+  </div>
+  <ul class="tight">
+    <li><strong>대화 장면</strong>: ① 마스터 → ② B 어깨 너머로 A, ③ A 어깨 너머로 B(숏-리버스 숏) → ④ ⑤ 클로즈업. 모든 카메라는 180도 선 한쪽에만 두고, ②와 ③은 거울처럼 같은 거리 · 높이 · 배율로 찍어야 편집이 매끄럽습니다.</li>
+    <li><strong>인터뷰</strong>: A캠은 와이드(바스트, 정면 가까이), B캠은 타이트(클로즈업, 45도 옆, 3x). 말을 잘라 붙일 때 A → B로 바꾸면 점프컷이 보이지 않습니다. 인터뷰이는 카메라가 아니라 카메라 바로 옆의 인터뷰어를 보고, 벽에서 1.5m 이상 떨어져 앉습니다. 두 폰은 같은 화이트밸런스 · fps · 해상도로.</li>
+  </ul>
+  <h3>편집을 위한 촬영</h3>
+  <ul class="tight">
+    <li><strong>액션 겹쳐 찍기</strong>(overlapping action): 같은 동작을 모든 각도에서 처음부터 끝까지. 편집에서 동작 중간에 잘라 이으면(컷 온 액션) 컷이 사라집니다.</li>
+    <li><strong>핸들</strong>(handles): '액션' 전 2~3초, '컷' 후 2~3초를 그대로 두기. 전환과 속도 조절에 쓸 여유입니다.</li>
+    <li><strong>B롤 넉넉히</strong>: 손 · 소품 · 공간 · 창밖. 필요하다 싶은 양의 두 배.</li>
+  </ul>
 
-  <h2><span class="num">10</span>소리</h2>
+  <h2><span class="num">11</span>소리</h2>
   <p>시청자는 조금 흐린 화면은 참아도 안 들리는 소리는 참지 않습니다.</p>
   <ul class="tight">
     <li>폰 마이크와 입 사이는 <strong>한 뼘</strong>. 멀어질수록 방 울림이 커집니다.</li>
     <li>에어컨 · 냉장고 · 복도 소음이 없는 자리를 고르세요. 사람 귀는 익숙한 소음을 걸러 듣지만 마이크는 그대로 담습니다.</li>
-    <li>촬영이 끝나면 아무 말 없이 <strong>룸톤 10초</strong>를 녹음해 두세요. 편집에서 말을 자른 자리의 갑작스러운 정적을 메꿉니다.</li>
+    <li>촬영이 끝나면 아무 말 없이 <strong>룸톤</strong>을 최소 10초, 현장 방식으로는 30초 이상 녹음해 두세요. 편집에서 말을 자른 자리의 갑작스러운 정적을 메꿉니다.</li>
     <li>발소리, 물소리, 포장지 소리 같은 <strong>현장음</strong>이 장면을 진짜로 만듭니다. 음악으로 다 덮지 마세요.</li>
     <li>말하는 영상이 많다면 무선 핀마이크가 가장 효과가 큰 장비입니다. 이어폰 마이크로도 폰 내장 마이크보다 나은 경우가 많습니다.</li>
   </ul>
-  <h2><span class="num">11</span>AI와 함께 촬영 준비하기</h2>
+  <h3>현장 녹음부가 지키는 것</h3>
+  <ul class="tight">
+    <li><strong>이중 녹음</strong>: 핀마이크와 폰 자체 녹음을 동시에. 하나가 끊겨도 삽니다.</li>
+    <li><strong>레벨 -12dB</strong>: 가장 큰 말소리가 -12dB 근처에 오게. 0dB(빨간색)에 닿으면 소리가 깨져 되살릴 수 없습니다.</li>
+    <li><strong>와일드 트랙</strong>: 화면 없이 소리만 따로(문 닫는 소리, 발소리, 대사 한 번 더).</li>
+    <li><strong>손뼉 싱크</strong>: 녹화 시작 후 손뼉 한 번. 편집에서 소리 파형의 뾰족한 지점으로 화면과 소리를 맞춥니다.</li>
+  </ul>
+
+  <h2><span class="num">12</span>현장 실무: 노출 도구 · 180도 셔터 · 색 지키기</h2>
+  <h3>180도 셔터와 ND 필터</h3>
+  <table>
+    <tr><th>프레임레이트</th><th>셔터 속도 (≈ 1 / (fps × 2))</th></tr>
+    <tr><td>24fps</td><td>1/50</td></tr>
+    <tr><td>30fps</td><td>1/60</td></tr>
+    <tr><td>60fps</td><td>1/120</td></tr>
+  </table>
+  <p>폰은 조리개가 고정이라 밝은 야외에서 셔터를 아주 빠르게 올려 밝기를 맞춥니다. 그러면 움직임이 뚝뚝 끊겨 보입니다. 현장은 렌즈에 'ND 필터'(카메라용 선글라스)를 씌워 빛을 줄이고 셔터를 지킵니다. 폰용 클립 ND도 있습니다.</p>
+  <h3>노출을 눈이 아니라 도구로 본다</h3>
+  <table>
+    <tr><th style="width:36mm">도구</th><th>무엇을 알려 주나</th></tr>
+    <tr><td>지브라 (zebra)</td><td>하얗게 날아갈 곳에 빗금 표시. 얼굴엔 빗금이 살짝 걸리기 직전까지</td></tr>
+    <tr><td>폴스 컬러 (false color)</td><td>밝기를 색으로 표시. 컷마다 피부가 같은 색으로 나오게 맞추기</td></tr>
+    <tr><td>포커스 피킹 (focus peaking)</td><td>초점 맞은 테두리에 색 표시. 수동 초점의 필수품</td></tr>
+    <tr><td>히스토그램 (histogram)</td><td>밝기 분포 그래프. 오른쪽 벽에 붙으면 하늘 · 창이 날아감</td></tr>
+  </table>
+  <p>기본 카메라 앱은 셔터나 이런 도구를 못 쓰는 경우가 많습니다. 갤럭시는 '프로 동영상' 모드, 그 밖에는 무료 <strong>Blackmagic Camera</strong> 앱(아이폰, 일부 갤럭시 · 픽셀 기종)을 쓸 수 있습니다. 안드로이드는 지원 기종이 제한적이니 설치 전에 확인하세요.</p>
+  <h3>색 지키기</h3>
+  <ul class="tight">
+    <li><strong>고정하기</strong>: 화이트밸런스 · 노출 · 초점을 잠그고 찍기. 컷마다 색이 바뀌는 것이 아마추어 티의 1순위입니다.</li>
+    <li><strong>맞추기</strong>: 두 대 이상이면 같은 설정으로, 시작할 때 흰 종이나 회색 카드를 함께 찍어 두면 편집에서 맞추기 쉽습니다.</li>
+    <li><strong>Log와 LUT</strong>: 색을 일부러 밋밋하게 찍어(예: 아이폰 15 Pro 이후의 Apple Log) 편집에서 LUT로 색을 입히는 방식. 보정할 시간이 있을 때만 쓰고, 처음에는 기본 색으로.</li>
+    <li><strong>같은 빛에서</strong>: 한 장면은 같은 시간대에. 해가 움직이면 컷마다 색이 달라집니다.</li>
+  </ul>
+
+  <h2><span class="num">13</span>현장 운영: 콜 순서 · 슬레이트 · 숏리스트 · 연속성 · 백업</h2>
+  <h3>촬영 시작 콜 순서</h3>
+  <p>영화 현장은 정해진 순서로 말하고 대답합니다. 소리를 먼저 돌려야 테이크 앞부분 소리를 잃지 않기 때문에 녹음이 먼저입니다. 팀마다 조금씩 다릅니다.</p>
+  <table>
+    <tr><th>콜</th><th>누가</th><th>우리 크루 버전 (폰)</th></tr>
+    <tr><td>롤 사운드 → 스피드</td><td>조감독 → 녹음</td><td>감독 "녹음!" → 녹음 "돌아요"</td></tr>
+    <tr><td>롤 카메라 → 롤링</td><td>조감독 → 촬영</td><td>감독 "카메라!" → 촬영 "돌아요"</td></tr>
+    <tr><td>마커</td><td>촬영부 (슬레이트)</td><td>손뼉 '짝' + 번호 종이 2초</td></tr>
+    <tr><td>액션</td><td>감독</td><td>2초 쉬고 "액션"</td></tr>
+    <tr><td>컷</td><td>감독</td><td>끝나고 2초 뒤 "컷"</td></tr>
+  </table>
+  <h3>슬레이트와 숏리스트</h3>
+  <p>슬레이트는 화면에 씬 · 컷 · 테이크 번호를 남기고 '딱' 소리로 소리와 화면을 맞춥니다. 숏리스트는 찍을 컷의 목록으로, 2회차에 만들 스토리보드가 현장에서는 이 표가 됩니다. 좋은 테이크는 찍자마자 사진 앱에서 '하트'(즐겨찾기)를 눌러 두면 편집 때 바로 찾습니다.</p>
+  <table>
+    <tr><th style="width:14mm">씬-컷</th><th>크기 · 앵글</th><th>무빙 · 기법</th><th>내용 (카페 릴스 예)</th></tr>
+    <tr><td>1-1</td><td>익스트림 클로즈업 · 탑뷰</td><td>고정</td><td>라떼아트가 그려지는 잔</td></tr>
+    <tr><td>1-2</td><td>미디엄 · 아이레벨</td><td>달리 인</td><td>바리스타가 잔을 건넨다</td></tr>
+    <tr><td>1-3</td><td>와이드 · 하이앵글</td><td>페디스털 다운</td><td>비 오는 창가와 카페 전경</td></tr>
+    <tr><td>1-4</td><td>클로즈업 · 3x</td><td>초점 이동</td><td>컵 → 손님의 미소</td></tr>
+    <tr><td>1-5</td><td>인서트</td><td>고정</td><td>원두를 가는 손</td></tr>
+    <tr><td>1-6</td><td>와이드 · 외부</td><td>리빌</td><td>간판 뒤에서 나오는 카페 외관</td></tr>
+  </table>
+  <h3>연속성과 데이터</h3>
+  <ul class="tight">
+    <li><strong>연속성</strong>: 컷이 바뀌어도 세상은 그대로여야 합니다. 컵 위치 · 물 높이, 든 손과 시선 방향, 머리카락 · 옷깃, 빛의 방향. 기록 담당이 매 컷 끝나면 사진 한 장.</li>
+    <li><strong>3-2-1 백업</strong>: 사본 세 개(원본 포함), 서로 다른 저장 장치 두 종류, 한 개는 다른 장소(클라우드). 폰 → 드라이브 크루 폴더 → 내 PC.</li>
+    <li><strong>파일명</strong>: 날짜_장면_컷_테이크. 예) 1022_카페_03_T2.mp4</li>
+  </ul>
+  <h3>현장 용어</h3>
+  <table>
+    <tr><th style="width:30mm">용어</th><th>뜻</th><th style="width:30mm">용어</th><th>뜻</th></tr>
+    <tr><td>스탠바이</td><td>준비 완료, 모두 제자리</td><td>마스터</td><td>장면 전체를 넓게 한 번에</td></tr>
+    <tr><td>롤</td><td>녹화 · 녹음 시작</td><td>인서트</td><td>손 · 소품 같은 디테일 컷</td></tr>
+    <tr><td>슬레이트 · 마커</td><td>번호판 + 딱 소리로 싱크</td><td>커버리지</td><td>여러 각도로 확보한 컷 묶음</td></tr>
+    <tr><td>테이크</td><td>같은 컷을 찍은 횟수</td><td>셋업</td><td>카메라 위치를 바꾸는 것</td></tr>
+    <tr><td>킵 · OK</td><td>쓸 수 있는 컷, 보관</td><td>블로킹</td><td>배우 동선과 위치 정하기</td></tr>
+    <tr><td>NG</td><td>다시 찍기</td><td>마크</td><td>배우가 설 자리에 붙인 테이프</td></tr>
+    <tr><td>픽업</td><td>중간부터 다시</td><td>콜시트</td><td>그날의 촬영 일정표</td></tr>
+  </table>
+  <p class="muted">폰 메뉴 이름은 기종 · 버전마다 다를 수 있습니다. 앱 지원 기종은 바뀔 수 있고, 현장 콜 순서는 팀마다 조금씩 다릅니다.</p>
+  <h2><span class="num">14</span>AI와 함께 촬영 준비하기</h2>
   <p>AI는 규칙을 잘 보고, 사람은 의도를 봅니다. 촬영 전후에 두 번째 의견을 구하는 용도로 쓰고, 마지막 결정은 내가 합니다. 아래 프롬프트는 대괄호만 바꿔 그대로 쓸 수 있습니다.</p>
   <div class="prompt">이 사진의 구도에서 좋은 점 1개, 고칠 점 2개를 알려줘. 초보자가 다음 촬영에서 바로 고칠 수 있게, 샷 크기 · 앵글 · 구도 용어를 써서.</div>
   <div class="prompt">나는 [장소]에서 [행동]을 5샷 시퀀스(손 클로즈업 · 얼굴 클로즈업 · 와이드 · 어깨너머 · 특이한 앵글)로 찍으려고 해. 컷마다 무엇을 어떤 앵글로 찍을지 한 줄씩, 그리고 B롤 아이디어 3개를 줘.</div>
   <div class="prompt">[시간대]에 [장소]에서 폰으로 사람 얼굴을 찍으려고 해. 빛이 [창문 위치 / 조명 상황]이야. 얼굴이 가장 자연스럽게 나오는 자리와 방향, 흰 종이로 반사판을 쓰는 위치를 알려줘.</div>
   <div class="prompt">내일 [촬영 내용]을 찍어. 폰 촬영 전 체크리스트를 장비 · 설정 · 빛 · 소리 · 허락받을 것으로 나눠 10개 이내로 만들어 줘.</div>
+  <div class="prompt">[장면 설명]을 촬영하려고 해. 마스터 · 어깨 너머 · 클로즈업 · 인서트 · 컷어웨이로 숏리스트를 표로 만들어 줘. 컷마다 샷 크기, 앵글, 카메라 무빙(dolly in, truck, arc 등)을 한 줄씩 넣고, 180도 선을 지키는 카메라 위치도 알려줘.</div>
+  <div class="prompt">이 사진은 [구도 이름] 구도로 찍었어. 의도한 구도가 잘 보이는지 화면 속 선 · 점 · 도형 위치로 설명하고, 더 좋아지려면 폰을 어디로 옮기면 될지 한 가지만 알려줘.</div>
   <div class="mist"><strong>AI에게 맡기지 말 것</strong> — 무엇을 보여주고 싶은지(의도), 그 자리의 공기와 사람의 표정, 다른 사람이 화면에 나와도 되는지에 대한 판단. 이건 현장에 있는 사람만 할 수 있습니다.</div>
 
-  <h2><span class="num">12</span>촬영 전 체크리스트</h2>
+  <h2><span class="num">15</span>촬영 전 체크리스트</h2>
   <div class="grid2">
     <div class="box line">
       <h3 style="margin-top:0">폰</h3>
       <ul class="check">
         <li>1080p 30fps (슬로모션 장면은 60fps)</li>
         <li>HDR 동영상 · 고효율(HEVC) 끄기</li>
-        <li>격자(안내선) 켜기</li>
+        <li>격자(안내선) · 수평계 켜기</li>
         <li>렌즈 닦기 · 저장공간 10GB 이상 · 배터리</li>
         <li>방해 금지 켜기</li>
       </ul>
@@ -224,7 +411,9 @@
         <li>빛의 방향 확인, 섞인 빛 끄기</li>
         <li>AE/AF 잠그고 찍기</li>
         <li>컷마다 7초 이상 · 두 번 · 앞뒤 2초</li>
-        <li>B롤 넉넉히, 끝에 룸톤 10초</li>
+        <li>B롤 넉넉히, 끝에 룸톤 30초</li>
+        <li>숏리스트 · 콜 순서 · 손뼉 싱크</li>
+        <li>끝나면 바로 드라이브에 백업</li>
         <li>화면에 나오는 사람에게 동의 받기</li>
       </ul>
     </div>
@@ -233,7 +422,6 @@
     <h3 style="margin-top:0">다음 장 예고 · 2장 기획에서 발행까지</h3>
     <p style="margin:0">아이템을 찾고, 잘되는 채널을 해부하고, 내 채널 콘셉트와 기획안 · 대본 · 스토리보드를 만든 뒤 유튜브 채널을 엽니다. 과제로 저장해 온 콘텐츠 10편이 레퍼런스 해부의 재료가 됩니다.</p>
   </div>
-  <p class="muted">폰 메뉴 이름은 기종 · 버전마다 다를 수 있습니다.</p>
 </section>
 
 </body>
