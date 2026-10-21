@@ -3,6 +3,8 @@ const fs = require("fs");
 const path = require("path");
 const { THEME, HEX, W, H, M, newDeck, makeKit } = require("./lib/deck");
 const { prepare, whiteBalanceSet } = require("./lib/images");
+const composition = require("./lib/s1_composition");
+const filmcraft = require("./lib/s1_filmcraft");
 const { applyTheme } = require(process.env.PPTX_SKILL + "/scripts/apply_theme.js");
 
 const OUT = process.argv[2] || path.join(__dirname, "..", "lectures", "01", "1회차_보는눈_슬라이드.pptx");
@@ -35,6 +37,7 @@ const IMAGE_SPECS = {
   img16: { kind: "panels", cols: 2, rows: 1, panelRatio: [900, 900], label: "심도 비교" },
   img17: { kind: "photo", ratio: [1536, 1024], label: "화이트밸런스 기준" },
   img18: { kind: "photo", fallback: "none" },
+  ...composition.IMAGE_SPECS,
 };
 
 async function main() {
@@ -50,9 +53,9 @@ async function main() {
   let period = 0;
   let periodName = "시작";
 
-  const content = (title, notes) => {
+  const content = (title, notes, part) => {
     const s = pres.addSlide({ masterName: "CONTENT", sectionTitle: sec });
-    k.kicker(s, period ? `${period}교시 · ${periodName}` : "1회차 · 보는 눈");
+    k.kicker(s, (period ? `${period}교시 · ${periodName}` : "1회차 · 보는 눈") + (part ? `  ·  ${part}` : ""));
     if (period) k.progress(s, period);
     s.addText(title, { placeholder: "title" });
     if (notes) s.addNotes(notes.trim());
@@ -83,6 +86,10 @@ async function main() {
     if (notes) s.addNotes(notes.trim());
     return s;
   };
+
+  // 5교시 구도 10가지 · 6교시 현장 촬영 기법 묶음
+  const comp = await composition.make({ k, C, content, img });
+  const film = await filmcraft.make({ k, C, content });
 
   // ───────────────────────── 시작 ─────────────────────────
   pres.addSection({ title: sec });
@@ -586,7 +593,8 @@ AI는 후보만. 내 이야기와 맞는 단어만 가져오기(워크북 p.2). 
   }
 
   // ───────────────────────── 5교시 ─────────────────────────
-  divider(5, "화면의 언어와 빛", "14:40–15:30  ·  얼마나 가까이, 어디서, 화면 어디에, 어떤 빛으로", "img06", `[14:40–15:30] 목표: 샷 크기 · 앵글 · 구도 · 빛을 영어 용어와 함께(4회차 AI 프롬프트 어휘). 개념 25분 → 학교 공간 구도 미션 15분 → ChatGPT 피드백 10분.`);
+  divider(5, "화면의 언어와 빛", "14:40–15:30  ·  얼마나 가까이, 어디서, 화면 어디에, 어떤 빛으로", "img06", `[14:40–15:30] 목표: 샷 크기 · 앵글 · 구도 · 빛을 영어 용어와 함께(4회차 AI 프롬프트 어휘). 개념 25분 → 학교 공간 구도 미션 15분 → ChatGPT 피드백 10분.
+확장판: 구도 10가지(한 장에 1분 안팎) + 구도 빙고가 들어 있어 50분을 넘깁니다. 시간이 모자라면 빙고와 구도 사진 미션 중 하나만.`);
   {
     const s = content("샷 크기: 얼마나 가까이 찍느냐가 말을 정한다", `[14:42] 영어 이름도 함께. 4회차에 이 단어가 그대로 AI 영상 프롬프트가 됩니다.
 연결 공식: 어디서(와이드) → 누가 무엇을(미디엄) → 어떤 감정으로(클로즈업). 같은 크기를 연달아 붙이면 화면이 튑니다.`);
@@ -630,6 +638,10 @@ AI는 후보만. 내 이야기와 맞는 단어만 가져오기(워크북 p.2). 
     });
     k.takeaway(s, "+ 대칭: 양쪽이 같은 곳(복도 · 건물 정면)은 가운데가 정답", 6.15);
   }
+  await comp.overview();
+  await comp.techniques();
+  await comp.bonus();
+  await comp.summary();
   {
     const s = content("구도 ② 무엇을 비울까", `[14:56] 비우는 것도 구도입니다.
 헤드룸: 머리 위는 손가락 한두 개만큼. 시선 여백: 보는 쪽 · 가는 쪽에 공간. 세로 안전 영역: 9:16의 위 · 아래 · 오른쪽은 버튼 · 캡션 · 프로필 자리 → 얼굴과 자막은 가운데 쪽. 수직선: 문틀 · 건물 세로선을 화면과 나란히.`);
@@ -680,6 +692,7 @@ AI는 후보만. 내 이야기와 맞는 단어만 가져오기(워크북 p.2). 
       k.text(s, `폰으로는 → ${p}`, { x: x + 0.3, y: y + 1.05, w: w - 0.6, h: 0.32, fontSize: 13, bold: true, color: C.accent2 });
     });
   }
+  await comp.bingo();
   {
     const s = content("실습 · 구도 사진 미션 + AI 피드백 (25분)", `[15:05–15:30] 학교 공간에서 15분, 돌아와서 ChatGPT 피드백 10분. 짝끼리 서로 모델이 되어 주기. 다른 사람이 나오면 동의 받기.
 가장 자신 있는 1장을 ChatGPT에 올려 피드백. 워크북에 "AI가 맞게 본 것 하나 / 놓친 것 하나" → AI는 규칙을 보고, 사람은 의도를 봅니다.`);
@@ -693,7 +706,8 @@ AI는 후보만. 내 이야기와 맞는 단어만 가져오기(워크북 p.2). 
   }
 
   // ───────────────────────── 6교시 ─────────────────────────
-  divider(6, "움직임 · 컷 · 소리, 그리고 장비", "15:40–16:30  ·  흔들림 없이, 한 장면을 여러 컷으로, 소리까지", "img07", `[15:40–16:30] 목표: 안정 · 무빙 · 컷의 문법 · 녹음 기초 + 강사 장비 체험 + 5샷 시퀀스 촬영. 개념 20분 → 장비 시연 · 체험 10분 → 5샷 촬영 20분.`);
+  divider(6, "움직임 · 컷 · 소리, 그리고 장비", "15:40–16:30  ·  흔들림 없이, 한 장면을 여러 컷으로, 소리까지", "img07", `[15:40–16:30] 목표: 안정 · 무빙 · 컷의 문법 · 녹음 기초 + 강사 장비 체험 + 5샷 시퀀스 촬영. 개념 20분 → 장비 시연 · 체험 10분 → 5샷 촬영 20분.
+확장판: 현장 촬영 기법(무빙 · 렌즈와 초점 · 커버리지 · 화질과 소리 · 현장 운영 · 용어 · 미니 촬영 현장)이 들어 있어 50분을 크게 넘깁니다. 시간이 모자라면 화질과 소리 · 현장 운영은 핸드북 안내로, 미니 촬영 현장은 3회차 첫 실습으로.`);
   {
     const s = content("흔들림 잡기와 카메라 움직임", `[15:42] 흔들림은 자세로 먼저, 앱 보정은 그다음(보정은 화면을 잘라내서 화질이 떨어져요). 두 손, 팔꿈치는 몸에, 벽 · 기둥에 기대기. 걸을 땐 무릎을 살짝 굽히고 발뒤꿈치부터.
 무빙 5가지와 영어 이름(4회차 프롬프트 어휘). 세 가지 약속: 한 클립에 한 움직임, 두 배 천천히, 시작과 끝 2초 멈추기.`);
@@ -716,6 +730,12 @@ AI는 후보만. 내 이야기와 맞는 단어만 가져오기(워크북 p.2). 
     });
     k.takeaway(s, "흔들림은 자세로 먼저: 두 손, 팔꿈치는 몸에, 벽에 기대기. 앱 보정은 그다음", 5.6);
   }
+  await film.overview();
+  await film.moves();
+  await film.gimbal();
+  await film.zoom();
+  await film.lens();
+  await film.rack();
   {
     const s = content("5샷 시퀀스: 뭘 찍을지 모를 때 꺼내는 공식", `[15:47] 한 장면을 다섯 컷으로 찍으면 편집할 재료가 생깁니다(다큐 · 뉴스 촬영의 기본 공식).
 1 손 클로즈업 2 얼굴 클로즈업 3 와이드 4 어깨너머 5 특이한 앵글. 컷마다 7초 이상, 두 번씩. ①과 ②는 같은 동작을 다른 크기로 → 편집에서 '동작 연결'.`);
@@ -753,6 +773,10 @@ AI는 후보만. 내 이야기와 맞는 단어만 가져오기(워크북 p.2). 
       k.text(s, b, { x: x + 1.15, y: y + 0.7, w: w - 1.35, h: 0.65, fontSize: 13, color: C.accent5 });
     });
   }
+  await film.coverage();
+  await film.dialogue();
+  await film.interview();
+  await film.editing();
   {
     const s = content("소리는 영상의 절반", `[15:56] 시청자는 흐린 화면은 참아도 안 들리는 소리는 못 참습니다.
 폰과 입 사이 한 뼘 / 에어컨 · 냉장고 · 복도 소리 피하기 / 끝에 룸톤 10초(편집에서 빈 곳 메꾸기) / 현장음 살리기(음악으로 다 덮지 않기). 이어폰 마이크나 핀마이크가 있으면 훨씬 깨끗합니다.`);
@@ -761,6 +785,14 @@ AI는 후보만. 내 이야기와 맞는 단어만 가져오기(워크북 p.2). 
     for (let i = 0; i < items.length; i++) await k.featureCard(s, M + i * (cw + 0.3), 1.8, cw, 3.6, { icon: items[i][0], head: items[i][1], body: items[i][2], bodySize: 14 });
     k.takeaway(s, "흐린 화면은 참아도, 안 들리는 소리는 못 참는다", 5.75);
   }
+  await film.exposure();
+  await film.color();
+  await film.light();
+  await film.sound();
+  await film.calls();
+  await film.slate();
+  await film.continuity();
+  await film.glossary();
   {
     const s = content("강사 장비 체험: 언제 쓰면 좋은가", `[16:00–16:10] 강사 장비를 보여 주고 크루별로 2분씩 돌려 쓰기(나머지 크루는 5샷 시퀀스 계획).
 삼각대: 고정 샷 · 혼자 찍는 토크 · 타임랩스. 무선 핀마이크: 인터뷰 · 토크 · 내레이션(폰 마이크와 같은 문장으로 비교). 짐벌: 걷거나 따라가며, 대신 무겁고 세팅 시간이 들어요. "사기 전에 자세부터."`);
@@ -781,6 +813,8 @@ AI는 후보만. 내 이야기와 맞는 단어만 가져오기(워크북 p.2). 
     k.text(s, "크루 기록 담당", { x: rx + 0.3, y: 4.45, w: rw - 0.6, h: 0.35, fontSize: 14, bold: true, color: C.accent1 });
     k.text(s, "크루가 촬영하는 모습을 찍어 두기\n→ 6회차 우리 반 브이로그 재료", { x: rx + 0.3, y: 4.9, w: rw - 0.6, h: 1.0, fontSize: 14.5, color: C.background1 });
   }
+
+  await film.practice();
 
   // ───────────────────────── 7교시 ─────────────────────────
   divider(7, "촬영 리뷰와 공유", "16:40–17:30  ·  보고, 고르고, 남기기", "img08", `[16:40–17:30] 목표: 오늘 찍은 것을 드라이브에 모으고, 크루 리뷰로 '고르는 눈'을 기르고, 크루 베스트 컷 선정. 업로드 10분 → 크루 리뷰 20분 → 베스트 컷 공유 10분 → 정리 · 과제 10분.`);

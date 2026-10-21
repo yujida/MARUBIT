@@ -1,14 +1,11 @@
-// 1회차 추가안: 구도 10가지 (본편과 따로 만드는 슬라이드). node build/session1_composition.js [출력 경로]
-// 예시 사진(img19~img28)이 build/assets/images/s1/에 있으면 사진 + 구도선, 없으면 도식만 쓴다.
+// 1회차 5교시: 구도 10가지 슬라이드 묶음. session1_slides.js가 make()로 받아 원하는 자리에 끼워 넣는다.
+// 예시 사진(img19~img28)이 있으면 사진 + 구도선, 없으면 도식만 쓴다.
 const path = require("path");
-const { THEME, W, M, newDeck, makeKit } = require("./lib/deck");
-const { prepare } = require("./lib/images");
-const { render } = require("./lib/composition_diagrams");
-const { applyTheme } = require(process.env.PPTX_SKILL + "/scripts/apply_theme.js");
+const { W, M } = require("./deck");
+const { render } = require("./composition_diagrams");
 
-const OUT = process.argv[2] || path.join(__dirname, "..", "lectures", "01", "1회차_추가슬라이드_구도10가지.pptx");
 const CW = W - 2 * M;
-const CACHE = path.join(__dirname, ".cache", "s1", "comp");
+const CACHE = path.join(__dirname, "..", ".cache", "s1", "comp");
 
 const TECH = [
   {
@@ -110,32 +107,16 @@ const BONUS = [
   ["pattern", "패턴과 깨기", "Pattern & Break", "반복되는 무늬 속 하나만 다르게. 눈이 그 하나로 바로 갑니다."],
 ];
 
-async function main() {
-  const specs = Object.fromEntries(TECH.map((t) => [t.img, { kind: "photo", fallback: "none" }]));
-  const img = await prepare("s1", specs);
+const IMAGE_SPECS = Object.fromEntries(TECH.map((t) => [t.img, { kind: "photo", fallback: "none" }]));
+
+async function make({ k, C, content, img }) {
+  const { S } = k;
   const dia = {}, lines = {};
   for (const t of TECH) {
     dia[t.key] = await render(t.key, CACHE);
     lines[t.key] = await render(t.key, CACHE, { scene: false });
   }
   for (const [key] of BONUS) dia[key] = await render(key, CACHE);
-  const have = TECH.filter((t) => img[t.img]).map((t) => t.img);
-  console.log("예시 사진:", have.length ? have.join(", ") : "없음(도식만 사용)");
-
-  const { pres, C } = newDeck({ title: "촬영편집 1회차 추가안 — 구도 10가지", footer: "AI콘텐츠 크리에이터 실무 · 촬영편집 1회차 — 추가안: 구도 10가지" });
-  const k = makeKit(pres, C);
-  const { S } = k;
-  const sec = "5교시 추가안 · 구도 10가지";
-  pres.addSection({ title: sec });
-
-  const content = (title, notes) => {
-    const s = pres.addSlide({ masterName: "CONTENT", sectionTitle: sec });
-    k.kicker(s, "5교시 · 화면의 언어 — 추가안: 구도 10가지");
-    k.progress(s, 5);
-    s.addText(title, { placeholder: "title" });
-    if (notes) s.addNotes(notes.trim());
-    return s;
-  };
   // 도식 또는 (예시 사진 + 구도선)
   const visual = (s, t, x, y, w, h) => {
     if (img[t.img]) {
@@ -143,101 +124,96 @@ async function main() {
       s.addImage({ path: lines[t.key], x, y, w, h, altText: `${t.name} 구도선` });
     } else s.addImage({ path: dia[t.key], x, y, w, h, altText: `${t.name} 구도 도식` });
   };
-
-  // 1. 한눈에 보기
-  {
-    const s = content("구도 10가지 · 화면 안에 숨은 선 · 점 · 도형", `[추가안 시작] "구도는 외우는 규칙이 아니라, 보는 사람의 시선을 어디로 보낼지 정하는 선택입니다."
-오늘은 10가지를 '이름과 느낌'까지만. 다 외울 필요 없고, 실습에서 3개 이상 찾아 찍으면 성공.
-흐름: 점(삼분할 · 교차점 · 황금비) → 선(수평 · 수직, 사선, S자, 유도선) → 도형(삼각형, 원형, 프레임).`);
-    const n = 5, gap = 0.25, cw = (CW - (n - 1) * gap) / n, ch = cw / 1.5;
-    TECH.forEach((t, i) => {
-      const x = M + (i % n) * (cw + gap), y = 1.7 + Math.floor(i / n) * (ch + 0.72);
-      s.addImage({ path: dia[t.key], x, y, w: cw, h: ch, altText: t.name });
-      k.text(s, String(i + 1).padStart(2, "0"), { x, y: y + ch + 0.1, w: 0.45, h: 0.32, fontSize: 13, bold: true, color: C.accent1 });
-      k.text(s, t.name, { x: x + 0.42, y: y + ch + 0.1, w: cw - 0.42, h: 0.32, fontSize: 14, bold: true });
-    });
-    k.takeaway(s, "구도는 규칙이 아니라 선택: 보는 사람의 시선을 어디로 보낼지 내가 정하는 것", 6.15);
-  }
-
-  // 2~11. 하나씩
-  TECH.forEach((t, i) => {
-    const s = content(`구도 ${String(i + 1).padStart(2, "0")} · ${t.name}`, `${t.note}
-느낌: ${t.feel}
-이렇게 찍기: ${t.how}`);
-    const vw = 6.3, vh = 4.2;
-    visual(s, t, M, 1.75, vw, vh);
-    const rx = M + vw + 0.45, rw = W - M - rx;
-    k.text(s, t.en.toUpperCase(), { x: rx, y: 1.72, w: rw, h: 0.3, fontSize: 11.5, bold: true, color: C.accent2, charSpacing: 1 });
-    k.text(s, t.feel, { x: rx, y: 2.05, w: rw, h: 0.8, fontSize: 18, bold: true });
-    [["이렇게 찍기", t.how], ["학교에서 찾기", t.where], ["세로 9:16에서", t.vert]].forEach(([lab, body], j) => {
-      const y = 2.98 + j * 1.0;
-      s.addShape(S.line, { x: rx, y: y - 0.07, w: rw, h: 0, line: { color: "DDE4E0", width: 0.75 } });
-      k.text(s, lab, { x: rx, y, w: rw, h: 0.26, fontSize: 11.5, bold: true, color: C.accent1 });
-      k.text(s, body, { x: rx, y: y + 0.27, w: rw, h: 0.68, fontSize: 12.5, color: C.text1 });
-    });
-    k.takeaway(s, t.take, 6.15);
-  });
-
-  // 12. 보너스
-  {
-    const s = content("+ 4가지 더 · 알아 두면 바로 쓰는 구도", `[보너스] 시간이 남으면. 대칭은 복도 · 건물 정면, 여백은 하늘 · 벽, 전경 겹치기는 화분 · 잎을 렌즈 앞에, 패턴과 깨기는 같은 의자 · 컵이 줄지어 있을 때.`);
-    const n = 4, gap = 0.3, cw = (CW - (n - 1) * gap) / n, ih = cw / 1.5;
-    BONUS.forEach(([key, name, en, body], i) => {
-      const x = M + i * (cw + gap);
-      k.card(s, x, 1.75, cw, 4.2);
-      s.addImage({ path: dia[key], x, y: 1.75, w: cw, h: ih, altText: name });
-      k.text(s, en.toUpperCase(), { x: x + 0.25, y: 1.75 + ih + 0.2, w: cw - 0.5, h: 0.26, fontSize: 10.5, bold: true, color: C.accent2, charSpacing: 1 });
-      k.text(s, name, { x: x + 0.25, y: 1.75 + ih + 0.47, w: cw - 0.5, h: 0.4, fontSize: 17, bold: true });
-      k.text(s, body, { x: x + 0.25, y: 1.75 + ih + 0.92, w: cw - 0.5, h: 1.2, fontSize: 12.5, color: C.accent5 });
-    });
-    k.takeaway(s, "영어 이름도 같이 기억하기: 4회차 AI 영상 프롬프트에 그대로 씁니다", 6.15);
-  }
-
-  // 13. 한 장 정리
-  {
-    const s = content("한 장 정리 · 어떤 느낌을, 어떤 콘텐츠에", `[정리] 표는 워크북 · 핸드북에 그대로 넣을 수 있는 형태. "내 채널 아이템에 맞는 구도 두 개에 동그라미."`);
-    const rows = [
-      ["", "구도", "주는 느낌", "이런 콘텐츠에"],
-      ["01", "삼분할", "자연스러운 균형", "인터뷰 · 브이로그 전반"],
-      ["02", "교차점", "주인공 강조", "인물 · 제품 컷"],
-      ["03", "황금비 · 나선", "우아한 흐름", "음식 · 공간 · 감성 영상"],
-      ["04", "수평선 · 수직선", "안정 · 고요 · 높이", "풍경 · 공간 소개"],
-      ["05", "사선", "움직임 · 에너지", "운동 · 여행 · 인트로"],
-      ["06", "삼각형", "안정 · 관계", "단체 · 정물 · 대화"],
-      ["07", "원형", "집중 · 완결", "음식 · 제품 탑뷰"],
-      ["08", "S자 곡선", "여유 · 여정", "여행 · 산책 브이로그"],
-      ["09", "유도선 · 소실점", "깊이 · 집중", "오프닝 · 장소 소개"],
-      ["10", "프레임 속 프레임", "몰입 · 엿보기", "스토리 · 인물"],
-    ];
-    k.table(s, rows, { x: M, y: 1.7, w: CW, colW: [0.7, 3.1, 3.6, CW - 7.4], fontSize: 14, rowH: 0.41 });
-  }
-
-  // 14. 실습
-  {
-    const s = content("실습 · 구도 빙고 (15분)", `[실습] 크루별로 학교 공간에서 15분. 한 칸에 사진 한 장, 가로 · 세로 · 대각선 한 줄을 채우면 빙고.
-가운데 칸은 황금비 도전(어려우면 자유). 다른 사람이 나오면 동의 받기.
-돌아와서: 크루 베스트 1장을 ChatGPT에 올려 피드백 → 단톡방 공유.`);
-    const cells = ["thirds", "diagonal", "triangle", "leading", "golden", "circle", "frame", "horizon", "scurve"];
-    const gs = 4.35, cs = (gs - 2 * 0.12) / 3, ih = cs / 1.5;
-    cells.forEach((key, i) => {
-      const t = TECH.find((x) => x.key === key);
-      const x = M + (i % 3) * (cs + 0.12), y = 1.72 + Math.floor(i / 3) * (ih + 0.47);
-      s.addImage({ path: dia[key], x, y, w: cs, h: ih, altText: t.name });
-      k.text(s, key === "golden" ? "황금비 (도전)" : t.name, { x, y: y + ih + 0.05, w: cs, h: 0.32, fontSize: 12, bold: true, align: "center" });
-    });
-    const rx = M + gs + 0.5, rw = W - M - rx;
-    k.text(s, "규칙", { x: rx, y: 1.72, w: rw, h: 0.32, fontSize: 13, bold: true, color: C.accent1 });
-    k.checklist(s, ["크루별로 9칸 중 최대한 많이, 한 칸에 사진 한 장", "가로 · 세로 · 대각선 한 줄을 채우면 빙고", "같은 장소라도 구도가 다르면 OK", "세로 사진 2장 이상 섞기 (숏폼 연습)"], { x: rx, y: 2.08, w: rw, h: 1.8, fontSize: 14 });
-    k.prompt(s, rx, 3.95, rw, 1.95, "이 사진은 ○○ 구도로 찍었어. 의도한 구도가 잘 보이는지 화면 속 선 · 점 · 도형 위치로 설명하고, 더 좋아지려면 폰을 어디로 옮기면 될지 한 가지만 알려줘.", "ChatGPT에 사진을 올리고");
-    k.takeaway(s, "빙고 사진은 드라이브 크루 폴더에. 가장 좋은 한 장이 크루 트리의 오너먼트가 됩니다", 6.15);
-  }
-
-  await pres.writeFile({ fileName: OUT });
-  await applyTheme(OUT, THEME);
-  console.log("wrote", OUT);
+  return {
+    overview: async () => {
+      {
+        const s = content("구도 10가지 · 화면 안에 숨은 선 · 점 · 도형", `"구도는 외우는 규칙이 아니라, 보는 사람의 시선을 어디로 보낼지 정하는 선택입니다."
+    오늘은 10가지를 '이름과 느낌'까지만. 다 외울 필요 없고, 실습에서 3개 이상 찾아 찍으면 성공.
+    흐름: 점(삼분할 · 교차점 · 황금비) → 선(수평 · 수직, 사선, S자, 유도선) → 도형(삼각형, 원형, 프레임).`);
+        const n = 5, gap = 0.25, cw = (CW - (n - 1) * gap) / n, ch = cw / 1.5;
+        TECH.forEach((t, i) => {
+          const x = M + (i % n) * (cw + gap), y = 1.7 + Math.floor(i / n) * (ch + 0.72);
+          s.addImage({ path: dia[t.key], x, y, w: cw, h: ch, altText: t.name });
+          k.text(s, String(i + 1).padStart(2, "0"), { x, y: y + ch + 0.1, w: 0.45, h: 0.32, fontSize: 13, bold: true, color: C.accent1 });
+          k.text(s, t.name, { x: x + 0.42, y: y + ch + 0.1, w: cw - 0.42, h: 0.32, fontSize: 14, bold: true });
+        });
+        k.takeaway(s, "구도는 규칙이 아니라 선택: 보는 사람의 시선을 어디로 보낼지 내가 정하는 것", 6.15);
+      }
+    },
+    techniques: async () => {
+      TECH.forEach((t, i) => {
+        const s = content(`구도 ${String(i + 1).padStart(2, "0")} · ${t.name}`, `${t.note}
+    느낌: ${t.feel}
+    이렇게 찍기: ${t.how}`);
+        const vw = 6.3, vh = 4.2;
+        visual(s, t, M, 1.75, vw, vh);
+        const rx = M + vw + 0.45, rw = W - M - rx;
+        k.text(s, t.en.toUpperCase(), { x: rx, y: 1.72, w: rw, h: 0.3, fontSize: 11.5, bold: true, color: C.accent2, charSpacing: 1 });
+        k.text(s, t.feel, { x: rx, y: 2.05, w: rw, h: 0.8, fontSize: 18, bold: true });
+        [["이렇게 찍기", t.how], ["학교에서 찾기", t.where], ["세로 9:16에서", t.vert]].forEach(([lab, body], j) => {
+          const y = 2.98 + j * 1.0;
+          s.addShape(S.line, { x: rx, y: y - 0.07, w: rw, h: 0, line: { color: "DDE4E0", width: 0.75 } });
+          k.text(s, lab, { x: rx, y, w: rw, h: 0.26, fontSize: 11.5, bold: true, color: C.accent1 });
+          k.text(s, body, { x: rx, y: y + 0.27, w: rw, h: 0.68, fontSize: 12.5, color: C.text1 });
+        });
+        k.takeaway(s, t.take, 6.15);
+      });
+    },
+    bonus: async () => {
+      {
+        const s = content("+ 4가지 더 · 알아 두면 바로 쓰는 구도", `[보너스] 시간이 남으면. 대칭은 복도 · 건물 정면, 여백은 하늘 · 벽, 전경 겹치기는 화분 · 잎을 렌즈 앞에, 패턴과 깨기는 같은 의자 · 컵이 줄지어 있을 때.`);
+        const n = 4, gap = 0.3, cw = (CW - (n - 1) * gap) / n, ih = cw / 1.5;
+        BONUS.forEach(([key, name, en, body], i) => {
+          const x = M + i * (cw + gap);
+          k.card(s, x, 1.75, cw, 4.2);
+          s.addImage({ path: dia[key], x, y: 1.75, w: cw, h: ih, altText: name });
+          k.text(s, en.toUpperCase(), { x: x + 0.25, y: 1.75 + ih + 0.2, w: cw - 0.5, h: 0.26, fontSize: 10.5, bold: true, color: C.accent2, charSpacing: 1 });
+          k.text(s, name, { x: x + 0.25, y: 1.75 + ih + 0.47, w: cw - 0.5, h: 0.4, fontSize: 17, bold: true });
+          k.text(s, body, { x: x + 0.25, y: 1.75 + ih + 0.92, w: cw - 0.5, h: 1.2, fontSize: 12.5, color: C.accent5 });
+        });
+        k.takeaway(s, "영어 이름도 같이 기억하기: 4회차 AI 영상 프롬프트에 그대로 씁니다", 6.15);
+      }
+    },
+    summary: async () => {
+      {
+        const s = content("한 장 정리 · 어떤 느낌을, 어떤 콘텐츠에", `[정리] 표는 워크북 · 핸드북에 그대로 넣을 수 있는 형태. "내 채널 아이템에 맞는 구도 두 개에 동그라미."`);
+        const rows = [
+          ["", "구도", "주는 느낌", "이런 콘텐츠에"],
+          ["01", "삼분할", "자연스러운 균형", "인터뷰 · 브이로그 전반"],
+          ["02", "교차점", "주인공 강조", "인물 · 제품 컷"],
+          ["03", "황금비 · 나선", "우아한 흐름", "음식 · 공간 · 감성 영상"],
+          ["04", "수평선 · 수직선", "안정 · 고요 · 높이", "풍경 · 공간 소개"],
+          ["05", "사선", "움직임 · 에너지", "운동 · 여행 · 인트로"],
+          ["06", "삼각형", "안정 · 관계", "단체 · 정물 · 대화"],
+          ["07", "원형", "집중 · 완결", "음식 · 제품 탑뷰"],
+          ["08", "S자 곡선", "여유 · 여정", "여행 · 산책 브이로그"],
+          ["09", "유도선 · 소실점", "깊이 · 집중", "오프닝 · 장소 소개"],
+          ["10", "프레임 속 프레임", "몰입 · 엿보기", "스토리 · 인물"],
+        ];
+        k.table(s, rows, { x: M, y: 1.7, w: CW, colW: [0.7, 3.1, 3.6, CW - 7.4], fontSize: 14, rowH: 0.41 });
+      }
+    },
+    bingo: async () => {
+      {
+        const s = content("실습 · 구도 빙고 (15분)", `[실습] 크루별로 학교 공간에서 15분. 한 칸에 사진 한 장, 가로 · 세로 · 대각선 한 줄을 채우면 빙고.
+    가운데 칸은 황금비 도전(어려우면 자유). 다른 사람이 나오면 동의 받기.
+    돌아와서: 크루 베스트 1장을 ChatGPT에 올려 피드백 → 단톡방 공유.`);
+        const cells = ["thirds", "diagonal", "triangle", "leading", "golden", "circle", "frame", "horizon", "scurve"];
+        const gs = 4.35, cs = (gs - 2 * 0.12) / 3, ih = cs / 1.5;
+        cells.forEach((key, i) => {
+          const t = TECH.find((x) => x.key === key);
+          const x = M + (i % 3) * (cs + 0.12), y = 1.72 + Math.floor(i / 3) * (ih + 0.47);
+          s.addImage({ path: dia[key], x, y, w: cs, h: ih, altText: t.name });
+          k.text(s, key === "golden" ? "황금비 (도전)" : t.name, { x, y: y + ih + 0.05, w: cs, h: 0.32, fontSize: 12, bold: true, align: "center" });
+        });
+        const rx = M + gs + 0.5, rw = W - M - rx;
+        k.text(s, "규칙", { x: rx, y: 1.72, w: rw, h: 0.32, fontSize: 13, bold: true, color: C.accent1 });
+        k.checklist(s, ["크루별로 9칸 중 최대한 많이, 한 칸에 사진 한 장", "가로 · 세로 · 대각선 한 줄을 채우면 빙고", "같은 장소라도 구도가 다르면 OK", "세로 사진 2장 이상 섞기 (숏폼 연습)"], { x: rx, y: 2.08, w: rw, h: 1.8, fontSize: 14 });
+        k.prompt(s, rx, 3.95, rw, 1.95, "이 사진은 ○○ 구도로 찍었어. 의도한 구도가 잘 보이는지 화면 속 선 · 점 · 도형 위치로 설명하고, 더 좋아지려면 폰을 어디로 옮기면 될지 한 가지만 알려줘.", "ChatGPT에 사진을 올리고");
+        k.takeaway(s, "빙고 사진은 드라이브 크루 폴더에. 가장 좋은 한 장이 크루 트리의 오너먼트가 됩니다", 6.15);
+      }
+    },
+  };
 }
 
-main().catch((e) => {
-  console.error(e);
-  process.exit(1);
-});
+module.exports = { make, IMAGE_SPECS };
