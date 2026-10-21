@@ -25,20 +25,23 @@ function findSource(dir, key) {
   return null;
 }
 
-// 흰 여백(거의 흰 줄) 사이의 구간을 찾아 n개로 나눈다. 못 찾으면 균등 분할.
+// 흰 여백(거의 흰 줄) 사이의 구간을 찾아 n개로 나눈다. 여백에 글자 · 테두리가 섞일 수 있어
+// 기준을 조금씩 낮춰 가며 n개가 나오는 첫 기준을 쓰고, 끝내 못 찾으면 균등 분할.
 function splitRuns(profile, n, len) {
-  const white = profile.map((v) => v > 0.97);
-  const segs = [];
-  let start = null;
-  for (let i = 0; i < len; i++) {
-    if (!white[i] && start === null) start = i;
-    if ((white[i] || i === len - 1) && start !== null) {
-      const end = white[i] ? i : i + 1;
-      if (end - start > len * 0.04) segs.push([start, end]);
-      start = null;
+  for (const th of [0.97, 0.9, 0.8]) {
+    const white = profile.map((v) => v > th);
+    const segs = [];
+    let start = null;
+    for (let i = 0; i < len; i++) {
+      if (!white[i] && start === null) start = i;
+      if ((white[i] || i === len - 1) && start !== null) {
+        const end = white[i] ? i : i + 1;
+        if (end - start > len * 0.04) segs.push([start, end]);
+        start = null;
+      }
     }
+    if (segs.length === n) return segs;
   }
-  if (segs.length === n) return segs;
   const step = len / n;
   return Array.from({ length: n }, (_, i) => [Math.round(i * step), Math.round((i + 1) * step)]);
 }
@@ -50,7 +53,7 @@ async function profiles(file) {
   const row = new Array(H).fill(0);
   for (let y = 0; y < H; y++) {
     for (let x = 0; x < W; x++) {
-      const w = data[y * W + x] > 232 ? 1 : 0;
+      const w = data[y * W + x] > 225 ? 1 : 0;
       col[x] += w;
       row[y] += w;
     }
@@ -67,8 +70,8 @@ async function cropPanels(src, cols, rows, outBase) {
   for (const [y0, y1] of ys) {
     for (const [x0, x1] of xs) {
       const inset = 2;
-      const out = `${outBase}_${++i}.png`;
-      await sharp(src).extract({ left: x0 + inset, top: y0 + inset, width: x1 - x0 - 2 * inset, height: y1 - y0 - 2 * inset }).png().toFile(out);
+      const out = `${outBase}_${++i}.jpg`;
+      await sharp(src).extract({ left: x0 + inset, top: y0 + inset, width: x1 - x0 - 2 * inset, height: y1 - y0 - 2 * inset }).jpeg({ quality: 88 }).toFile(out);
       outs.push(out);
     }
   }
@@ -127,8 +130,9 @@ async function prepare(session, specs) {
       }
     } else if (spec.kind === "photo") {
       if (src) {
-        const p = path.join(cache, `${key}.png`);
-        await sharp(src).png().toFile(p);
+        // 슬라이드 용량을 줄이려고 사진은 JPEG로 넣는다
+        const p = path.join(cache, `${key}.jpg`);
+        await sharp(src).jpeg({ quality: 88 }).toFile(p);
         out[key] = p;
       } else if (spec.fallback === "none") {
         out[key] = null;
@@ -146,7 +150,17 @@ async function prepare(session, specs) {
 }
 
 // 화이트밸런스 시연: 기준 사진 하나로 따뜻한·중립·차가운 버전을 만든다.
-async function whiteBalanceSet(srcPng, cacheDir) {
+// aspect를 주면 그 비율로 먼저 자른다(세로 원본을 가로 칸에 넣을 때). focusY = 자를 중심의 세로 위치(0~1).
+async function whiteBalanceSet(srcPng, cacheDir, { aspect, focusY = 0.5 } = {}) {
+  let src = sharp(srcPng);
+  if (aspect) {
+    const { width: W, height: H } = await sharp(srcPng).metadata();
+    let w = W, h = Math.round(W / aspect);
+    if (h > H) { h = H; w = Math.round(H * aspect); }
+    const top = Math.min(H - h, Math.max(0, Math.round(H * focusY - h / 2)));
+    src = sharp(await sharp(srcPng).extract({ left: Math.round((W - w) / 2), top, width: w, height: h }).toBuffer());
+  }
+  const base = await src.toBuffer();
   const mats = {
     warm: [[1.08, 0, 0], [0, 0.97, 0], [0, 0, 0.72]],
     neutral: [[1, 0, 0], [0, 1, 0], [0, 0, 1]],
@@ -154,8 +168,8 @@ async function whiteBalanceSet(srcPng, cacheDir) {
   };
   const out = {};
   for (const [k, m] of Object.entries(mats)) {
-    const p = path.join(cacheDir, `wb_${k}.png`);
-    await sharp(srcPng).recomb(m).png().toFile(p);
+    const p = path.join(cacheDir, `wb_${k}.jpg`);
+    await sharp(base).recomb(m).jpeg({ quality: 88 }).toFile(p);
     out[k] = p;
   }
   return out;

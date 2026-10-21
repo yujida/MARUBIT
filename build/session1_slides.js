@@ -32,7 +32,7 @@ const IMAGE_SPECS = {
   img11: { kind: "panels", cols: 2, rows: 2, panelRatio: [800, 800], label: "빛의 방향 4컷" },
   img12: { kind: "panels", cols: 3, rows: 1, panelRatio: [800, 1000], label: "구도 3컷" },
   img13: { kind: "panels", cols: 5, rows: 1, panelRatio: [600, 900], label: "5샷 시퀀스" },
-  img14: { kind: "photo", ratio: [1536, 1024], label: "카페 릴스 콘티" },
+  img14: { kind: "panels", cols: 2, rows: 3, panelRatio: [800, 800], label: "카페 릴스 콘티" },
   img15: { kind: "photo", ratio: [1024, 1536], label: "완성 장면 9:16" },
   img16: { kind: "panels", cols: 2, rows: 1, panelRatio: [900, 900], label: "심도 비교" },
   img17: { kind: "photo", ratio: [1536, 1024], label: "화이트밸런스 기준" },
@@ -42,7 +42,8 @@ const IMAGE_SPECS = {
 
 async function main() {
   const img = await prepare("s1", IMAGE_SPECS);
-  const wb = await whiteBalanceSet(img.img17, path.dirname(img.overlay));
+  // 화이트밸런스 칸은 가로(약 1.44:1). 세로 원본이면 얼굴과 종이가 함께 보이는 높이에서 자른다.
+  const wb = await whiteBalanceSet(img.img17, path.dirname(img.overlay), { aspect: 1.44, focusY: 0.46 });
   if (img.missing.length) console.log("이미지 없음(자리 표시로 대체):", img.missing.join(", "));
 
   const FOOTER = "AI콘텐츠 크리에이터 실무 · 촬영편집 1회차 — 보는 눈";
@@ -335,7 +336,12 @@ AI는 후보만. 내 이야기와 맞는 단어만 가져오기(워크북 p.2). 
 2) 프리프로덕션: 6컷 콘티(왼쪽 그림), 샷 리스트, 촬영 시간대(오전 창가빛), 소품(우산, 젖은 창).
 3) 촬영: 5샷 시퀀스 + B롤(빗방울, 김 오르는 컵), 우유 붓는 장면은 60fps로 슬로 재료, 마지막에 룸톤 10초.
 수강생 아이템(디저트 · 뷰티샵 · MD 상품)으로 바꿔 생각해 보게 하세요.`);
-    k.photo(s, img.img14, M, 1.8, 6.4, 4.27, { alt: "카페 릴스 6컷 콘티" });
+    // 6컷 콘티(원본 2열 × 3행, 칸 번호 포함)를 3열 × 2행으로 다시 놓는다
+    const cs = (6.4 - 2 * 0.08) / 3;
+    img.img14.forEach((f, i) => {
+      const x = M + (i % 3) * (cs + 0.08), y = 1.8 + Math.floor(i / 3) * (cs + 0.08);
+      k.photo(s, f, x, y, cs, cs, { alt: `카페 릴스 콘티 ${i + 1}` });
+    });
     const steps = [["1 기획", "근처 직장인에게, 비 오는 날 창가 자리와 라떼를, 저장하고 찾아오게", "\"비 오는 날, 여기 창가 자리 하나면 충분해요\""], ["2 프리프로덕션", "6컷 콘티 · 샷 리스트 · 오전 창가빛 · 소품(우산, 젖은 창)", "산출물: 콘티 한 장, 샷 리스트"], ["3 촬영", "5샷 시퀀스 + B롤(빗방울, 김 오르는 컵) · 우유 붓기는 60fps · 룸톤 10초", "산출물: 클립 20~30개"]];
     steps.forEach(([h, b, o], i) => {
       const y = 1.8 + i * 1.45;
