@@ -277,7 +277,87 @@ function exportbox() {
   return { W, H, s };
 }
 
-const D = { ui1: () => ui(1), ui2: () => ui(2), ui3: () => ui(3), ui4: () => ui(4), ui5: () => ui(5), ui: () => ui(), timeline, cuts, fit, color, audio, layers, masks, textbehind, keyframe, reveal, split, exportbox };
+// 전환: 이음새에 놓고, 길이만큼 두 컷이 겹쳐 바뀐다
+function transition() {
+  const W = 1600, H = 730;
+  let s = `<rect width="${W}" height="${H}" fill="#141618"/>`;
+  // 위: 세 프레임 (A → 섞임 → B)
+  const fw = 300, fh = 300, fy = 40, xs = [170, 650, 1130];
+  s += `<svg x="${xs[0]}" y="${fy}" width="${fw}" height="${fh}">${scene(0, 0, fw, fh, "sky")}</svg>`;
+  s += `<svg x="${xs[1]}" y="${fy}" width="${fw}" height="${fh}">${scene(0, 0, fw, fh, "sky")}<g opacity="0.5">${scene(0, 0, fw, fh, "warm", false)}</g></svg>`;
+  s += `<svg x="${xs[2]}" y="${fy}" width="${fw}" height="${fh}">${scene(0, 0, fw, fh, "warm", false)}</svg>`;
+  ["컷 A", "전환 중 (겹침)", "컷 B"].forEach((l, i) => { s += t(xs[i] + fw / 2, fy + fh + 40, l, 24, i === 1 ? GOLD : "#fff", 800, "middle"); });
+  s += `<path d="M${xs[0] + fw + 30} ${fy + fh / 2} L${xs[1] - 30} ${fy + fh / 2}" stroke="${GOLD}" stroke-width="6" marker-end="url(#ah)"/>`;
+  s += `<path d="M${xs[1] + fw + 30} ${fy + fh / 2} L${xs[2] - 30} ${fy + fh / 2}" stroke="${GOLD}" stroke-width="6" marker-end="url(#ah)"/>`;
+  // 아래: 타임라인 이음새의 전환 블록
+  const ty = 500;
+  s += t(40, ty + 55, "메인 트랙", 22, GOLD, 800) + `<rect x="200" y="${ty}" width="1360" height="90" fill="#1A1C1F"/>`;
+  s += `<rect x="210" y="${ty + 8}" width="640" height="74" rx="8" fill="${UI.clip}"/>` + t(230, ty + 55, "컷 A", 22, "#fff", 700);
+  s += `<rect x="856" y="${ty + 8}" width="690" height="74" rx="8" fill="${UI.clip2}"/>` + t(1500, ty + 55, "컷 B", 22, "#fff", 700, "end");
+  s += `<rect x="790" y="${ty + 4}" width="132" height="82" rx="10" fill="${GOLD}" opacity="0.92"/>`;
+  s += `<path d="M812 ${ty + 22} L856 ${ty + 45} L812 ${ty + 68} Z M900 ${ty + 22} L856 ${ty + 45} L900 ${ty + 68} Z" fill="${INK}"/>`;
+  s += `<path d="M790 ${ty + 120} L922 ${ty + 120}" stroke="${GOLD}" stroke-width="4" marker-start="url(#ah)" marker-end="url(#ah)"/>` + t(856, ty + 160, "길이 0.3~0.5초", 22, GOLD, 800, "middle");
+  s += t(856, ty - 22, "이음새에 끌어다 놓기", 22, "#fff", 800, "middle");
+  s += t(1560, 715, "전환 = 두 컷이 겹치는 짧은 시간", 22, GOLD, 800, "end");
+  return { W, H, s };
+}
+
+// 비트: 음악의 박자 점에 컷과 이펙트를 맞춘다
+function beats() {
+  const W = 1600, H = 640;
+  let s = `<rect width="${W}" height="${H}" fill="#141618"/>`;
+  const beatsX = [330, 530, 730, 930, 1130, 1330, 1530];
+  const rows = [["이펙트", 60, "#B86A3E"], ["메인 트랙", 190, UI.clip], ["음악", 320, UI.aud]];
+  rows.forEach(([n, y]) => { s += t(40, y + 55, n, 22, n === "메인 트랙" ? GOLD : UI.text, 800) + `<rect x="230" y="${y}" width="1340" height="90" fill="#1A1C1F"/>`; });
+  // 메인 트랙 컷: 이음새가 비트 점 위
+  const seams = [240, 530, 930, 1330, 1565];
+  for (let i = 0; i < seams.length - 1; i++) s += `<rect x="${seams[i] + 3}" y="198" width="${seams[i + 1] - seams[i] - 6}" height="74" rx="8" fill="${i % 2 ? UI.clip2 : UI.clip}"/>` + t(seams[i] + 20, 245, `컷 ${i + 1}`, 20, "#fff", 700);
+  // 이펙트 클립: 비트 위 짧게
+  [[530, "흔들림"], [930, "플래시"], [1330, "흔들림"]].forEach(([x, l]) => { s += `<rect x="${x}" y="68" width="120" height="74" rx="8" fill="#B86A3E"/>` + t(x + 60, 115, l, 19, "#fff", 800, "middle"); });
+  // 음악 파형 + 비트 점
+  for (let k = 0; k < 130; k++) { const hh = 10 + 50 * Math.abs(Math.sin(k * 0.5)) * (k % 20 < 3 ? 1.4 : 0.7); s += `<rect x="${240 + k * 10.2}" y="${365 - hh / 2}" width="5" height="${hh}" fill="#BFE7D6" opacity="0.8"/>`; }
+  beatsX.forEach((x) => { s += `<line x1="${x}" y1="60" x2="${x}" y2="420" stroke="${GOLD}" stroke-width="2" stroke-dasharray="8 8" opacity="0.7"/><circle cx="${x}" cy="425" r="11" fill="${GOLD}"/>`; });
+  s += t(240, 490, "● 비트 점 (음악 클립 우클릭 → 비트 표시)", 22, GOLD, 800);
+  s += t(240, 540, "컷 이음새와 이펙트 시작을 점에 맞추기", 22, "#fff", 700);
+  s += t(1560, 620, "박자 위에서 바뀌면 \"편집이 좋다\"고 느낍니다", 22, GOLD, 800, "end");
+  return { W, H, s };
+}
+
+// 자동 자막: 말소리 → 자막 클립 → 강조 단어 · 군말
+function captions() {
+  const W = 1600, H = 640;
+  let s = `<rect width="${W}" height="${H}" fill="#141618"/>`;
+  s += phone(50, 40, 560, (w, h) => scene(0, 0, w, h, "warm") +
+    `<rect x="${w * 0.06}" y="${h * 0.66}" width="${w * 0.88}" height="${h * 0.11}" rx="12" fill="#000" opacity="0.55"/>` +
+    t(w * 0.5, h * 0.735, `매일 아침 <tspan fill="${GOLD}" font-weight="900">갓 구운</tspan> 빵`, 30, "#fff", 800, "middle"));
+  const x0 = 430, bw = 1080;
+  s += t(x0, 70, "말소리", 24, "#E6C36A", 800);
+  s += `<rect x="${x0}" y="90" width="${bw}" height="80" fill="#1A1C1F"/>`;
+  const segs = [[0, 330], [360, 300], [690, 380]];
+  segs.forEach(([dx, w]) => { for (let k = 0; k < w / 10.5; k++) { const hh = 10 + 50 * Math.abs(Math.sin(k * 0.8 + dx)); s += `<rect x="${x0 + 12 + dx + k * 10.5}" y="${130 - hh / 2}" width="5" height="${hh}" fill="#E6C36A"/>`; } });
+  s += `<path d="M${x0 + bw / 2} 182 L${x0 + bw / 2} 232" stroke="${GOLD}" stroke-width="6" marker-end="url(#ah)"/>` + t(x0 + bw / 2 + 24, 216, "자동 캡션", 24, GOLD, 800);
+  s += t(x0, 268, "자막 클립", 24, "#C9B6E8", 800);
+  s += `<rect x="${x0}" y="288" width="${bw}" height="80" fill="#1A1C1F"/>`;
+  [["매일 아침 갓 구운 빵", 0], ["오늘은 소금빵", 1], ["음… 반죽부터 볼게요", 2]].forEach(([l, i]) => {
+    const [dx, w] = segs[i];
+    s += `<rect x="${x0 + 10 + dx}" y="296" width="${w}" height="64" rx="8" fill="${UI.txt}"/>` + t(x0 + 28 + dx, 337, i === 2 ? `<tspan fill="#F2B8B0">음…</tspan> 반죽부터 볼게요` : l, 22, "#fff", 700);
+  });
+  // 아래: 꾸미기 두 가지
+  const cy = 420, cw = 520;
+  s += `<rect x="${x0}" y="${cy}" width="${cw}" height="190" rx="14" fill="#1D2023"/>`;
+  s += t(x0 + 30, cy + 50, "강조 단어 · 템플릿", 24, GOLD, 800);
+  s += t(x0 + 30, cy + 120, `오늘은 <tspan fill="${GOLD}" font-size="44" font-weight="900">소금빵</tspan>`, 34, "#fff", 800);
+  s += t(x0 + 30, cy + 168, "핵심 단어만 색 · 크기 다르게", 20, UI.text, 600);
+  const x1 = x0 + cw + 40;
+  s += `<rect x="${x1}" y="${cy}" width="${cw}" height="190" rx="14" fill="#1D2023"/>`;
+  s += t(x1 + 30, cy + 50, "군말 찾기 · 대본으로 편집", 24, "#F2B8B0", 800);
+  s += t(x1 + 30, cy + 120, `<tspan fill="#F2B8B0" text-decoration="line-through">음…</tspan> 반죽부터 볼게요`, 34, "#fff", 800);
+  s += `<line x1="${x1 + 28}" y1="${cy + 108}" x2="${x1 + 80}" y2="${cy + 108}" stroke="#F2B8B0" stroke-width="4"/>`;
+  s += t(x1 + 30, cy + 168, "글자를 지우면 영상도 잘림", 20, UI.text, 600);
+  return { W, H, s };
+}
+
+const D = { transition, beats, captions, ui1: () => ui(1), ui2: () => ui(2), ui3: () => ui(3), ui4: () => ui(4), ui5: () => ui(5), ui: () => ui(), timeline, cuts, fit, color, audio, layers, masks, textbehind, keyframe, reveal, split, exportbox };
 
 async function render(key, outDir) {
   fs.mkdirSync(outDir, { recursive: true });
