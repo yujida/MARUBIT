@@ -1,0 +1,684 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>촬영·편집 핸드북 3장 — 편집의 기초와 CapCut 완전정복</title>
+<link rel="stylesheet" href="../assets/print.css">
+<style>
+  body { font-size: 10.3pt; line-height: 1.62; }
+  table { font-size: 9.5pt; }
+  td { padding: 1.7mm 2.5mm; }
+  .prompt { font-size: 9.4pt; line-height: 1.55; }
+  .prompt b { color: var(--blue); }
+  h2 { border-top: 1.5px solid var(--line); padding-top: 4mm; margin-top: 8mm; }
+  h2:first-of-type { border-top: none; padding-top: 0; }
+  .num { color: var(--gold); margin-right: 2mm; }
+  .cyc { font-size: 8.5pt; font-weight: 700; color: var(--green); margin: -1mm 0 2mm; }
+  .tip { background: #fbf1d3; border-radius: 3mm; padding: 3.5mm 5mm; margin: 0 0 4mm; break-inside: avoid; }
+  .tip::before { content: "실무 팁"; display: block; font-size: 8.5pt; font-weight: 800; color: var(--red); margin-bottom: 1mm; }
+  .mist { background: var(--mist); border-radius: 3mm; padding: 3.5mm 5mm; margin: 0 0 4mm; break-inside: avoid; }
+  .toc li { margin-bottom: 1.2mm; }
+  figure { margin: 2mm 0 5mm; text-align: center; break-inside: avoid; }
+  figcaption { font-size: 8.8pt; color: var(--sage); margin-top: 1mm; }
+  .four { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2.5mm; margin: 1mm 0 4mm; break-inside: avoid; }
+  .four div { background: var(--mist); border-radius: 2.5mm; padding: 3mm 3mm; font-size: 9.6pt; line-height: 1.5; }
+  .four b { display: block; color: var(--pine); font-size: 10.5pt; margin-bottom: 0.8mm; }
+  .formula { display: flex; align-items: stretch; gap: 1.6mm; margin: 2mm 0 4mm; break-inside: avoid; }
+  .formula div { flex: 1; background: #fff; border: 1.2px solid var(--line); border-radius: 2.5mm; padding: 2.5mm 2.5mm; font-size: 9.2pt; line-height: 1.45; text-align: center; }
+  .formula div b { display: block; color: var(--pine); font-size: 10.3pt; }
+  .formula div.res { background: var(--pine); color: #fff; border-color: var(--pine); }
+  .formula div.res b { color: var(--pale); }
+  .formula span { align-self: center; font-weight: 800; color: var(--gold); font-size: 13pt; }
+  .card { border: 1.2px solid var(--line); border-radius: 3mm; padding: 3.5mm 4.5mm 1.5mm; margin: 0 0 4mm; break-inside: avoid; }
+  .card h3 { margin-top: 0; }
+  .card .tag { display: inline-block; background: var(--pine); color: var(--pale); font-size: 8.5pt; font-weight: 700; border-radius: 1.5mm; padding: 0.3mm 2mm; margin-right: 1.5mm; vertical-align: 1px; }
+  ol.tight { margin: 0 0 3mm; padding-left: 5.5mm; }
+  ol.tight li { margin-bottom: 1mm; }
+  .side { display: grid; grid-template-columns: 44mm 1fr; gap: 5mm; align-items: start; margin: 1mm 0 4mm; break-inside: avoid; }
+  .side figure { margin: 0; }
+  .dict { font-size: 8.7pt; line-height: 1.4; }
+  .dict td { padding: 1.1mm 2mm; }
+  .dict td:first-child { font-weight: 700; color: var(--pine); }
+  .dict td:last-child { text-align: center; }
+  kbd { font-family: "Pretendard", sans-serif; font-size: 8.8pt; font-weight: 700; background: #fff; border: 1px solid var(--sage); border-bottom-width: 2px; border-radius: 1.2mm; padding: 0 1.4mm; white-space: nowrap; }
+  .en { color: var(--sage); font-size: 8.8pt; }
+</style>
+</head>
+<body>
+
+<section class="page">
+  <div class="cover">
+    <div class="series">AI콘텐츠 크리에이터 실무 · 촬영·편집 핸드북</div>
+    <h1>3장<br>편집의 기초와<br>CapCut 완전정복</h1>
+    <div class="sub">3회차 · 붙이는 손</div>
+    <div class="meta">1장에서 찍는 법을, 2장에서 무엇을 찍을지를 정했다면 3장은 찍은 컷을 한 편의 영상으로 만드는 일입니다. 편집의 순서와 판단 기준을 먼저 세우고, PC용 CapCut의 화면 · 타임라인 · 소리 · 자막 · 레이어 · 마스크 · 키프레임 · 내보내기까지 차례로 익힙니다. 수업에서는 작은 단위로 따라 하며 30초 파일럿 숏폼 한 편을 완성하고, 이 장은 그때 다 못 한 설명과 찾아보기용 사전으로 곁에 두세요.</div>
+  </div>
+</section>
+
+<section class="page">
+  <h1>이 장에서 다루는 것</h1>
+  <p class="lead">편집은 기능을 많이 아는 것보다 <strong>무엇을 남기고 무엇을 버릴지</strong> 판단하는 일입니다. 그래서 이 장은 판단 기준을 먼저 세우고, 그 기준을 CapCut에서 손으로 옮기는 순서로 갑니다. 끝에는 찾아보기용 기능 사전 · 단축키 · 막힘 해결, 편집을 돕는 프롬프트를 붙였습니다.</p>
+  <ol class="toc">
+    <li>편집이란 무엇인가</li>
+    <li>CapCut PC 화면 다섯 구역</li>
+    <li>타임라인과 컷 편집</li>
+    <li>화면 다듬기: 크기 · 속도 · 색</li>
+    <li>소리</li>
+    <li>자막과 텍스트</li>
+    <li>레이어 쌓기</li>
+    <li>마스크</li>
+    <li>키프레임</li>
+    <li>마스터링과 내보내기</li>
+    <li>CapCut 기능 사전</li>
+    <li>단축키와 막힘 해결</li>
+    <li>편집을 돕는 프롬프트</li>
+  </ol>
+  <div class="mist">
+    <h3 style="margin-top:0">이 장을 읽는 법</h3>
+    <ul class="tight" style="margin-bottom:0">
+      <li><strong>메뉴 이름은 버전마다 조금씩 다릅니다.</strong> CapCut은 업데이트가 잦아 같은 기능도 이름 · 위치가 바뀝니다. 이 장은 위치를 "오른쪽 패널의 ○○" 식으로 설명하고, 이름이 바뀌기 쉬운 메뉴는 영어 이름을 괄호로 함께 적었습니다. 화면에 똑같은 글자가 없으면 비슷한 이름이나 영어 이름을 찾으세요.</li>
+      <li><strong>수업의 리듬은 설명 → 따라하기 → 확인입니다.</strong> 절 제목 아래 초록 글씨는 워크북의 사이클 번호입니다. 사이클 20개를 마치면 그 결과가 쌓여 <strong>30초 안팎의 세로 파일럿 숏폼 한 편</strong>이 됩니다.</li>
+      <li><strong>막히면</strong> 옆 사람 → 크루 → 강사 순서로 부르세요. 크루 전원의 화면이 같아지면 다음으로 넘어갑니다. 먼저 끝난 사람은 옆 사람을 돕습니다.</li>
+    </ul>
+  </div>
+
+  <h2><span class="num">1</span>편집이란 무엇인가</h2>
+  <p>편집은 찍어 온 재료로 <strong>고르기 · 자르기 · 붙이기 · 다듬기</strong>를 하는 일입니다. 네 가지 중 가장 중요하고 가장 어려운 것은 첫 번째, 고르기입니다. 아까운 컷을 버릴 수 있어야 영상이 짧고 단단해집니다.</p>
+  <div class="four">
+    <div><b>고르기</b>쓸 컷과 버릴 컷을 나눈다. 흔들리고 초점이 나간 컷은 미련 없이.</div>
+    <div><b>자르기</b>쓸 컷 안에서도 가장 좋은 몇 초만 남긴다.</div>
+    <div><b>붙이기</b>순서를 정해 이어 붙인다. 이야기와 리듬이 여기서 생긴다.</div>
+    <div><b>다듬기</b>소리 · 자막 · 색 · 크기를 맞춰 한 편처럼 보이게 한다.</div>
+  </div>
+  <h3>편집의 순서</h3>
+  <p>처음부터 자막과 효과를 만지면 시간이 끝없이 듭니다. 프로도 아래 순서를 지킵니다. 앞 단계가 흔들리면 뒤 단계를 아무리 공들여도 다시 해야 하기 때문입니다.</p>
+  <div class="formula">
+    <div><b>정리</b>원본을 한 폴더에, 쓸 컷 표시</div><span>→</span>
+    <div><b>가편집</b>순서대로 대충 붙이기</div><span>→</span>
+    <div><b>본편집</b>리듬 · 소리 · 자막 · 색</div><span>→</span>
+    <div><b>마스터링</b>음량 · 오탈자 · 색 최종 점검</div><span>→</span>
+    <div class="res"><b>내보내기</b>규격 맞춰 파일로</div>
+  </div>
+  <table>
+    <tr><th style="width:24mm">단계</th><th>하는 일</th><th style="width:56mm">끝났다는 기준</th></tr>
+    <tr><td>정리</td><td>폰에서 옮긴 원본을 한 폴더에 모으고, CapCut에 가져와 쓸 컷을 훑어본다</td><td>쓸 컷이 무엇인지 말할 수 있다</td></tr>
+    <tr><td>가편집</td><td>스토리보드 순서대로 컷을 붙이고 앞뒤를 거칠게 자른다. 자막 · 음악은 아직</td><td>처음부터 끝까지 이야기가 이어진다</td></tr>
+    <tr><td>본편집</td><td>컷 길이로 리듬을 만들고, 소리 · 자막 · 색 · 크기를 맞춘다</td><td>지루한 곳이 없고, 한 영상처럼 보인다</td></tr>
+    <tr><td>마스터링</td><td>소리 켜고 · 끄고 보며 음량 · 오탈자 · 색 · 안전 영역 점검</td><td>마스터링 체크 7(10절)을 다 통과</td></tr>
+    <tr><td>내보내기</td><td>이름 · 해상도 · 프레임 속도 · 형식을 정해 파일로 만든다</td><td>폰으로 옮겨 재생해 봤다</td></tr>
+  </table>
+  <p>1장의 <strong>제작 공정 7단계</strong>로 보면 이 장은 4단계(편집)와 5단계(마스터링)입니다. 그리고 앞의 두 장이 편집의 재료를 만듭니다. 1장의 <strong>컷의 문법과 커버리지</strong>대로 같은 장면을 여러 크기 · 각도로 찍어 왔다면 고를 컷이 넉넉하고, 동작 연결도 할 수 있습니다. 2장의 <strong>훅 · 대본 · 스토리보드</strong>가 있다면 가편집은 그 순서대로 붙이기만 하면 됩니다. 편집에서 길을 잃는 가장 흔한 이유는 기획 없이 찍은 컷입니다.</p>
+  <div class="mist">
+    <h3 style="margin-top:0">편집자가 하는 질문 세 가지</h3>
+    <ol class="tight" style="margin-bottom:0">
+      <li><strong>3초 안에 무슨 영상인지 아나?</strong> 첫 화면과 첫 자막만 보고 "아, ○○ 영상이구나"가 나와야 합니다. 안 나오면 훅 컷을 맨 앞으로 옮기거나 제목 텍스트를 넣습니다.</li>
+      <li><strong>지루한 곳이 없나?</strong> 처음 보는 사람이라면 어디서 넘길까. 같은 그림이 오래 가는 곳, 말이 늘어지는 곳을 자릅니다.</li>
+      <li><strong>소리 없이 봐도 이해되나?</strong> 피드에서는 많은 사람이 소리를 끄고 봅니다. 자막과 화면만으로 내용이 전해져야 합니다.</li>
+    </ol>
+  </div>
+
+  <h2><span class="num">2</span>CapCut PC 화면 다섯 구역</h2>
+  <div class="cyc">워크북 사이클 1</div>
+  <p>CapCut PC는 처음 열면 버튼이 많아 보이지만, 화면은 크게 다섯 구역뿐입니다. 왼쪽 위에서 <strong>재료를 고르고</strong>, 아래 타임라인에 <strong>놓고</strong>, 가운데에서 <strong>보고</strong>, 오른쪽에서 <strong>설정하고</strong>, 오른쪽 위에서 <strong>내보냅니다</strong>.</p>
+  <figure>
+    <svg viewBox="0 0 560 318" width="150mm" role="img" aria-label="CapCut PC 화면 다섯 구역 그림">
+      <g font-family="Pretendard, sans-serif">
+        <rect x="6" y="6" width="548" height="306" rx="8" fill="#1f2724"/>
+        <!-- 위 막대 + 내보내기 -->
+        <rect x="6" y="6" width="548" height="24" rx="8" fill="#2b3531"/>
+        <text x="20" y="22" font-size="9" fill="#9fb0a8">프로젝트 이름 · 3회차_내이름</text>
+        <rect x="466" y="11" width="80" height="15" rx="4" fill="#e0a526"/>
+        <text x="506" y="22" text-anchor="middle" font-size="9" font-weight="700" fill="#173a2b">⑤ 내보내기</text>
+        <!-- ① 도구 탭 + 자료 창 -->
+        <rect x="14" y="36" width="196" height="150" rx="4" fill="#2b3531"/>
+        <rect x="14" y="36" width="196" height="20" rx="4" fill="#33403b"/>
+        <text x="20" y="49" font-size="7.6" fill="#d9e2dd">미디어 · 오디오 · 텍스트 · 스티커 · 효과 · 전환 · 필터 · 조정</text>
+        <g fill="#4a5a53">
+          <rect x="22" y="66" width="52" height="34" rx="2"/><rect x="82" y="66" width="52" height="34" rx="2"/><rect x="142" y="66" width="52" height="34" rx="2"/>
+          <rect x="22" y="108" width="52" height="34" rx="2"/><rect x="82" y="108" width="52" height="34" rx="2"/>
+        </g>
+        <circle cx="30" cy="166" r="9" fill="#e0a526"/><text x="30" y="170" text-anchor="middle" font-size="10" font-weight="800" fill="#173a2b">1</text>
+        <text x="44" y="164" font-size="9" font-weight="700" fill="#f3dfa2">도구 탭 + 자료 창</text>
+        <text x="44" y="176" font-size="7.8" fill="#9fb0a8">재료를 고르는 곳</text>
+        <!-- ② 플레이어 -->
+        <rect x="216" y="36" width="168" height="150" rx="4" fill="#2b3531"/>
+        <rect x="273" y="44" width="54" height="96" fill="#111614" stroke="#7a8c83"/>
+        <rect x="273" y="44" width="54" height="96" fill="#2e7d57" opacity="0.35"/>
+        <text x="300" y="96" text-anchor="middle" font-size="8" fill="#d9e2dd">9:16</text>
+        <text x="300" y="153" text-anchor="middle" font-size="8" fill="#9fb0a8">▶  00:00 / 00:30    비율</text>
+        <circle cx="232" cy="166" r="9" fill="#e0a526"/><text x="232" y="170" text-anchor="middle" font-size="10" font-weight="800" fill="#173a2b">2</text>
+        <text x="246" y="164" font-size="9" font-weight="700" fill="#f3dfa2">재생 화면(플레이어)</text>
+        <text x="246" y="176" font-size="7.8" fill="#9fb0a8">결과를 보는 곳</text>
+        <!-- ③ 속성 패널 -->
+        <rect x="390" y="36" width="156" height="150" rx="4" fill="#2b3531"/>
+        <rect x="390" y="36" width="156" height="20" rx="4" fill="#33403b"/>
+        <text x="398" y="49" font-size="7.6" fill="#d9e2dd">비디오 · 오디오 · 속도 · 애니메이션</text>
+        <g font-size="7.6" fill="#d9e2dd">
+          <text x="398" y="72">크기</text><text x="398" y="88">위치</text><text x="398" y="104">회전</text><text x="398" y="120">불투명도</text>
+        </g>
+        <g stroke="#7a8c83" stroke-width="2"><line x1="440" y1="69" x2="520" y2="69"/><line x1="440" y1="85" x2="520" y2="85"/><line x1="440" y1="101" x2="520" y2="101"/><line x1="440" y1="117" x2="520" y2="117"/></g>
+        <g fill="none" stroke="#e0a526" stroke-width="1.2"><path d="M532 65 l4 4 -4 4 -4 -4z"/><path d="M532 81 l4 4 -4 4 -4 -4z"/><path d="M532 97 l4 4 -4 4 -4 -4z"/><path d="M532 113 l4 4 -4 4 -4 -4z"/></g>
+        <circle cx="406" cy="166" r="9" fill="#e0a526"/><text x="406" y="170" text-anchor="middle" font-size="10" font-weight="800" fill="#173a2b">3</text>
+        <text x="420" y="164" font-size="9" font-weight="700" fill="#f3dfa2">속성 패널</text>
+        <text x="420" y="176" font-size="7.8" fill="#9fb0a8">선택한 클립을 설정</text>
+        <!-- ④ 타임라인 -->
+        <rect x="14" y="192" width="532" height="112" rx="4" fill="#2b3531"/>
+        <text x="22" y="205" font-size="7.6" fill="#9fb0a8">↶ ↷  분할  왼쪽 삭제  오른쪽 삭제  정지 프레임  역재생 …        자석  확대/축소</text>
+        <rect x="250" y="214" width="120" height="13" rx="2" fill="#c8423b" opacity="0.85"/><text x="256" y="224" font-size="7.6" fill="#fff">텍스트</text>
+        <rect x="200" y="232" width="110" height="15" rx="2" fill="#2f6e9e"/><text x="206" y="243" font-size="7.6" fill="#fff">위 트랙 영상(PiP)</text>
+        <g fill="#2e7d57" stroke="#1f2724" stroke-width="1.5">
+          <rect x="60" y="252" width="90" height="22" rx="2"/><rect x="150" y="252" width="70" height="22" rx="2"/><rect x="220" y="252" width="100" height="22" rx="2"/><rect x="320" y="252" width="60" height="22" rx="2"/><rect x="380" y="252" width="84" height="22" rx="2"/>
+        </g>
+        <text x="22" y="266" font-size="7.6" fill="#d9e2dd">메인</text>
+        <rect x="60" y="280" width="404" height="12" rx="2" fill="#e0a526" opacity="0.6"/><text x="66" y="289" font-size="7.4" fill="#173a2b">음악</text>
+        <line x1="236" y1="209" x2="236" y2="298" stroke="#ff5a4f" stroke-width="1.6"/>
+        <path d="M231 209 h10 l-5 6z" fill="#ff5a4f"/>
+        <text x="230" y="225" text-anchor="end" font-size="7.4" fill="#ff8b83">재생헤드</text>
+        <circle cx="478" cy="232" r="9" fill="#e0a526"/><text x="478" y="236" text-anchor="middle" font-size="10" font-weight="800" fill="#173a2b">4</text>
+        <text x="491" y="230" font-size="9" font-weight="700" fill="#f3dfa2">타임라인</text>
+        <text x="491" y="242" font-size="7.8" fill="#9fb0a8">놓고 자르는 곳</text>
+      </g>
+    </svg>
+    <figcaption>CapCut PC 화면을 단순하게 그린 그림입니다. 실제 화면의 버튼 모양 · 탭 이름 · 위치는 버전마다 조금씩 다릅니다.</figcaption>
+  </figure>
+  <table>
+    <tr><th style="width:42mm">구역</th><th>여기서 하는 일</th></tr>
+    <tr><td>① 위쪽 도구 탭 + 왼쪽 자료 창</td><td>미디어 · 오디오 · 텍스트 · 스티커 · 효과 · 전환 · 필터 · 조정 탭을 고르면 그 아래 자료 창에 재료가 뜹니다. 내 영상 파일도, 무료 음악 · 스톡 영상도 여기서 타임라인으로 끌어다 놓습니다.</td></tr>
+    <tr><td>② 가운데 재생 화면</td><td>지금 재생헤드 위치의 결과를 보여 줍니다. 화면 속 클립을 직접 끌어 옮기거나 모서리를 끌어 크기를 바꿀 수도 있습니다. 화면 비율 버튼이 아래쪽에 있습니다.</td></tr>
+    <tr><td>③ 오른쪽 속성 패널</td><td><strong>선택한 클립</strong>의 설정 창입니다. 영상을 고르면 비디오 · 오디오 · 속도 · 애니메이션 같은 탭이, 텍스트를 고르면 글꼴 · 색 같은 탭이 뜹니다. 아무것도 선택하지 않으면 프로젝트 설정이 보입니다.</td></tr>
+    <tr><td>④ 아래 타임라인</td><td>클립을 순서대로 놓고 자르는 작업대입니다. 위쪽 도구 막대에 분할 · 삭제 · 정지 프레임 같은 버튼이 모여 있습니다.</td></tr>
+    <tr><td>⑤ 오른쪽 위 내보내기</td><td>다 만든 영상을 파일로 만드는 버튼입니다(10절).</td></tr>
+  </table>
+  <h3>새 프로젝트 시작하기</h3>
+  <ol class="tight">
+    <li>CapCut 첫 화면에서 <strong>새 프로젝트 만들기</strong>(Create project)를 누릅니다.</li>
+    <li>폰에서 옮겨 둔 원본 폴더를 열고, 영상 파일을 왼쪽 <strong>미디어</strong> 창으로 끌어다 놓습니다. 가져오기(Import) 버튼으로 골라도 됩니다.</li>
+    <li>화면 비율을 <strong>9:16</strong>으로 바꿉니다. 재생 화면 아래의 비율 버튼이나, 아무것도 선택하지 않았을 때 오른쪽에 뜨는 프로젝트 설정에서 고릅니다. 비율은 컷을 올리기 전에 정하는 것이 편합니다.</li>
+    <li>위쪽의 프로젝트 이름을 눌러 <strong>"3회차_내이름"</strong>처럼 바꿉니다.</li>
+  </ol>
+  <p><strong>확인</strong>: 가운데 화면이 세로로 길쭉하고, 미디어 창에 내 컷이 5개 이상 보이면 성공입니다.</p>
+  <h3>파일 정리 원칙</h3>
+  <ul class="tight">
+    <li><strong>원본은 한 폴더에 모으고, 옮기지 않습니다.</strong> CapCut은 영상을 복사하지 않고 원래 자리를 기억해서 불러옵니다. 편집 도중 원본 폴더를 옮기거나 이름을 바꾸거나 지우면, 타임라인의 클립이 빨갛게 바뀌며 <strong>"미디어 없음"</strong>(Media not found) 같은 경고가 뜹니다.</li>
+    <li>폴더는 이렇게 나누면 찾기 쉽습니다. <strong>3회차_소스</strong> 안에 <strong>01_영상 · 02_음악 · 03_이미지 · 04_내보내기</strong>.</li>
+    <li><strong>프로젝트는 자동 저장</strong>됩니다. 따로 저장 버튼을 찾지 않아도 되고, 다음에 CapCut을 열면 첫 화면 프로젝트 목록에서 이어서 열 수 있습니다. 다만 프로젝트 파일에는 원본이 들어 있지 않으니, 다른 PC에서 이어 하려면 원본 폴더도 함께 가져가야 합니다.</li>
+  </ul>
+  <div class="tip">폰 영상을 PC로 옮길 때 메신저로 보내면 화질이 떨어지고 파일 이름이 뒤섞입니다. USB 케이블, 클라우드 드라이브(원본 화질 설정), 에어드롭처럼 원본 그대로 옮기는 방법을 쓰세요. 옮긴 뒤에는 폴더에서 한 번 재생해 보고 CapCut으로 가져옵니다.</div>
+
+  <h2><span class="num">3</span>타임라인과 컷 편집</h2>
+  <div class="cyc">워크북 사이클 2 – 4</div>
+  <p>타임라인은 왼쪽에서 오른쪽으로 시간이 흐르는 작업대입니다. 몇 가지 이름만 알면 됩니다.</p>
+  <table>
+    <tr><th style="width:30mm">이름</th><th>무엇인가</th></tr>
+    <tr><td>재생헤드</td><td>타임라인을 가로지르는 세로선. 지금 보고 있는 순간이며, 자르기는 대부분 이 선을 기준으로 합니다.</td></tr>
+    <tr><td>트랙</td><td>가로로 놓인 줄. 영상 · 텍스트 · 음악이 각자 줄을 차지하고, <strong>위 트랙일수록 화면 앞</strong>에 보입니다.</td></tr>
+    <tr><td>메인 트랙</td><td>맨 아래 영상 줄. 영상의 뼈대이자 바닥입니다.</td></tr>
+    <tr><td>클립</td><td>트랙 위의 블록 하나. 영상 한 컷, 자막 한 줄, 음악 한 곡이 모두 클립입니다.</td></tr>
+    <tr><td>자석</td><td>메인 트랙은 중간을 지우면 뒤 클립이 자동으로 당겨져 빈틈이 생기지 않습니다. 타임라인 위 도구 막대의 자석 모양 버튼(Main track magnet)으로 켜고 끕니다. 처음에는 켜 두세요.</td></tr>
+  </table>
+  <p>컷 5개를 메인 트랙에 순서대로 끌어다 놓고, 클립을 끌어 순서를 바꿔 보세요. <kbd>Space</kbd>로 재생 · 정지하고, <kbd>Ctrl</kbd> + 마우스 휠(또는 <kbd>+</kbd> <kbd>-</kbd>)로 타임라인을 확대 · 축소합니다. 짧은 컷을 자를 때는 크게 확대해야 정확합니다.</p>
+  <h3>자르는 네 가지 방법</h3>
+  <table>
+    <tr><th style="width:36mm">방법</th><th>어떻게</th><th style="width:52mm">언제</th></tr>
+    <tr><td><strong>분할</strong> <kbd>Ctrl</kbd>+<kbd>B</kbd></td><td>재생헤드 위치에서 클립을 둘로 나눕니다. 나눈 뒤 필요 없는 쪽을 골라 <kbd>Delete</kbd></td><td>클립 가운데를 들어낼 때</td></tr>
+    <tr><td><strong>왼쪽 삭제</strong> <kbd>Q</kbd></td><td>선택한 클립에서 재생헤드 왼쪽 부분을 한 번에 지웁니다</td><td>컷의 앞부분(준비 동작)을 버릴 때</td></tr>
+    <tr><td><strong>오른쪽 삭제</strong> <kbd>W</kbd></td><td>재생헤드 오른쪽 부분을 한 번에 지웁니다</td><td>컷의 뒷부분(멈칫한 끝)을 버릴 때</td></tr>
+    <tr><td><strong>트림</strong></td><td>클립의 왼쪽 · 오른쪽 끝을 마우스로 끌어 줄입니다</td><td>몇 프레임씩 미세하게 맞출 때</td></tr>
+  </table>
+  <p>가편집은 "재생 → 좋은 순간 시작에서 멈춤 → <kbd>Q</kbd> → 좋은 순간 끝에서 멈춤 → <kbd>W</kbd>"를 컷마다 반복하는 일입니다. 메인 트랙은 자석 덕분에 뒤가 저절로 붙습니다. 컷마다 <strong>가장 좋은 2~4초</strong>만 남기고, 훅 컷을 맨 앞으로 옮기면 15초 안팎의 가편집이 됩니다.</p>
+  <h3>컷의 리듬</h3>
+  <ul class="tight">
+    <li><strong>동작 연결</strong>: 같은 동작을 미디엄과 클로즈업으로 찍어 왔다면(1장), 첫 컷을 동작 중간에서 자르고 다음 컷을 같은 동작 순간부터 이어 붙입니다. 컵을 드는 손이 미디엄에서 시작해 클로즈업에서 끝나면, 보는 사람은 컷이 바뀐 줄도 모릅니다.</li>
+    <li><strong>점프컷</strong>: 같은 크기 · 같은 각도의 컷을 이어 붙이면 화면이 툭 튑니다. 실수로 생기면 어색하지만, 말하는 영상에서 군더더기를 덜어 내고 빠르게 보이게 하려고 일부러 쓰기도 합니다. 일부러인지 아닌지가 보이게 쓰세요.</li>
+    <li><strong>B롤로 덮기</strong>: 말을 잘라 내 화면이 튀는 곳 위 트랙에 손 · 소품 · 공간 컷을 올려 덮으면, 소리는 이어지고 화면은 자연스럽습니다.</li>
+    <li><strong>쇼츠는 한 컷 평균 1.5~3초</strong>: 30초 영상이면 10~20컷입니다. 정보가 많은 컷은 조금 길게, 분위기 컷은 짧게. 모든 컷을 같은 길이로 맞추면 오히려 단조롭습니다.</li>
+  </ul>
+  <div class="tip">말하는 컷은 말이 시작하기 직전의 숨, 말이 끝난 뒤의 "음…"을 잘라 내기만 해도 영상이 빨라집니다. 반대로 감정이 실린 장면은 반 박자 더 두세요. 리듬은 모든 컷을 줄이는 것이 아니라 줄일 곳과 둘 곳을 나누는 것입니다.</div>
+
+  <h2><span class="num">4</span>화면 다듬기: 크기 · 속도 · 색</h2>
+  <div class="cyc">워크북 사이클 5 – 7</div>
+  <h3>크기 · 위치 · 회전 · 자르기</h3>
+  <p>클립을 선택하면 오른쪽 패널 <strong>'비디오'</strong> 탭의 기본 설정(Basic · Transform)에 크기 · 위치 · 회전 값이 있습니다. 숫자로 맞추거나, 가운데 재생 화면에서 클립을 직접 끌어 옮기고 모서리를 끌어 키워도 됩니다. 화면 일부만 쓰고 싶으면 타임라인 도구 막대의 자르기(Crop) 버튼을 씁니다.</p>
+  <h3>가로로 찍은 컷을 세로 화면에</h3>
+  <p>가로 컷을 9:16 프로젝트에 넣으면 가운데에 작게 놓이고 위아래가 검게 빕니다. 고치는 방법은 둘입니다.</p>
+  <figure>
+    <svg viewBox="0 0 520 220" width="118mm" role="img" aria-label="가로 컷을 세로 화면에 맞추는 세 가지 모습">
+      <defs>
+        <clipPath id="f2"><rect x="215" y="10" width="90" height="160"/></clipPath>
+        <clipPath id="f3"><rect x="400" y="10" width="90" height="160"/></clipPath>
+        <filter id="bl"><feGaussianBlur stdDeviation="5"/></filter>
+        <g id="scene">
+          <rect x="0" y="0" width="160" height="90" fill="#9cc7a8"/>
+          <rect x="0" y="58" width="160" height="32" fill="#6f9a63"/>
+          <circle cx="128" cy="20" r="10" fill="#e0a526"/>
+          <circle cx="80" cy="36" r="8" fill="#173a2b"/>
+          <rect x="72" y="45" width="16" height="28" rx="4" fill="#173a2b"/>
+        </g>
+      </defs>
+      <g font-family="Pretendard, sans-serif">
+        <!-- 1 그대로 -->
+        <rect x="30" y="10" width="90" height="160" fill="#111"/>
+        <use href="#scene" transform="translate(30 64.7) scale(0.5625)"/>
+        <!-- 2 크기 키우기 -->
+        <rect x="215" y="10" width="90" height="160" fill="#111"/>
+        <g clip-path="url(#f2)"><use href="#scene" transform="translate(117.8 10) scale(1.7778)"/></g>
+        <rect x="215" y="10" width="90" height="160" fill="none" stroke="#173a2b" stroke-width="1.5"/>
+        <!-- 3 배경 흐림 -->
+        <g clip-path="url(#f3)"><g filter="url(#bl)"><use href="#scene" transform="translate(302.8 10) scale(1.7778)"/></g></g>
+        <use href="#scene" transform="translate(400 64.7) scale(0.5625)"/>
+        <rect x="400" y="10" width="90" height="160" fill="none" stroke="#173a2b" stroke-width="1.5"/>
+        <text x="75" y="190" text-anchor="middle" font-size="12" font-weight="700" fill="#c8423b">그대로</text>
+        <text x="75" y="207" text-anchor="middle" font-size="10.5" fill="#1c2420">위아래 검은 띠</text>
+        <text x="260" y="190" text-anchor="middle" font-size="12" font-weight="700" fill="#173a2b">① 크기 키우기</text>
+        <text x="260" y="207" text-anchor="middle" font-size="10.5" fill="#1c2420">꽉 차지만 양옆이 잘림</text>
+        <text x="445" y="190" text-anchor="middle" font-size="12" font-weight="700" fill="#173a2b">② 배경 흐림</text>
+        <text x="445" y="207" text-anchor="middle" font-size="10.5" fill="#1c2420">원본은 그대로, 빈 곳은 흐리게</text>
+      </g>
+    </svg>
+    <figcaption>인물이 가운데 있는 컷은 ① 크기 키우기, 화면 전체가 중요한 풍경 · 단체 컷은 ② 배경 흐림이 어울립니다.</figcaption>
+  </figure>
+  <ul class="tight">
+    <li><strong>① 크기 키우기</strong>: 재생 화면에서 클립 모서리를 끌거나 크기 값을 올려 세로를 꽉 채웁니다. 양옆이 잘리니 위치를 옮겨 중요한 것이 화면 안에 오게 합니다. 너무 키우면 화질이 거칠어집니다.</li>
+    <li><strong>② 배경 흐림</strong>: 오른쪽 패널의 캔버스 또는 배경 설정(Canvas · Background)에서 흐림(Blur)을 고르면, 같은 영상을 흐리게 깔아 빈 곳을 채웁니다. 원본이 잘리지 않습니다.</li>
+  </ul>
+  <h3>속도</h3>
+  <p>클립을 선택하고 오른쪽 패널의 <strong>속도</strong>(Speed) 탭을 엽니다. 정지 프레임 · 역재생은 타임라인 도구 막대나 오른쪽 클릭 메뉴에 있습니다.</p>
+  <table>
+    <tr><th style="width:36mm">기능</th><th>하는 일</th><th style="width:58mm">이럴 때</th></tr>
+    <tr><td>일반 속도 <span class="en">(Normal)</span></td><td>전체를 같은 비율로 느리게(0.5x) · 빠르게(2x)</td><td>훅 컷을 슬로로, 지루한 과정을 빨리 감기로</td></tr>
+    <tr><td>곡선 속도 <span class="en">(Curve)</span></td><td>한 클립 안에서 빠르다 느려졌다 하게</td><td>움직임의 결정적 순간만 느리게</td></tr>
+    <tr><td>정지 프레임 <span class="en">(Freeze)</span></td><td>재생헤드 위치의 한 장면을 멈춘 그림으로 만들어 끼움</td><td>마지막 장면에 1초 멈춤 + 제목 · 로고</td></tr>
+    <tr><td>역재생 <span class="en">(Reverse)</span></td><td>클립을 거꾸로 재생</td><td>쏟은 물이 컵으로 돌아가는 재미 컷</td></tr>
+  </table>
+  <p>슬로모션은 촬영할 때 정해집니다. <strong>60fps로 찍은 컷은 0.5x로 늦춰도 부드럽고</strong>, 30fps 컷을 0.5x로 늦추면 뚝뚝 끊겨 보입니다(1장 프레임레이트). 슬로로 쓸 훅 컷은 60fps로 찍어 오세요.</p>
+  <h3>색 맞추기</h3>
+  <p>1장에서 화이트밸런스를 고정하라고 한 이유가 여기서 드러납니다. 컷마다 색이 다르면 같은 날 같은 장소에서 찍었어도 다른 영상을 이어 붙인 것처럼 보입니다. 편집에서 맞추는 순서는 이렇습니다.</p>
+  <ol class="tight">
+    <li><strong>기준 컷 하나를 정합니다.</strong> 가장 자연스럽게 나온 컷, 보통은 훅 컷이나 얼굴이 나오는 컷입니다.</li>
+    <li>다른 컷을 선택하고 오른쪽 패널의 <strong>조정</strong>(Adjust)에서 <strong>밝기 → 대비 → 색온도 → 채도</strong> 순으로 기준 컷과 비슷하게 맞춥니다. 노랗게 뜨면 색온도를 차갑게, 파랗게 뜨면 따뜻하게.</li>
+    <li>필터를 쓴다면 위쪽 '필터' 탭에서 고른 뒤 <strong>강도를 낮춰</strong> 살짝만. 필터는 색을 맞춰 주지 않습니다. 맞춘 다음에 분위기를 더하는 것입니다.</li>
+    <li>같은 설정을 여러 컷에 쓰려면 클립 오른쪽 클릭 메뉴의 <strong>속성 복사 · 붙여넣기</strong>(Copy · Paste attributes)를 쓰거나, 위쪽 '조정' 탭의 조정 항목을 타임라인 위 트랙에 끌어다 놓아 <strong>조정 레이어</strong>(Adjustment layer)로 만들고 길이를 늘려 아래 컷 전체에 한 번에 적용합니다.</li>
+  </ol>
+  <div class="tip">색은 피부로 봅니다. 배경보다 얼굴 · 손 색이 컷마다 같은지 보세요. 그리고 PC 화면만 믿지 말고 폰에서도 확인합니다. 모니터마다 색이 달라서, PC에서 딱 맞던 색이 폰에서는 노랗게 보이는 일이 흔합니다.</div>
+
+  <h2><span class="num">5</span>소리</h2>
+  <div class="cyc">워크북 사이클 8</div>
+  <p>보는 사람은 화면의 흠은 넘어가도 소리의 흠은 못 참습니다. 영상의 소리는 네 층으로 나눠 생각하면 정리가 쉽습니다.</p>
+  <table>
+    <tr><th style="width:26mm">층</th><th>무엇</th><th style="width:66mm">크기 기준</th></tr>
+    <tr><td><strong>말</strong></td><td>목소리 · 내레이션 · 인터뷰</td><td>가장 크게. 모든 소리의 기준</td></tr>
+    <tr><td><strong>현장음</strong></td><td>반죽 소리, 문 여는 소리, 거리 소리</td><td>장면이 살아 있다고 느낄 만큼. 말이 있으면 낮게</td></tr>
+    <tr><td><strong>음악</strong></td><td>배경 음악</td><td>말이 있을 때는 확실히 낮게, 말이 없는 구간은 조금 올려도</td></tr>
+    <tr><td><strong>효과음</strong></td><td>"뿅", "착", 넘기는 소리</td><td>짧게, 꼭 필요한 곳에만</td></tr>
+  </table>
+  <h3>기본 손질</h3>
+  <ul class="tight">
+    <li><strong>원본 소리 끄기</strong>: 현장음이 지저분하면 메인 트랙 왼쪽 끝의 스피커 아이콘이나 클립의 볼륨을 0으로 내려 음소거합니다.</li>
+    <li><strong>볼륨 · 페이드</strong>: 소리가 있는 클립이나 음악을 선택하면 오른쪽 패널의 오디오(Audio) 탭에 볼륨, 페이드 인 · 페이드 아웃(Fade in · out)이 있습니다. 음악 끝을 <strong>2초 페이드 아웃</strong>하면 영상 끝에서 뚝 끊기지 않고 자연스럽게 사라집니다.</li>
+    <li><strong>소음 제거</strong>: 같은 오디오 탭의 소음 제거(Reduce noise)를 켜면 에어컨 · 바람 같은 웅 소리가 줄어듭니다. 너무 세게 걸면 목소리가 물속처럼 뭉개지니 켜고 끄며 비교해 보세요. 가장 좋은 소음 제거는 촬영할 때 조용한 곳을 고르는 것입니다(1장).</li>
+  </ul>
+  <h3>음악을 박자에 맞추기</h3>
+  <p>음악을 위쪽 '오디오' 탭에서 골라 타임라인 아래 트랙에 깔고, 컷이 바뀌는 곳을 음악의 강한 박자에 맞추면 편집이 갑자기 프로처럼 보입니다. 음악 클립을 선택했을 때 도구 막대에 비트 표시(Beat) 기능이 있으면 박자 자리에 점이 찍히고, 없으면 음악 파형이 뾰족하게 솟은 곳을 기준으로 맞춥니다. 모든 컷을 박자에 맞출 필요는 없습니다. 훅 직후, 장면이 바뀌는 곳 몇 군데면 충분합니다.</p>
+  <div class="mist">
+    <h3 style="margin-top:0">음악 저작권, 이것만은 확인</h3>
+    <ul class="tight" style="margin-bottom:0">
+      <li><strong>CapCut 안의 음악이라도 어디에나 써도 되는 것은 아닙니다.</strong> CapCut 안에서 쓰는 것과 유튜브에 올리는 것, 광고 · 홍보에 쓰는 것은 허락 범위가 다를 수 있습니다. 곡 정보나 이용 조건에서 <strong>유튜브 · 상업적 사용 가능 여부</strong>를 확인하세요.</li>
+      <li><strong>안전한 선택</strong>은 유튜브 스튜디오의 <strong>오디오 보관함</strong>(저작자 표시 조건이 붙은 곡은 설명란에 표시)이나 직접 녹음한 소리입니다.</li>
+      <li><strong>사업 홍보 채널은 특히 주의</strong>하세요. 가게 · 제품을 알리는 영상은 상업적 사용으로 볼 수 있어 개인 채널보다 조건이 엄격합니다.</li>
+      <li>인기 가요 · 드라마 음악은 몇 초만 써도 저작권 신고로 수익이 막히거나 소리가 지워질 수 있습니다.</li>
+    </ul>
+  </div>
+
+  <h2><span class="num">6</span>자막과 텍스트</h2>
+  <div class="cyc">워크북 사이클 9 – 10</div>
+  <p>자막은 소리를 끄고 보는 사람을 위한 것이자, 첫 3초에 "무슨 영상인지"를 알려 주는 가장 빠른 방법입니다. 말이 있는 영상은 자동 캡션으로 시작하고, 말이 없는 영상은 텍스트로 한 줄씩 직접 넣습니다.</p>
+  <h3>자동 캡션 네 단계</h3>
+  <ol class="tight">
+    <li><strong>만들기</strong>: 위쪽 '텍스트' 탭이나 자막 탭(Captions)에 있는 자동 캡션(Auto captions)을 열고, 언어를 한국어로 골라 만듭니다. 말소리가 자막 트랙에 한 줄씩 생깁니다.</li>
+    <li><strong>고치기</strong>: 자동 캡션은 이름 · 전문 용어 · 사투리를 자주 틀립니다. 재생하며 한 줄씩 읽고, 틀린 줄을 선택해 고칩니다. 한 줄이 너무 길면 둘로 나눕니다.</li>
+    <li><strong>스타일 통일</strong>: 자막 하나를 골라 글꼴 · 크기 · 색 · 테두리를 정하면, 버전에 따라 나머지 자막에도 한꺼번에 적용하는 선택지가 함께 뜹니다. 영상 하나에 자막 스타일은 하나입니다.</li>
+    <li><strong>위치</strong>: 아래 그림의 안전 영역 안으로 옮깁니다.</li>
+  </ol>
+  <div class="side">
+    <figure>
+      <svg viewBox="0 0 160 284" width="42mm" role="img" aria-label="세로 화면 안전 영역">
+        <g font-family="Pretendard, sans-serif">
+          <rect x="2" y="2" width="156" height="280" rx="6" fill="#eef3f0" stroke="#173a2b" stroke-width="1.5"/>
+          <rect x="2" y="2" width="156" height="30" rx="6" fill="#c8423b" opacity="0.18"/>
+          <rect x="2" y="210" width="156" height="72" rx="6" fill="#c8423b" opacity="0.18"/>
+          <rect x="126" y="32" width="32" height="178" fill="#c8423b" opacity="0.18"/>
+          <g fill="#c8423b" opacity="0.7"><circle cx="142" cy="120" r="7"/><circle cx="142" cy="145" r="7"/><circle cx="142" cy="170" r="7"/><circle cx="142" cy="195" r="7"/></g>
+          <text x="64" y="21" text-anchor="middle" font-size="9" fill="#c8423b">상단 표시</text>
+          <text x="80" y="238" text-anchor="middle" font-size="9" fill="#c8423b">채널 이름 · 제목 · 설명</text>
+          <text x="80" y="252" text-anchor="middle" font-size="9" fill="#c8423b">캡션이 덮는 곳</text>
+          <rect x="14" y="44" width="104" height="156" rx="3" fill="none" stroke="#2e7d57" stroke-width="1.4" stroke-dasharray="4 3"/>
+          <text x="66" y="62" text-anchor="middle" font-size="9.5" font-weight="700" fill="#173a2b">제목 텍스트</text>
+          <text x="66" y="118" text-anchor="middle" font-size="9" fill="#2e7d57">얼굴 · 중요한 것</text>
+          <rect x="22" y="176" width="88" height="16" rx="2" fill="#173a2b"/>
+          <text x="66" y="188" text-anchor="middle" font-size="9" font-weight="700" fill="#fff">자막은 여기</text>
+        </g>
+      </svg>
+      <figcaption>빨간 곳은 앱 버튼 · 글자가 덮는 곳</figcaption>
+    </figure>
+    <div>
+      <h3 style="margin-top:0">읽히는 자막의 규칙</h3>
+      <ul class="tight">
+        <li><strong>한 줄 15자 안팎, 많아야 두 줄.</strong> 길면 나눠서 두 화면에.</li>
+        <li><strong>굵은 고딕 + 흰 글자 + 검은 테두리</strong>(또는 반투명 배경). 밝은 화면 · 어두운 화면 어디서나 읽힙니다.</li>
+        <li><strong>위치 · 크기는 끝까지 같게.</strong> 자막이 오르락내리락하면 눈이 피곤합니다.</li>
+        <li><strong>세로 안전 영역</strong>(1장): 위 · 아래 · 오른쪽은 앱의 버튼과 글자가 덮습니다. 자막은 화면 아래쪽 3분의 1 위, 오른쪽 버튼에서 떨어진 곳에.</li>
+        <li>강조는 한 줄에 한 단어만 색을 바꿉니다. 다 강조하면 아무것도 강조되지 않습니다.</li>
+      </ul>
+    </div>
+  </div>
+  <h3>제목 텍스트와 등장 애니메이션</h3>
+  <p>첫 3초에 제목 한 줄을 넣으면 편집자의 첫 번째 질문 "3초 안에 무슨 영상인지 아나"가 해결됩니다. 위쪽 '텍스트' 탭에서 기본 텍스트를 타임라인 위 트랙에 끌어다 놓고 글자를 씁니다. 텍스트를 선택한 채 오른쪽 패널의 애니메이션(Animation)에서 <strong>등장</strong>(In) 하나를 고르고 길이를 0.3~0.5초로 짧게 두면, 글자가 톡 나타납니다. 등장 · 퇴장 · 반복 애니메이션을 다 걸면 산만하니 등장 하나면 충분합니다.</p>
+  <div class="tip">소리를 끄고 처음부터 끝까지 한 번 보세요. 자막만으로 내용이 따라가지면 통과입니다. 말이 없는 브이로그도 "오늘은 300걸음만", "여기서 10분 쉬어 감"처럼 상황을 알려 주는 한 줄 자막이 있으면 끝까지 보는 사람이 늘어납니다.</div>
+
+  <h2><span class="num">7</span>레이어 쌓기</h2>
+  <div class="cyc">워크북 사이클 11 – 13</div>
+  <p>레이어는 <strong>투명 필름을 겹쳐 쌓는 것</strong>입니다. 메인 트랙이 바닥 그림이고, 그 위 트랙에 영상 · 사진 · 텍스트 · 스티커를 올릴 때마다 필름이 한 장씩 덮입니다. <strong>위 트랙일수록 화면 앞</strong>에 보이고, 불투명한 필름은 아래를 가립니다. 순서를 바꾸려면 클립을 위아래 트랙으로 끌어 옮기면 됩니다.</p>
+  <figure>
+    <svg viewBox="0 0 560 270" width="138mm" role="img" aria-label="레이어를 펼쳐 본 그림">
+      <g font-family="Pretendard, sans-serif">
+        <!-- 펼친 레이어: 아래부터 -->
+        <polygon points="90,200 290,200 250,250 50,250" fill="#9cc7a8" stroke="#173a2b" stroke-width="1.3"/>
+        <polygon points="70,236 270,236 260,248 60,248" fill="#6f9a63"/>
+        <polygon points="90,140 290,140 250,190 50,190" fill="#ffffff" fill-opacity="0.35" stroke="#2f6e9e" stroke-width="1.3" stroke-dasharray="4 3"/>
+        <polygon points="200,146 268,146 254,164 186,164" fill="#2f6e9e"/>
+        <polygon points="90,80 290,80 250,130 50,130" fill="#ffffff" fill-opacity="0.35" stroke="#e0a526" stroke-width="1.3" stroke-dasharray="4 3"/>
+        <ellipse cx="102" cy="88" rx="16" ry="6" fill="#e0a526"/>
+        <polygon points="90,20 290,20 250,70 50,70" fill="#ffffff" fill-opacity="0.35" stroke="#c8423b" stroke-width="1.3" stroke-dasharray="4 3"/>
+        <text x="170" y="52" text-anchor="middle" font-size="15" font-weight="800" fill="#c8423b">오늘 첫 빵</text>
+        <!-- 화살표 -->
+        <line x1="22" y1="240" x2="22" y2="30" stroke="#173a2b" stroke-width="1.6"/>
+        <path d="M16 36 l6 -12 6 12z" fill="#173a2b"/>
+        <text x="14" y="140" font-size="10" font-weight="700" fill="#173a2b" transform="rotate(-90 14 140)" text-anchor="middle">위 트랙일수록 화면 앞</text>
+        <!-- 이름표 -->
+        <g font-size="10.5" fill="#1c2420">
+          <text x="300" y="48"><tspan font-weight="700" fill="#c8423b">4 텍스트</tspan> 제목 한 줄</text>
+          <text x="300" y="108"><tspan font-weight="700" fill="#b07d10">3 로고 PNG</tspan> 투명 배경이라 로고만</text>
+          <text x="300" y="168"><tspan font-weight="700" fill="#2f6e9e">2 작은 화면(PiP)</tspan> 크기 줄여 모서리로</text>
+          <text x="300" y="228"><tspan font-weight="700" fill="#173a2b">1 메인 트랙</tspan> 배경 영상, 바닥</text>
+        </g>
+        <!-- 합친 화면 -->
+        <rect x="488" y="40" width="62" height="110" rx="3" fill="#9cc7a8" stroke="#173a2b" stroke-width="1.3"/>
+        <rect x="488" y="124" width="62" height="26" fill="#6f9a63"/>
+        <rect x="520" y="118" width="26" height="18" fill="#2f6e9e"/>
+        <circle cx="498" cy="49" r="5" fill="#e0a526"/>
+        <text x="519" y="80" text-anchor="middle" font-size="9" font-weight="800" fill="#c8423b">오늘 첫 빵</text>
+        <text x="519" y="168" text-anchor="middle" font-size="9.5" font-weight="700" fill="#173a2b">합쳐 보이는 화면</text>
+      </g>
+    </svg>
+    <figcaption>레이어를 옆에서 펼쳐 본 그림. 위 필름의 빈 곳(투명한 곳)으로 아래 필름이 비쳐 보이고, 위 필름이 그린 곳은 아래를 가립니다.</figcaption>
+  </figure>
+  <h3>화면 속 화면 (PiP)</h3>
+  <ol class="tight">
+    <li>작게 넣을 클립을 메인 트랙 <strong>위 트랙으로</strong> 끌어 올립니다. 미디어 창에서 바로 위 트랙에 놓아도 됩니다.</li>
+    <li>재생 화면에서 그 클립의 모서리를 끌어 3분의 1 크기로 줄입니다.</li>
+    <li>모서리로 옮깁니다. 오른쪽 아래는 앱 버튼과 겹치니 왼쪽 위나 오른쪽 위가 안전합니다.</li>
+  </ol>
+  <p>반응 영상, 과정과 결과를 동시에 보여 줄 때, 설명하는 내 얼굴을 작게 띄울 때 씁니다.</p>
+  <h3>불투명도 · 혼합 모드 · PNG</h3>
+  <ul class="tight">
+    <li><strong>불투명도</strong>: 오른쪽 패널 '비디오'의 불투명도(Opacity)를 낮추면 위 레이어가 반투명해져 아래가 비칩니다. 두 장면을 겹쳐 시간이 흐르는 느낌을 줄 때 씁니다.</li>
+    <li><strong>혼합 모드</strong>(Blend): 같은 패널 근처에 있는 혼합 설정에서 화면(Screen) · 곱하기(Multiply) 같은 방식을 고르면, 위 레이어의 밝은 부분만 또는 어두운 부분만 겹칩니다. 빛 번짐 · 먼지 · 종이 질감 영상을 위에 얹을 때 씁니다.</li>
+    <li><strong>로고 · 워터마크는 PNG로</strong>: 투명 배경 PNG 이미지는 로고만 보이고, JPG는 흰 네모째로 덮습니다. 로고는 작게, 한쪽 모서리에, 영상 내내 같은 자리에 둡니다.</li>
+  </ul>
+  <h3>배경 제거와 크로마 키</h3>
+  <table>
+    <tr><th style="width:28mm">기능</th><th>순서</th></tr>
+    <tr><td><strong>배경 제거</strong><br><span class="en">자동 컷아웃</span></td><td>클립 선택 → 오른쪽 패널 <strong>'비디오'</strong> → <strong>'컷아웃'</strong>(Cutout) → <strong>'자동 컷아웃'</strong> 체크. 사람만 남고 배경이 사라집니다(누끼). 처리하는 데 시간이 조금 걸립니다.</td></tr>
+    <tr><td><strong>크로마 키</strong><br><span class="en">초록 배경일 때</span></td><td>같은 <strong>'컷아웃'</strong> 탭에서 크로마 키 → <strong>스포이드</strong>로 화면의 초록을 찍기 → <strong>'강도'</strong>를 올려 초록이 다 빠지게 → <strong>'그림자'</strong>로 가장자리 초록 테두리를 정리.</td></tr>
+  </table>
+  <p>자동 컷아웃은 배경과 사람이 뚜렷이 구분될수록 깔끔합니다. 머리카락 · 손가락 끝이 지저분하면 배경을 단순한 곳에서 다시 찍는 것이 가장 빠릅니다. 크로마 키는 초록 천이 구김 없이 고르게 밝아야 잘 빠집니다.</p>
+  <div class="card">
+    <h3><span class="tag">레시피</span>썸네일형 인트로</h3>
+    <ol class="tight">
+      <li>메인 트랙에 새 배경(가게 외관, 단색, 풍경)을 깝니다.</li>
+      <li>위 트랙에 인물 컷을 올리고 <strong>자동 컷아웃</strong>으로 배경을 지웁니다.</li>
+      <li>맨 위 트랙에 큰 제목 텍스트. 인물 얼굴과 겹치지 않게 위쪽에.</li>
+    </ol>
+    <p style="margin-bottom:2mm"><strong>확인</strong>: 인물만 떠 있는 첫 화면. 이 장면을 정지 프레임으로 만들면 커버(10절)로도 씁니다.</p>
+  </div>
+  <h3>전환은 아껴 쓰기</h3>
+  <p>위쪽 '전환'(Transitions) 탭의 전환을 두 클립 사이에 끌어다 놓으면 장면이 녹아들거나 밀려납니다. 하지만 <strong>대부분의 컷은 그냥 컷</strong>이 가장 좋습니다. 전환은 장소나 시간이 바뀔 때만, 0.3~0.5초로 짧게, 한 영상에 한두 번이면 충분합니다. 효과도 마찬가지입니다. 효과가 많을수록 내용이 아니라 효과가 보입니다.</p>
+
+  <h2><span class="num">8</span>마스크</h2>
+  <div class="cyc">워크북 사이클 14 – 15</div>
+  <p>마스크는 화면의 <strong>어느 부분만 보이게 뚫는 구멍</strong>입니다. 위 레이어에 마스크를 씌우면 구멍 안쪽만 보이고, 바깥은 투명해져 아래 레이어가 드러납니다. 클립을 선택하면 오른쪽 패널 '비디오' 쪽에 마스크(Mask) 탭이나 항목이 있습니다. 위치와 모양 이름은 버전마다 다를 수 있습니다.</p>
+  <figure>
+    <svg viewBox="0 0 540 110" width="140mm" role="img" aria-label="마스크 모양 여섯 가지">
+      <defs><clipPath id="mk"><rect width="64" height="64" rx="4"/></clipPath></defs>
+      <g font-family="Pretendard, sans-serif">
+        <g transform="translate(14 8)"><rect width="64" height="64" rx="4" fill="#cfd9d3"/><g clip-path="url(#mk)"><rect width="64" height="32" fill="#2e7d57"/></g><line x1="0" y1="32" x2="64" y2="32" stroke="#e0a526" stroke-width="2"/></g>
+        <g transform="translate(102 8)"><rect width="64" height="64" rx="4" fill="#cfd9d3"/><rect y="20" width="64" height="24" fill="#2e7d57"/></g>
+        <g transform="translate(190 8)"><rect width="64" height="64" rx="4" fill="#cfd9d3"/><circle cx="32" cy="32" r="22" fill="#2e7d57"/></g>
+        <g transform="translate(278 8)"><rect width="64" height="64" rx="4" fill="#cfd9d3"/><rect x="12" y="14" width="40" height="36" rx="3" fill="#2e7d57"/></g>
+        <g transform="translate(366 8)"><rect width="64" height="64" rx="4" fill="#cfd9d3"/><path d="M32 52 C10 38 8 24 18 18 C25 14 30 18 32 23 C34 18 39 14 46 18 C56 24 54 38 32 52z" fill="#2e7d57"/></g>
+        <g transform="translate(454 8)"><rect width="64" height="64" rx="4" fill="#cfd9d3"/><path d="M32 9 L38.5 25 L55 25.5 L42 36 L46.5 53 L32 43.5 L17.5 53 L22 36 L9 25.5 L25.5 25z" fill="#2e7d57"/></g>
+        <g font-size="11" font-weight="700" fill="#173a2b" text-anchor="middle">
+          <text x="46" y="90">선형</text><text x="134" y="90">미러</text><text x="222" y="90">원</text><text x="310" y="90">사각형</text><text x="398" y="90">하트</text><text x="486" y="90">별</text>
+        </g>
+        <g font-size="9" fill="#7a8c83" text-anchor="middle">
+          <text x="46" y="104">한쪽만, 반반 화면</text><text x="134" y="104">가운데 띠만</text><text x="222" y="104">동그랗게 열기</text><text x="310" y="104">창 · 액자</text><text x="398" y="104">장식</text><text x="486" y="104">장식</text>
+        </g>
+      </g>
+    </svg>
+    <figcaption>초록이 보이는 부분, 회색이 투명해지는 부분입니다. 하트 · 별은 재미로 가끔만 쓰세요.</figcaption>
+  </figure>
+  <table>
+    <tr><th style="width:36mm">조절</th><th>하는 일</th></tr>
+    <tr><td>위치 · 크기 · 회전</td><td>구멍을 옮기고, 키우고, 기울입니다. 재생 화면에서 마스크 테두리를 직접 끌어도 됩니다.</td></tr>
+    <tr><td>가장자리 흐림 <span class="en">(Feather)</span></td><td>구멍의 경계를 부드럽게 번지게 합니다. 경계선이 칼같이 보이면 조금 올리세요.</td></tr>
+    <tr><td>반전 <span class="en">(Invert)</span></td><td>안과 밖을 뒤집습니다. 원 안이 아니라 원 밖이 보이게.</td></tr>
+  </table>
+  <h3>분할 화면 (비포 · 애프터)</h3>
+  <ol class="tight">
+    <li>비포 컷은 메인 트랙에, 애프터 컷은 바로 위 트랙에 같은 시작점으로 겹쳐 놓습니다.</li>
+    <li>위 클립을 선택하고 마스크에서 <strong>선형</strong>을 고릅니다. 선을 화면 가운데로 옮기고, 필요하면 90도 돌려 좌우 반반으로.</li>
+    <li>가장자리 흐림을 살짝 올려 경계를 부드럽게. 위에 "전 · 후" 텍스트를 얹으면 끝입니다.</li>
+  </ol>
+  <div class="card">
+    <h3><span class="tag">레시피</span>글자 뒤로 지나가는 사람</h3>
+    <p style="margin-bottom:1.5mm">큰 글자 앞을 사람이 지나가며 글자를 가리는 장면입니다. 레이어 세 장이면 됩니다.</p>
+    <ol class="tight">
+      <li><strong>바닥</strong>: 사람이 화면을 가로질러 걷는 컷을 메인 트랙에 놓습니다. 고정해서 찍은 컷이 가장 잘 됩니다.</li>
+      <li><strong>가운데</strong>: 그 위 트랙에 큰 텍스트를 놓고, 사람이 지나가는 높이에 오도록 위치를 잡습니다.</li>
+      <li><strong>맨 위</strong>: 메인 트랙의 클립을 선택해 <kbd>Ctrl</kbd>+<kbd>C</kbd>, <kbd>Ctrl</kbd>+<kbd>V</kbd>로 복제하고, 텍스트보다 위 트랙에 <strong>메인과 정확히 같은 시작점</strong>으로 놓습니다.</li>
+      <li>맨 위 클립을 선택하고 '비디오' → '컷아웃' → <strong>'자동 컷아웃'</strong>을 켭니다. 맨 위에는 사람만 남습니다.</li>
+      <li>재생해 봅니다. 사람(맨 위) → 글자(가운데) → 배경(바닥) 순서라, 사람이 지나갈 때만 글자가 가려집니다.</li>
+    </ol>
+    <p style="margin-bottom:2mm"><strong>확인</strong>: 사람에 가려지는 글자. 사람이 글자 뒤로 숨는다면 맨 위 클립의 시작점이 어긋난 것입니다. 타임라인을 크게 확대해 두 클립의 왼쪽 끝을 맞추세요.</p>
+  </div>
+
+  <h2><span class="num">9</span>키프레임</h2>
+  <div class="cyc">워크북 사이클 16 – 18</div>
+  <p>키프레임은 <strong>시작 상태와 끝 상태를 두 점으로 찍어 두면, 그 사이를 CapCut이 자동으로 채워 주는 기능</strong>입니다. "0초에 크기 100%, 3초에 크기 120%"라고 두 점만 찍으면 3초 동안 서서히 커지는 움직임이 생깁니다. 위치 · 크기 · 회전 · 불투명도처럼 숫자로 된 값이면 무엇이든 움직일 수 있습니다.</p>
+  <figure>
+    <svg viewBox="0 0 540 200" width="132mm" role="img" aria-label="키프레임 두 점과 그 사이를 채우는 모습">
+      <g font-family="Pretendard, sans-serif">
+        <!-- 그래프 -->
+        <line x1="70" y1="20" x2="70" y2="104" stroke="#7a8c83"/>
+        <line x1="70" y1="104" x2="470" y2="104" stroke="#7a8c83"/>
+        <text x="62" y="34" text-anchor="end" font-size="10" fill="#1c2420">120%</text>
+        <text x="62" y="100" text-anchor="end" font-size="10" fill="#1c2420">100%</text>
+        <text x="20" y="66" font-size="10" font-weight="700" fill="#173a2b">크기</text>
+        <line x1="110" y1="96" x2="410" y2="30" stroke="#2e7d57" stroke-width="2.2"/>
+        <g fill="#fff" stroke="#2e7d57" stroke-width="1.4">
+          <circle cx="160" cy="85" r="3.5"/><circle cx="210" cy="74" r="3.5"/><circle cx="260" cy="63" r="3.5"/><circle cx="310" cy="52" r="3.5"/><circle cx="360" cy="41" r="3.5"/>
+        </g>
+        <text x="260" y="48" text-anchor="middle" font-size="10.5" fill="#2e7d57" font-weight="700" transform="rotate(-12 260 48)">사이는 CapCut이 채움</text>
+        <!-- 클립 바 -->
+        <rect x="70" y="128" width="400" height="26" rx="3" fill="#2e7d57"/>
+        <text x="80" y="145" font-size="10" fill="#fff">메인 트랙 클립</text>
+        <g fill="#e0a526" stroke="#173a2b" stroke-width="1.2">
+          <path d="M110 133 l8 8 -8 8 -8 -8z"/><path d="M410 133 l8 8 -8 8 -8 -8z"/>
+        </g>
+        <line x1="110" y1="104" x2="110" y2="128" stroke="#e0a526" stroke-dasharray="3 2"/>
+        <line x1="410" y1="30" x2="410" y2="128" stroke="#e0a526" stroke-dasharray="3 2"/>
+        <text x="110" y="172" text-anchor="middle" font-size="10" fill="#1c2420">0초</text>
+        <text x="410" y="172" text-anchor="middle" font-size="10" fill="#1c2420">3초</text>
+        <!-- 단계 -->
+        <g font-size="10.5" font-weight="700">
+          <circle cx="96" cy="190" r="8" fill="#173a2b"/><text x="96" y="194" text-anchor="middle" fill="#f3dfa2">1</text>
+          <text x="108" y="194" fill="#173a2b">재생헤드를 시작에</text>
+          <circle cx="216" cy="190" r="8" fill="#173a2b"/><text x="216" y="194" text-anchor="middle" fill="#f3dfa2">2</text>
+          <text x="228" y="194" fill="#173a2b">◇ 눌러 첫 점</text>
+          <circle cx="318" cy="190" r="8" fill="#173a2b"/><text x="318" y="194" text-anchor="middle" fill="#f3dfa2">3</text>
+          <text x="330" y="194" fill="#173a2b">재생헤드를 끝에</text>
+          <circle cx="430" cy="190" r="8" fill="#173a2b"/><text x="430" y="194" text-anchor="middle" fill="#f3dfa2">4</text>
+          <text x="442" y="194" fill="#173a2b">값 바꾸기</text>
+        </g>
+      </g>
+    </svg>
+    <figcaption>두 점(◇)만 찍으면 그 사이의 값은 자동으로 이어집니다. 4번에서 값을 바꾸면 두 번째 점이 저절로 생깁니다.</figcaption>
+  </figure>
+  <h3>순서가 전부입니다</h3>
+  <ol class="tight">
+    <li><strong>재생헤드를 시작 위치로</strong> 옮깁니다.</li>
+    <li>클립을 선택하고 오른쪽 패널 '비디오'에서 움직일 값(위치 · 크기 · 회전 · 불투명도) 옆의 <strong>◇(다이아몬드)</strong>를 눌러 첫 점을 찍습니다. ◇가 색이 채워지면 찍힌 것입니다.</li>
+    <li><strong>재생헤드를 끝 위치로</strong> 옮깁니다.</li>
+    <li><strong>값을 바꿉니다.</strong> 두 번째 점이 자동으로 생깁니다. ◇를 다시 누를 필요가 없습니다.</li>
+  </ol>
+  <p>가장 흔한 실수는 순서를 바꾸는 것입니다. 값을 먼저 바꾸고 ◇를 누르면 그 값이 첫 점이 되어 버립니다. 재생헤드 먼저, 점은 그다음입니다.</p>
+  <div class="card">
+    <h3><span class="tag">레시피 1</span>천천히 다가가는 줌 (켄 번스)</h3>
+    <p style="margin-bottom:2mm">0초에 크기 100% ◇ → 3초에 크기 120%. 고정해서 찍은 컷이나 사진이 천천히 다가가는 화면이 됩니다. 1장에서 "줌 말고 달리"라고 했지요. 현장에서 걸어 들어가지 못했다면 편집에서 이렇게 흉내 냅니다. 사진에 이 움직임을 주는 것을 다큐멘터리 감독 이름을 따 <strong>켄 번스 효과</strong>(Ken Burns)라고 부릅니다. 120%를 넘기면 화질이 거칠어지니 조금만.</p>
+  </div>
+  <div class="card">
+    <h3><span class="tag">레시피 2</span>날아와서 멈추는 글자</h3>
+    <p style="margin-bottom:2mm">텍스트 클립을 선택하고, 시작 위치에서 위치 ◇와 불투명도 ◇를 함께 찍습니다(글자는 화면 왼쪽 밖, 불투명도 0). 0.5초 뒤로 재생헤드를 옮겨 글자를 가운데로 끌고 불투명도를 100으로. 글자가 미끄러지며 나타나 멈춥니다. 두 점 사이가 짧을수록 빠르게 움직입니다.</p>
+  </div>
+  <div class="card">
+    <h3><span class="tag">레시피 3</span>동그랗게 열리는 장면 (마스크 리빌)</h3>
+    <p style="margin-bottom:2mm">다음 장면을 위 트랙에 올리고 <strong>원</strong> 마스크를 씌웁니다. 시작 위치에서 마스크 크기를 0으로 두고 ◇, 1초 뒤에 화면을 가득 덮도록 키웁니다. 구멍이 커지며 다음 장면이 열립니다. 1장의 리빌(가림 뒤에서 나오기)을 편집으로 만든 것입니다. 마스크 크기 옆에도 ◇가 있는지 확인하세요. 없으면 버전에 따라 클립 쪽 키프레임을 씁니다.</p>
+  </div>
+  <div class="tip">◇가 안 보이면 클립을 선택하지 않은 것입니다. 클립을 먼저 누르세요. 처음에는 <strong>두 점만</strong> 찍고, 움직임이 마음에 들 때 점을 더합니다. 점이 많아질수록 고치기 어렵습니다. 찍은 점은 타임라인의 클립 위에 작은 ◇로 보이고, 그 ◇를 선택해 지우거나 끌어 옮길 수 있습니다.</div>
+
+  <h2><span class="num">10</span>마스터링과 내보내기</h2>
+  <div class="cyc">워크북 사이클 19 – 20</div>
+  <p>마스터링은 "다 됐다" 싶을 때 한 번 더 보는 일입니다. 만든 사람은 자기 영상의 흠이 잘 안 보이니, 체크리스트로 봅니다.</p>
+  <h3>마스터링 체크 7</h3>
+  <ul class="check">
+    <li><strong>소리 켜고 한 번, 끄고 한 번</strong> 처음부터 끝까지 봤다</li>
+    <li><strong>음량</strong>: 말이 음악보다 확실히 크다. 갑자기 커지거나 작아지는 곳이 없다</li>
+    <li><strong>자막 오탈자</strong>: 한 줄씩 소리 내 읽어 봤다. 이름 · 숫자는 두 번</li>
+    <li><strong>컷마다 색</strong>: 얼굴 · 손 색이 컷마다 같다</li>
+    <li><strong>첫 3초</strong>: 무슨 영상인지 안다</li>
+    <li><strong>마지막 1초</strong>: 뚝 끊기지 않는다. 정지 프레임 · 로고 · 다음 편 안내 중 하나</li>
+    <li><strong>세로 안전 영역</strong>: 자막 · 얼굴 · 로고가 앱 버튼에 가리지 않는다</li>
+  </ul>
+  <h3>내보내기 설정</h3>
+  <p>오른쪽 위 <strong>'내보내기'</strong>를 누르면 이름 · 해상도 · 형식 · 프레임 속도 · 코덱을 고르는 창이 뜹니다.</p>
+  <table>
+    <tr><th style="width:28mm">항목</th><th style="width:40mm">이 과정의 기본값</th><th>이유</th></tr>
+    <tr><td>이름</td><td>날짜_채널_제목</td><td>예: <strong>1119_오늘첫빵_파일럿</strong>. 나중에 파일만 보고도 무엇인지 알게</td></tr>
+    <tr><td>저장 위치</td><td>04_내보내기 폴더</td><td>내보낸 뒤 파일을 못 찾는 일이 가장 흔합니다. 위치를 눈으로 확인</td></tr>
+    <tr><td>해상도</td><td>1080p</td><td>쇼츠 · 릴스에 충분하고 파일이 가볍습니다. 4K로 찍었어도 1080p로 충분</td></tr>
+    <tr><td>프레임 속도</td><td>30fps (촬영과 같게)</td><td>촬영과 다르게 내보내면 움직임이 어색해질 수 있습니다. 60fps 컷을 슬로로 쓴 영상도 30fps로 내보내면 됩니다</td></tr>
+    <tr><td>형식</td><td>MP4</td><td>어디서나 재생되는 형식</td></tr>
+    <tr><td>코덱</td><td>H.264</td><td>호환성이 가장 좋습니다. <strong>HEVC(H.265)</strong>는 파일이 작지만 일부 PC · 앱에서 재생이 안 되거나 끊깁니다</td></tr>
+    <tr><td>비트 전송률</td><td>권장값 그대로</td><td>높일수록 파일만 커지고, 업로드하면 어차피 다시 압축됩니다</td></tr>
+  </table>
+  <p>내보냈다면 <strong>폰으로 옮겨 재생해 봅니다</strong>. 시청자는 폰으로 보기 때문에, 폰에서 자막이 읽히고 소리가 잘 들려야 진짜 완성입니다.</p>
+  <h3>커버 이미지</h3>
+  <p>메인 트랙 왼쪽 끝의 커버(Cover) 버튼에서 영상 속 한 장면을 고르거나 이미지를 넣어 커버를 만들 수 있습니다. 업로드할 때 유튜브 · 인스타그램에서 다시 고를 수도 있습니다. 커버는 작게 봐도 무엇인지 보이게, 첫 3초와 같은 약속을 하게 만듭니다(2장).</p>
+  <h3>올리기 전 다섯 가지 (2장 발행 체크리스트)</h3>
+  <table>
+    <tr><th style="width:28mm">항목</th><th>확인할 것</th></tr>
+    <tr><td>제목</td><td>핵심 단어를 앞쪽에, 영상에 실제로 나오는 내용만</td></tr>
+    <tr><td>첫 화면 · 썸네일</td><td>커버와 첫 3초가 같은 약속을 하나</td></tr>
+    <tr><td>설명</td><td>첫 두 줄에 무엇을 볼 수 있는지 + 시리즈 안내</td></tr>
+    <tr><td>공개 범위</td><td>공개 · 일부 공개 · 비공개. 첫 파일럿은 일부 공개도 괜찮습니다</td></tr>
+    <tr><td>AI 사용 표시</td><td>실제처럼 보이는 합성 · 변경 장면이 있으면 업로드할 때 공개</td></tr>
+  </table>
+  <div class="tip">내보내기 전에 프로젝트를 한 번 복제해 두세요. 첫 화면 프로젝트 목록에서 복제할 수 있습니다. 업로드 뒤 "자막 하나만 고치자" 하다가 원래 버전을 망가뜨리는 일을 막아 줍니다. 4 · 5회차에는 이 파일럿 프로젝트를 복제해서 장르마다 다시 다듬습니다.</div>
+
+  <h2 style="break-before: page; border-top: none; padding-top: 0; margin-top: 0"><span class="num">11</span>CapCut 기능 사전</h2>
+  <p>"그거 어디 있었지?" 할 때 찾아보는 표입니다. <strong>굵은 글씨</strong>로 적은 위치는 공개 자료로 확인된 경로이고, 나머지는 대략의 위치와 영어 이름입니다. 메뉴 이름은 버전마다 다를 수 있으니 화면에 같은 글자가 없으면 영어 이름이나 비슷한 이름을 찾으세요. 클립 오른쪽 클릭 메뉴에도 자주 쓰는 기능이 모여 있습니다.</p>
+  <table class="dict">
+    <tr><th style="width:30mm">기능</th><th style="width:88mm">어디서</th><th>언제 쓰나</th><th style="width:9mm">절</th></tr>
+    <tr><td>새 프로젝트</td><td>첫 화면 새 프로젝트 만들기 (Create project)</td><td>편집 시작</td><td>2</td></tr>
+    <tr><td>미디어 가져오기</td><td>위쪽 '미디어' 탭 → 자료 창에 끌어다 놓기 · 가져오기 (Import)</td><td>내 컷을 불러올 때</td><td>2</td></tr>
+    <tr><td>화면 비율</td><td>재생 화면 아래 비율 버튼 또는 프로젝트 설정 (Ratio)</td><td>세로 9:16으로 시작</td><td>2</td></tr>
+    <tr><td>분할 · 삭제</td><td>타임라인 도구 막대 · <strong><kbd>Ctrl</kbd>+<kbd>B</kbd> · <kbd>Q</kbd> · <kbd>W</kbd></strong></td><td>컷의 좋은 부분만 남길 때</td><td>3</td></tr>
+    <tr><td>메인 트랙 자석</td><td>타임라인 도구 막대의 자석 버튼 (Main track magnet)</td><td>지운 자리를 자동으로 붙일 때</td><td>3</td></tr>
+    <tr><td>크기 · 위치 · 회전</td><td>오른쪽 패널 '비디오' 기본 (Basic · Transform) 또는 재생 화면에서 끌기</td><td>화면 안 배치</td><td>4</td></tr>
+    <tr><td>자르기</td><td>타임라인 도구 막대 (Crop)</td><td>화면 가장자리를 잘라 낼 때</td><td>4</td></tr>
+    <tr><td>배경 흐림</td><td>오른쪽 패널 캔버스 · 배경 설정 → 흐림 (Canvas · Background · Blur)</td><td>가로 컷을 세로에</td><td>4</td></tr>
+    <tr><td>일반 · 곡선 속도</td><td>오른쪽 패널 '속도' 탭 (Speed · Normal · Curve)</td><td>슬로 · 빨리 감기</td><td>4</td></tr>
+    <tr><td>정지 프레임</td><td>타임라인 도구 막대 또는 오른쪽 클릭 (Freeze)</td><td>마지막 장면 멈춤</td><td>4</td></tr>
+    <tr><td>역재생</td><td>타임라인 도구 막대 또는 오른쪽 클릭 (Reverse)</td><td>거꾸로 가는 재미 컷</td><td>4</td></tr>
+    <tr><td>색 조정</td><td>오른쪽 패널 '조정' (Adjust) · 밝기 · 대비 · 채도 · 색온도</td><td>컷끼리 색 맞추기</td><td>4</td></tr>
+    <tr><td>필터</td><td>위쪽 '필터' 탭 (Filters) → 고른 뒤 강도 조절</td><td>분위기를 살짝</td><td>4</td></tr>
+    <tr><td>조정 레이어 · 속성 복사</td><td>위쪽 '조정' 탭에서 타임라인에 끌기 · 오른쪽 클릭 (Adjustment layer · Copy attributes)</td><td>여러 컷에 같은 색</td><td>4</td></tr>
+    <tr><td>볼륨 · 페이드</td><td>오른쪽 패널 '오디오' 탭 (Audio · Volume · Fade in/out)</td><td>음악 낮추기, 끝 2초 사라지게</td><td>5</td></tr>
+    <tr><td>소음 제거</td><td>오른쪽 패널 '오디오' 탭 안 (Reduce noise)</td><td>웅 소리 줄이기</td><td>5</td></tr>
+    <tr><td>음악 · 효과음</td><td>위쪽 '오디오' 탭 (Music · Sound effects)</td><td>배경 음악, 짧은 효과음</td><td>5</td></tr>
+    <tr><td>비트 표시</td><td>음악 클립 선택 → 타임라인 도구 막대 (Beat)</td><td>컷을 박자에 맞출 때</td><td>5</td></tr>
+    <tr><td>자동 캡션</td><td>위쪽 '텍스트' 또는 자막 탭 (Captions · Auto captions)</td><td>말을 자막으로</td><td>6</td></tr>
+    <tr><td>텍스트 · 애니메이션</td><td>위쪽 '텍스트' 탭 → 오른쪽 패널 애니메이션 (Animation · In)</td><td>제목 한 줄, 등장 효과</td><td>6</td></tr>
+    <tr><td>불투명도 · 혼합</td><td>오른쪽 패널 '비디오' (Opacity · Blend)</td><td>반투명 겹치기, 빛 · 질감</td><td>7</td></tr>
+    <tr><td>배경 제거</td><td><strong>오른쪽 패널 '비디오' → '컷아웃' → '자동 컷아웃'</strong></td><td>인물 누끼</td><td>7</td></tr>
+    <tr><td>크로마 키</td><td><strong>'컷아웃' 탭 → 크로마 키 → 스포이드 · '강도' · '그림자'</strong></td><td>초록 배경 지우기</td><td>7</td></tr>
+    <tr><td>전환</td><td>위쪽 '전환' 탭 → 두 클립 사이에 끌기 (Transitions)</td><td>장소 · 시간이 바뀔 때만</td><td>7</td></tr>
+    <tr><td>마스크</td><td>오른쪽 패널 '비디오' 쪽 마스크 (Mask)</td><td>분할 화면, 구멍 리빌</td><td>8</td></tr>
+    <tr><td>키프레임</td><td><strong>클립 선택 → 오른쪽 패널 '비디오'의 위치 · 크기 · 회전 · 불투명도 옆 ◇</strong></td><td>움직이는 줌 · 글자</td><td>9</td></tr>
+    <tr><td>커버</td><td>메인 트랙 왼쪽 끝 커버 버튼 (Cover)</td><td>썸네일 이미지</td><td>10</td></tr>
+    <tr><td>내보내기</td><td><strong>오른쪽 위 '내보내기' → 이름 · 해상도 · 형식 · 프레임 속도 · 코덱</strong></td><td>파일로 만들기</td><td>10</td></tr>
+  </table>
+
+  <h2><span class="num">12</span>단축키와 막힘 해결</h2>
+  <h3>꼭 쓰는 단축키</h3>
+  <table>
+    <tr><th style="width:56mm">단축키</th><th>하는 일</th></tr>
+    <tr><td><kbd>Space</kbd></td><td>재생 · 정지</td></tr>
+    <tr><td><kbd>Ctrl</kbd>+<kbd>B</kbd></td><td>재생헤드 위치에서 분할</td></tr>
+    <tr><td><kbd>Q</kbd> / <kbd>W</kbd></td><td>선택한 클립의 재생헤드 왼쪽 / 오른쪽 삭제</td></tr>
+    <tr><td><kbd>Delete</kbd></td><td>선택한 클립 지우기</td></tr>
+    <tr><td><kbd>Ctrl</kbd>+<kbd>Z</kbd></td><td>되돌리기. 망쳤다 싶으면 일단 이것부터</td></tr>
+    <tr><td><kbd>Ctrl</kbd>+<kbd>C</kbd> / <kbd>Ctrl</kbd>+<kbd>V</kbd></td><td>클립 복사 / 붙여넣기 (복제해서 위 트랙에 올릴 때)</td></tr>
+    <tr><td><kbd>Ctrl</kbd> + 마우스 휠 · <kbd>+</kbd> / <kbd>-</kbd></td><td>타임라인 확대 · 축소</td></tr>
+  </table>
+  <p class="muted">단축키는 CapCut의 키보드 아이콘(단축키 목록)에서 확인하고 바꿀 수 있으며, 버전에 따라 다를 수 있습니다. 맥에서는 <kbd>Ctrl</kbd> 대신 <kbd>⌘</kbd>입니다.</p>
+  <h3>막힘 해결</h3>
+  <table>
+    <tr><th style="width:46mm">증상</th><th>이렇게</th></tr>
+    <tr><td>클립이 빨갛고 "미디어 없음"</td><td>원본 파일을 옮기거나 이름을 바꾼 것입니다. 원래 폴더 · 이름으로 되돌리거나, 클립의 다시 연결(Relink) 안내에서 새 위치의 파일을 골라 줍니다.</td></tr>
+    <tr><td>재생이 끊기거나 색이 허옇다</td><td>폰에서 HEVC(고효율)나 HDR로 찍은 파일일 수 있습니다(1장). 다음 촬영부터 H.264 · HDR 끄기로 찍고, 지금 파일은 미리보기 화질을 낮추거나 PC를 재시작해 봅니다.</td></tr>
+    <tr><td>내보내려니 "Pro" 결제 창</td><td>왕관 · Pro 표시가 있는 효과 · 필터 · 기능을 쓴 것입니다. 유료 구독 로그인이 필요합니다. 그 효과를 지우거나 무료 기능으로 바꾸면 내보낼 수 있습니다. 수업은 무료 기능만으로 충분합니다.</td></tr>
+    <tr><td>키프레임 ◇가 안 보인다</td><td>클립을 선택하지 않았거나, 텍스트 · 영상이 아닌 곳을 선택한 것입니다. 타임라인에서 클립을 한 번 누르고 오른쪽 패널 '비디오'(텍스트는 텍스트 쪽 기본 설정)를 봅니다.</td></tr>
+    <tr><td>키프레임이 안 움직인다</td><td>재생헤드를 옮기지 않고 값을 바꿨을 가능성이 큽니다. 9절의 순서(재생헤드 → ◇ → 재생헤드 → 값)대로 다시.</td></tr>
+    <tr><td>자동 캡션이 안 되거나 엉망</td><td>언어가 한국어인지, 인터넷 · 로그인이 되어 있는지 확인합니다. 음악이 크거나 말이 작으면 잘 못 알아듣습니다. 음악을 끄고 만든 뒤 다시 켜고, 틀린 줄은 직접 고칩니다.</td></tr>
+    <tr><td>내보내기가 너무 느리다</td><td>4K · 60fps · 효과가 많으면 오래 걸립니다. 1080p 30fps로, 다른 프로그램을 닫고 내보냅니다. 노트북은 전원을 꽂으세요.</td></tr>
+    <tr><td>내보낸 영상에 소리가 없다</td><td>클립을 음소거했거나 볼륨이 0인지, 음악 트랙이 꺼져 있지 않은지 봅니다. 폰에서 재생할 때 무음 모드인지도 확인합니다.</td></tr>
+    <tr><td>위 트랙 클립이 안 보인다</td><td>더 위 트랙의 불투명한 클립이 가리고 있거나, 클립이 아주 작게 줄어 있습니다. 트랙 순서를 바꿔 봅니다.</td></tr>
+  </table>
+
+  <h2><span class="num">13</span>편집을 돕는 프롬프트</h2>
+  <p>편집 자체는 내 손으로 하지만, 순서를 고민하거나 문장을 다듬을 때는 ChatGPT가 빠릅니다. 대괄호 [ ]만 내 내용으로 바꿔 붙여 넣으세요. AI의 답은 언제나 초안이고, 고르는 것은 내 몫입니다.</p>
+  <h3>① 컷 순서 제안</h3>
+  <div class="prompt">너는 숏폼 영상 편집자야. 내가 찍어 온 컷 목록이야.<br>
+  [컷 번호 · 샷 크기 · 길이 · 무엇이 보이는지. 예: 1 클로즈업 8초 오븐에서 빵이 나옴 / 2 와이드 12초 불 꺼진 가게에 불이 켜짐 …]<br>
+  영상 목표: [30초 세로 쇼츠 · 누구에게 무엇을]<br>
+  이 컷들로 만들 편집 순서 2안을 표로 써 줘. 열은 "순서 · 컷 번호 · 쓸 길이(초) · 왜 여기에". 첫 3초 훅이 될 컷을 맨 앞에 두고, 한 컷 평균 1.5~3초가 되게. 같은 크기 컷이 이어져 점프컷이 되는 곳은 표시하고 사이에 넣을 컷을 제안해 줘. 목록에 없는 컷을 지어내지 말고, 부족한 컷은 "다음에 찍을 컷"으로 따로 적어 줘.</div>
+  <h3>② 자막 문장 다듬기</h3>
+  <div class="prompt">아래는 자동 캡션으로 만든 자막이야. 세로 숏폼 자막으로 다듬어 줘.<br>
+  [자막 붙여넣기]<br>
+  조건: 한 줄 15자 안팎, 한 화면 최대 두 줄. 뜻과 사실은 바꾸지 말 것. "어, 음, 그래서" 같은 군말은 빼고, 내 말투(끝맺음)는 살릴 것. 맞춤법 · 띄어쓰기를 고치고, 고친 곳은 굵게. 소리를 끄고 자막만 봐도 내용이 이해되는지 마지막에 한 줄로 평가해 줘.</div>
+  <h3>③ 제목 · 첫 화면 문구 3안</h3>
+  <div class="prompt">영상 내용: [한 줄 요약]<br>타깃 한 사람: [ ]<br>첫 3초 화면: [무엇이 보이는지]<br>
+  첫 화면에 얹을 제목 텍스트 3안을 써 줘. 각각 다른 훅 유형(질문 · 결과 먼저 · 숫자 · 공감 상황 중)으로, 한 줄 12자 이내, 영상에 실제로 나오는 내용만, 과장 표현 금지. 안마다 어울리는 글자 위치(위 · 가운데)와 강조할 한 단어를 붙여 줘.</div>
+  <h3>④ 음악 분위기 키워드</h3>
+  <div class="prompt">영상 내용과 분위기: [ ]<br>길이와 컷 속도: [30초, 컷 평균 2초 등]<br>
+  이 영상에 어울리는 배경 음악을 음악 라이브러리 · 유튜브 오디오 보관함에서 찾을 수 있게 검색 키워드를 한국어 5개, 영어 5개로 줘(장르 · 분위기 · 빠르기 · 악기). 말이 많은 영상이라 목소리를 가리지 않을 음악이어야 해. 특정 가수 · 곡 이름은 추천하지 말고, 사업 홍보 영상이면 상업적 사용 가능 여부를 꼭 확인하라는 말을 덧붙여 줘.</div>
+
+  <div class="box gold">
+    <h3 style="margin-top:0">다음 장 예고 · 4장 장르별 실습</h3>
+    <p style="margin:0">4 · 5회차에는 오늘 익힌 기능을 장르마다 다시 씁니다. <strong>숏폼 · 브이로그 · 정보성 · 스트리머형 · AI 영상</strong>, 그리고 채널을 기억하게 만드는 <strong>브랜딩 · 후킹</strong>까지. 과제는 오늘 만든 파일럿 숏폼을 다듬어 채널에 올리고, 다음 회차에 해 볼 장르 하나를 골라 촬영 소스를 모아 오는 것입니다.</p>
+  </div>
+</section>
+
+</body>
+</html>
