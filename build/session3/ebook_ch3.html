@@ -5,14 +5,16 @@
 <title>촬영·편집 핸드북 3장 — 편집의 기초와 CapCut 완전정복</title>
 <link rel="stylesheet" href="../assets/print.css">
 <style>
-  body { font-size: 10.3pt; line-height: 1.62; }
-  table { font-size: 9.5pt; }
+  body { font-size: 10.1pt; line-height: 1.58; }
+  table { font-size: 9.3pt; }
   td { padding: 1.7mm 2.5mm; }
   .prompt { font-size: 9.4pt; line-height: 1.55; }
   .prompt b { color: var(--blue); }
   h2 { border-top: 1.5px solid var(--line); padding-top: 4mm; margin-top: 8mm; }
   h2:first-of-type { border-top: none; padding-top: 0; }
   .num { color: var(--gold); margin-right: 2mm; }
+  h2, h3, .cyc { break-after: avoid; page-break-after: avoid; }
+  tr { break-inside: avoid; }
   .cyc { font-size: 8.5pt; font-weight: 700; color: var(--green); margin: -1mm 0 2mm; }
   .tip { background: #fbf1d3; border-radius: 3mm; padding: 3.5mm 5mm; margin: 0 0 4mm; break-inside: avoid; }
   .tip::before { content: "실무 팁"; display: block; font-size: 8.5pt; font-weight: 800; color: var(--red); margin-bottom: 1mm; }
@@ -412,8 +414,89 @@
   <p>첫 3초에 제목 한 줄을 넣으면 편집자의 첫 번째 질문 "3초 안에 무슨 영상인지 아나"가 해결됩니다. 위쪽 '텍스트' 탭에서 기본 텍스트를 타임라인 위 트랙에 끌어다 놓고 글자를 씁니다. 텍스트를 선택한 채 오른쪽 패널의 애니메이션(Animation)에서 <strong>등장</strong>(In) 하나를 고르고 길이를 0.3~0.5초로 짧게 두면, 글자가 톡 나타납니다. 등장 · 퇴장 · 반복 애니메이션을 다 걸면 산만하니 등장 하나면 충분합니다. 제목은 15자 안팎으로, 크기를 키워 화면 위쪽 3분의 1에 두고 길이는 3초 정도면 됩니다. 나만의 한 편에서는 2장 기획안의 제목 · 훅 문장을 그대로 쓰면 됩니다.</p>
   <div class="tip">소리를 끄고 처음부터 끝까지 한 번 보세요. 자막만으로 내용이 따라가지면 통과입니다. 말이 없는 브이로그도 "오늘은 300걸음만", "여기서 10분 쉬어 감"처럼 상황을 알려 주는 한 줄 자막이 있으면 끝까지 보는 사람이 늘어납니다.</div>
 
-  <h2><span class="num">7</span>레이어 쌓기</h2>
-  <div class="cyc">워크북 사이클 11 – 13</div>
+  <h2><span class="num">7</span>CapCut 자동 자막 시스템</h2>
+  <div class="cyc">워크북 사이클 10</div>
+  <p>자동 캡션은 시작일 뿐입니다. CapCut에는 자막을 만든 뒤 <strong>고치고, 꾸미고, 강조하고, 군더더기를 잘라 내고, 목소리까지 입히는</strong> 기능이 이어져 있습니다. 한 번에 다 쓸 필요는 없고, 아래 순서대로 필요한 데까지만 가면 됩니다.</p>
+  <div class="formula" style="gap:1.2mm">
+    <div><b>자동 캡션</b>말을 자막 줄로</div><span>→</span>
+    <div><b>고치기</b>이름 · 숫자 · 용어</div><span>→</span>
+    <div><b>스타일 하나로</b>캡션 템플릿</div><span>→</span>
+    <div><b>강조 · 정리</b>키워드 강조 · 군말 찾기 · 대본으로 편집</div><span>→</span>
+    <div><b>텍스트 읽기</b>TTS 목소리</div><span>→</span>
+    <div class="res"><b>더 나아가</b>자동 가사 · 이중 자막</div>
+  </div>
+  <table>
+    <tr><th style="width:36mm">기능</th><th>하는 일</th><th style="width:60mm">쓸 때 · 주의</th></tr>
+    <tr><td><strong>자동 캡션</strong> <span class="en">(Auto captions)</span></td><td>'텍스트'(또는 캡션) 탭 → 자동 캡션 → 언어 고르고 만들기. 말소리가 자막 트랙에 줄마다 생깁니다.</td><td>음악이 크면 잘 못 알아들으니 음악을 끄고 만들기. 다시 만들면 사용 횟수가 차감될 수 있습니다</td></tr>
+    <tr><td><strong>고치기</strong></td><td>재생하며 한 줄씩 읽고, 틀린 줄을 선택해 고칩니다. 긴 줄은 둘로 나눕니다(6절).</td><td>이름 · 숫자 · 전문 용어 · 사투리는 거의 늘 틀립니다</td></tr>
+    <tr><td><strong>캡션 템플릿</strong> <span class="en">(Caption · Text templates)</span></td><td>글꼴 · 색 · 테두리 · 움직임이 한 세트로 묶인 스타일. 자막 하나에 골라 전체에 적용합니다.</td><td>화려한 템플릿 여러 개보다 <strong>읽기 쉬운 스타일 하나 + 강조 단어 하나</strong></td></tr>
+    <tr><td><strong>키워드 강조</strong> <span class="en">(Highlight keywords)</span></td><td>자동 캡션을 만들 때 켜는 옵션. 핵심 단어의 색 · 크기를 자동으로 바꿔 줍니다. 직접 고를 때는 한 줄에 한 단어만.</td><td>AI가 고른 단어가 핵심이 아닐 때가 많으니 확인 후 바꾸기</td></tr>
+    <tr><td><strong>군말 찾기</strong> <span class="en">(Filler words)</span> · <strong>대본으로 편집</strong></td><td>"음, 어", 같은 말 반복을 찾아 표시합니다. 자막 줄(대본)을 지우면 <strong>영상의 그 부분도 함께 잘립니다</strong>.</td><td>말하는 영상 · 인터뷰 · 브이로그의 군더더기를 빠르게 잘라 낼 때. 지우기 전에 프로젝트를 복제해 두기</td></tr>
+    <tr><td><strong>텍스트 읽기</strong> <span class="en">(Text to speech · TTS)</span></td><td>텍스트 클립 선택 → 텍스트 읽기 → 목소리 고르기. 그 글을 읽는 목소리가 오디오 트랙에 생깁니다.</td><td>말 없는 컷에 설명을 더할 때. 사람처럼 들리면 업로드 때 AI 표시(8절)</td></tr>
+    <tr><td><strong>자동 가사</strong> <span class="en">(Auto lyrics)</span></td><td>노래가 든 음악에서 가사를 자막으로 만듭니다.</td><td>노래 · 커버 영상. 음악 저작권은 따로 확인(5절)</td></tr>
+    <tr><td><strong>이중 자막</strong> <span class="en">(Bilingual captions)</span></td><td>한 자막에 두 언어(예: 한국어 + 영어)를 함께 띄웁니다.</td><td>외국 시청자용. 번역은 반드시 한 번 읽고 고치기</td></tr>
+  </table>
+  <div class="mist">
+    <strong>메뉴 이름과 위치는 버전마다 다릅니다.</strong> 공개된 안내 자료끼리도 이름이 다르게 적혀 있을 정도입니다. 화면에 같은 글자가 없으면 영어 이름이나 비슷한 이름을 찾으세요. 그리고 이 기능들 가운데 일부는 <strong>Pro(유료) 전용이거나 사용 횟수 제한</strong>이 있을 수 있습니다. 수업 PC는 유료 계정으로 로그인해 두지만, 집에서 무료 계정으로 열면 왕관 표시가 붙거나 메뉴가 안 보일 수 있습니다.
+  </div>
+  <h3>사이클 10에서 해 보는 것 · 자막 꾸미기</h3>
+  <ol class="tight">
+    <li>사이클 9에서 만든 자막 하나에 <strong>캡션 템플릿</strong>(또는 텍스트 템플릿 · 애니메이션)을 골라 전체에 적용합니다.</li>
+    <li>핵심 단어 하나만 골라 색 · 크기를 다르게. 한 줄에 한 단어입니다.</li>
+    <li>말 없는 컷(01) 위에 텍스트 한 줄을 넣고 <strong>텍스트 읽기</strong>로 목소리를 입힙니다.</li>
+    <li>소리를 끄고 한 번, 켜고 한 번 재생합니다. 강조 단어가 먼저 눈에 들어오고 말 없는 컷에서도 목소리가 나오면 성공입니다.</li>
+    <li>도전: 자동 캡션을 다시 만들며 키워드 강조 · 군말 찾기를 켜 봅니다.</li>
+  </ol>
+
+  <h2><span class="num">8</span>AI 목소리</h2>
+  <div class="cyc">워크북 사이클 9 – 10 · 내레이션 재료</div>
+  <p>내 목소리로 녹음하기 어렵거나, 말 없는 영상에 설명을 넣고 싶을 때 AI 목소리(TTS)를 씁니다. 공통 샘플의 <strong>내레이션.mp3</strong>도 대본을 Fish Audio에 넣어 만든 것입니다. 많이 쓰는 세 가지를 비교하면 이렇습니다.</p>
+  <table style="break-inside:avoid">
+    <tr><th style="width:26mm"></th><th>CapCut TTS</th><th>Fish Audio (무료)</th><th>ElevenLabs (무료)</th></tr>
+    <tr><td><strong>무료 분량</strong></td><td>기본 목소리 무료 · 일부 Pro</td><td>월 8천 크레딧 (약 7분)</td><td>월 1만 크레딧 (약 10분)</td></tr>
+    <tr><td><strong>가입</strong></td><td>필요 없음</td><td>필요</td><td>필요</td></tr>
+    <tr><td><strong>작업 순서</strong></td><td>텍스트 → 텍스트 읽기 → 오디오</td><td>생성 → mp3 받기 → 가져오기</td><td>생성 → mp3 받기 → 가져오기</td></tr>
+    <tr><td><strong>자막 연결</strong></td><td>같은 텍스트라 처음부터 맞음</td><td>mp3로 자동 캡션 다시</td><td>mp3로 자동 캡션 다시</td></tr>
+    <tr><td><strong>목소리</strong></td><td>깔끔 · 흔한 목소리</td><td>자연스러움 · 목소리 종류 매우 많음</td><td>자연스러움 · 감정 태그 · 효과음 생성</td></tr>
+    <tr><td><strong>무료 이용 조건</strong></td><td>유료 계정으로 사용</td><td>비상업용일 가능성 · 약관 확인</td><td>비상업용 · 출처(elevenlabs.io) 표기</td></tr>
+    <tr><td><strong>속도</strong></td><td>가장 빠름</td><td>빠름</td><td>기능이 많아 다소 느림</td></tr>
+  </table>
+  <p class="muted" style="margin-top:-2mm">크레딧 · 가격 · 이용 조건 · 메뉴 이름은 자주 바뀝니다. 표의 숫자와 조건은 이 장을 만들 때의 기준이니, 쓰기 전에 각 사이트의 요금제 · 약관에서 다시 확인하세요.</p>
+  <p>수업에서는 <strong>CapCut TTS가 기본</strong>이고, 목소리를 한 단계 올리고 싶을 때 <strong>Fish Audio</strong>를 씁니다(강사 시연). CapCut TTS는 같은 텍스트로 만들어 자막과 처음부터 맞고, 외부 서비스는 목소리가 더 자연스럽지만 mp3를 받아 와서 자막을 다시 만들어야 합니다.</p>
+  <h3>외부 목소리 작업 순서</h3>
+  <div class="formula">
+    <div><b>대본</b>숫자 · 영어는 한글로</div><span>→</span>
+    <div><b>Fish Audio 생성</b>한국어 기본 목소리</div><span>→</span>
+    <div><b>mp3 받기</b>드라이브로 PC에</div><span>→</span>
+    <div><b>CapCut</b>오디오 트랙에 올리기</div><span>→</span>
+    <div class="res"><b>자동 캡션</b>만들고 고치기</div>
+  </div>
+  <p>사이트에 로그인 → 한국어 목소리 고르기 → 대본 붙여 넣기 → 만들기 → mp3 받기. PC에서 소리가 안 나면 목소리를 듣고 고르는 일은 <strong>폰(브라우저 · 이어폰)</strong>에서 하고, 받은 mp3는 드라이브로 PC에 옮깁니다(5절 상자).</p>
+  <div class="grid2" style="margin-bottom:4mm">
+    <div class="box" style="margin:0">
+      <h3 style="margin-top:0">목소리 규칙</h3>
+      <ul class="tight" style="margin-bottom:0">
+        <li><strong>기본 제공 목소리만</strong> 씁니다.</li>
+        <li><strong>목소리 복제는 본인 목소리만.</strong> 남의 목소리를 허락 없이 복제하지 않습니다.</li>
+        <li><strong>유명인 흉내 목소리는 금지</strong>입니다.</li>
+        <li><strong>사람처럼 들리면 AI 표시.</strong> 업로드할 때 공개합니다(14절).</li>
+        <li><strong>무료 플랜 목소리는 수익화 영상에 쓰지 않습니다.</strong> 무료는 비상업용인 경우가 많습니다.</li>
+        <li><strong>ElevenLabs 무료</strong>는 설명란에 출처(elevenlabs.io)를 적습니다.</li>
+      </ul>
+    </div>
+    <div class="box gold" style="margin:0">
+      <h3 style="margin-top:0">대본 쓰는 요령</h3>
+      <ul class="tight" style="margin-bottom:0">
+        <li><strong>숫자 · 영어는 한글로 풀어 씁니다.</strong> "3초" → "삼 초", "CapCut" → "캡컷". 그대로 두면 엉뚱하게 읽는 일이 많습니다.</li>
+        <li><strong>쉼표로 숨 쉴 자리</strong>를 표시합니다. "돗자리 펴고, 따뜻한 커피 한 잔이면, 준비 끝."</li>
+        <li>문장 사이를 한 줄씩 띄우면 컷마다 잘라 쓰기 쉽습니다.</li>
+        <li>볼륨은 <strong>목소리 0dB · 음악 −15 ~ −20dB</strong>(5절).</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2><span class="num">9</span>레이어 쌓기</h2>
+  <div class="cyc">워크북 사이클 12 – 14</div>
   <p>레이어는 <strong>투명 필름을 겹쳐 쌓는 것</strong>입니다. 메인 트랙이 바닥 그림이고, 그 위 트랙에 영상 · 사진 · 텍스트 · 스티커를 올릴 때마다 필름이 한 장씩 덮입니다. <strong>위 트랙일수록 화면 앞</strong>에 보이고, 불투명한 필름은 아래를 가립니다. 순서를 바꾸려면 클립을 위아래 트랙으로 끌어 옮기면 됩니다.</p>
   <figure>
     <svg viewBox="0 0 560 270" width="138mm" role="img" aria-label="레이어를 펼쳐 본 그림">
@@ -451,16 +534,16 @@
   </figure>
   <h3>화면 속 화면 (PiP)</h3>
   <ol class="tight">
-    <li>작게 넣을 클립을 메인 트랙 <strong>위 트랙으로</strong> 끌어 올립니다. 미디어 창에서 바로 위 트랙에 놓아도 됩니다.</li>
+    <li>작게 넣을 클립을 메인 트랙 <strong>위 트랙으로</strong> 끌어 올립니다. 미디어 창에서 바로 위 트랙에 놓아도 됩니다. 사이클 12에서는 메인 트랙 09_다른장소 위에 아무 샘플 하나를 올립니다.</li>
     <li>재생 화면에서 그 클립의 모서리를 끌어 3분의 1 크기로 줄입니다.</li>
-    <li>모서리로 옮깁니다. 오른쪽 아래는 앱 버튼과 겹치니 왼쪽 위나 오른쪽 위가 안전합니다.</li>
+    <li>모서리로 옮깁니다. 오른쪽 아래는 앱 버튼과 겹치니 왼쪽 위나 오른쪽 위가 안전합니다. 길이는 메인 트랙 클립과 맞춥니다.</li>
   </ol>
   <p>반응 영상, 과정과 결과를 동시에 보여 줄 때, 설명하는 내 얼굴을 작게 띄울 때 씁니다.</p>
   <h3>불투명도 · 혼합 모드 · PNG</h3>
   <ul class="tight">
     <li><strong>불투명도</strong>: 오른쪽 패널 '비디오'의 불투명도(Opacity)를 낮추면 위 레이어가 반투명해져 아래가 비칩니다. 두 장면을 겹쳐 시간이 흐르는 느낌을 줄 때 씁니다.</li>
     <li><strong>혼합 모드</strong>(Blend): 같은 패널 근처에 있는 혼합 설정에서 화면(Screen) · 곱하기(Multiply) 같은 방식을 고르면, 위 레이어의 밝은 부분만 또는 어두운 부분만 겹칩니다. 빛 번짐 · 먼지 · 종이 질감 영상을 위에 얹을 때 씁니다.</li>
-    <li><strong>로고 · 워터마크는 PNG로</strong>: 투명 배경 PNG 이미지는 로고만 보이고, JPG는 흰 네모째로 덮습니다. 로고는 작게, 한쪽 모서리에, 영상 내내 같은 자리에 둡니다.</li>
+    <li><strong>로고 · 워터마크는 PNG로</strong>: 투명 배경 PNG 이미지는 로고만 보이고, JPG는 흰 네모째로 덮습니다. 로고는 작게, 한쪽 모서리에, 영상 내내 같은 자리에 두고 불투명도는 70% 정도면 화면을 덜 가립니다. ChatGPT 이미지로 로고를 만들 때는 "transparent background"를 넣어 달라고 합니다.</li>
   </ul>
   <h3>배경 제거와 크로마 키</h3>
   <table>
@@ -472,17 +555,56 @@
   <div class="card">
     <h3><span class="tag">레시피</span>썸네일형 인트로</h3>
     <ol class="tight">
-      <li>메인 트랙에 새 배경(가게 외관, 단색, 풍경)을 깝니다.</li>
-      <li>위 트랙에 인물 컷을 올리고 <strong>자동 컷아웃</strong>으로 배경을 지웁니다.</li>
+      <li>메인 트랙에 새 배경(가게 외관, 단색, 풍경)을 깝니다. 공통 샘플은 09_다른장소.</li>
+      <li>위 트랙에 인물 컷(공통 샘플은 06_한마디)을 올리고 <strong>자동 컷아웃</strong>으로 배경을 지웁니다. 처리가 끝날 때까지 기다립니다.</li>
       <li>맨 위 트랙에 큰 제목 텍스트. 인물 얼굴과 겹치지 않게 위쪽에.</li>
     </ol>
-    <p style="margin-bottom:2mm"><strong>확인</strong>: 인물만 떠 있는 첫 화면. 이 장면을 정지 프레임으로 만들면 커버(11절)로도 씁니다.</p>
+    <p style="margin-bottom:2mm"><strong>확인</strong>: 인물만 떠 있는 첫 화면. 이 장면을 정지 프레임으로 만들면 커버(14절)로도 씁니다.</p>
   </div>
-  <h3>전환은 아껴 쓰기</h3>
-  <p>위쪽 '전환'(Transitions) 탭의 전환을 두 클립 사이에 끌어다 놓으면 장면이 녹아들거나 밀려납니다. 하지만 <strong>대부분의 컷은 그냥 컷</strong>이 가장 좋습니다. 전환은 장소나 시간이 바뀔 때만, 0.3~0.5초로 짧게, 한 영상에 한두 번이면 충분합니다. 효과도 마찬가지입니다. 효과가 많을수록 내용이 아니라 효과가 보입니다.</p>
+  <h2><span class="num">10</span>전환 · 이펙트</h2>
+  <div class="cyc">워크북 사이클 15 – 16</div>
+  <p><strong>전환</strong>은 두 컷의 이음새에 거는 움직임이고, <strong>이펙트</strong>는 화면 자체에 거는 움직임 · 질감입니다. 둘 다 양념입니다. <strong>대부분의 컷은 그냥 컷</strong>이 가장 좋고, 전환 · 이펙트는 뜻이 있는 자리 한두 군데에 정확하게 넣을 때 빛납니다. 효과가 많을수록 내용이 아니라 효과가 보입니다.</p>
+  <h3>전환은 뜻으로 고른다</h3>
+  <p>위쪽 '전환'(Transitions) 탭은 뜻별 서랍입니다. 고르기 전에 <strong>"이 이음새에서 무엇이 바뀌나"</strong>부터 묻습니다. 같은 종류라도 느낌이 조금씩 다르니 썸네일에 마우스를 올려 미리보기로 몇 개 보고 고릅니다.</p>
+  <table>
+    <tr><th style="width:40mm">종류</th><th>주는 뜻 · 느낌</th><th style="width:44mm">어울리는 영상</th></tr>
+    <tr><td><strong>디졸브 · 페이드</strong></td><td>시간이 흐름, 차분함. 앞 장면이 녹아 다음 장면이 됨</td><td>브이로그 · 감성</td></tr>
+    <tr><td><strong>슬라이드 · 와이프</strong></td><td>다음 순서, 목록을 넘기는 느낌</td><td>정보성</td></tr>
+    <tr><td><strong>줌 · 카메라 흔들림</strong></td><td>에너지, 훅. 화면이 확 다가오거나 흔들림</td><td>숏폼</td></tr>
+    <tr><td><strong>블러 · 휩</strong></td><td>빠른 이동, 장소가 바뀜</td><td>여행 · 브이로그 · 숏폼</td></tr>
+    <tr><td><strong>글리치 · 모양</strong><span class="en"> (마스크형)</span></td><td>테크 · 게임 느낌 / 원 · 별 같은 모양으로 열기</td><td>게임 · 테크 · 재미 요소</td></tr>
+  </table>
+  <p>넣는 법은 간단합니다. 전환을 두 클립 사이 이음새에 끌어다 놓고, 전환을 선택해 오른쪽 패널에서 <strong>길이</strong>를 정합니다. 전환 창의 <strong>'모두 적용'</strong>(Apply to all)은 모든 이음새에 같은 전환을 걸어 버리니 한 번 눌러 보고 <kbd>Ctrl</kbd>+<kbd>Z</kbd>로 되돌려 보세요. 차이가 바로 느껴집니다.</p>
+  <h3>전환을 잘 쓰는 다섯 가지</h3>
+  <table>
+    <tr><th style="width:40mm">원칙</th><th>이렇게</th></tr>
+    <tr><td><strong>1 · 한 영상에 한두 종류</strong></td><td>매번 다른 전환은 산만합니다. 같은 전환을 반복하면 그것이 그 영상의 스타일이 됩니다.</td></tr>
+    <tr><td><strong>2 · 짧게 0.3~0.5초</strong></td><td>숏폼은 짧게. 감성 브이로그의 디졸브만 0.8~1초로 길게 둡니다.</td></tr>
+    <tr><td><strong>3 · 바뀌는 곳에만</strong></td><td>장소 · 시간 · 주제가 바뀔 때만. 같은 장면 안은 그냥 컷입니다.</td></tr>
+    <tr><td><strong>4 · 박자 위에</strong></td><td>음악의 비트 점에 이음새를 맞춥니다(아래 비트 표시).</td></tr>
+    <tr><td><strong>5 · 움직임을 잇기</strong></td><td>오른쪽으로 움직이는 컷 뒤에는 오른쪽 슬라이드 · 휩. 화면 속 움직임과 전환 방향을 맞추면 이음새가 안 보입니다.</td></tr>
+  </table>
+  <h3>찍을 때 만드는 전환</h3>
+  <p>가장 자연스러운 전환은 편집 메뉴가 아니라 <strong>촬영</strong>에서 나옵니다(1장). 이렇게 찍어 오면 편집에서는 그냥 붙이기만 하면 됩니다.</p>
+  <div class="grid3" style="margin-bottom:4mm">
+    <div class="box" style="margin:0"><strong>휩 팬</strong><br>컷 끝에서 카메라를 휙 돌리고, 다음 컷도 휙으로 시작. 흐린 부분끼리 붙이면 장소가 순간 이동합니다. 공통 샘플 12_자전거_시점의 마지막 1초가 휩입니다.</div>
+    <div class="box" style="margin:0"><strong>가리기</strong><br>손 · 물건으로 렌즈를 가렸다가, 다음 컷은 가린 상태에서 떼며 시작. 가려진 순간에 컷을 바꿉니다.</div>
+    <div class="box" style="margin:0"><strong>매치 컷</strong><br>같은 모양 · 같은 동작으로 다음 장면을 잇습니다. 둥근 컵 → 둥근 해, 문을 여는 손 → 다른 문을 여는 손.</div>
+  </div>
+  <h3>이펙트 · 애니메이션</h3>
+  <p>위쪽 '효과'(Effects) 탭의 효과를 타임라인 위 트랙에 끌어다 놓으면 효과 클립이 생기고, <strong>그 길이만큼</strong> 아래 화면에 적용됩니다. 버전에 따라 클립을 선택하고 적용하는 방식도 있습니다. 필터는 색을, 효과는 움직임 · 질감을 바꿉니다.</p>
+  <table>
+    <tr><th style="width:36mm">종류</th><th>무엇</th><th style="width:56mm">쓰는 곳</th></tr>
+    <tr><td><strong>비디오 효과</strong><span class="en"> (Video effects)</span></td><td>흔들림 · 플래시 · 빛샘 · 필름 · 레트로. 놓은 길이만큼 적용</td><td>박자 강조, 마지막 컷 분위기</td></tr>
+    <tr><td><strong>바디 효과</strong><span class="en"> (Body effects)</span></td><td>인물을 알아보고 외곽선 · 빛 같은 효과를 몸에 붙임</td><td>인물 컷에만. 인물이 작거나 없으면 안 됨</td></tr>
+    <tr><td><strong>클립 애니메이션</strong><span class="en"> (Animation)</span></td><td>클립 선택 → 오른쪽 패널 '애니메이션': 등장(In) · 퇴장(Out) · 콤보(Combo)</td><td>사진 · 로고 · 텍스트가 톡 나타날 때</td></tr>
+  </table>
+  <h3>비트 표시</h3>
+  <p>음악 클립을 오른쪽 클릭하면(버전에 따라 타임라인 도구 막대) <strong>비트</strong>(Beat) 메뉴가 있고, 자동 비트를 고르면 박자 자리에 점이 찍힙니다. 이름 · 위치는 버전마다 다릅니다. 비트 표시는 <strong>눈금일 뿐</strong>이라, 이음새와 효과를 점에 직접 맞춰야 합니다. 클립 끝을 끌어 가까운 점에 붙이고, 한두 프레임 어긋나면 파형을 보고 미세하게 조정합니다. 비트 기능이 없으면 파형이 뾰족하게 솟은 곳이 박자입니다.</p>
+  <div class="tip">사이클 15에서는 장소가 바뀌는 이음새 하나(예: 08 → 09)에만 디졸브 0.4초를 넣고, 줌 · 블러로 바꿔 본 뒤 하나만 남깁니다. 사이클 16에서는 음악_배경에 비트를 표시하고 이음새 두세 곳을 비트 점에 맞춘 다음, 비트 위에 흔들림이나 플래시를 <strong>0.3~0.5초</strong>만 얹습니다. 박자에 맞춰 화면이 한 번 "탁" 반응하면 성공입니다. 이펙트는 강조할 순간에만, 박자 위에서 짧게.</div>
 
-  <h2><span class="num">8</span>마스크</h2>
-  <div class="cyc">워크북 사이클 14 – 15</div>
+  <h2><span class="num">11</span>마스크</h2>
+  <div class="cyc">워크북 사이클 17 – 18</div>
   <p>마스크는 화면의 <strong>어느 부분만 보이게 뚫는 구멍</strong>입니다. 위 레이어에 마스크를 씌우면 구멍 안쪽만 보이고, 바깥은 투명해져 아래 레이어가 드러납니다. 클립을 선택하면 오른쪽 패널 '비디오' 쪽에 마스크(Mask) 탭이나 항목이 있습니다. 위치와 모양 이름은 버전마다 다를 수 있습니다.</p>
   <figure>
     <svg viewBox="0 0 540 110" width="140mm" role="img" aria-label="마스크 모양 여섯 가지">
@@ -512,15 +634,15 @@
   </table>
   <h3>분할 화면 (비포 · 애프터)</h3>
   <ol class="tight">
-    <li>비포 컷은 메인 트랙에, 애프터 컷은 바로 위 트랙에 같은 시작점으로 겹쳐 놓습니다.</li>
-    <li>위 클립을 선택하고 마스크에서 <strong>선형</strong>을 고릅니다. 선을 화면 가운데로 옮기고, 필요하면 90도 돌려 좌우 반반으로.</li>
-    <li>가장자리 흐림을 살짝 올려 경계를 부드럽게. 위에 "전 · 후" 텍스트를 얹으면 끝입니다.</li>
+    <li>두 컷을 같은 시작점으로 위아래 트랙에 겹쳐 놓습니다. 공통 샘플은 07_비포를 위 트랙, 08_애프터를 메인 트랙에. 두 컷은 같은 구도로 만들었습니다.</li>
+    <li>위 클립을 선택하고 마스크에서 <strong>선형</strong>을 고릅니다. 선을 화면 가운데로 옮기고, 각도 0°면 위아래, 90°면 좌우 반반입니다.</li>
+    <li>가장자리 흐림을 살짝 올려 경계를 부드럽게. 보이는 쪽이 반대면 <strong>반전</strong>. 위에 "전 · 후" 텍스트를 얹으면 끝입니다.</li>
   </ol>
   <div class="card">
     <h3><span class="tag">레시피</span>글자 뒤로 지나가는 사람</h3>
     <p style="margin-bottom:1.5mm">큰 글자 앞을 사람이 지나가며 글자를 가리는 장면입니다. 레이어 세 장이면 됩니다.</p>
     <ol class="tight">
-      <li><strong>바닥</strong>: 사람이 화면을 가로질러 걷는 컷을 메인 트랙에 놓습니다. 고정해서 찍은 컷이 가장 잘 됩니다.</li>
+      <li><strong>바닥</strong>: 사람이 화면을 가로질러 걷는 컷을 메인 트랙에 놓습니다(공통 샘플은 05_지나가는사람). 고정해서 찍은 컷이 가장 잘 됩니다.</li>
       <li><strong>가운데</strong>: 그 위 트랙에 큰 텍스트를 놓고, 사람이 지나가는 높이에 오도록 위치를 잡습니다.</li>
       <li><strong>맨 위</strong>: 메인 트랙의 클립을 선택해 <kbd>Ctrl</kbd>+<kbd>C</kbd>, <kbd>Ctrl</kbd>+<kbd>V</kbd>로 복제하고, 텍스트보다 위 트랙에 <strong>메인과 정확히 같은 시작점</strong>으로 놓습니다.</li>
       <li>맨 위 클립을 선택하고 '비디오' → '컷아웃' → <strong>'자동 컷아웃'</strong>을 켭니다. 맨 위에는 사람만 남습니다.</li>
@@ -529,8 +651,8 @@
     <p style="margin-bottom:2mm"><strong>확인</strong>: 사람에 가려지는 글자. 사람이 글자 뒤로 숨는다면 맨 위 클립의 시작점이 어긋난 것입니다. 타임라인을 크게 확대해 두 클립의 왼쪽 끝을 맞추세요.</p>
   </div>
 
-  <h2><span class="num">9</span>키프레임</h2>
-  <div class="cyc">워크북 사이클 16 – 18</div>
+  <h2><span class="num">12</span>키프레임</h2>
+  <div class="cyc">워크북 사이클 19 – 21</div>
   <p>키프레임은 <strong>시작 상태와 끝 상태를 두 점으로 찍어 두면, 그 사이를 CapCut이 자동으로 채워 주는 기능</strong>입니다. "0초에 크기 100%, 3초에 크기 120%"라고 두 점만 찍으면 3초 동안 서서히 커지는 움직임이 생깁니다. 위치 · 크기 · 회전 · 불투명도처럼 숫자로 된 값이면 무엇이든 움직일 수 있습니다.</p>
   <figure>
     <svg viewBox="0 0 540 200" width="132mm" role="img" aria-label="키프레임 두 점과 그 사이를 채우는 모습">
@@ -581,46 +703,54 @@
   <p>가장 흔한 실수는 순서를 바꾸는 것입니다. 값을 먼저 바꾸고 ◇를 누르면 그 값이 첫 점이 되어 버립니다. 재생헤드 먼저, 점은 그다음입니다.</p>
   <div class="card">
     <h3><span class="tag">레시피 1</span>천천히 다가가는 줌 (켄 번스)</h3>
-    <p style="margin-bottom:2mm">0초에 크기 100% ◇ → 3초에 크기 120%. 고정해서 찍은 컷이나 사진이 천천히 다가가는 화면이 됩니다. 1장에서 "줌 말고 달리"라고 했지요. 현장에서 걸어 들어가지 못했다면 편집에서 이렇게 흉내 냅니다. 사진에 이 움직임을 주는 것을 다큐멘터리 감독 이름을 따 <strong>켄 번스 효과</strong>(Ken Burns)라고 부릅니다. 120%를 넘기면 화질이 거칠어지니 조금만.</p>
+    <p style="margin-bottom:2mm">0초에 크기 100% ◇ → 3초에 크기 120%. 고정해서 찍은 컷이나 사진이 천천히 다가가는 화면이 됩니다. 1장에서 "줌 말고 달리"라고 했지요. 현장에서 걸어 들어가지 못했다면 편집에서 이렇게 흉내 냅니다. 공통 샘플이라면 13_나뭇가지_하늘처럼 느린 컷이 잘 어울립니다. 사진에 이 움직임을 주는 것을 다큐멘터리 감독 이름을 따 <strong>켄 번스 효과</strong>(Ken Burns)라고 부릅니다. 120%를 넘기면 화질이 거칠어지니 조금만.</p>
   </div>
   <div class="card">
     <h3><span class="tag">레시피 2</span>날아와서 멈추는 글자</h3>
-    <p style="margin-bottom:2mm">텍스트 클립을 선택하고, 시작 위치에서 위치 ◇와 불투명도 ◇를 함께 찍습니다(글자는 화면 왼쪽 밖, 불투명도 0). 0.5초 뒤로 재생헤드를 옮겨 글자를 가운데로 끌고 불투명도를 100으로. 글자가 미끄러지며 나타나 멈춥니다. 두 점 사이가 짧을수록 빠르게 움직입니다.</p>
+    <p style="margin-bottom:2mm">이번에는 <strong>멈출 모습을 먼저</strong> 기록합니다. 제목 텍스트를 선택하고 재생헤드를 텍스트 시작 0.5초 뒤로 옮긴 다음, 글자가 제자리에 있는 상태에서 위치 ◇와 불투명도 ◇를 찍습니다. 그다음 재생헤드를 텍스트 시작으로 옮겨 글자를 화면 왼쪽 밖으로 끌고 불투명도를 0으로 바꾸면 점이 저절로 생깁니다. 글자가 미끄러져 들어와 멈춥니다. 자리 잡은 모습을 먼저 찍어 두면 끝 위치가 흔들리지 않습니다. 두 점 사이가 짧을수록 빠르게 움직입니다.</p>
   </div>
   <div class="card">
     <h3><span class="tag">레시피 3</span>동그랗게 열리는 장면 (마스크 리빌)</h3>
-    <p style="margin-bottom:2mm">다음 장면을 위 트랙에 올리고 <strong>원</strong> 마스크를 씌웁니다. 시작 위치에서 마스크 크기를 0으로 두고 ◇, 1초 뒤에 화면을 가득 덮도록 키웁니다. 구멍이 커지며 다음 장면이 열립니다. 1장의 리빌(가림 뒤에서 나오기)을 편집으로 만든 것입니다. 마스크 크기 옆에도 ◇가 있는지 확인하세요. 없으면 버전에 따라 클립 쪽 키프레임을 씁니다.</p>
+    <p style="margin-bottom:2mm">다음 장면(공통 샘플은 09_다른장소)을 앞 장면 끝에 겹치게 위 트랙에 올리고 <strong>원</strong> 마스크를 씌웁니다. 다음 장면 시작에서 마스크 크기를 아주 작게 두고 ◇, 1초 뒤에 화면을 가득 덮도록 키운 뒤 가장자리 흐림을 조금 줍니다. 구멍이 커지며 다음 장면이 열립니다. 1장의 리빌(가림 뒤에서 나오기)을 편집으로 만든 것입니다. 마스크 크기 옆에도 ◇가 있는지 확인하세요. 없으면 버전에 따라 클립 쪽 키프레임을 씁니다.</p>
   </div>
   <div class="tip">◇가 안 보이면 클립을 선택하지 않은 것입니다. 클립을 먼저 누르세요. 처음에는 <strong>두 점만</strong> 찍고, 움직임이 마음에 들 때 점을 더합니다. 점이 많아질수록 고치기 어렵습니다. 찍은 점은 타임라인의 클립 위에 작은 ◇로 보이고, 그 ◇를 선택해 지우거나 끌어 옮길 수 있습니다.</div>
 
-  <h2><span class="num">10</span>나만의 한 편 만들기</h2>
-  <div class="cyc">7교시 · 사이클 18 다음, 사이클 19 – 20 전에</div>
-  <p>공통 샘플로 한 번씩 손을 거친 기능은 <strong>내가 고른 재료에 내 판단으로</strong> 다시 써 봐야 손에 남습니다. 그래서 7교시에는 배운 기능으로 한 편을 더 만듭니다. 내보내기 · 업로드(사이클 19 · 20)는 이 한 편으로 하고, 채널에 올린 이 한 편이 크루 트리의 첫 오너먼트가 됩니다.</p>
+  <h2><span class="num">13</span>나만의 한 편 만들기</h2>
+  <div class="cyc">7교시 · 사이클 21 다음, 사이클 22 – 23 전에</div>
+  <p>공통 샘플로 한 번씩 손을 거친 기능은 <strong>내가 고른 재료에 내 판단으로</strong> 다시 써 봐야 손에 남습니다. 그래서 7교시에는 배운 기능으로 한 편을 더 만듭니다. 길은 둘이어도 할 일은 같습니다. 15~30초 한 편을 처음부터 끝까지 혼자 만드는 것입니다. 내보내기 · 업로드(사이클 22 · 23)는 이 한 편으로 하고, 채널에 올린 이 한 편이 크루 트리의 첫 오너먼트가 됩니다.</p>
   <table>
     <tr><th style="width:30mm">길</th><th>재료</th><th style="width:62mm">이럴 때</th></tr>
-    <tr><td><strong>A · 내 영상</strong></td><td>3주 과제로 찍어 온(또는 생성한) 내 영상</td><td>쓸 컷이 6개 이상 있을 때</td></tr>
-    <tr><td><strong>B · 추가 샘플</strong></td><td>드라이브 <strong>"3회차 추가 샘플"</strong> 폴더. 공통 샘플과 다른 주제의 6~8컷</td><td>내 영상이 없거나 부족할 때. 과제로 다음 회차 장르의 내 영상을 찍어 옵니다</td></tr>
+    <tr><td><strong>A · 내 영상</strong></td><td>3주 과제로 찍어 온 컷 · 생성 영상 · 1장의 5샷. 고르기부터 시작해 쓸 컷 6~10개</td><td>준비해 온 내 영상이 있을 때</td></tr>
+    <tr><td><strong>B · 추가 샘플</strong></td><td>드라이브 <strong>"3회차 추가 샘플"</strong> 폴더. 강사가 오늘 찍은 스케치(학교 모습 · 점심시간 구내식당 · 수업 장면)를 넉넉하게 담았습니다</td><td>내 영상이 없거나 모자랄 때. 다음 회차엔 꼭 내 영상으로</td></tr>
   </table>
-  <p class="muted" style="margin-top:-2mm">오프닝에서 크루장이 우리 크루의 A · B 인원과, 모두 공통 샘플 폴더를 받았는지 확인합니다.</p>
+  <p class="muted" style="margin-top:-2mm">B 스케치에 얼굴이 나온 사람이 있으면 업로드는 <strong>일부 공개</strong>로 합니다. 추가 샘플은 강사가 찍은 영상이라 채널에 올려도 됩니다. 공통 샘플 연습본은 올리지 않아도 되고, 올린다면 AI로 만든 영상이니 AI 표시를 합니다.</p>
   <div class="mist">
     <h3 style="margin-top:0">꼭 넣을 것</h3>
-    <ul class="check" style="margin-bottom:0;columns:2;column-gap:6mm">
-      <li><strong>15~30초 가편집</strong>: 첫 3초에 훅(3절)</li>
-      <li><strong>세로 9:16</strong>: 검은 띠 없이(4절)</li>
-      <li><strong>색 맞추기</strong>: 한 영상처럼(4절)</li>
-      <li><strong>음악</strong>: 말보다 낮게, 끝 2초 페이드 아웃(5절)</li>
-      <li><strong>자막</strong>: 소리 끄고도 이해되게(6절)</li>
-      <li><strong>제목</strong>: 첫 3초에 한 줄(6절)</li>
-      <li><strong>레이어 · 마스크 · 키프레임</strong> 중 하나 이상(7 – 9절)</li>
+    <p style="margin:0 0 1.5mm"><strong>기본 여섯 · 모두</strong></p>
+    <ul class="check" style="margin-bottom:2mm;columns:2;column-gap:6mm">
+      <li><strong>15~30초 가편집</strong>: 첫 3초에 훅 · 사이클 2–4(3절)</li>
+      <li><strong>세로 9:16</strong>: 검은 띠 없이 · 사이클 5(4절)</li>
+      <li><strong>색 맞추기</strong>: 한 영상처럼 · 사이클 7(4절)</li>
+      <li><strong>음악</strong>: 말보다 낮게, 끝 2초 페이드 아웃 · 사이클 8(5절)</li>
+      <li><strong>자막</strong>: 소리 끄고도 이해되게 · 사이클 9–10(6 · 7절)</li>
+      <li><strong>제목</strong>: 첫 3초에 한 줄 · 사이클 11(6절)</li>
     </ul>
+    <p style="margin:0 0 1.5mm"><strong>+ 하나 이상 골라 넣기</strong></p>
+    <ul class="check" style="margin-bottom:0;columns:2;column-gap:6mm">
+      <li><strong>레이어</strong>: PiP · 로고 · 컷아웃 · 사이클 12–14(9절)</li>
+      <li><strong>전환 · 이펙트</strong>: 뜻에 맞는 전환 · 비트 이펙트 · 사이클 15–16(10절)</li>
+      <li><strong>마스크</strong>: 분할 화면 · 글자 뒤 · 사이클 17–18(11절)</li>
+      <li><strong>키프레임</strong>: 줌인 · 날아오는 글자 · 원 리빌 · 사이클 19–21(12절)</li>
+    </ul>
+    <p class="muted" style="margin:1.5mm 0 0">기본 여섯을 먼저 다 채우고, 남은 시간에 도전 하나. 다 되면 마스터링으로.</p>
   </div>
   <h3>15~30초 계획하는 법</h3>
   <ol class="tight">
     <li><strong>새 프로젝트를 따로 만듭니다.</strong> 9:16, 이름은 "3회차_나만의한편_내이름". 연습 프로젝트에 이어 붙이면 연습본이 망가지고, 연습본은 막혔을 때 다시 열어 볼 레시피 노트입니다.</li>
     <li><strong>재료를 한 번 훑고 계획표를 씁니다.</strong> 열은 컷 · 길이 · 쓸 기능. 30초면 8~12컷, 한 컷 평균 1.5~3초(3절). 15초도 괜찮습니다. 짧고 단단한 편이 낫습니다.</li>
     <li><strong>처음과 끝부터 정합니다.</strong> 첫 컷은 훅, 마지막은 정지 프레임이나 로고. 가운데는 보여 주고 싶은 순서대로.</li>
-    <li><strong>기능은 계획표에 적은 곳에만 씁니다.</strong> 배운 것을 다 넣으려 하면 효과가 내용을 덮습니다. 레이어 · 마스크 · 키프레임은 한 편에 한두 번이면 충분하고, 시간이 모자라면 하나만.</li>
-    <li><strong>편집 순서대로</strong> 가편집 → 본편집 → 마스터링 체크 7(11절) → 내보내기.</li>
+    <li><strong>기능은 계획표에 적은 곳에만 씁니다.</strong> 배운 것을 다 넣으려 하면 효과가 내용을 덮습니다. 레이어 · 전환 · 이펙트 · 마스크 · 키프레임은 한 편에 한두 번이면 충분하고, 시간이 모자라면 하나만.</li>
+    <li><strong>편집 순서대로</strong> 가편집 → 본편집 → 마스터링 체크 7(14절) → 내보내기. 막히면 그 기능의 절과 워크북 사이클로 돌아가 보세요.</li>
   </ol>
   <table>
     <tr><th style="width:12mm">컷</th><th>무엇이 보이나</th><th style="width:16mm">길이</th><th style="width:58mm">쓸 기능</th></tr>
@@ -632,8 +762,8 @@
     <tr><td colspan="2" style="text-align:right"><strong>합계 · 전체에 음악 · 색 맞추기</strong></td><td>19초</td><td></td></tr>
   </table>
 
-  <h2><span class="num">11</span>마스터링과 내보내기</h2>
-  <div class="cyc">워크북 사이클 19 – 20</div>
+  <h2><span class="num">14</span>마스터링과 내보내기</h2>
+  <div class="cyc">워크북 사이클 22 – 23</div>
   <p>마스터링은 "다 됐다" 싶을 때 한 번 더 보는 일입니다. 만든 사람은 자기 영상의 흠이 잘 안 보이니, 체크리스트로 봅니다.</p>
   <h3>마스터링 체크 7</h3>
   <ul class="check">
@@ -649,7 +779,7 @@
   <p>오른쪽 위 <strong>'내보내기'</strong>를 누르면 이름 · 해상도 · 형식 · 프레임 속도 · 코덱을 고르는 창이 뜹니다.</p>
   <table>
     <tr><th style="width:28mm">항목</th><th style="width:40mm">이 과정의 기본값</th><th>이유</th></tr>
-    <tr><td>이름</td><td>날짜_채널_제목</td><td>예: <strong>1119_오늘첫빵_반죽하는아침</strong>. 나중에 파일만 보고도 무엇인지 알게</td></tr>
+    <tr><td>이름</td><td>날짜_채널_제목</td><td>예: <strong>1119_내채널_첫빵</strong>. 나중에 파일만 보고도 무엇인지 알게</td></tr>
     <tr><td>저장 위치</td><td>04_내보내기 폴더</td><td>내보낸 뒤 파일을 못 찾는 일이 가장 흔합니다. 위치를 눈으로 확인</td></tr>
     <tr><td>해상도</td><td>1080p</td><td>쇼츠 · 릴스에 충분하고 파일이 가볍습니다. 4K로 찍었어도 1080p로 충분</td></tr>
     <tr><td>프레임 속도</td><td>30fps (촬영과 같게)</td><td>촬영과 다르게 내보내면 움직임이 어색해질 수 있습니다. 60fps 컷을 슬로로 쓴 영상도 30fps로 내보내면 됩니다</td></tr>
@@ -657,7 +787,7 @@
     <tr><td>코덱</td><td>H.264</td><td>호환성이 가장 좋습니다. <strong>HEVC(H.265)</strong>는 파일이 작지만 일부 PC · 앱에서 재생이 안 되거나 끊깁니다</td></tr>
     <tr><td>비트 전송률</td><td>권장값 그대로</td><td>높일수록 파일만 커지고, 업로드하면 어차피 다시 압축됩니다</td></tr>
   </table>
-  <p>내보냈다면 <strong>폰으로 옮겨 재생해 봅니다</strong>. 시청자는 폰으로 보기 때문에, 폰에서 자막이 읽히고 소리가 잘 들려야 진짜 완성입니다.</p>
+  <p>내보냈다면 <strong>폰으로 옮겨 재생해 봅니다</strong>. 시청자는 폰으로 보기 때문에, 폰에서 자막이 읽히고 소리가 잘 들려야 진짜 완성입니다. PC에서 소리를 못 들었다면 이때 이어폰으로 꼭 들어 봅니다(5절 상자).</p>
   <h3>커버 이미지</h3>
   <p>메인 트랙 왼쪽 끝의 커버(Cover) 버튼에서 영상 속 한 장면을 고르거나 이미지를 넣어 커버를 만들 수 있습니다. 업로드할 때 유튜브 · 인스타그램에서 다시 고를 수도 있습니다. 커버는 작게 봐도 무엇인지 보이게, 첫 3초와 같은 약속을 하게 만듭니다(2장).</p>
   <h3>올리기 전 다섯 가지 (2장 발행 체크리스트)</h3>
@@ -667,14 +797,16 @@
     <tr><td>첫 화면 · 썸네일</td><td>커버와 첫 3초가 같은 약속을 하나</td></tr>
     <tr><td>설명</td><td>첫 두 줄에 무엇을 볼 수 있는지 + 시리즈 안내</td></tr>
     <tr><td>공개 범위</td><td>공개 · 일부 공개 · 비공개. 첫 업로드는 일부 공개도 괜찮습니다</td></tr>
-    <tr><td>AI 사용 표시</td><td>실제처럼 보이는 합성 · 변경 장면이 있으면 업로드할 때 공개</td></tr>
+    <tr><td>AI 사용 표시</td><td>실제처럼 보이는 합성 · 변경 장면이 있거나, AI 목소리가 사람처럼 들리면 업로드할 때 공개</td></tr>
   </table>
+  <h3>쇼츠로 올리기</h3>
+  <p>폰 유튜브 앱에서 <strong>+ → 동영상 올리기</strong>(또는 PC의 유튜브 스튜디오)로 2장에서 연 채널에 올립니다. 제목 · 설명 첫 두 줄을 쓰고, 공개 범위를 고르고(일부 공개도 괜찮습니다), 필요하면 AI 표시를 한 뒤 크루장에게 링크를 보냅니다. 내 채널에 올라간 나만의 한 편이 크루 트리의 첫 오너먼트입니다. 올린 다음에는 <strong>폰 유튜브 앱으로 한 번 더 재생</strong>해 소리와 자막을 마지막으로 확인합니다.</p>
   <div class="tip">내보내기 전에 첫 화면 프로젝트 목록에서 프로젝트를 한 번 복제해 두세요. 업로드 뒤 "자막 하나만 고치자" 하다가 원래 버전을 망가뜨리는 일을 막아 줍니다. 4 · 5회차에는 나만의 한 편 프로젝트를 복제해서 장르마다 다시 다듬습니다.</div>
 
-  <h2 style="break-before: page; border-top: none; padding-top: 0; margin-top: 0"><span class="num">12</span>CapCut 기능 사전</h2>
+  <h2><span class="num">15</span>CapCut 기능 사전</h2>
   <p>"그거 어디 있었지?" 할 때 찾아보는 표입니다. <strong>굵은 글씨</strong>로 적은 위치는 공개 자료로 확인된 경로이고, 나머지는 대략의 위치와 영어 이름입니다. 메뉴 이름은 버전마다 다를 수 있으니 화면에 같은 글자가 없으면 영어 이름이나 비슷한 이름을 찾으세요. 클립 오른쪽 클릭 메뉴에도 자주 쓰는 기능이 모여 있습니다.</p>
   <table class="dict">
-    <tr><th style="width:30mm">기능</th><th style="width:88mm">어디서</th><th>언제 쓰나</th><th style="width:9mm">절</th></tr>
+    <tr><th style="width:30mm">기능</th><th style="width:88mm">어디서</th><th>언제 쓰나</th><th style="width:12mm">절</th></tr>
     <tr><td>새 프로젝트</td><td>첫 화면 새 프로젝트 만들기 (Create project)</td><td>편집 시작</td><td>2</td></tr>
     <tr><td>미디어 가져오기</td><td>위쪽 '미디어' 탭 → 자료 창에 끌어다 놓기 · 가져오기 (Import)</td><td>샘플 · 내 영상을 불러올 때</td><td>2</td></tr>
     <tr><td>화면 비율</td><td>재생 화면 아래 비율 버튼 또는 프로젝트 설정 (Ratio)</td><td>세로 9:16으로 시작</td><td>2</td></tr>
@@ -689,23 +821,31 @@
     <tr><td>색 조정</td><td>오른쪽 패널 '조정' (Adjust) · 밝기 · 대비 · 채도 · 색온도</td><td>컷끼리 색 맞추기</td><td>4</td></tr>
     <tr><td>필터</td><td>위쪽 '필터' 탭 (Filters) → 고른 뒤 강도 조절</td><td>분위기를 살짝</td><td>4</td></tr>
     <tr><td>조정 레이어 · 속성 복사</td><td>위쪽 '조정' 탭에서 타임라인에 끌기 · 오른쪽 클릭 (Adjustment layer · Copy attributes)</td><td>여러 컷에 같은 색</td><td>4</td></tr>
+    <tr><td>음량 정규화</td><td>오른쪽 패널 '오디오' 탭 안 (Normalize loudness)</td><td>클립마다 다른 크기를 고르게</td><td>5</td></tr>
     <tr><td>볼륨 · 페이드</td><td>오른쪽 패널 '오디오' 탭 (Audio · Volume · Fade in/out)</td><td>음악 낮추기, 끝 2초 사라지게</td><td>5</td></tr>
     <tr><td>소음 제거</td><td>오른쪽 패널 '오디오' 탭 안 (Reduce noise)</td><td>웅 소리 줄이기</td><td>5</td></tr>
     <tr><td>음악 · 효과음</td><td>위쪽 '오디오' 탭 (Music · Sound effects)</td><td>배경 음악, 짧은 효과음</td><td>5</td></tr>
-    <tr><td>비트 표시</td><td>음악 클립 선택 → 타임라인 도구 막대 (Beat)</td><td>컷을 박자에 맞출 때</td><td>5</td></tr>
-    <tr><td>자동 캡션</td><td>위쪽 '텍스트' 또는 자막 탭 (Captions · Auto captions)</td><td>말을 자막으로</td><td>6</td></tr>
+    <tr><td>비트 표시</td><td>음악 클립 오른쪽 클릭 → 비트 · 자동 비트, 또는 타임라인 도구 막대 (Beat)</td><td>컷 · 효과를 박자에 맞출 때</td><td>5 · 10</td></tr>
+    <tr><td>자동 캡션</td><td>위쪽 '텍스트' 또는 자막 탭 (Captions · Auto captions)</td><td>말을 자막으로</td><td>6 · 7</td></tr>
+    <tr><td>캡션 템플릿</td><td>자막 선택 → 텍스트 쪽 템플릿 (Caption · Text templates)</td><td>자막 스타일을 한 번에</td><td>7</td></tr>
+    <tr><td>키워드 강조</td><td>자동 캡션 만들 때 켜는 옵션 (Highlight keywords)</td><td>핵심 단어 색 · 크기</td><td>7</td></tr>
+    <tr><td>군말 찾기 · 대본으로 편집</td><td>자동 캡션 쪽 옵션 · 대본 편집 (Filler words · Edit by transcript)</td><td>"음, 어" 지우기, 자막 지우면 영상도 잘림</td><td>7</td></tr>
+    <tr><td>텍스트 읽기 (TTS)</td><td>텍스트 클립 선택 → 텍스트 읽기 (Text to speech)</td><td>말 없는 컷에 목소리</td><td>7 · 8</td></tr>
+    <tr><td>자동 가사 · 이중 자막</td><td>자막 · 캡션 쪽 (Auto lyrics · Bilingual captions)</td><td>노래 가사, 두 언어 자막</td><td>7</td></tr>
     <tr><td>텍스트 · 애니메이션</td><td>위쪽 '텍스트' 탭 → 오른쪽 패널 애니메이션 (Animation · In)</td><td>제목 한 줄, 등장 효과</td><td>6</td></tr>
-    <tr><td>불투명도 · 혼합</td><td>오른쪽 패널 '비디오' (Opacity · Blend)</td><td>반투명 겹치기, 빛 · 질감</td><td>7</td></tr>
-    <tr><td>배경 제거</td><td><strong>오른쪽 패널 '비디오' → '컷아웃' → '자동 컷아웃'</strong></td><td>인물 누끼</td><td>7</td></tr>
-    <tr><td>크로마 키</td><td><strong>'컷아웃' 탭 → 크로마 키 → 스포이드 · '강도' · '그림자'</strong></td><td>초록 배경 지우기</td><td>7</td></tr>
-    <tr><td>전환</td><td>위쪽 '전환' 탭 → 두 클립 사이에 끌기 (Transitions)</td><td>장소 · 시간이 바뀔 때만</td><td>7</td></tr>
-    <tr><td>마스크</td><td>오른쪽 패널 '비디오' 쪽 마스크 (Mask)</td><td>분할 화면, 구멍 리빌</td><td>8</td></tr>
-    <tr><td>키프레임</td><td><strong>클립 선택 → 오른쪽 패널 '비디오'의 위치 · 크기 · 회전 · 불투명도 옆 ◇</strong></td><td>움직이는 줌 · 글자</td><td>9</td></tr>
-    <tr><td>커버</td><td>메인 트랙 왼쪽 끝 커버 버튼 (Cover)</td><td>썸네일 이미지</td><td>11</td></tr>
-    <tr><td>내보내기</td><td><strong>오른쪽 위 '내보내기' → 이름 · 해상도 · 형식 · 프레임 속도 · 코덱</strong></td><td>파일로 만들기</td><td>11</td></tr>
+    <tr><td>불투명도 · 혼합</td><td>오른쪽 패널 '비디오' (Opacity · Blend)</td><td>반투명 겹치기, 빛 · 질감</td><td>9</td></tr>
+    <tr><td>배경 제거</td><td><strong>오른쪽 패널 '비디오' → '컷아웃' → '자동 컷아웃'</strong></td><td>인물 누끼</td><td>9</td></tr>
+    <tr><td>크로마 키</td><td><strong>'컷아웃' 탭 → 크로마 키 → 스포이드 · '강도' · '그림자'</strong></td><td>초록 배경 지우기</td><td>9</td></tr>
+    <tr><td>전환</td><td>위쪽 '전환' 탭 → 두 클립 사이에 끌기 → 오른쪽 패널 길이 (Transitions)</td><td>장소 · 시간이 바뀔 때만, 0.3~0.5초</td><td>10</td></tr>
+    <tr><td>비디오 · 바디 효과</td><td>위쪽 '효과' 탭 → 위 트랙에 끌기 (Video · Body effects)</td><td>박자 강조, 분위기, 인물 효과</td><td>10</td></tr>
+    <tr><td>클립 애니메이션</td><td>클립 선택 → 오른쪽 패널 '애니메이션' (In · Out · Combo)</td><td>사진 · 로고가 톡 나타나게</td><td>10</td></tr>
+    <tr><td>마스크</td><td>오른쪽 패널 '비디오' 쪽 마스크 (Mask)</td><td>분할 화면, 구멍 리빌</td><td>11</td></tr>
+    <tr><td>키프레임</td><td><strong>클립 선택 → 오른쪽 패널 '비디오'의 위치 · 크기 · 회전 · 불투명도 옆 ◇</strong></td><td>움직이는 줌 · 글자</td><td>12</td></tr>
+    <tr><td>커버</td><td>메인 트랙 왼쪽 끝 커버 버튼 (Cover)</td><td>썸네일 이미지</td><td>14</td></tr>
+    <tr><td>내보내기</td><td><strong>오른쪽 위 '내보내기' → 이름 · 해상도 · 형식 · 프레임 속도 · 코덱</strong></td><td>파일로 만들기</td><td>14</td></tr>
   </table>
 
-  <h2><span class="num">13</span>단축키와 막힘 해결</h2>
+  <h2><span class="num">16</span>단축키와 막힘 해결</h2>
   <h3>꼭 쓰는 단축키</h3>
   <table>
     <tr><th style="width:56mm">단축키</th><th>하는 일</th></tr>
@@ -723,16 +863,20 @@
     <tr><th style="width:46mm">증상</th><th>이렇게</th></tr>
     <tr><td>클립이 빨갛고 "미디어 없음"</td><td>원본 파일을 옮기거나 이름을 바꾼 것입니다. 원래 폴더 · 이름으로 되돌리거나, 클립의 다시 연결(Relink) 안내에서 새 위치의 파일을 골라 줍니다.</td></tr>
     <tr><td>재생이 끊기거나 색이 허옇다</td><td>폰에서 HEVC(고효율)나 HDR로 찍은 파일일 수 있습니다(1장). 다음 촬영부터 H.264 · HDR 끄기로 찍고, 지금 파일은 미리보기 화질을 낮추거나 PC를 재시작해 봅니다.</td></tr>
-    <tr><td>내보내려니 "Pro" 결제 창</td><td>왕관 · Pro 표시가 있는 효과 · 필터 · 기능을 쓴 것입니다. 유료 구독 로그인이 필요합니다. 그 효과를 지우거나 무료 기능으로 바꾸면 내보낼 수 있습니다. 수업은 무료 기능만으로 충분합니다.</td></tr>
+    <tr><td>내보내려니 "Pro" 결제 창</td><td>왕관 · Pro 표시가 있는 효과 · 필터 · 기능을 쓴 것입니다. 유료 구독 로그인이 필요합니다. 그 효과를 지우거나 무료 기능으로 바꾸면 내보낼 수 있습니다. 수업 PC는 유료 계정으로 로그인해 두지만, 집에서 무료 계정으로 이어 할 때 자주 만납니다.</td></tr>
     <tr><td>키프레임 ◇가 안 보인다</td><td>클립을 선택하지 않았거나, 텍스트 · 영상이 아닌 곳을 선택한 것입니다. 타임라인에서 클립을 한 번 누르고 오른쪽 패널 '비디오'(텍스트는 텍스트 쪽 기본 설정)를 봅니다.</td></tr>
-    <tr><td>키프레임이 안 움직인다</td><td>재생헤드를 옮기지 않고 값을 바꿨을 가능성이 큽니다. 9절의 순서(재생헤드 → ◇ → 재생헤드 → 값)대로 다시.</td></tr>
+    <tr><td>키프레임이 안 움직인다</td><td>재생헤드를 옮기지 않고 값을 바꿨을 가능성이 큽니다. 12절의 순서(재생헤드 → ◇ → 재생헤드 → 값)대로 다시. 멈출 모습을 먼저 찍을 때도 원리는 같습니다.</td></tr>
     <tr><td>자동 캡션이 안 되거나 엉망</td><td>언어가 한국어인지, 인터넷 · 로그인이 되어 있는지 확인합니다. 음악이 크거나 말이 작으면 잘 못 알아듣습니다. 음악을 끄고 만든 뒤 다시 켜고, 틀린 줄은 직접 고칩니다.</td></tr>
     <tr><td>내보내기가 너무 느리다</td><td>4K · 60fps · 효과가 많으면 오래 걸립니다. 1080p 30fps로, 다른 프로그램을 닫고 내보냅니다. 노트북은 전원을 꽂으세요.</td></tr>
     <tr><td>내보낸 영상에 소리가 없다</td><td>클립을 음소거했거나 볼륨이 0인지, 음악 트랙이 꺼져 있지 않은지 봅니다. 폰에서 재생할 때 무음 모드인지도 확인합니다.</td></tr>
+    <tr><td>PC에서 소리가 안 난다</td><td>교실 PC는 소리가 안 나는 경우가 많습니다. 파형 · dB 숫자로 크기를 맞추고, CapCut 클라우드나 드라이브로 폰에 옮겨 이어폰으로 듣습니다(5절 상자).</td></tr>
+    <tr><td>모든 이음새에 전환이 걸렸다</td><td>전환 창의 '모두 적용'을 누른 것입니다. <kbd>Ctrl</kbd>+<kbd>Z</kbd>로 되돌리고, 장소 · 시간이 바뀌는 곳 한두 군데에만 다시 넣습니다(10절).</td></tr>
+    <tr><td>군말을 지웠더니 영상이 잘렸다</td><td>군말 찾기 · 대본으로 편집은 자막과 함께 영상도 잘라 냅니다. <kbd>Ctrl</kbd>+<kbd>Z</kbd>로 되돌리거나 복제해 둔 프로젝트를 엽니다(7절).</td></tr>
+    <tr><td>AI 목소리가 숫자 · 영어를 이상하게 읽는다</td><td>대본에서 숫자 · 영어를 한글로 풀어 쓰고("3초" → "삼 초"), 쉼표로 숨 쉴 자리를 넣어 다시 만듭니다(8절).</td></tr>
     <tr><td>위 트랙 클립이 안 보인다</td><td>더 위 트랙의 불투명한 클립이 가리고 있거나, 클립이 아주 작게 줄어 있습니다. 트랙 순서를 바꿔 봅니다.</td></tr>
   </table>
 
-  <h2><span class="num">14</span>편집을 돕는 프롬프트</h2>
+  <h2><span class="num">17</span>편집을 돕는 프롬프트</h2>
   <p>편집 자체는 내 손으로 하지만, 순서를 고민하거나 문장을 다듬을 때는 ChatGPT가 빠릅니다. 대괄호 [ ]만 내 내용으로 바꿔 붙여 넣으세요. AI의 답은 언제나 초안이고, 고르는 것은 내 몫입니다.</p>
   <h3>① 컷 순서 제안</h3>
   <div class="prompt">너는 숏폼 영상 편집자야. 나만의 한 편에 쓸 컷 목록이야.<br>
@@ -749,6 +893,11 @@
   <h3>④ 음악 분위기 키워드</h3>
   <div class="prompt">영상 내용과 분위기: [ ]<br>길이와 컷 속도: [30초, 컷 평균 2초 등]<br>
   이 영상에 어울리는 배경 음악을 음악 라이브러리 · 유튜브 오디오 보관함에서 찾을 수 있게 검색 키워드를 한국어 5개, 영어 5개로 줘(장르 · 분위기 · 빠르기 · 악기). 말이 많은 영상이라 목소리를 가리지 않을 음악이어야 해. 특정 가수 · 곡 이름은 추천하지 말고, 사업 홍보 영상이면 상업적 사용 가능 여부를 꼭 확인하라는 말을 덧붙여 줘.</div>
+
+  <h3>⑤ AI 목소리용 내레이션 대본</h3>
+  <div class="prompt">아래는 내 영상의 장면 목록과 하고 싶은 말이야.<br>
+  [장면 순서 · 무엇이 보이는지 · 하고 싶은 말. 예: 1 떨어지는 단풍잎 / 2 한강 전경 …]<br>
+  이걸 AI 목소리(TTS)로 읽힐 내레이션 대본으로 써 줘. 조건: 전체 [25]초 안팎(1초에 약 6자), 장면마다 한 문장, 문장 사이는 한 줄 띄우기. 숫자 · 영어는 한글로 풀어 쓰고(예: "3초" → "삼 초"), 쉼표로 숨 쉴 자리를 표시. 영상에 실제로 나오는 내용만, 과장 표현 금지. 마지막에 화면에 얹을 자막용으로 문장마다 15자 안팎의 짧은 버전도 따로 붙여 줘.</div>
 
   <div class="box gold">
     <h3 style="margin-top:0">다음 장 예고 · 4장 장르별 실습</h3>
