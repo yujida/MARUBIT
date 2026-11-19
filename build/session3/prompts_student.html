@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>3회차 공통 샘플 프롬프트 모음</title>
+<link rel="stylesheet" href="../assets/print.css">
+<style>
+  .pr { background: #fff; border: 1.2px dashed var(--blue); border-radius: 2.5mm; padding: 2.2mm 3.5mm; font-size: 8.9pt; line-height: 1.42; margin: 1mm 0 0; break-inside: avoid; font-family: inherit; color: #26302c; }
+  .pr::before { content: "복사해서 붙여 넣기"; display: block; font-size: 7.8pt; font-weight: 700; color: var(--blue); margin-bottom: 0.6mm; }
+  .cut { border: 1.2px solid var(--line); border-radius: 3mm; padding: 2.5mm 3.5mm; margin: 0 0 2.5mm; break-inside: avoid; }
+  .cut .hd { display: flex; gap: 2.5mm; align-items: baseline; flex-wrap: wrap; }
+  .cut .no { font-weight: 800; color: var(--pine); font-size: 10.5pt; }
+  .cut .t { font-weight: 700; font-size: 10.5pt; }
+  .tag { display: inline-block; font-size: 7.8pt; font-weight: 700; padding: 0.4mm 2mm; border-radius: 2mm; background: var(--mist); color: var(--pine); }
+  .tag.i { background: #fbf1d3; color: #7a5a12; }
+  .tag.x { background: #e8eef5; color: #2f5378; }
+  .cut .ko { font-size: 9.2pt; margin: 1mm 0 0; color: #3c4642; }
+  .formula { display: grid; grid-template-columns: repeat(6, 1fr); gap: 2mm; margin: 2mm 0 3mm; }
+  .formula div { background: var(--mist); border-radius: 2.5mm; padding: 2.5mm; text-align: center; font-size: 9pt; }
+  .formula b { display: block; color: var(--pine); font-size: 10pt; margin-bottom: 0.5mm; }
+  .ref { display: grid; grid-template-columns: 42mm 1fr; gap: 5mm; align-items: start; }
+  .ref img { width: 42mm; border-radius: 3mm; display: block; }
+  .write { border-bottom: 1px solid var(--line); height: 6mm; }
+  ol.flow { margin: 0; padding-left: 5mm; }
+  ol.flow li { margin-bottom: 1mm; }
+</style>
+</head>
+<body>
+
+<section class="page">
+  <div class="kicker">AI콘텐츠 크리에이터 실무 · 촬영편집 · 3회차</div>
+  <h1>공통 샘플은 이렇게 만들었어요 — 이미지 · 영상 프롬프트 모음</h1>
+  <p class="lead">오늘 편집한 "한강 단풍, 지금이에요"는 강사가 CapCut AI로 만든 영상입니다. 같은 방법으로 나만의 AI 컷을 만들어 볼 수 있도록 실제로 쓴 프롬프트를 모았습니다. 5회차 AI 영상 장르에서도 그대로 씁니다.</p>
+
+  <h2 style="margin-top:2mm">1. 만드는 순서</h2>
+  <div class="grid2">
+    <div class="box">
+      <ol class="flow">
+        <li><strong>대본</strong> — 장면 순서와 내레이션 (2회차 기획안처럼)</li>
+        <li><strong>스토리보드</strong> — 컷마다 화면 · 카메라 · 길이</li>
+        <li><strong>기준 이미지</strong> — 인물 · 장소를 먼저 이미지로 고정</li>
+        <li><strong>이미지 → 영상</strong> — 기준 이미지를 넣고 움직임만 프롬프트로</li>
+        <li><strong>목소리</strong> — Fish Audio 내레이션 → CapCut 자동 캡션</li>
+      </ol>
+    </div>
+    <div class="box gold">
+      <h3 style="margin-top:0">CapCut에서 만드는 곳</h3>
+      <p style="margin:0">미디어 → AI 미디어 → <strong>AI 동영상</strong> (텍스트 → 영상 / 이미지 → 영상). 비율 9:16, 길이 5~10초. 메뉴 이름 · 위치 · 길이 선택지는 버전마다 다를 수 있어요. 생성할 때마다 크레딧이 듭니다.</p>
+    </div>
+  </div>
+
+  <h2>2. 프롬프트 공식</h2>
+  <p>영어로 쓰면 결과가 더 안정적입니다. 아래 여섯 칸을 차례로 채우면 됩니다.</p>
+  <div class="formula">
+    <div><b>누가 · 무엇</b>a woman in a navy coat</div>
+    <div><b>어디서</b>riverside park, autumn trees</div>
+    <div><b>동작</b>bends down, picks up a leaf</div>
+    <div><b>카메라</b>static camera, full body</div>
+    <div><b>빛 · 분위기</b>late-afternoon light, calm</div>
+    <div><b>하지 말 것</b>no text, no logos</div>
+  </div>
+
+  <h3>모든 프롬프트 끝에 붙인 공통 스타일</h3>
+  <div class="pr">Photorealistic, natural late-autumn afternoon light in Seoul, shot on a smartphone, soft contrast, natural human proportions and hands, no text, no logos, no watermark.</div>
+
+</section>
+
+<section class="page">
+  <h2 style="margin-top:0">3. 기준 이미지 5장</h2>
+  <p>AI 영상은 컷마다 얼굴 · 옷이 바뀌기 쉬워요. 그래서 이미지를 먼저 만들고, 그 이미지를 넣어 영상을 만들었습니다. 이미지는 CapCut AI 이미지나 ChatGPT 이미지 생성으로 만들 수 있어요.</p>
+  <div class="ref">
+    <div><img src="../assets/images/s3/sample_R1.jpg" alt="주인공 기준 이미지"><p class="muted" style="text-align:center;margin-top:1mm">R1 · AI 생성 · 가상 인물</p></div>
+    <div>
+      <div class="cut" style="margin-bottom:2mm"><div class="hd"><span class="no">R1</span><span class="t">주인공 전신</span><span class="tag">02 · 04 · 11, 인물 기준</span></div>
+        <div class="pr">A Korean woman in her early 30s with a shoulder-length bob, wearing a dark navy wool coat, a cream knit scarf and brown ankle boots, standing on a riverside park path covered with fallen red maple and yellow ginkgo leaves, rows of autumn trees on both sides, the Han River softly visible in the background, full body, eye-level.</div></div>
+      <p class="muted" style="margin:0">남색 코트 ↔ 노란 · 붉은 단풍처럼 <strong>옷과 배경 색이 확실히 달라야</strong> 컷아웃(사이클 14 · 18)이 깨끗합니다.</p>
+    </div>
+  </div>
+  <div class="cut"><div class="hd"><span class="no">R2</span><span class="t">손 클로즈업</span><span class="tag">03</span><span class="tag i">R1을 참고 이미지로 함께</span></div>
+    <div class="pr">Close-up of the same woman's hand in a dark navy wool coat sleeve reaching down toward a bright red maple leaf on a path covered with fallen red and yellow leaves, shallow depth of field.</div></div>
+  <div class="cut"><div class="hd"><span class="no">R3</span><span class="t">빈 돗자리</span><span class="tag">07 비포</span></div>
+    <div class="pr">High-angle 45-degree view of an empty beige checkered picnic mat spread on grass covered with fallen yellow ginkgo leaves under a large tree in a riverside park, no people, nothing on the mat.</div></div>
+  <div class="cut"><div class="hd"><span class="no">R4</span><span class="t">차려진 돗자리</span><span class="tag">08 애프터</span><span class="tag i">R3을 넣고 이미지 편집</span></div>
+    <div class="pr">Keep the exact same camera angle, framing, mat and background. Add on the mat: a stainless steel thermos, two paper coffee cups with light steam, an open kimbap lunch box, a folded cream knit blanket and a closed book. Change nothing else.</div>
+    <p class="ko">비포 · 애프터는 <strong>같은 이미지를 고쳐서</strong> 만들어야 구도가 똑같아져요(사이클 17 분할 화면).</p></div>
+  <div class="cut"><div class="hd"><span class="no">R5</span><span class="t">주인공 상반신</span><span class="tag">06</span><span class="tag i">R1을 참고 이미지로 함께</span></div>
+    <div class="pr">The same woman (dark navy wool coat, cream knit scarf, shoulder-length bob), medium close-up from the chest up, centered, smiling warmly and looking directly into the camera as if talking to a friend, background of softly blurred bright yellow ginkgo trees.</div></div>
+
+</section>
+
+<section class="page">
+  <h2 style="margin-top:0">4. 영상 프롬프트 12컷</h2>
+  <p><span class="tag i">이미지 → 영상</span> 기준 이미지를 넣고 움직임만 적기 &nbsp; <span class="tag x">텍스트 → 영상</span> 프롬프트만으로. 모두 9:16, <strong>04만 16:9</strong>. 끝에 공통 스타일 붙이기.</p>
+
+  <div class="cut"><div class="hd"><span class="no">01</span><span class="t">떨어지는 단풍잎 (훅 · 슬로)</span><span class="tag x">텍스트 → 영상</span><span class="tag">6초</span></div>
+    <div class="pr">Extreme close-up slow-motion shot of several bright red maple leaves slowly falling and gently spinning in the air, background a soft golden blur of autumn trees with bokeh, static camera, very shallow depth of field, dreamy and calm, slow motion.</div>
+    <p class="ko">AI 영상은 보통 24~30fps라 CapCut에서 많이 늦추면 끊겨요. 슬로는 <strong>처음부터 프롬프트에</strong>.</p></div>
+  <div class="cut"><div class="hd"><span class="no">02</span><span class="t">단풍잎 줍기 · 전신</span><span class="tag i">이미지 → 영상 · R1</span><span class="tag">8초</span></div>
+    <div class="pr">The woman walks slowly along the leaf-covered path, stops, bends down, picks up one red maple leaf from the ground, stands up and lifts the leaf to eye level to look at it, smiling. Static camera, full body in frame, natural motion.</div></div>
+  <div class="cut"><div class="hd"><span class="no">03</span><span class="t">단풍잎 줍기 · 손</span><span class="tag i">이미지 → 영상 · R2</span><span class="tag">6초</span></div>
+    <div class="pr">Close-up: the hand in a dark navy coat sleeve reaches down, picks up the red maple leaf by its stem and lifts it upward out of frame, other leaves rustle slightly. Camera follows the hand slightly upward, shallow depth of field.</div>
+    <p class="ko">02와 <strong>같은 동작</strong>을 크기만 바꿔서 → 사이클 4 동작 연결. 손가락 모양이 이상하면 다시 만들기.</p></div>
+  <div class="cut"><div class="hd"><span class="no">04</span><span class="t">한강공원 전경 (가로)</span><span class="tag i">R1 또는 텍스트 → 영상</span><span class="tag">8초 · 16:9</span></div>
+    <div class="pr">Wide establishing shot of a riverside park in Seoul in late autumn: a long walking path lined with red and yellow trees, the wide Han River and a distant city skyline on one side, the woman in a dark navy coat walking away from camera in the center of the frame, small in the scene. Slow gentle push-in, horizontal 16:9.</div></div>
+  <div class="cut"><div class="hd"><span class="no">05</span><span class="t">은행나무 앞을 지나가는 사람</span><span class="tag x">텍스트 → 영상</span><span class="tag">8초</span></div>
+    <div class="pr">Static locked-off shot of a row of bright yellow ginkgo trees along a park path. A person in a black puffer jacket enters from the left edge, walks across the frame at a steady pace and exits on the right edge. The frame is empty of people at the very beginning and the end. Camera does not move at all.</div>
+    <p class="ko">"Camera does not move at all"을 꼭. 카메라가 흔들리면 글자 뒤로 지나가기(사이클 18)가 안 돼요.</p></div>
+</section>
+
+<section class="page">
+  <div class="cut"><div class="hd"><span class="no">06</span><span class="t">카메라 보며 한마디</span><span class="tag i">이미지 → 영상 · R5</span><span class="tag">8초</span></div>
+    <div class="pr">The woman looks directly into the camera and talks naturally and cheerfully as if recording a vlog, small nods and gentle hand gesture near her chest, a light breeze moves her hair and scarf slightly. Static camera, chest-up framing, centered, softly blurred yellow ginkgo trees behind.</div>
+    <p class="ko">대사는 영상에 넣지 않고 Fish Audio 내레이션으로.</p></div>
+  <div class="grid2">
+    <div class="cut"><div class="hd"><span class="no">07</span><span class="t">빈 돗자리</span><span class="tag i">R3</span><span class="tag">5초</span></div>
+      <div class="pr">Static locked-off shot. A gentle breeze, one or two yellow ginkgo leaves drift down onto the empty picnic mat. Nothing else moves. Camera does not move at all.</div></div>
+    <div class="cut"><div class="hd"><span class="no">08</span><span class="t">차려진 피크닉</span><span class="tag i">R4</span><span class="tag">5초</span></div>
+      <div class="pr">Static locked-off shot. Light steam rises from the paper coffee cups, a yellow ginkgo leaf drifts down onto the blanket. Nothing else moves. Camera does not move at all.</div></div>
+  </div>
+  <div class="cut"><div class="hd"><span class="no">09</span><span class="t">해 질 녘 한강</span><span class="tag x">텍스트 → 영상</span><span class="tag">10초</span></div>
+    <div class="pr">Static shot of the Han River at sunset: a vivid red and orange sky, the silhouette of a long bridge across the river, warm sunlight reflecting on the gently moving water, a few tiny silhouettes of people far away on the riverside, slow-moving clouds. Camera does not move.</div>
+    <p class="ko">가운데가 비어 있어서 로고 · 제목 · 화면 속 화면을 얹기 좋은 배경 컷.</p></div>
+  <h3>여분 씬 3컷 · 넣을지 · 어디에 둘지는 편집자 마음</h3>
+  <div class="cut"><div class="hd"><span class="no">11</span><span class="t">낙엽 밟는 발걸음</span><span class="tag i">R1 또는 텍스트 → 영상</span><span class="tag">6초</span></div>
+    <div class="pr">Ground-level close-up of a path thickly covered with red and yellow fallen leaves. A pair of brown ankle boots under a dark navy coat hem steps into the frame, crunches through the leaves and walks away, leaves scatter lightly. Static camera at ground level, shallow depth of field.</div></div>
+</section>
+
+<section class="page">
+  <div class="cut"><div class="hd"><span class="no">12</span><span class="t">자전거 시점</span><span class="tag x">텍스트 → 영상</span><span class="tag">8초</span></div>
+    <div class="pr">First-person point-of-view shot from a bicycle riding fast along a riverside path lined with red and yellow autumn trees, the handlebars visible at the bottom of the frame, leaves flying past, sunlight flickering through the branches. In the final second the camera whips quickly to the right with strong motion blur.</div>
+    <p class="ko">마지막 "휙"(휩 팬)은 사이클 15 전환 재료.</p></div>
+  <div class="cut"><div class="hd"><span class="no">13</span><span class="t">올려다본 단풍 하늘</span><span class="tag x">텍스트 → 영상</span><span class="tag">8초</span></div>
+    <div class="pr">Low-angle shot looking straight up through branches of red maple and yellow ginkgo trees toward a clear blue sky, leaves swaying in the breeze, sunlight sparkling through gaps with soft lens flare. The camera slowly rotates clockwise.</div></div>
+
+  <div class="grid2">
+    <div class="box">
+      <h3 style="margin-top:0">잘 나오게 하는 요령</h3>
+      <ul style="margin:0;padding-left:5mm">
+        <li>인물이 나오면 <strong>기준 이미지 → 영상</strong></li>
+        <li>안 움직일 컷은 "Camera does not move at all"</li>
+        <li>한 컷에 동작은 <strong>하나</strong>만, 순서대로</li>
+        <li>컷마다 2~3번 만들어 고르기</li>
+        <li>손 · 발 · 얼굴이 바뀌지 않았는지 확인</li>
+      </ul>
+    </div>
+    <div class="box gold">
+      <h3 style="margin-top:0">지킬 것</h3>
+      <ul style="margin:0;padding-left:5mm">
+        <li>실제 사람 · 유명인 · 남의 사진으로 만들지 않기</li>
+        <li>화면에 글자 · 로고 넣지 않기 (글자는 CapCut에서)</li>
+        <li>올릴 때 <strong>AI 표시</strong> (사이클 23)</li>
+        <li>크레딧 · 이용 조건은 버전마다 확인</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>5. 내 컷 프롬프트 써 보기</h2>
+  <p class="muted" style="margin-top:-1mm">나만의 한 편이나 5회차 AI 영상에 넣고 싶은 컷 하나. 공식 여섯 칸을 채워 영어 프롬프트로 바꿔 보세요(ChatGPT에 "영상 생성 프롬프트로 영어로 바꿔 줘"라고 해도 좋아요).</p>
+  <table>
+    <tr><th style="width:28mm">칸</th><th>내 컷</th></tr>
+    <tr><td>누가 · 무엇</td><td><div class="write"></div></td></tr>
+    <tr><td>어디서</td><td><div class="write"></div></td></tr>
+    <tr><td>동작</td><td><div class="write"></div></td></tr>
+    <tr><td>카메라</td><td><div class="write"></div></td></tr>
+    <tr><td>빛 · 분위기</td><td><div class="write"></div></td></tr>
+    <tr><td>하지 말 것</td><td>no text, no logos, no watermark</td></tr>
+  </table>
+</section>
+
+</body>
+</html>
