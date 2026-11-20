@@ -81,11 +81,11 @@
   .shoot div { border: 1.4px solid var(--pine); border-radius: 2.5mm; padding: 2.2mm 2.5mm; background: #fff; font-size: 8.6pt; line-height: 1.4; color: var(--sage); }
   .shoot div b { display: block; color: var(--pine); font-size: 10pt; margin: 1mm 0 0.5mm; line-height: 1.3; }
   .count { display: grid; grid-template-columns: repeat(10, 1fr); gap: 1.5mm; margin: 0 0 1.5mm; }
-  .count div { border: 1.2px solid var(--line); border-radius: 1.5mm; height: 13mm; padding: 0.8mm 1.2mm; font-size: 8pt; color: var(--sage); position: relative; background: #fff; }
+  .count div { border: 1.2px solid var(--line); border-radius: 1.5mm; height: 11.5mm; padding: 0.8mm 1.2mm; font-size: 8pt; color: var(--sage); position: relative; background: #fff; }
   .count div b { font-size: 10pt; color: var(--pine); }
   .count div i { font-style: normal; position: absolute; right: 1mm; top: 1mm; width: 3mm; height: 3mm; border: 1.2px solid var(--pine); border-radius: 0.6mm; }
   .count div.v { background: #dbe7f1; }
-  .places td { height: 8mm; vertical-align: middle; padding: 1mm 2.5mm; }
+  .places td { height: 7.2mm; vertical-align: middle; padding: 1mm 2.5mm; }
   .places td:first-child { width: 10mm; text-align: center; font-weight: 700; color: var(--pine); }
   .places td.ck { width: 30mm; }
   .selfie { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3mm; margin: 0 0 3.5mm; }
@@ -184,7 +184,7 @@
   /* 기획 시트 */
   .sheet td { vertical-align: middle; padding: 1.6mm 2.5mm; }
   .sheet td.lab { width: 24mm; }
-  .sheet td.write { height: 11mm; }
+  .sheet td.write { height: 13mm; }
   .sheet td.write.s { height: 9mm; }
   .sheet th { padding: 1.6mm 2.5mm; }
 
@@ -247,6 +247,8 @@
   .thumbs .cap { font-size: 8.6pt; color: var(--sage); margin-top: 1mm; display: flex; gap: 2mm; align-items: flex-end; }
   .thumbs .cap div { flex: 1; border-bottom: 1px solid var(--line); height: 6mm; }
   .thumbs .vote { font-size: 8.6pt; color: var(--pine); font-weight: 700; margin-top: 1mm; }
+  .pair td { height: 9.5mm; vertical-align: middle; padding: 1mm 2.5mm; }
+  .pair td:first-child { text-align: center; font-weight: 700; color: var(--pine); }
   .ch td { vertical-align: middle; padding: 1mm 2.5mm; height: 8mm; }
   .ch td:first-child { width: 26mm; color: var(--sage); }
   .lf td { vertical-align: middle; padding: 1.4mm 2.5mm; font-size: 9.3pt; }
@@ -405,8 +407,8 @@
 <section class="page">
   <div class="kicker">1교시부터 7교시 전까지 · 촬영</div>
   <h1>오늘 하루 브이로그 촬영 체크</h1>
-  <p class="lead" style="margin-bottom:3mm">6교시에 편집할 <strong>수업 날 브이로그</strong>의 재료예요. 지금부터 점심 · 쉬는 시간 · 실습 장면까지 틈틈이 찍어 <strong>7교시 전에 20컷 이상</strong>.</p>
-  <div class="shoot">
+  <p class="lead" style="margin-bottom:2.5mm;font-size:10.8pt">6교시에 편집할 <strong>수업 날 브이로그</strong>의 재료예요. 지금부터 점심 · 쉬는 시간 · 실습 장면까지 틈틈이 찍어 <strong>7교시 전에 20컷 이상</strong>.</p>
+  <div class="shoot" style="margin-bottom:3mm">
     <div><span class="cb"></span><b>가로 16:9</b>브이로그 롱폼용. 숏폼용 세로 컷은 따로 몇 개</div>
     <div><span class="cb"></span><b>장소마다 와이드 1 + 디테일 3</b>건물 · 교실 · 책상 · 손 · 화면</div>
     <div><span class="cb"></span><b>셀프캠 3번</b>아침 한마디 · 점심 · 끝나고 소감</div>
@@ -421,7 +423,7 @@
     <div><i></i><b>11</b></div><div><i></i><b>12</b></div><div><i></i><b>13</b></div><div><i></i><b>14</b></div><div><i></i><b>15</b></div>
     <div><i></i><b>16</b></div><div><i></i><b>17</b></div><div><i></i><b>18</b></div><div><i></i><b>19</b></div><div class="v"><i></i><b>20</b></div>
   </div>
-  <p class="muted" style="margin:0 0 3.5mm">20컷을 넘으면 칸 밖 여백에 바를 정(正)자로. 같은 동작은 여러 번 찍어 두면 편집이 쉬워요.</p>
+  <p class="muted" style="margin:0 0 2.5mm">20컷을 넘으면 칸 밖 여백에 바를 정(正)자로. 같은 동작은 여러 번 찍어 두면 편집이 쉬워요.</p>
 
   <div class="grid2" style="gap:4mm">
     <div>
@@ -437,32 +439,32 @@
     </div>
     <div>
       <h3 class="top">한 번 찍고 여러 번 쓰기</h3>
-      <div class="box" style="padding:3mm 4mm;margin:0 0 3mm;font-size:9.2pt;line-height:1.5">
+      <div class="box" style="padding:2.5mm 4mm;margin:0 0 2.5mm;font-size:9.2pt;line-height:1.45">
         <strong style="color:var(--pine)">촬영 한 번</strong> 가로로 넉넉히 + 세로 컷 몇 개<br>
         → <strong style="color:var(--pine)">롱폼 1편</strong> 유튜브 16:9 · 챕터 · 썸네일<br>
         → <strong style="color:var(--pine)">숏폼</strong> 하이라이트 · 핵심 한 가지 · 비하인드<br>
         <span class="opt">세로로 다시 내보낼 땐 인물을 가운데로 다시 맞추기</span>
       </div>
-      <div class="box dark" style="padding:3mm 4mm;margin:0;font-size:9.2pt">
+      <div class="box dark" style="padding:2.5mm 4mm;margin:0;font-size:9pt">
         <strong>점심 미션 · 브이로그 컷 모으기</strong><br>구내식당 · 학교 · 친구와 이야기. 와이드 1 + 디테일 3, 셀프캠 한마디, 현장음 그대로. 숏폼용 세로 컷도 몇 개.
       </div>
     </div>
   </div>
 
-  <div class="box" style="margin:0">
+  <div class="box" style="margin:0;padding:3mm 4mm">
     <h3 class="top">셀프캠 3번 <span class="opt">팔 길이 · 눈높이 · 렌즈를 보며 · 가로로 · 무슨 말을 했는지 한 줄</span></h3>
-    <div class="selfie" style="margin:0 0 2mm">
+    <div class="selfie" style="margin:0 0 1.2mm">
       <div><span class="cb"></span><b>아침 한마디</b> <span class="opt">오늘 무엇을</span><div class="ln"></div></div>
       <div><span class="cb"></span><b>점심</b> <span class="opt">지금 어디서 무엇을</span><div class="ln"></div></div>
       <div><span class="cb"></span><b>끝나고 소감</b> <span class="opt">오늘 한 줄 · 다음 예고</span><div class="ln"></div></div>
     </div>
-    <p class="muted" style="margin:0"><strong style="color:var(--pine)">촬영 동의</strong> 다른 사람 얼굴이 나오면 미리 물어보기, 원치 않는 사람은 빼기. 손 · 화면 · 뒷모습 위주면 편해요(3회차 스케치와 같은 원칙).</p>
+    <p class="muted" style="margin:0"><strong style="color:var(--pine)">촬영 동의</strong> 얼굴이 나오면 미리 묻고, 원치 않는 사람은 빼기 · 손 · 화면 · 뒷모습 위주면 편해요</p>
   </div>
 
-  <div class="box line" style="margin:3.5mm 0 0;padding:3mm 4mm">
-    <h3 class="top">6교시 편집을 위한 메모 <span class="opt">찍으면서 떠오를 때 바로 · 브이로그 네 구간에 그대로 들어갑니다</span></h3>
-    <p style="margin:0 0 1.5mm;font-size:9.4pt"><strong style="color:var(--pine)">인트로</strong> 오늘의 약속 한 문장 <span class="blank" style="min-width:118mm"></span></p>
-    <p style="margin:0 0 1.5mm;font-size:9.4pt"><strong style="color:var(--pine)">하이라이트</strong> 오늘의 한 장면 (가장 웃긴 · 예쁜 · 맛있는) · 컷 # <span class="blank" style="min-width:12mm"></span> <span class="blank" style="min-width:66mm"></span></p>
+  <div class="box line" style="margin:2.5mm 0 0;padding:2.2mm 4mm">
+    <h3 class="top" style="margin-bottom:0.8mm">6교시 편집을 위한 메모 <span class="opt">찍으면서 떠오를 때 바로 · 브이로그 네 구간에 그대로 들어갑니다</span></h3>
+    <p style="margin:0 0 0.8mm;font-size:9.4pt"><strong style="color:var(--pine)">인트로</strong> 오늘의 약속 한 문장 <span class="blank" style="min-width:118mm"></span></p>
+    <p style="margin:0 0 0.8mm;font-size:9.4pt"><strong style="color:var(--pine)">하이라이트</strong> 오늘의 한 장면 (가장 웃긴 · 예쁜 · 맛있는) · 컷 # <span class="blank" style="min-width:12mm"></span> <span class="blank" style="min-width:66mm"></span></p>
     <p style="margin:0;font-size:9.4pt"><strong style="color:var(--pine)">숏폼으로 쓸 세로 컷</strong> 컷 # <span class="blank" style="min-width:20mm"></span> &nbsp; <strong style="color:var(--pine)">아웃트로</strong> 소감 · 다음 예고 <span class="blank" style="min-width:58mm"></span></p>
   </div>
 </section>
@@ -1208,6 +1210,13 @@
       <li><strong>나머지 2안</strong> · 나중에 바꿔 보기용으로 저장</li>
     </ul>
   </div>
+  <h3 class="top">제목 · 썸네일 짝 맞추기 <span class="opt">썸네일은 그림, 제목은 말 · 같은 말을 두 번 하지 않기 · 제목은 누가 · 어디서 · 무엇을</span></h3>
+  <table class="pair">
+    <tr><th style="width:12mm">안</th><th style="width:52mm">썸네일 글자 (3단어 이하)</th><th>제목 (검색될 말을 앞쪽에)</th></tr>
+    <tr><td>1</td><td></td><td></td></tr>
+    <tr><td>2</td><td></td><td></td></tr>
+    <tr><td>3</td><td></td><td></td></tr>
+  </table>
   <div class="box dark" style="margin:0;padding:3mm 4mm">
     <p style="margin:0;font-size:9.6pt"><strong>숏폼 커버도 같은 원리.</strong> 릴스 커버는 피드 미리보기에서 가운데가 잘려 보이니 핵심은 가운데에. 상품 이미지 영상은 제품 정면 · 가운데 · 글자 3단어 이하.</p>
   </div>
@@ -1261,6 +1270,11 @@
     <div><b class="t">틱톡</b>
       <ul class="check"><li>앱 음원</li><li>해시태그</li><li>커버</li><li>빠르게 올리기</li></ul>
       <div class="pick"><span class="cb"></span>여기에 올림</div></div>
+  </div>
+  <div class="box line" style="margin:3mm 0 0;padding:2.5mm 4mm">
+    <p style="margin:0 0 1.5mm;font-size:9.4pt"><strong style="color:var(--pine)">숏폼 캡션 한 줄</strong> <span class="blank" style="min-width:128mm"></span></p>
+    <p style="margin:0 0 1.5mm;font-size:9.4pt"><strong style="color:var(--pine)">해시태그 3~5</strong> <span class="opt">업종 · 지역 · 제품 · 챌린지</span> &nbsp;# <span class="blank" style="min-width:20mm"></span> # <span class="blank" style="min-width:20mm"></span> # <span class="blank" style="min-width:20mm"></span> # <span class="blank" style="min-width:20mm"></span></p>
+    <p style="margin:0;font-size:9.4pt"><strong style="color:var(--pine)">커버 장면</strong> <span class="blank" style="min-width:60mm"></span> &nbsp; <strong style="color:var(--pine)">붙일 음원</strong> <span class="blank" style="min-width:46mm"></span></p>
   </div>
   <p class="muted" style="margin:2mm 0 0"><strong style="color:var(--pine)">AI 표시 · 협찬 표시는 숏폼도 똑같이.</strong> 사업 홍보는 인스타 릴스, 유튜브 채널을 키우려면 쇼츠, 챌린지는 틱톡이나 릴스.</p>
 </section>
