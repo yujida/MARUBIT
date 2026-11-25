@@ -168,7 +168,7 @@
   .aside.gold { background: #fbf1d3; }
   .ok { display: flex; justify-content: space-between; align-items: center; border-top: 1.2px dashed var(--line); padding-top: 1.8mm; font-size: 9.8pt; }
   .ok .t { font-weight: 700; color: var(--green); margin-right: 1.5mm; }
-  .ok .crew { font-size: 8.5pt; color: var(--sage); white-space: nowrap; }
+  .ok .done { font-size: 8.5pt; color: var(--sage); white-space: nowrap; }
   .memo { display: flex; align-items: flex-end; gap: 2mm; margin-top: 1.2mm; font-size: 8.5pt; color: var(--sage); }
   .memo div { flex: 1; border-bottom: 1px solid var(--line); height: 6mm; }
 
@@ -203,7 +203,7 @@
   .rule2 .ok1 { background: var(--mist); } .rule2 .ok1 b.h { color: var(--green); }
   .rule2 .no1 { background: var(--pine); color: #fff; } .rule2 .no1 b.h { color: var(--pale); }
 
-  /* 챌린지 */
+  /* 공감 상황극 */
   .formula { display: grid; grid-template-columns: 1fr auto 1fr auto 0.8fr; gap: 2mm; align-items: stretch; margin: 0 0 2.5mm; }
   .formula > div.f { border: 1.5px solid var(--pine); border-radius: 2.5mm; padding: 1.8mm 3mm; background: #fff; }
   .formula > div.f b { display: block; font-size: 9pt; color: var(--green); }
@@ -220,9 +220,6 @@
   .run td:nth-child(2) { width: 28mm; font-weight: 700; color: var(--pine); }
   .run td.tm { width: 16mm; text-align: center; color: var(--sage); }
   .run td.c { width: 12mm; text-align: center; }
-  .crewt td { height: 9.5mm; vertical-align: middle; padding: 1mm 2.5mm; }
-  .crewt td:first-child { width: 8mm; text-align: center; font-weight: 700; color: var(--pine); }
-  .crewt td.c { width: 14mm; text-align: center; }
   ol.up { counter-reset: u; list-style: none; padding: 0; margin: 0; }
   ol.up li { counter-increment: u; position: relative; padding: 1.4mm 0 1.4mm 15mm; border-bottom: 1px dashed var(--line); font-size: 9.6pt; }
   ol.up li:last-child { border-bottom: none; }
@@ -262,19 +259,48 @@
   .sf .check li::before { width: 3.2mm; height: 3.2mm; }
   .sf .pick { font-weight: 700; color: var(--pine); border-top: 1px dashed var(--line); padding-top: 1.2mm; }
 
-  /* 상영 · 과제 */
-  .fb td { height: 11mm; vertical-align: middle; padding: 1mm 2.5mm; }
-  .fb td:first-child { width: 30mm; }
-  .next { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5mm; margin: 0 0 3mm; }
+  /* 레퍼런스 해부 */
+  .lookbar { display: flex; gap: 1.5mm; flex-wrap: wrap; align-items: center; background: var(--mist); border-radius: 2mm; padding: 1.6mm 2.5mm; margin: 0 0 3mm; font-size: 8.5pt; color: var(--sage); }
+  .lookbar b { color: var(--pine); margin-right: 1mm; }
+  .lookbar span { background: #fff; border-radius: 3mm; padding: 0.2mm 2.4mm; color: var(--pine); font-weight: 600; }
+  .rf { border: 1.4px solid var(--line); border-radius: 3mm; background: #fff; padding: 2.6mm 3.5mm 2.2mm; margin: 0 0 3mm; break-inside: avoid; }
+  .rf .top { display: flex; gap: 3mm; align-items: flex-start; margin-bottom: 1.6mm; }
+  .rf .no { flex: 0 0 8.5mm; height: 8.5mm; border-radius: 50%; background: var(--gold); color: var(--pine); font-weight: 800; text-align: center; line-height: 8.5mm; font-size: 10.5pt; }
+  .rf h3 { margin: 0; font-size: 11pt; line-height: 1.3; }
+  .rf .meta { font-size: 8.2pt; color: var(--sage); line-height: 1.4; margin-top: 0.4mm; }
+  .rf .meta b { color: var(--pine); font-weight: 700; }
+  .rf .meta .url { color: var(--blue); font-weight: 600; word-break: break-all; }
+  .rf .meta .fm { display: inline-block; background: #fbf1d3; color: var(--pine); font-weight: 700; border-radius: 1mm; padding: 0 1.6mm; }
+  table.rtl { margin: 0 0 1.6mm; font-size: 8.4pt; }
+  table.rtl th { padding: 1mm 2mm; font-size: 8.2pt; }
+  table.rtl td { padding: 0.8mm 2mm; line-height: 1.36; }
+  table.rtl td.t { width: 13mm; font-weight: 700; color: var(--pine); white-space: nowrap; }
+  table.rtl td.k { width: 62mm; color: var(--ink); }
+  .az1 { display: inline-block; min-width: 4.2mm; text-align: center; background: var(--pine); color: var(--gold); font-weight: 800; font-size: 7.6pt; border-radius: 1mm; padding: 0 1mm; margin-right: 1mm; }
+  .rf .fx { display: grid; grid-template-columns: 1fr; gap: 0; font-size: 8.4pt; line-height: 1.4; }
+  .rf .fx ul.dl li { margin-bottom: 0.2mm; }
+  .rf .take { display: flex; align-items: flex-end; gap: 2mm; font-size: 8.6pt; font-weight: 700; color: var(--green); margin-top: 1.2mm; }
+  .rf .take div { flex: 1; border-bottom: 1px solid var(--line); height: 6mm; }
+  .vs td { padding: 1mm 2mm; font-size: 8.4pt; line-height: 1.36; }
+  .vs th { padding: 1mm 2mm; font-size: 8.4pt; }
+  .vs td:first-child { width: 20mm; font-weight: 700; color: var(--pine); }
+  .four { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2mm; }
+  .four > div { border-radius: 2mm; padding: 1.8mm 2.5mm; font-size: 8.6pt; line-height: 1.4; background: var(--mist); }
+  .four > div b { display: block; color: var(--pine); font-size: 9.4pt; }
+  .four > div .ln { border-bottom: 1px solid var(--line); height: 6.5mm; }
+
+  /* 메인 스타일 */
+  .styl { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2.5mm; margin: 0 0 2mm; }
+  .styl > div { border: 1.4px solid var(--pine); border-radius: 2.5mm; padding: 2.2mm 3mm; background: #fff; font-size: 8.6pt; line-height: 1.4; color: var(--sage); }
+  .styl > div b { display: block; color: var(--pine); font-size: 10.5pt; margin: 0.6mm 0 0.4mm; }
+  .styl > div .ln { border-bottom: 1px solid var(--line); height: 6.5mm; }
+  .next { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5mm; margin: 0 0 2mm; }
   .next div { background: var(--mist); border-radius: 2mm; padding: 1.8mm 3mm; font-size: 8.8pt; color: var(--sage); }
   .next div b { display: block; color: var(--pine); font-size: 10pt; }
-  .shot td { height: 8.4mm; vertical-align: middle; padding: 0.8mm 2mm; font-size: 9pt; }
-  .shot th { padding: 1.4mm 2mm; font-size: 8.8pt; }
-  .shot td:first-child { width: 8mm; text-align: center; font-weight: 700; color: var(--pine); }
-  .shot tr td { background: #fff !important; }
-  .hw { list-style: none; counter-reset: h; padding: 0; margin: 0; }
-  .hw li { counter-increment: h; position: relative; padding-left: 8mm; margin-bottom: 1.4mm; font-size: 9.8pt; }
-  .hw li::before { content: counter(h); position: absolute; left: 0; top: 0.2mm; width: 5.4mm; height: 5.4mm; line-height: 5.4mm; border-radius: 50%; background: var(--gold); color: var(--pine); font-weight: 800; font-size: 8.5pt; text-align: center; }
+  .idea td { height: 10mm; vertical-align: middle; padding: 1mm 2.5mm; }
+  .idea td:first-child { width: 10mm; text-align: center; font-weight: 700; color: var(--pine); }
+  .idea tr td { background: #fff !important; }
+  .wln { border-bottom: 1px solid var(--line); height: 8mm; }
 </style>
 </head>
 <body>
@@ -285,14 +311,14 @@
     <div class="series">AI콘텐츠 크리에이터 실무 · 촬영편집</div>
     <h1>4회차 워크북<br>카테고리 A to Z ①<br>보여주는 영상</h1>
     <div class="sub">유튜브 롱폼과 릴스 · 쇼츠 · 틱톡 · 2026. 11. 26 (목)</div>
-    <div class="fill"><div>이름</div><div>크루</div><div>대표작 카테고리 (①~⑦)</div></div>
+    <div class="fill"><div>이름</div><div>주력 플랫폼</div><div>대표작 카테고리 (①~⑦)</div></div>
     <div class="today">
       <div class="c"><b>롱폼 1편</b><span>수업 날 브이로그 · 가로 16:9 · 2분 안팎<br>오늘 하루를 찍어 오늘 편집 → 유튜브</span></div>
       <div class="p">+</div>
-      <div class="c"><b>숏폼 1편</b><span>상품 이미지 영상 또는 크루 챌린지 · 세로 9:16 · 15초 안팎<br>→ 릴스 · 쇼츠 · 틱톡 중 하나</span></div>
+      <div class="c"><b>숏폼 1편</b><span>상품 이미지 영상 또는 공감 상황극 · 세로 9:16 · 15초 안팎<br>→ 릴스 · 쇼츠 · 틱톡 중 하나</span></div>
     </div>
-    <div class="orn">오늘 남는 것 = 롱폼 1 + 숏폼 1 · 크루 트리에 오너먼트 두 개</div>
-    <div class="meta">1회차 촬영 · 2회차 기획 · 3회차 편집으로 기술 세 가지를 다 배웠어요. 오늘부터는 그 기술을 카테고리별로 묶어 처음부터 끝까지(A to Z) 한 번씩 돌립니다. 오늘은 ① 브이로그 ② 정보성 · 리뷰 ③ 상품 이미지 영상 ④ 챌린지 · 트렌드 숏폼. 카테고리 카드 네 장을 다 채우면 나만의 제작 매뉴얼이 됩니다.</div>
+    <div class="orn">오늘 남는 것 = 롱폼 1 + 숏폼 1 · 반 트리에 오너먼트 두 개</div>
+    <div class="meta">1회차 촬영 · 2회차 기획 · 3회차 편집으로 기술 세 가지를 다 배웠어요. 오늘부터는 그 기술을 카테고리별로 묶어 처음부터 끝까지(A to Z) 한 번씩 돌립니다. 오늘은 ① 브이로그 ② 정보성 · 리뷰 ③ 상품 이미지 영상 ④ 공감 상황극 숏폼. 카테고리 카드 네 장을 다 채우면 나만의 제작 매뉴얼이 됩니다.</div>
   </div>
 </section>
 
@@ -305,14 +331,14 @@
     <div class="ar">→</div>
     <div class="st"><b>② 따라하기</b><span>그 카테고리의 CapCut 핵심 기법을 번호 순서대로 (3회차 방식)</span></div>
     <div class="ar">→</div>
-    <div class="st on"><b>③ 확인 · 실습</b><span>확인 □ 체크 → 크루 전원 완료면 다음. 실습으로 내 것 만들기</span></div>
+    <div class="st on"><b>③ 확인 · 실습</b><span>확인 □ 체크 → 모두 완료면 다음. 실습은 각자, 막히면 옆자리와 서로 돕기</span></div>
   </div>
   <div class="day">
     <div><i>1교시</i><b>지도</b>플랫폼 · 카테고리 · 촬영 시작</div>
     <div><i>2교시</i><b>① 브이로그</b>롱폼 + 하루 1초</div>
     <div><i>3교시</i><b>② 정보성 · 리뷰</b>기획 시트</div>
     <div><i>4교시</i><b>③ 상품 이미지</b>10컷 → 15초</div>
-    <div><i>5교시</i><b>④ 챌린지</b>크루 챌린지</div>
+    <div><i>5교시</i><b>④ 공감 상황극</b>4컷 · 반전</div>
     <div><i>6교시</i><b>제작</b>브이로그 2분</div>
     <div><i>7교시</i><b>업로드</b>오너먼트 두 개</div>
   </div>
@@ -330,7 +356,7 @@
   <div class="three">
     <div><b>인스타그램 릴스</b>브랜드 · 감성 · 가게 홍보. 피드 · 프로필과 함께 보임. 피드 미리보기는 가운데가 잘려 보이니 커버 핵심은 가운데에</div>
     <div><b>유튜브 쇼츠</b>유튜브 채널로 연결. 롱폼 하이라이트 · 예고. 관련 롱폼 연결</div>
-    <div><b>틱톡</b>트렌드 · 음원 · 챌린지. 빠른 반응 · 짧은 유행. 트렌드 찾기 도구</div>
+    <div><b>틱톡</b>트렌드 · 음원 중심. 빠른 반응 · 짧은 유행. 트렌드 찾기 도구</div>
   </div>
   <div class="grid2" style="gap:3mm;margin-bottom:2mm">
     <div class="gram lt">
@@ -368,14 +394,14 @@
     <div class="n5"><span class="n">⑥</span><span class="t"><b>라이브 · 라이브커머스</b><span>판매 · 소통</span></span><span class="w">5회차</span></div>
     <div><span class="n">③</span><span class="t"><b>상품 이미지 영상</b><span>뷰티 · 디저트 · 가게 홍보</span></span><span class="w">릴스 중심</span></div>
     <div class="n5"><span class="n">⑦</span><span class="t"><b>AI 영상</b><span>AI 광고 · 숏드라마</span></span><span class="w">5회차</span></div>
-    <div><span class="n">④</span><span class="t"><b>챌린지 · 트렌드</b><span>개인 채널 · 브랜드 참여</span></span><span class="w">틱톡 · 릴스 · 쇼츠</span></div>
-    <div class="goal">5회차 대표작은 이 일곱 중 하나로</div>
+    <div><span class="n">④</span><span class="t"><b>공감 상황극</b><span>직장 · 가게 · 육아 공감 에피소드</span></span><span class="w">릴스 · 쇼츠 · 틱톡</span></div>
+    <div class="goal">대표작은 이 일곱 중 하나로</div>
   </div>
   <table class="mapto">
     <tr><th>원하는 결과물</th><th>잘 맞는 카테고리</th></tr>
     <tr><td>사업 홍보</td><td>③ 상품 이미지 · ② 리뷰 · ⑥ 라이브커머스 · ① 사장 브이로그</td></tr>
     <tr><td>취업 · 강사</td><td>② 정보성 · ⑤ 토크</td></tr>
-    <tr><td>개인 채널</td><td>① 브이로그 · ② 리뷰 · ④ 챌린지</td></tr>
+    <tr><td>개인 채널</td><td>① 브이로그 · ② 리뷰 · ④ 공감 상황극</td></tr>
     <tr><td>AI 광고</td><td>⑦ AI 영상</td></tr>
   </table>
 
@@ -392,14 +418,14 @@
   <p class="muted" style="margin:0 0 4mm">E 편집은 3회차 기능 중에서 이 카테고리에 맞는 것만 골라 쓰기.</p>
 
   <div class="box gold" style="margin:0">
-    <h3 class="top">내 카테고리 고르기 <span class="opt">크루 · 나중에 바꿔도 OK · 오늘 배우는 카테고리가 아니어도 괜찮아요</span></h3>
+    <h3 class="top">내 카테고리 고르기 <span class="opt">나중에 바꿔도 OK · 오늘 배우는 카테고리가 아니어도 괜찮아요</span></h3>
     <table class="pickme" style="margin:0 0 2mm;background:#fff">
       <tr><td>내 아이템</td><td class="write"><span class="opt">2회차 기획안의 아이템 (가게 · 직무 · 취미)</span></td></tr>
       <tr><td>목적</td><td><span class="opts"><span><span class="cb"></span>홍보</span><span><span class="cb"></span>포트폴리오</span><span><span class="cb"></span>채널 키우기</span><span><span class="cb"></span>판매</span><span><span class="cb"></span>기타 <span class="blank" style="min-width:24mm"></span></span></span></td></tr>
       <tr><td>주력 플랫폼 하나</td><td><span class="opts"><span><span class="cb"></span>유튜브 롱폼</span><span><span class="cb"></span>릴스</span><span><span class="cb"></span>쇼츠</span><span><span class="cb"></span>틱톡</span></span></td></tr>
-      <tr><td>대표작 카테고리<br><span class="opt">하나에 동그라미</span></td><td><span class="circ"><span>① 브이로그</span><span>② 정보성 · 리뷰</span><span>③ 상품 이미지</span><span>④ 챌린지</span><span>⑤ 토크 · 인터뷰</span><span>⑥ 라이브커머스</span><span>⑦ AI 영상</span></span></td></tr>
+      <tr><td>대표작 카테고리<br><span class="opt">하나에 동그라미</span></td><td><span class="circ"><span>① 브이로그</span><span>② 정보성 · 리뷰</span><span>③ 상품 이미지</span><span>④ 공감 상황극</span><span>⑤ 토크 · 인터뷰</span><span>⑥ 라이브커머스</span><span>⑦ AI 영상</span></span></td></tr>
     </table>
-    <p style="margin:0;font-size:9.5pt"><strong style="color:var(--pine)">크루 안에서 30초씩</strong> "저는 <span class="blank" style="min-width:26mm"></span>을 <span class="blank" style="min-width:20mm"></span>에 올리려고, <span class="blank" style="min-width:10mm"></span>번 카테고리로 해 보고 싶어요"</p>
+    <p style="margin:0;font-size:9.5pt"><strong style="color:var(--pine)">원하면 옆자리와 30초씩</strong> "저는 <span class="blank" style="min-width:26mm"></span>을 <span class="blank" style="min-width:20mm"></span>에 올리려고, <span class="blank" style="min-width:10mm"></span>번 카테고리로 해 보고 싶어요"</p>
   </div>
 </section>
 
@@ -407,7 +433,8 @@
 <section class="page">
   <div class="kicker">1교시부터 7교시 전까지 · 촬영</div>
   <h1>오늘 하루 브이로그 촬영 체크</h1>
-  <p class="lead" style="margin-bottom:2.5mm;font-size:10.8pt">6교시에 편집할 <strong>수업 날 브이로그</strong>의 재료예요. 지금부터 점심 · 쉬는 시간 · 실습 장면까지 틈틈이 찍어 <strong>7교시 전에 20컷 이상</strong>.</p>
+  <p class="lead" style="margin-bottom:2mm;font-size:10.8pt">6교시에 편집할 <strong>수업 날 브이로그</strong>의 재료예요. 직접 찍는 사람은 지금부터 점심 · 쉬는 시간 · 실습 장면까지 틈틈이 찍어 <strong>7교시 전에 20컷 이상</strong>.</p>
+  <div class="box gold" style="margin:0 0 2.5mm;padding:2mm 4mm"><p style="margin:0;font-size:9.6pt"><strong style="color:var(--pine)">6교시 브이로그 재료 · 둘 중 선택</strong> &nbsp; <span class="cb"></span>오늘 각자 찍은 컷 &nbsp; <span class="cb"></span>강사 촬영본 (공용 폴더) <span class="opt">&nbsp;· 강사 촬영본을 골라도 셀프캠 한마디 정도는 내 것으로 찍어 두면 좋아요</span></p></div>
   <div class="shoot" style="margin-bottom:3mm">
     <div><span class="cb"></span><b>가로 16:9</b>브이로그 롱폼용. 숏폼용 세로 컷은 따로 몇 개</div>
     <div><span class="cb"></span><b>장소마다 와이드 1 + 디테일 3</b>건물 · 교실 · 책상 · 손 · 화면</div>
@@ -487,12 +514,12 @@
     <div class="R">
       <div class="ref">
         <div>
-          <div class="hd">강사가 고른 레퍼런스</div>
-          <div class="wl">레퍼런스 제목<div></div></div>
-          <div class="wl">몇 초에 무엇이<div></div></div>
-          <div class="tl"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
-          <div class="tlx"><span>0초</span><span>타임라인에 구간을 그려 보기</span><span>끝</span></div>
-          <div class="wl">가져올 것 1개<div></div></div>
+          <div class="hd">강사가 고른 레퍼런스 2편 <span class="opt">· 다음 쪽 레퍼런스 해부</span></div>
+          <ul class="dl" style="font-size:8.8pt;margin:0.5mm 0 0">
+            <li><b>교토에서 책 보고 킷사텐 여행하기</b> · 아융그 · 현지인 동행 · 인터뷰</li>
+            <li><b>후쿠오카 근교 이토시마 당일치기 여행</b> · 센님 Sennim · 하루 동선</li>
+          </ul>
+          <div class="wl">내 브이로그에 가져올 것 1개<div></div></div>
         </div>
         <div class="look"><b>보면서 찾을 것</b>① 인트로는 몇 초? 무엇으로 시작?<br>② 장면이 몇 개, 한 장면 몇 초?<br>③ 말 · 자막 · 음악 중 무엇으로 끌고 가나<br>④ 끝을 어떻게 맺나</div>
       </div>
@@ -549,6 +576,57 @@
   <p class="ccfoot"><b>내 브이로그 한 줄 메모</b> 오늘의 약속(인트로 한 문장) <span class="blank" style="min-width:110mm"></span></p>
 </section>
 
+<!-- 5-2. 레퍼런스 해부 ① 브이로그 (분석: lectures/04/레퍼런스분석/브이로그_교토킷사텐.txt · 브이로그_이토시마당일치기.txt) -->
+<section class="page">
+  <div class="kicker">2교시 · ① 브이로그 · B 레퍼런스</div>
+  <h1>레퍼런스 해부 · 브이로그 두 편</h1>
+  <div class="lookbar"><b>보면서 찾을 것</b><span>① 인트로는 몇 초? 무엇으로 시작?</span><span>② 장면이 몇 개, 한 장면 몇 초?</span><span>③ 말 · 자막 · 음악 중 무엇으로 끌고 가나</span><span>④ 끝을 어떻게 맺나</span></div>
+
+  <div class="rf">
+    <div class="top"><span class="no">1</span><div>
+      <h3>교토에서 책 보고 킷사텐 여행하기</h3>
+      <div class="meta"><b>채널</b> 아융그 · <b>링크</b> <span class="url">https://www.youtube.com/watch?v=b10oK7oYctg</span> · <span class="fm">여행 브이로그 · 롱폼 16:9 · 마지막 장면 07:41</span><br>교토 거주 현지 작가와 동행해, 아날로그 잡지(책)로 숨은 노포 킷사텐(일본식 옛날 다방)을 찾아가는 영상</div>
+    </div></div>
+    <table class="rtl">
+      <tr><th>시간</th><th>장면</th><th>무엇을 배울까</th></tr>
+      <tr><td class="t">00:00</td><td>킷사텐의 매력을 비교하러 교토 여행 시작. 교토 7년 차 단골 작가와 60년 전통 로컬 킷사텐으로</td><td class="k"><span class="az1">C</span>인트로 · 오늘 무엇을 하는지 한 문장 + 현지인 동행</td></tr>
+      <tr><td class="t">01:17</td><td>관광객 없는 주거지역 · 만화책꽂이 · 옛날 게임기 테이블 · 개업 당시 소파</td><td class="k"><span class="az1">D</span>장소마다 와이드 1 + 디테일 3 · 공간이 내용</td></tr>
+      <tr><td class="t">01:36</td><td>가게에서 킷사텐 모음집을 발견 → 구글 맵 대신 이 책으로 다음 가게를 찾기로</td><td class="k"><span class="az1">C</span>오늘의 규칙 = 열린 고리 · "다음은 어디?"</td></tr>
+      <tr><td class="t">03:27</td><td>나폴리탄 스파게티 · 커피 젤리 → 버스로 산조 가와라마치 이동 (04:03)</td><td class="k"><span class="az1">C</span>흐름 · 먹기 디테일 → 이동은 빠르게 압축</td></tr>
+      <tr><td class="t">05:10</td><td>두 번째 가게 마스터 짧은 인터뷰 · 1950년대 개업, 대를 이어 온 레시피</td><td class="k"><span class="az1">E</span>하이라이트 · 인터뷰 답 위에 B롤 (L컷 자리)</td></tr>
+      <tr><td class="t">06:50</td><td>같은 잡지를 다시 펼쳐 1934년 개업 노포 '프랑수아' 선정 → 크림치즈 케이크 · 레트로 전표 (07:41)</td><td class="k"><span class="az1">C</span>같은 틀 반복 → 아웃트로 · 마지막 한 입으로 마무리</td></tr>
+    </table>
+    <div class="fx"><ul class="dl">
+      <li><b>아날로그 콘셉트</b> · 지도 · 평점 앱 대신 가게에 놓인 현지 잡지를 즉흥적으로 펼쳐 다음 목적지를 정함</li>
+      <li><b>현지인 동행 · 취재형</b> · 7년째 사는 작가가 일본어 잡지를 해석하고 교토 역사 · 킷사텐 배경을 자연스럽게 풀어 줌</li>
+      <li><b>공간 · 음식 깊이</b> · 마스터 인터뷰, 나폴리탄 · 커피 젤리 · 치즈케이크 같은 상징 메뉴의 유래로 정보성 · 몰입감</li>
+    </ul></div>
+    <div class="take">내 영상에 가져올 것 1개<div></div></div>
+  </div>
+
+  <div class="rf" style="margin:0">
+    <div class="top"><span class="no">2</span><div>
+      <h3>후쿠오카만 가기 아쉬워서 떠난 근교 이토시마 당일치기 여행 브이로그</h3>
+      <div class="meta"><b>채널</b> 센님 Sennim · <b>링크</b> <span class="url">https://www.youtube.com/watch?v=FobTg6lTGQs</span> · <span class="fm">여행 브이로그 · 롱폼 16:9 · 마지막 장면 16:24</span><br>후쿠오카 근교 소도시 이토시마 당일치기 코스와, 돌아온 뒤 후쿠오카 시내 식도락 · 쇼핑까지 담은 영상</div>
+    </div></div>
+    <table class="rtl">
+      <tr><th>시간</th><th>장면</th><th>무엇을 배울까</th></tr>
+      <tr><td class="t">00:28</td><td>유람선 마감(오후 4시)에 맞추려고 공항에 짐을 맡기고 바로 출발</td><td class="k"><span class="az1">C</span>인트로 · 오늘의 약속 + 시간 제한 = 끝까지 보게</td></tr>
+      <tr><td class="t">01:43</td><td>전철로 이동하며 한적한 소도시 풍경 · 첫 끼 연어 육회 덮밥 · 참치 덮밥 (02:17)</td><td class="k"><span class="az1">C</span>흐름 · 이동은 풍경 컷으로 압축, 먹기는 디테일</td></tr>
+      <tr><td class="t">04:17</td><td>해식 동굴 '케야노오토' 유람선 · 주상절리 암벽 · 바닷새 떼 · 동굴 입구 바로 앞까지</td><td class="k"><span class="az1">D</span>하이라이트 ① · 와이드 + 현장음으로 현장감</td></tr>
+      <tr><td class="t">07:24</td><td>버스로 30분 · 노을 속 바다 위 하얀 토리이와 부부바위 (08:06) · 배차 1시간 버스 팁</td><td class="k"><span class="az1">E</span>하이라이트 ② · 노을 한 장면 + 정보 한 줄</td></tr>
+      <tr><td class="t">09:38</td><td>해변 포토존 · '기적의 유목' · 높은 야자수 그네 · 상어 조형물 그네 (10:44)</td><td class="k"><span class="az1">E</span>힐링 → 액티비티로 리듬 바꾸기</td></tr>
+      <tr><td class="t">13:34</td><td>후쿠오카 복귀 · 수제 버거 · 다음 날 하카타 우동과 유래 · 치크 렌즈 쇼핑 (16:24)</td><td class="k"><span class="az1">C</span>아웃트로 · 하루를 정리하고 다음으로 이어 가기</td></tr>
+    </table>
+    <div class="fx"><ul class="dl">
+      <li><b>대중교통 당일치기 동선</b> · 렌터카 없이 공항 코인라커 · 전철 · 노선버스로 핵심 3코스(유람선 → 토리이 → 그네)를 하루에</li>
+      <li><b>한 · 일 이중언어 소통</b> · 일본인 동행자와 대화하며 진행, 현지인 시선의 감상 + 자막 번역으로 현장감</li>
+      <li><b>힐링과 액티비티의 균형</b> · 잔잔한 풍경 · 노을과 동굴 유람선 · 대형 그네 체험을 번갈아 배치</li>
+    </ul></div>
+    <div class="take">내 영상에 가져올 것 1개<div></div></div>
+  </div>
+</section>
+
 <!-- 6. 브이로그 따라하기 01 · 02 -->
 <section class="page">
   <div class="kicker">2교시 · ① 브이로그 · E 편집</div>
@@ -579,7 +657,7 @@
       </ol>
       <div class="aside gold"><b>PC는 소리가 안 나요</b>파형으로 확인: 말 파형이 B롤 아래에서도 이어지면 성공<br><b style="margin-top:1mm">메뉴 이름</b>오디오 분리 · 오디오 추출 등 버전 · 시기마다 다를 수 있음</div>
     </div>
-    <div class="ok"><span><span class="cb"></span><span class="t">확인</span>말은 이어지고 화면만 B롤로 바뀜</span><span class="crew">크루 전원 완료 <span class="cb"></span></span></div>
+    <div class="ok"><span><span class="cb"></span><span class="t">확인</span>말은 이어지고 화면만 B롤로 바뀜</span><span class="done">모두 완료 <span class="cb"></span></span></div>
     <div class="memo">내 메모<div></div></div>
   </div>
 
@@ -604,7 +682,7 @@
       </ol>
       <div class="aside"><b>자동 기능</b>버전에 따라 음악을 자동으로 낮추는 기능이 오디오 패널에 있을 수 있어요(강사 PC에서 확인)<br><b style="margin-top:1mm">소리 확인</b>내보내기 또는 클라우드 → 폰 앱에서 이어폰으로<br>내 음악 볼륨 <span class="blank" style="min-width:12mm"></span> dB</div>
     </div>
-    <div class="ok"><span><span class="cb"></span><span class="t">확인</span>말할 때만 음악이 내려갔다 다시 올라옴</span><span class="crew">크루 전원 완료 <span class="cb"></span></span></div>
+    <div class="ok"><span><span class="cb"></span><span class="t">확인</span>말할 때만 음악이 내려갔다 다시 올라옴</span><span class="done">모두 완료 <span class="cb"></span></span></div>
     <div class="memo">내 메모<div></div></div>
   </div>
 </section>
@@ -628,12 +706,12 @@
     <div class="R">
       <div class="ref">
         <div>
-          <div class="hd">강사가 고른 레퍼런스 <span class="opt">정보성 1편 · 리뷰 1편</span></div>
-          <div class="wl">레퍼런스 제목<div></div></div>
-          <div class="wl">몇 초에 무엇이<div></div></div>
-          <div class="tl"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
-          <div class="tlx"><span>0초</span><span>문제 제기 · 결론이 끝나는 곳에 표시</span><span>끝</span></div>
-          <div class="wl">가져올 것 1개<div></div></div>
+          <div class="hd">강사가 고른 레퍼런스 2편 <span class="opt">· 같은 AI 안경, 다른 리뷰 · 다음 쪽 레퍼런스 해부</span></div>
+          <ul class="dl" style="font-size:8.8pt;margin:0.5mm 0 0">
+            <li><b>젠틀몬스터 AI 안경</b> · ITSub잇섭 · 현장 체험형 리뷰</li>
+            <li><b>지금 난리난 AI 안경 써봤습니다</b> · 디에디트 · 제품 상세 리뷰</li>
+          </ul>
+          <div class="wl">내 영상에 가져올 것 1개<div></div></div>
         </div>
         <div class="look"><b>보면서 찾을 것</b>① 문제 제기 · 결론이 몇 초에?<br>② 핵심(장면)이 몇 개?<br>③ 말하는 화면 vs 보여 주는 화면 비율<br>④ 마지막에 무엇을 하라고 하나</div>
       </div>
@@ -700,6 +778,66 @@
   </div>
 </section>
 
+<!-- 7-2. 레퍼런스 해부 ② 정보성 · 리뷰 (분석: lectures/04/레퍼런스분석/리뷰_잇섭_젠틀몬스터AI안경.txt · 리뷰_디에디트_AI안경.txt) -->
+<section class="page">
+  <div class="kicker">3교시 · ② 정보성 · 리뷰 · B 레퍼런스</div>
+  <h1>레퍼런스 해부 · 같은 AI 안경, 두 가지 리뷰</h1>
+  <div class="lookbar"><b>보면서 찾을 것</b><span>① 문제 제기 · 결론이 몇 초에?</span><span>② 핵심(장면)이 몇 개?</span><span>③ 말하는 화면 vs 보여 주는 화면 비율</span><span>④ 마지막에 무엇을 하라고 하나</span></div>
+
+  <div class="rf">
+    <div class="top"><span class="no">1</span><div>
+      <h3>드디어 디자인도 신경쓴 젠틀몬스터 AI 안경? 나오자마자 품절됨 ㄷㄷ</h3>
+      <div class="meta"><b>채널</b> ITSub잇섭 · <b>링크</b> <span class="url">https://www.youtube.com/watch?v=pS4yoeRcci8</span> · <span class="fm">현장 체험형 리뷰 · 롱폼 · 마지막 장면 16:55</span><br>젠틀몬스터 · 삼성전자 · 구글이 협업한 스마트 글래스를 뉴욕 팝업 스토어에서 직접 체험한 리뷰</div>
+    </div></div>
+    <table class="rtl">
+      <tr><th>시간</th><th>장면</th><th>무엇을 배울까</th></tr>
+      <tr><td class="t">00:11</td><td>첫 공개 현장, 뉴욕 팝업 스토어 방문</td><td class="k"><span class="az1">C</span>"가 보기"로 시작 · 왜 지금 봐야 하나</td></tr>
+      <tr><td class="t">01:03</td><td>6가지 프레임 · 도수 렌즈 체험 → 스피커 · 마이크 · 카메라 · 녹화 LED · 케이스 · 배터리 (02:50)</td><td class="k"><span class="az1">C</span>겉모습 · 디테일 <span class="az1">D</span>손 클로즈업 · 매크로</td></tr>
+      <tr><td class="t">04:17</td><td>전시물을 보며 AI 호출 · 손가락으로 표지판을 가리키자 뜻을 알려 줌</td><td class="k"><span class="az1">C</span>써 보기 ① · 말하는 화면 + 보여 주는 화면</td></tr>
+      <tr><td class="t">05:59</td><td>프랑스어 직원과 실시간 통역 · 책 번역 · 사진으로 길찾기 · 다국어 '심포지엄 룸' (09:47)</td><td class="k"><span class="az1">C</span>써 보기 ② · 실제 상황별 시나리오</td></tr>
+      <tr><td class="t">11:13</td><td>마트 재료로 레시피 · 제스처 반응 · 소리 누설 (12:15) → 1시간 착용감 · 발열 · 방수 · 호환 (13:13) → 얼굴 블러 · LED 보안 (15:56)</td><td class="k"><span class="az1">C</span>장단점 · 아쉬운 점도 직접 검증</td></tr>
+      <tr><td class="t">16:55</td><td>출시 일정 · 가격대 안내 + "여행 필수템으로 활용할 수 있을 것" 총평</td><td class="k"><span class="az1">C</span>정보 · 누구에게 <span class="az1">G</span>가격 · 날짜는 출처 확인</td></tr>
+    </table>
+    <div class="fx"><ul class="dl">
+      <li><b>패션 + 테크</b> · 투박한 디자인이라는 진입장벽을 어떻게 풀었는지 일반 안경 · 선글라스와 비교, 도수 렌즈 등 실착 관점</li>
+      <li><b>실제 사용 시나리오 중심</b> · 미술관 · 외국인과 대화 · 외국어 책 · 지도 · 장보기 등 상황별로 직관적으로 보여 줌</li>
+      <li><b>장단점 · 보안 · 호환까지 균형</b> · 빠른 응답 · 완성도 호평과 함께 데일리 착용 부담 · 소리 누설 · 프라이버시 장치도 점검</li>
+    </ul></div>
+    <div class="take">내 영상에 가져올 것 1개<div></div></div>
+  </div>
+
+  <div class="rf">
+    <div class="top"><span class="no">2</span><div>
+      <h3>지금 난리난 AI 안경 써봤습니다</h3>
+      <div class="meta"><b>채널</b> 디에디트 THE EDIT · <b>링크</b> <span class="url">https://www.youtube.com/watch?v=ICvpBpZn7Tk</span> · <span class="fm">제품 상세 리뷰 · 롱폼 · 마지막 장면 13:57</span><br>카메라 대신 눈앞 디스플레이를 넣은 스마트 글래스와 전용 스마트 링을 기능별로 짚은 리뷰</div>
+    </div></div>
+    <table class="rtl">
+      <tr><th>시간</th><th>장면</th><th>무엇을 배울까</th></tr>
+      <tr><td class="t">00:01</td><td>"카메라가 없다"를 유머로 강조하며 시작 · 약 36g · 일반 안경 같은 외관</td><td class="k"><span class="az1">C</span>한 줄 결론 · 차별점부터 (첫 30초 약속)</td></tr>
+      <tr><td class="t">01:33</td><td>안경원과 협업한 검안 · 도수 · 다초점 렌즈 · 자석 클립온 선글라스</td><td class="k"><span class="az1">C</span>겉모습 · 디테일 · 안경 쓰는 사람이 궁금한 것</td></tr>
+      <tr><td class="t">03:00</td><td>눈앞 디스플레이 · 표시 거리 · 높이 조절 · 터치패드 · 위젯 5개 · 알림 (04:52)</td><td class="k"><span class="az1">C</span>핵심 1 <span class="az1">E</span>기능마다 번호 · 정보 카드</td></tr>
+      <tr><td class="t">06:58</td><td>별매 스마트 링 조작 · 음성 호출 · 실시간 번역 자막 (08:25)</td><td class="k"><span class="az1">C</span>핵심 2 · 가격은 정보 카드로</td></tr>
+      <tr><td class="t">09:20</td><td>대화 전사 · 팩트체크 · 요약 → 내비게이션 · 텔레프롬프터 (10:19) → AI 코딩 도구 연동 (11:53)</td><td class="k"><span class="az1">C</span>핵심 3 · 이런 분께 추천 (발표자 · 테크 마니아)</td></tr>
+      <tr><td class="t">13:25</td><td>배터리 · 방수 스펙 → "매일 쓰는 진짜 안경" 총평 · 쿠키 영상 (13:57)</td><td class="k"><span class="az1">C</span>정보 → 결론 · 끝을 웃음으로</td></tr>
+    </table>
+    <div class="fx"><ul class="dl">
+      <li><b>차별점 대비</b> · 카메라 · 스피커 중심 제품과 달리 초경량 무게 · 눈앞 디스플레이에 집중한 정체성을 분명히 보여 줌</li>
+      <li><b>안경 착용자 관점</b> · 실제 안경원 방문, 도수 · 다초점 · 클립온 등 평소 안경 쓰는 사람이 가장 궁금한 포인트</li>
+      <li><b>활용 확장</b> · 텔레프롬프터 · 회의 팩트체크 · AI 코딩 도구로 나만의 안경 앱 만들기까지 사례 제시</li>
+    </ul></div>
+    <div class="take">내 영상에 가져올 것 1개<div></div></div>
+  </div>
+
+  <h3 class="top" style="margin-bottom:1mm">두 리뷰 비교 <span class="opt">결론 · 장단점 · 정보를 어디에 두나 · C 리뷰 구조와 맞춰 보기</span></h3>
+  <table class="vs" style="margin:0">
+    <tr><th></th><th>① 잇섭 · 현장 체험형</th><th>② 디에디트 · 제품 상세형</th></tr>
+    <tr><td>시작</td><td>현장(팝업 스토어)에 가는 장면부터</td><td>차별점 한 줄("카메라가 없다")부터</td></tr>
+    <tr><td>핵심을 나누는 법</td><td>상황별 체험 (전시 · 통역 · 길찾기 · 장보기)</td><td>기능별 묶음 (디스플레이 · 링 · 대화 · 확장)</td></tr>
+    <tr><td>장단점</td><td>호평 + 착용 부담 · 소리 누설을 직접 테스트</td><td>카메라 · 스피커를 뺀 대신 얻은 것 (가벼움 · 디스플레이)</td></tr>
+    <tr><td>정보 · 결론</td><td>마지막에 출시 일정 · 가격대 + 총평</td><td>중간에 링 가격, 마지막에 배터리 · 방수 + 총평</td></tr>
+  </table>
+</section>
+
 <!-- 8. 정보성 · 리뷰 따라하기 03 · 04 -->
 <section class="page">
   <div class="kicker">3교시 · ② 정보성 · 리뷰 · D 촬영 · E 편집</div>
@@ -727,7 +865,7 @@
       </ol>
       <div class="aside"><b>잘 안 될 때</b>너무 자주 확대하면 어지러워요 · 글자가 깨지면 녹화 해상도를 높이기<br><b style="margin-top:1mm">값 메모</b>100% → <span class="blank" style="min-width:12mm"></span>% → 100% · 걸린 시간 <span class="blank" style="min-width:10mm"></span>초</div>
     </div>
-    <div class="ok"><span><span class="cb"></span><span class="t">확인</span>보여 줄 곳으로 다가갔다가 다시 전체로 돌아옴</span><span class="crew">크루 전원 완료 <span class="cb"></span></span></div>
+    <div class="ok"><span><span class="cb"></span><span class="t">확인</span>보여 줄 곳으로 다가갔다가 다시 전체로 돌아옴</span><span class="done">모두 완료 <span class="cb"></span></span></div>
     <div class="memo">내 메모<div></div></div>
   </div>
 
@@ -743,7 +881,7 @@
       </ol>
       <div class="aside gold"><b>내 카드 디자인</b>글꼴 <span class="blank" style="min-width:34mm"></span><br>색 <span class="blank" style="min-width:16mm"></span> 배경 <span class="blank" style="min-width:16mm"></span><br>브랜드 색을 미리 정해 두면 좋아요(5회차 브랜딩). 텍스트 템플릿도 OK, 너무 화려한 것은 피하기</div>
     </div>
-    <div class="ok"><span><span class="cb"></span><span class="t">확인</span>카드가 모두 같은 디자인 · 같은 자리</span><span class="crew">크루 전원 완료 <span class="cb"></span></span></div>
+    <div class="ok"><span><span class="cb"></span><span class="t">확인</span>카드가 모두 같은 디자인 · 같은 자리</span><span class="done">모두 완료 <span class="cb"></span></span></div>
     <div class="memo">내 메모<div></div></div>
   </div>
 
@@ -756,7 +894,7 @@
 <section class="page">
   <div class="kicker">3교시 · 미니 실습</div>
   <h1>내 아이템 기획 시트 · 정보성 또는 리뷰</h1>
-  <p class="lead" style="margin-bottom:3mm">내 아이템으로 정보성 또는 리뷰 하나. 기획 코치 GPT에 물어 초안을 받고, <strong>사실 · 숫자는 내가 확인</strong>. 크루 안에서 제목만 돌아가며 읽어 주기. &nbsp; <span class="cb"></span>정보성 &nbsp; <span class="cb"></span>리뷰</p>
+  <p class="lead" style="margin-bottom:3mm">내 아이템으로 정보성 또는 리뷰 하나. 기획 코치 GPT에 물어 초안을 받고, <strong>사실 · 숫자는 내가 확인</strong>. 다 쓰면 옆자리에게 제목만 읽어 주고 반응 보기. &nbsp; <span class="cb"></span>정보성 &nbsp; <span class="cb"></span>리뷰</p>
   <table class="sheet">
     <tr><th style="width:24mm">칸</th><th>쓰기</th><th style="width:56mm">보여 줄 화면 (B롤)</th></tr>
     <tr><td class="lab">제목<br><span class="opt">후보 3</span></td><td class="write" colspan="2"><span class="opt">숫자 · 결과 · 대상이 들어간 한 줄</span><br><br>②<br>③</td></tr>
@@ -808,12 +946,12 @@
     <div class="R">
       <div class="ref">
         <div>
-          <div class="hd">강사가 고른 레퍼런스 <span class="opt">무음으로 봐도 OK · 컷 수 · 리듬을 눈으로</span></div>
-          <div class="wl">레퍼런스 제목<div></div></div>
-          <div class="wl">몇 초에 무엇이<div></div></div>
-          <div class="tl"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
-          <div class="tlx"><span>0초</span><span>컷이 바뀔 때마다 눈금에 표시</span><span>끝</span></div>
-          <div class="wl">가져올 것 1개<div></div></div>
+          <div class="hd">강사가 고른 레퍼런스 2편 <span class="opt">무음으로 봐도 OK · 컷 수 · 리듬을 눈으로 · 다음 쪽 레퍼런스 해부</span></div>
+          <ul class="dl" style="font-size:8.8pt;margin:0.5mm 0 0">
+            <li><b>더페이스샵 '더테라피'</b> · 브랜드영상공모전 · 자연 · ASMR · 약 35초</li>
+            <li><b>Creative 향수 제품 광고</b> · KY Film · 흑백 · 매크로 · 약 29초</li>
+          </ul>
+          <div class="wl">내 상품 영상에 가져올 것 1개<div></div></div>
         </div>
         <div class="look"><b>보면서 찾을 것</b>① 컷이 몇 개, 한 컷 몇 초?<br>② 첫 1초에 무엇이 움직이나<br>③ 컷이 바뀌는 곳 = 음악 박자?<br>④ 색이 한 톤인가, 글자는 어디에만?</div>
       </div>
@@ -873,6 +1011,58 @@
         <li>음원 이용 조건 확인</li>
       </ul>
     </div>
+  </div>
+</section>
+
+<!-- 10-2. 레퍼런스 해부 ③ 상품 이미지 영상 (분석: lectures/04/레퍼런스분석/상품이미지_더페이스샵_더테라피.txt · 상품이미지_Creative향수광고.txt) -->
+<section class="page">
+  <div class="kicker">4교시 · ③ 상품 이미지 영상 · B 레퍼런스</div>
+  <h1>레퍼런스 해부 · 상품 이미지 영상 두 편</h1>
+  <div class="lookbar"><b>보면서 찾을 것</b><span>① 컷이 몇 개, 한 컷 몇 초?</span><span>② 첫 1초에 무엇이 움직이나</span><span>③ 컷이 바뀌는 곳 = 음악 박자?</span><span>④ 색이 한 톤인가, 글자는 어디에만?</span></div>
+
+  <div class="rf">
+    <div class="top"><span class="no">1</span><div>
+      <h3>[더페이스샵] 2022 브랜드영상공모전 수장작_bdgin vegan</h3>
+      <!-- 분석 파일에 채널 표기 없음 -->
+      <div class="meta"><b>브랜드</b> 더페이스샵 '더테라피' · <b>링크</b> <span class="url">https://youtube.com/shorts/WLzeq0o94nA</span> · <span class="fm">감성 브랜딩 쇼츠 · 9:16 · 약 35초</span><br>비건 스킨케어 라인을 자연의 빛 · 소리 · 오브제로 보여 주는 브랜드 영상</div>
+    </div></div>
+    <table class="rtl">
+      <tr><th>시간</th><th>장면</th><th>무엇을 배울까</th></tr>
+      <tr><td class="t">00:00</td><td>초록 나뭇잎 보케 위로 'the therapy' 글자 · 잔잔한 새소리</td><td class="k"><span class="az1">C</span>훅 · 첫 1초는 빛 · 소리로 분위기</td></tr>
+      <tr><td class="t">00:03</td><td>숲속 꽃 · 풀잎 클로즈업 + "자연 유래 성분을 담아"</td><td class="k"><span class="az1">C</span>디테일 · 카피는 한 화면에 한 문장</td></tr>
+      <tr><td class="t">00:08</td><td>물방울 머금은 토너 용기가 굴러가는 슬로 + "햇살, 바람 그리고 물로 키웠습니다"</td><td class="k"><span class="az1">D</span>움직임 · 굴리기 · 슬로 (60fps)</td></tr>
+      <tr><td class="t">00:12</td><td>로고 → 푸른 잎사귀 클로즈업 전환 + "동물 유래 성분을 배제하여 만든"</td><td class="k"><span class="az1">E</span>매치 컷 · 자연 오브제로 장면 잇기</td></tr>
+      <tr><td class="t">00:19</td><td>잎 위 리필 캡슐 → 돌 · 이끼 위 본품 · 뚜껑 열린 크림 제형 클로즈업 (00:23)</td><td class="k"><span class="az1">C</span>쓰는 장면 대신 제형 · 질감 <span class="az1">D</span>매크로</td></tr>
+      <tr><td class="t">00:29</td><td>돌 위 전체 라인업 → 'THE FACE SHOP CLEAN BEAUTY' 로고 (00:31)</td><td class="k"><span class="az1">C</span>히어로 샷 → 엔딩 카드</td></tr>
+    </table>
+    <div class="fx"><ul class="dl">
+      <li><b>자연의 소리 · 빛 · ASMR</b> · 내레이션이나 화려한 음악 대신 새소리 · 물방울 소리, 나뭇잎 사이 자연광 · 보케로 순한 무드</li>
+      <li><b>자연 오브제와 제품</b> · 스튜디오 대신 식물 · 꽃 · 이끼 · 돌 위에 용기와 리필 캡슐 → "자연 성분 · 리필"이 눈으로 설득됨</li>
+      <li><b>카피 한 문장씩</b> · 자연 유래 → 비건 → 리필 · 제형 → 클린 뷰티 순서로 브랜드 가치를 끊어서 전달</li>
+    </ul></div>
+    <div class="take">내 영상에 가져올 것 1개<div></div></div>
+  </div>
+
+  <div class="rf" style="margin:0">
+    <div class="top"><span class="no">2</span><div>
+      <h3>Creative 향수 제품 광고 영상 | Creative perfume Product Commercial Video</h3>
+      <div class="meta"><b>채널</b> KY Film 케이와이필름 · <b>링크</b> <span class="url">https://youtube.com/shorts/DvB4puP18bk</span> · <span class="fm">제품 광고 쇼츠 · 9:16 · 약 29초 · 흑백</span><br>미니멀한 흑백 모노톤으로 15ml 향수의 질감과 세련된 무드를 담은 광고</div>
+    </div></div>
+    <table class="rtl">
+      <tr><th>시간</th><th>장면</th><th>무엇을 배울까</th></tr>
+      <tr><td class="t">00:00</td><td>엠보싱 질감 라벨 · 블랙 로고 극단적 클로즈업</td><td class="k"><span class="az1">C</span>훅 = 디테일 <span class="az1">D</span>매크로 · 접사</td></tr>
+      <tr><td class="t">00:01</td><td>잔잔한 피아노 · 유리 보틀과 메탈 캡 회전 샷 · 제품명 글자</td><td class="k"><span class="az1">D</span>돌림판 · 회전으로 움직임</td></tr>
+      <tr><td class="t">00:06</td><td>딥 블랙 배경, 스포이드 끝 향수 방울이 맺혔다 떨어지는 슬로</td><td class="k"><span class="az1">E</span>스피드 램프의 "와" 하는 느린 순간</td></tr>
+      <tr><td class="t">00:08</td><td>물방울이 떨어지는 순간 비트 음악으로 전환 · 물방울 맺힌 보틀 회전</td><td class="k"><span class="az1">E</span>비트 전환점 = 스피드 램프 → 비트 컷 연결</td></tr>
+      <tr><td class="t">00:10</td><td>세운 보틀 vs 눕힌 보틀 · 일렁이는 패브릭 · 단상자가 떨어지며 쌓임 (00:16)</td><td class="k"><span class="az1">E</span>비트에 맞춘 빠른 컷 <span class="az1">D</span>떨어뜨리기</td></tr>
+      <tr><td class="t">00:20</td><td>아웃포커싱으로 시선 이동 → 'Experience your creativity' 슬로건 페이드 아웃 (00:24)</td><td class="k"><span class="az1">C</span>히어로 샷 → 엔딩 카드 한 줄</td></tr>
+    </table>
+    <div class="fx"><ul class="dl">
+      <li><b>흑백 모노톤</b> · 색을 완전히 빼고 강한 명암 대비로 유리 반사광 · 라벨 요철 · 금속 캡 질감을 살림 → "색 하나"의 극단</li>
+      <li><b>소리와 컷의 결합</b> · 0~7초 서정적인 피아노 → 물방울이 떨어지는 순간 비트로 전환, 이후 회전 · 낙하 모션이 박자에 맞춰 전개</li>
+      <li><b>매크로 · 슬로 · 반사판</b> · 작은 보틀을 크게 보이게: 라벨 접사 · 물방울 슬로 · 반사판(거울) 구도</li>
+    </ul></div>
+    <div class="take">내 영상에 가져올 것 1개<div></div></div>
   </div>
 </section>
 
@@ -937,18 +1127,18 @@
       </ol>
       <div class="aside gold"><b>프리셋 이름</b>곡선 프리셋 이름은 버전 · 언어마다 다를 수 있음. 점(포인트)을 끌어 속도를 직접 그려도 돼요<br><b style="margin-top:1mm">60fps</b>60fps 컷이 훨씬 부드러워요. 30fps는 느린 구간이 끊겨 보일 수 있음<br>고른 프리셋 <span class="blank" style="min-width:24mm"></span></div>
     </div>
-    <div class="ok"><span><span class="cb"></span><span class="t">확인</span>빠르게 가다가 "와" 하는 순간에 느려짐</span><span class="crew">크루 전원 완료 <span class="cb"></span></span></div>
+    <div class="ok"><span><span class="cb"></span><span class="t">확인</span>빠르게 가다가 "와" 하는 순간에 느려짐</span><span class="done">모두 완료 <span class="cb"></span></span></div>
     <div class="memo">내 메모<div></div></div>
   </div>
 
-  <h3 class="top">실습 순서 <span class="opt">각자 가져온 물건(내 상품 · 메뉴 · 소지품 · 교실 소품)으로 · 크루가 서로 손 모델 · 흰 종이 반사판 들어 주기</span></h3>
+  <h3 class="top">실습 순서 <span class="opt">각자 가져온 물건(내 상품 · 메뉴 · 소지품 · 교실 소품)으로 · 손 모델 · 흰 종이 반사판은 옆자리와 서로 들어 주기(혼자면 컵에 기대 세우기)</span></h3>
   <table class="run">
     <tr><th>#</th><th>단계</th><th>할 일</th><th style="text-align:center">기준</th><th style="text-align:center">체크</th></tr>
     <tr><td>1</td><td>컷 리스트</td><td>다섯 블록에 10줄 (앞쪽 표)</td><td class="tm">먼저</td><td class="c"><span class="cb"></span></td></tr>
     <tr><td>2</td><td>촬영</td><td>흰 종이 배경 · 창가 빛 · 같은 동작 3번</td><td class="tm">15분</td><td class="c"><span class="cb"></span></td></tr>
     <tr><td>3</td><td>편집</td><td>9:16 새 프로젝트 → 비트 컷 → 스피드 램프 1번 → 색 하나</td><td class="tm">15분</td><td class="c"><span class="cb"></span></td></tr>
     <tr><td>4</td><td>엔딩 카드</td><td>이름 · 한 줄 · (가격)</td><td class="tm"></td><td class="c"><span class="cb"></span></td></tr>
-    <tr><td>5</td><td>크루 보기</td><td>무음으로 틀고 "갖고 싶다" 순간 손들기</td><td class="tm"></td><td class="c"><span class="cb"></span></td></tr>
+    <tr><td>5</td><td>짝꿍 보기</td><td>무음으로 틀고 "갖고 싶다" 순간 손들기</td><td class="tm"></td><td class="c"><span class="cb"></span></td></tr>
   </table>
 
   <div class="grid2" style="gap:4mm;margin-bottom:3.5mm">
@@ -959,7 +1149,7 @@
       <p style="margin:0;font-size:9.3pt">가격 · 어디서 <span class="blank" style="min-width:42mm"></span></p>
     </div>
     <div class="box line" style="margin:0;padding:3mm 4mm">
-      <h3 class="top">크루 보기 메모</h3>
+      <h3 class="top">짝꿍 보기 메모</h3>
       <p style="margin:0 0 1.5mm;font-size:9.3pt">"갖고 싶다" 손이 올라간 컷 # <span class="blank" style="min-width:26mm"></span></p>
       <p style="margin:0 0 1.5mm;font-size:9.3pt">박자에서 어긋난 곳 <span class="blank" style="min-width:36mm"></span></p>
       <p style="margin:0;font-size:9.3pt">색이 튀는 컷 # <span class="blank" style="min-width:44mm"></span></p>
@@ -967,7 +1157,7 @@
   </div>
 
   <div class="box dark" style="margin:0">
-    <p style="margin:0;font-size:10pt"><strong>오늘 숏폼 오너먼트 후보 ①.</strong> 사업이 있는 사람은 바로 계정에 올릴 수 있게 9:16으로 내보내 두기.<br>업로드 때 커버는 제품 정면 · 가운데, 첫 1초는 움직이는 훅 컷, 음원은 앱 안에서 또는 상업 이용 가능 음원.<br>숏폼 오너먼트는 이것 또는 크루 챌린지 중 하나 &nbsp; <span class="cb" style="border-color:var(--pale);background:transparent"></span><span style="color:var(--pale)">나는 상품 이미지 영상으로</span></p>
+    <p style="margin:0;font-size:10pt"><strong>오늘 숏폼 오너먼트 후보 ①.</strong> 사업이 있는 사람은 바로 계정에 올릴 수 있게 9:16으로 내보내 두기.<br>업로드 때 커버는 제품 정면 · 가운데, 첫 1초는 움직이는 훅 컷, 음원은 앱 안에서 또는 상업 이용 가능 음원.<br>숏폼 오너먼트는 이것 또는 공감 상황극 중 하나 &nbsp; <span class="cb" style="border-color:var(--pale);background:transparent"></span><span style="color:var(--pale)">나는 상품 이미지 영상으로</span></p>
   </div>
 </section>
 
@@ -1094,7 +1284,7 @@
       </ol>
       <div class="aside gold"><b>왜 무음으로?</b>CapCut에 넣은 음원으로 내보내면 음소거 · 저작권 표시가 될 수 있음. 음원은 업로드할 때 앱 안에서 (플랫폼 정책은 버전 · 시기마다 다를 수 있으니 확인)<br><b style="margin-top:1mm">비트 표시</b>3회차 사이클 16과 같은 자리</div>
     </div>
-    <div class="ok"><span><span class="cb"></span><span class="t">확인</span>손이 지나가는 순간 장면이 바뀌고, 끝이 처음으로 이어짐</span><span class="crew">크루 전원 완료 <span class="cb"></span></span></div>
+    <div class="ok"><span><span class="cb"></span><span class="t">확인</span>손이 지나가는 순간 장면이 바뀌고, 끝이 처음으로 이어짐</span><span class="done">모두 완료 <span class="cb"></span></span></div>
   </div>
 
   <div class="grid2" style="gap:4mm">
@@ -1125,7 +1315,8 @@
 <section class="page">
   <div class="kicker">6교시 · 제작</div>
   <h1>수업 날 브이로그 · 2분 롱폼</h1>
-  <p class="lead" style="margin-bottom:3mm">아침부터 찍은 컷으로 <strong>16:9 브이로그 2분 안팎</strong>. 숏폼(상품 이미지 또는 챌린지)은 마무리해서 9:16으로 내보내기. 3회차는 세로였지만 오늘은 가로예요.</p>
+  <p class="lead" style="margin-bottom:2mm">아침부터 찍은 컷으로 <strong>16:9 브이로그 2분 안팎</strong>. 숏폼(상품 이미지 또는 공감 상황극)은 마무리해서 9:16으로 내보내기. 3회차는 세로였지만 오늘은 가로예요.</p>
+  <div class="box gold" style="margin:0 0 3mm;padding:2mm 4mm"><p style="margin:0;font-size:9.6pt"><strong style="color:var(--pine)">내 브이로그 재료</strong> &nbsp; <span class="cb"></span>내가 찍은 컷 &nbsp; <span class="cb"></span>강사 촬영본 <span class="opt">&nbsp;· 강사 촬영본은 공용 폴더에서 내려받아 따라하기 07의 2번에서 가져오기</span></p></div>
   <div class="cyc">
     <div class="hd"><span class="no">07</span><h3>16:9 브이로그 프로젝트<span class="why">오늘 찍은 컷을 네 구간으로 가편집</span></h3><span class="tag">따라하기 07 / 8</span></div>
     <div class="body">
@@ -1138,7 +1329,7 @@
       </ol>
       <div class="aside"><b>비율 버튼</b>위치는 3회차와 같음(버전마다 다를 수 있음)<br><b style="margin-top:1mm">세로 컷이 많으면</b>화면 속 화면으로 두 개를 나란히 두는 방법도<br><b style="margin-top:1mm">구간 길이 메모</b>인트로 <span class="blank" style="min-width:8mm"></span> 흐름 <span class="blank" style="min-width:8mm"></span> 하이 <span class="blank" style="min-width:8mm"></span> 아웃 <span class="blank" style="min-width:8mm"></span></div>
     </div>
-    <div class="ok"><span><span class="cb"></span><span class="t">확인</span>16:9 화면에 네 구간, 전체 2분 안팎</span><span class="crew">크루 전원 완료 <span class="cb"></span></span></div>
+    <div class="ok"><span><span class="cb"></span><span class="t">확인</span>16:9 화면에 네 구간, 전체 2분 안팎</span><span class="done">모두 완료 <span class="cb"></span></span></div>
     <div class="memo">내 메모<div></div></div>
   </div>
 
@@ -1169,14 +1360,14 @@
     </div>
   </div>
   <div class="box line" style="margin:0;padding:3mm 4mm">
-    <p style="margin:0;font-size:9.4pt"><strong style="color:var(--pine)">내보내기</strong> &nbsp; 브이로그 16:9 <span class="cb"></span> 길이 <span class="blank" style="min-width:14mm"></span> &nbsp;&nbsp; 숏폼 9:16 <span class="cb"></span> <span class="cb"></span>상품 이미지 <span class="cb"></span>크루 챌린지 · 길이 <span class="blank" style="min-width:14mm"></span> &nbsp;&nbsp; 폰에서 재생 <span class="cb"></span></p>
+    <p style="margin:0;font-size:9.4pt"><strong style="color:var(--pine)">내보내기</strong> &nbsp; 브이로그 16:9 <span class="cb"></span> 길이 <span class="blank" style="min-width:14mm"></span> &nbsp;&nbsp; 숏폼 9:16 <span class="cb"></span> <span class="cb"></span>상품 이미지 <span class="cb"></span>공감 상황극 · 길이 <span class="blank" style="min-width:14mm"></span> &nbsp;&nbsp; 폰에서 재생 <span class="cb"></span></p>
   </div>
 </section>
 
 <!-- 16. 썸네일 -->
 <section class="page">
   <div class="kicker">7교시 · 업로드</div>
-  <h1>썸네일 3안 · 크루가 고르기</h1>
+  <h1>썸네일 3안 · 옆자리가 1초 안에 고르기</h1>
   <div class="cyc">
     <div class="hd"><span class="no">08</span><h3>썸네일 만들기 (1280×720)<span class="why">유튜브 권장 썸네일은 1280×720(16:9) · 캔바로 만들어도 OK</span></h3><span class="tag">따라하기 08 / 8</span></div>
     <div class="body">
@@ -1185,18 +1376,18 @@
         <li>얼굴 · 대상을 화면의 1/3 이상 크게</li>
         <li>글자 3단어 이하, 굵은 글꼴 · 테두리 · 대비 색</li>
         <li>같은 방법으로 2안 더 (다른 장면 · 다른 문구)</li>
-        <li>한 프레임 내보내기(이미지) 또는 캡처 → 크루가 3안 중 투표</li>
+        <li>한 프레임 내보내기(이미지) 또는 캡처 → 옆자리가 1초 안에 고르는 안</li>
       </ol>
       <div class="aside gold"><b>기준</b>작게 봤을 때(폰 목록 크기) 읽히는지<br><b style="margin-top:1mm">브이로그 썸네일</b>표정 + 장소 + 3단어<br><b style="margin-top:1mm">이미지 내보내기</b>프레임을 이미지로 저장하는 옵션은 버전 · 시기마다 다를 수 있음</div>
     </div>
-    <div class="ok"><span><span class="cb"></span><span class="t">확인</span>작게 줄여 봐도 무엇인지 보이는 썸네일</span><span class="crew">크루 전원 완료 <span class="cb"></span></span></div>
+    <div class="ok"><span><span class="cb"></span><span class="t">확인</span>작게 줄여 봐도 무엇인지 보이는 썸네일</span><span class="done">모두 완료 <span class="cb"></span></span></div>
   </div>
 
   <h3 class="top">썸네일 3안 스케치 <span class="opt">점선 = 화면 1/3 · 얼굴 · 대상을 1/3 이상 크게 · 글자 3단어 이하</span></h3>
   <div class="thumbs">
-    <div><div class="fr"><span>1안</span><i></i><i></i></div><div class="cap">문구<div></div></div><div class="cap">장면<div></div></div><div class="vote">크루 투표 <span class="blank" style="min-width:10mm"></span> 표 &nbsp; <span class="cb"></span>채택</div></div>
-    <div><div class="fr"><span>2안</span><i></i><i></i></div><div class="cap">문구<div></div></div><div class="cap">장면<div></div></div><div class="vote">크루 투표 <span class="blank" style="min-width:10mm"></span> 표 &nbsp; <span class="cb"></span>채택</div></div>
-    <div><div class="fr"><span>3안</span><i></i><i></i></div><div class="cap">문구<div></div></div><div class="cap">장면<div></div></div><div class="vote">크루 투표 <span class="blank" style="min-width:10mm"></span> 표 &nbsp; <span class="cb"></span>채택</div></div>
+    <div><div class="fr"><span>1안</span><i></i><i></i></div><div class="cap">문구<div></div></div><div class="cap">장면<div></div></div><div class="vote"><span class="cb"></span>옆자리가 고름 &nbsp; <span class="cb"></span>채택</div></div>
+    <div><div class="fr"><span>2안</span><i></i><i></i></div><div class="cap">문구<div></div></div><div class="cap">장면<div></div></div><div class="vote"><span class="cb"></span>옆자리가 고름 &nbsp; <span class="cb"></span>채택</div></div>
+    <div><div class="fr"><span>3안</span><i></i><i></i></div><div class="cap">문구<div></div></div><div class="cap">장면<div></div></div><div class="vote"><span class="cb"></span>옆자리가 고름 &nbsp; <span class="cb"></span>채택</div></div>
   </div>
 
   <div class="box" style="padding:3mm 4mm;margin-bottom:3mm">
@@ -1253,7 +1444,7 @@
     </div>
   </div>
   <table class="lf" style="margin-bottom:4mm">
-    <tr><td>썸네일</td><td>크루가 고른 1안 업로드 (나머지는 나중에 바꿔 보기)</td><td style="width:12mm"><span class="cb"></span></td></tr>
+    <tr><td>썸네일</td><td>옆자리가 1초 안에 고른 1안 업로드 (나머지는 나중에 바꿔 보기)</td><td style="width:12mm"><span class="cb"></span></td></tr>
     <tr><td>AI 표시</td><td>사실처럼 보이는 합성 · 변경 영상, 사람처럼 들리는 AI 목소리(TTS)를 썼다면 업로드 때 공개</td><td><span class="cb"></span></td></tr>
     <tr><td>협찬 표시</td><td>협찬 · 제공을 받았다면 유료 광고 표시 + 영상 처음에 표시</td><td><span class="cb"></span></td></tr>
     <tr><td>공개 범위</td><td><span class="cb"></span>공개 &nbsp; <span class="cb"></span>일부 공개 &nbsp; <span class="cb"></span>비공개 <span class="opt">· 얼굴이 나온 사람이 있거나 부담되면 일부 공개도 OK</span></td><td><span class="cb"></span></td></tr>
@@ -1273,10 +1464,10 @@
   </div>
   <div class="box line" style="margin:3mm 0 0;padding:2.5mm 4mm">
     <p style="margin:0 0 1.5mm;font-size:9.4pt"><strong style="color:var(--pine)">숏폼 캡션 한 줄</strong> <span class="blank" style="min-width:128mm"></span></p>
-    <p style="margin:0 0 1.5mm;font-size:9.4pt"><strong style="color:var(--pine)">해시태그 3~5</strong> <span class="opt">업종 · 지역 · 제품 · 챌린지</span> &nbsp;# <span class="blank" style="min-width:20mm"></span> # <span class="blank" style="min-width:20mm"></span> # <span class="blank" style="min-width:20mm"></span> # <span class="blank" style="min-width:20mm"></span></p>
+    <p style="margin:0 0 1.5mm;font-size:9.4pt"><strong style="color:var(--pine)">해시태그 3~5</strong> <span class="opt">업종 · 지역 · 제품 · 주제</span> &nbsp;# <span class="blank" style="min-width:20mm"></span> # <span class="blank" style="min-width:20mm"></span> # <span class="blank" style="min-width:20mm"></span> # <span class="blank" style="min-width:20mm"></span></p>
     <p style="margin:0;font-size:9.4pt"><strong style="color:var(--pine)">커버 장면</strong> <span class="blank" style="min-width:60mm"></span> &nbsp; <strong style="color:var(--pine)">붙일 음원</strong> <span class="blank" style="min-width:46mm"></span></p>
   </div>
-  <p class="muted" style="margin:2mm 0 0"><strong style="color:var(--pine)">AI 표시 · 협찬 표시는 숏폼도 똑같이.</strong> 사업 홍보는 인스타 릴스, 유튜브 채널을 키우려면 쇼츠, 챌린지는 틱톡이나 릴스.</p>
+  <p class="muted" style="margin:2mm 0 0"><strong style="color:var(--pine)">AI 표시 · 협찬 표시는 숏폼도 똑같이.</strong> 사업 홍보는 인스타 릴스, 유튜브 채널을 키우려면 쇼츠, 공감 상황극은 셋 어디든 잘 맞음.</p>
 </section>
 
 <!-- 18. 크루 상영 + 5회차 과제 + 샷 리스트 -->
