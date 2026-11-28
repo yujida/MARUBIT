@@ -1,0 +1,976 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>촬영·편집 핸드북 5장 · 카테고리별 제작법 ② — 말하는 영상 · 만드는 영상, 그리고 채널</title>
+<link rel="stylesheet" href="../assets/print.css">
+<style>
+  body { font-size: 9.9pt; line-height: 1.53; }
+  table { font-size: 9.1pt; }
+  td { padding: 1.7mm 2.5mm; }
+  .prompt { font-size: 9.4pt; line-height: 1.55; }
+  .prompt b { color: var(--blue); }
+  h2 { border-top: 1.5px solid var(--line); padding-top: 3.5mm; margin-top: 6.5mm; }
+  h2:first-of-type { border-top: none; padding-top: 0; }
+  .num { color: var(--gold); margin-right: 2mm; }
+  h2, h3, .cyc { break-after: avoid; page-break-after: avoid; }
+  tr { break-inside: avoid; }
+  .cyc { font-size: 8.5pt; font-weight: 700; color: var(--green); margin: -1mm 0 2mm; }
+  .tip { background: #fbf1d3; border-radius: 3mm; padding: 3.5mm 5mm; margin: 0 0 4mm; break-inside: avoid; }
+  .tip::before { content: "실무 팁"; display: block; font-size: 8.5pt; font-weight: 800; color: var(--red); margin-bottom: 1mm; }
+  .mist { background: var(--mist); border-radius: 3mm; padding: 3.5mm 5mm; margin: 0 0 4mm; break-inside: avoid; }
+  .toc li { margin-bottom: 1.2mm; }
+  figure { margin: 2mm 0 5mm; text-align: center; break-inside: avoid; }
+  figcaption { font-size: 8.8pt; color: var(--sage); margin-top: 1mm; }
+  .four { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2.5mm; margin: 1mm 0 4mm; break-inside: avoid; }
+  .three { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5mm; margin: 1mm 0 4mm; break-inside: avoid; }
+  .four div, .three div { background: var(--mist); border-radius: 2.5mm; padding: 3mm 3mm; font-size: 9.6pt; line-height: 1.5; }
+  .four b, .three b { display: block; color: var(--pine); font-size: 10.5pt; margin-bottom: 0.8mm; }
+  .formula { display: flex; align-items: stretch; gap: 1.6mm; margin: 2mm 0 4mm; break-inside: avoid; }
+  .formula div { flex: 1; background: #fff; border: 1.2px solid var(--line); border-radius: 2.5mm; padding: 2.5mm 2.5mm; font-size: 9.2pt; line-height: 1.45; text-align: center; }
+  .formula div b { display: block; color: var(--pine); font-size: 10.3pt; }
+  .formula div.res { background: var(--pine); color: #fff; border-color: var(--pine); }
+  .formula div.res b { color: var(--pale); }
+  .formula span { align-self: center; font-weight: 800; color: var(--gold); font-size: 13pt; }
+  .formula.az div { padding: 2mm 1.2mm; font-size: 8.4pt; }
+  .formula.az div b { font-size: 12pt; color: var(--gold); }
+  .formula.az div i { display: block; font-style: normal; font-weight: 700; color: var(--pine); font-size: 9.4pt; }
+  .formula.az span { font-size: 10pt; }
+  .formula.sm div { font-size: 8.6pt; padding: 2mm 1.5mm; }
+  .formula.sm div b { font-size: 9.6pt; }
+  .formula.sm span { font-size: 11pt; }
+  .card { border: 1.2px solid var(--line); border-radius: 3mm; padding: 3.5mm 4.5mm 1.5mm; margin: 0 0 4mm; break-inside: avoid; }
+  .card h3 { margin-top: 0; }
+  .card .tag { display: inline-block; background: var(--pine); color: var(--pale); font-size: 8.5pt; font-weight: 700; border-radius: 1.5mm; padding: 0.3mm 2mm; margin-right: 1.5mm; vertical-align: 1px; }
+  .catcard { display: grid; grid-template-columns: 1fr 64mm; gap: 5mm; align-items: start; }
+  .catcard table { margin-bottom: 2.5mm; font-size: 9pt; }
+  .catcard td:first-child { width: 8mm; font-weight: 800; color: var(--gold); text-align: center; }
+  .catcard .check { margin-top: 1mm; font-size: 9.3pt; }
+  .catcard .check li { margin-bottom: 1.3mm; }
+  .catcard h4 { margin: 0 0 1mm; font-size: 9.5pt; color: var(--pine); }
+  ol.tight { margin: 0 0 3mm; padding-left: 5.5mm; }
+  ol.tight li { margin-bottom: 1mm; }
+  .side { display: grid; grid-template-columns: 44mm 1fr; gap: 5mm; align-items: start; margin: 1mm 0 4mm; break-inside: avoid; }
+  .side figure { margin: 0; }
+  kbd { font-family: "Pretendard", sans-serif; font-size: 8.8pt; font-weight: 700; background: #fff; border: 1px solid var(--sage); border-bottom-width: 2px; border-radius: 1.2mm; padding: 0 1.4mm; white-space: nowrap; }
+  .en { color: var(--sage); font-size: 8.8pt; }
+  .step { display: inline-block; background: var(--gold); color: var(--pine); font-weight: 800; font-size: 9pt; border-radius: 1.2mm; padding: 0 1.6mm; margin-right: 1.5mm; vertical-align: 1px; }
+  h3 .step { font-size: 9.5pt; }
+  .stamp { font-family: "Pretendard", sans-serif; background: #fff; border: 1px solid var(--line); border-radius: 2mm; padding: 2.5mm 4mm; font-size: 9.3pt; line-height: 1.55; margin: 0 0 4mm; break-inside: avoid; }
+  .stamp b { color: var(--blue); }
+  .ref { background: #fff; border: 1px solid var(--line); border-left: 3px solid var(--gold); border-radius: 2mm; padding: 2.6mm 4mm 1.2mm; margin: 0 0 4mm; font-size: 9.2pt; line-height: 1.5; break-inside: avoid; }
+  .ref::before { content: "수업에서 본 레퍼런스 메모"; display: block; font-size: 8.5pt; font-weight: 800; color: #c08a10; margin-bottom: 1mm; }
+  .ref p { margin: 0 0 1.4mm; }
+  .ref .ln { display: grid; grid-template-columns: 30mm 1fr; gap: 2mm; align-items: end; margin-bottom: 1.8mm; }
+  .ref .ln span { color: var(--sage); font-size: 8.8pt; }
+  .ref .ln i { display: block; border-bottom: 1px solid var(--line); height: 5.5mm; }
+  .cut6 { display: grid; grid-template-columns: repeat(6, 1fr); gap: 1.6mm; margin: 1mm 0 4mm; break-inside: avoid; }
+  .cut6 div { background: #fff; border: 1.2px solid var(--line); border-radius: 2.2mm; padding: 2mm 1.8mm; font-size: 8.5pt; line-height: 1.42; }
+  .cut6 div b { display: block; color: var(--pine); font-size: 9.8pt; }
+  .cut6 div i { display: block; font-style: normal; color: var(--gold); font-weight: 800; font-size: 8.3pt; }
+  .cut6 div em { display: block; font-style: normal; color: var(--blue); font-size: 8.2pt; margin-top: 1mm; border-top: 1px dashed var(--line); padding-top: 1mm; }
+  .cut6 div.hl { border-color: var(--gold); background: #fffaf0; }
+  .cut6 div.res { background: var(--pine); color: #fff; border-color: var(--pine); }
+  .cut6 div.res b { color: var(--pale); }
+  .cut6 div.res em { color: var(--pale); border-top-color: #3d5d4f; }
+  .who td.h { background: var(--pine) !important; color: var(--pale); font-weight: 700; text-align: center; }
+  .who td.a { background: #eaf1f7 !important; color: var(--blue); text-align: center; }
+  .who td.m { background: #fbf1d3 !important; color: #8a6510; text-align: center; }
+  .sumgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5mm; }
+  .sumgrid .card { margin: 0; padding-bottom: 1mm; }
+  .sumgrid .card h3 { font-size: 10.5pt; margin-bottom: 1.5mm; }
+  .sumgrid .check { font-size: 9.1pt; margin-bottom: 1.5mm; }
+  .sumgrid .check li { margin-bottom: 1.1mm; }
+</style>
+</head>
+<body>
+
+<section class="page">
+  <div class="cover">
+    <div class="series">AI콘텐츠 크리에이터 실무 · 촬영·편집 핸드북</div>
+    <h1>5장<br>카테고리별 제작법 ②<br>말하는 영상 · 만드는 영상</h1>
+    <div class="sub">5회차 · 그리고 채널</div>
+    <div class="meta">4장에서는 카메라로 찍어 <strong>보여주는</strong> 네 카테고리를 돌렸습니다. 5장은 남은 세 카테고리, 사람이 <strong>말하는</strong> ⑤ 토크 · 인터뷰와 ⑥ 라이브 · 라이브커머스, 그리고 AI로 <strong>만드는</strong> ⑦ AI 영상을 같은 일곱 단계로 풉니다. 이어서 한 편을 끝까지 보게 하는 법과 여러 편을 하나의 채널로 묶는 법을 더하고, 4회차에 정한 메인 스타일로 대표작 한 편을 완성하는 길을 정리합니다. 수업에서 따라하기로 손을 움직였다면, 이 장에는 왜 그렇게 하는지와 현장 요령을 담았습니다. 6회차 상영 전에 다시 펼쳐 체크리스트로 점검하세요.</div>
+  </div>
+</section>
+
+<section class="page">
+  <h1>이 장에서 다루는 것</h1>
+  <p class="lead">4장이 "무엇을 어디에 올리느냐"의 지도를 폈다면, 5장은 그 지도 위에 <strong>내 자리</strong>를 정하는 장입니다. 남은 세 카테고리를 배우고, 끝까지 보게 하는 장치와 채널 브랜딩을 더한 뒤, 메인 스타일로 대표작을 만들어 6회차 상영을 준비합니다.</p>
+  <ol class="toc" style="columns:2;column-gap:8mm">
+    <li>4장에서 이어지는 것: 메인 스타일에서 대표작으로</li>
+    <li>⑤ 토크 · 인터뷰 A to Z</li>
+    <li>⑥ 라이브 · 라이브커머스 A to Z</li>
+    <li>⑦ AI 영상 A to Z</li>
+    <li>끝까지 보게 하는 법</li>
+    <li>채널로 묶기</li>
+    <li>대표작 만들기</li>
+    <li>올리기 · 6회차 상영 준비 · 제작 노트</li>
+    <li>장 정리 체크리스트</li>
+  </ol>
+  <div class="mist">
+    <h3 style="margin-top:0">이 장을 읽는 법</h3>
+    <ul class="tight" style="margin-bottom:0">
+      <li><strong>2 ~ 4절이 카테고리 셋입니다.</strong> 4장과 같은 순서 <strong>A 정의 → B 레퍼런스 → C 기획 → D 촬영(⑦은 생성) → E 편집 → F 발행 → G 체크</strong>로 쓰고, 단계마다 유튜브 롱폼과 릴스 · 쇼츠 · 틱톡이 어떻게 다른지 함께 적었습니다. 절 끝의 <strong>카테고리 카드</strong>는 워크북 카드 ⑤ · ⑥ · ⑦과 같은 내용입니다.</li>
+      <li><strong>레퍼런스 영상은 수업에서 강사가 고릅니다.</strong> 카테고리마다 "보면서 찾을 것"을 적어 두었으니, 수업에서 본 영상은 <strong>레퍼런스 메모</strong> 칸에 적고, 집에서 다른 영상을 볼 때도 같은 질문으로 해부해 보세요.</li>
+      <li><strong>플랫폼 기능 · 조건은 자주 바뀝니다.</strong> 라이브 조건, 광고 · AI 표시 메뉴, 수익 조건은 앱 업데이트마다 이름과 기준이 달라집니다. 올릴 때는 <strong>업로드 화면의 안내를 우선</strong>하세요. CapCut 메뉴도 버전마다 이름 · 위치가 다르니, 3장처럼 비슷한 이름이나 영어 이름을 찾으면 됩니다.</li>
+      <li><strong>초록 글씨</strong>는 수업 슬라이드의 따라하기 번호(모두 5개)와 워크북 쪽입니다. 오늘은 크루 활동 없이 <strong>개인 실습</strong>입니다. 막히면 옆자리와 서로 도와 가며 만드세요.</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3><span class="tag">오늘 남는 것</span>대표작 한 편 · 숏폼 한 편 · 브랜딩 한 장</h3>
+    <table style="margin-bottom:2.5mm">
+      <tr><th style="width:36mm">결과물</th><th>모양</th><th style="width:48mm">어디에</th></tr>
+      <tr><td><strong>대표작 1편</strong></td><td>메인 스타일 카테고리(①~⑦)로. 롱폼 16:9 · 2~4분, 또는 숏폼 시리즈 3편, 또는 AI 영상 30초~1분 (7절)</td><td>6회차 상영작 후보</td></tr>
+      <tr><td><strong>숏폼 1편</strong></td><td>대표작에서 가장 센 장면을 잘라 9:16으로</td><td>릴스 · 쇼츠 · 틱톡 중 하나</td></tr>
+      <tr><td><strong>채널 브랜딩 한 장</strong></td><td>이름 · 소개 한 줄 · 썸네일/커버 규칙 · 시리즈 이름 · 업로드 주기 (6절)</td><td>채널 소개 · 프로필에 반영</td></tr>
+    </table>
+  </div>
+
+  <h2><span class="num">1</span>4장에서 이어지는 것: 메인 스타일에서 대표작으로</h2>
+  <p>4회차의 마지막 질문은 <strong>"내 콘텐츠의 메인 스타일은?"</strong>이었습니다. 내 계정에서 가장 꾸준히 올릴 영상 한 가지를 정하고, 워크북에 한 줄로 적었습니다. 오늘은 그 한 줄을 <strong>실제 영상 한 편</strong>으로 바꾸는 날입니다. 남은 세 카테고리를 먼저 배우는 이유도 여기에 있습니다. 4회차에 "⑤ ~ ⑦을 보고 정하겠다"고 했던 사람은 오늘 정하고, 이미 정한 사람도 더 맞는 것이 보이면 바꿔도 됩니다. 정하는 시한은 <strong>5교시 시작 전</strong>까지입니다.</p>
+  <div class="formula">
+    <div><b>4회차</b>①~④ 배우고<br>메인 스타일 한 줄</div><span>→</span>
+    <div><b>5회차 오전 · 오후</b>⑤ · ⑥ · ⑦ 배우고<br>(바꿔도 OK)</div><span>→</span>
+    <div><b>5회차 5 · 6 · 7교시</b>대표작 1편 + 숏폼 1편<br>+ 브랜딩 한 장</div><span>→</span>
+    <div class="res"><b>6회차 (12/10)</b>상영 · 피드백</div>
+  </div>
+  <p>워크북 첫 쪽의 문장을 이렇게 바꿔 적습니다. <strong>"제 메인 스타일은 ○번 ○○이고, 대표작은 ○○에 올릴 ○○입니다."</strong> 플랫폼과 영상 제목 자리까지 채우면 대표작이 이미 반쯤 기획된 셈입니다.</p>
+  <h3>보여주는 영상 · 말하는 영상 · 만드는 영상</h3>
+  <table>
+    <tr><th style="width:36mm">카테고리</th><th>무엇이 내용인가</th><th style="width:66mm">그래서 편집이 하는 일</th></tr>
+    <tr><td><strong>①~④ 보여주는 영상</strong><br><span class="muted">4장</span></td><td>카메라에 담긴 장면 · 상품 · 상황</td><td>리듬 · 소리 · 컷으로 "보고 싶게"</td></tr>
+    <tr><td><strong>⑤ · ⑥ 말하는 영상</strong><br><span class="muted">5장 2 · 3절</span></td><td>사람의 말 · 표정 · 경험. 라이브는 "지금 같이 있음"</td><td>빈 곳을 줄이고 센 말을 살린다. 라이브는 <strong>준비가 편집</strong>이고, 끝난 뒤 잘라 다시 쓴다</td></tr>
+    <tr><td><strong>⑦ 만드는 영상</strong><br><span class="muted">5장 4절</span></td><td>찍을 수 없는 장면. 이야기는 사람이, 장면은 AI가</td><td>따로 노는 AI 컷을 색 · 소리 · 글자로 <strong>한 편</strong>으로 묶는다</td></tr>
+  </table>
+  <p>일곱 단계는 4장과 같습니다. 단계가 같으니 카테고리가 바뀌어도 길을 잃지 않고, 오늘 만드는 카드 셋을 더하면 <strong>일곱 장의 카드</strong>가 모두 모입니다. 대표작은 내 메인 스타일 카드 한 장을 C → E → F → G 순서로 따라가며 만듭니다(7절).</p>
+  <div class="formula az">
+    <div><b>A</b><i>정의</i>무엇 · 어디에 · 누가 보나</div><span>→</span>
+    <div><b>B</b><i>레퍼런스</i>잘된 영상 해부</div><span>→</span>
+    <div><b>C</b><i>기획</i>구조 템플릿</div><span>→</span>
+    <div><b>D</b><i>촬영 · 생성</i>세팅 · 기준 이미지</div><span>→</span>
+    <div><b>E</b><i>편집</i>CapCut 핵심 셋</div><span>→</span>
+    <div><b>F</b><i>발행</i>제목 · 썸네일 · 표시</div><span>→</span>
+    <div class="res"><b>G</b><i style="color:var(--pale)">체크</i>올리기 전 5개</div>
+  </div>
+  <h3>대표작 재료 점검</h3>
+  <p>수업을 시작하면서 대표작을 <strong>무엇으로</strong> 만들지 먼저 정해 둡니다. 재료가 정해져 있으면 오전에 배우는 동안에도 "이건 내 대표작에 쓰겠다"가 보이고, 5교시가 빨라집니다. 찍어 온 것이 없어도 괜찮습니다. 아래 네 가지 중 무엇으로도 대표작을 만들 수 있습니다.</p>
+  <table>
+    <tr><th style="width:34mm">재료</th><th>무엇을</th><th style="width:56mm">이럴 때</th></tr>
+    <tr><td><strong>① 찍어 온 소스</strong></td><td>4회차 이후 준비해 온 촬영본. 노트북에 폴더 하나로 옮깁니다</td><td>기획 시트 · 샷 리스트대로 찍어 왔다</td></tr>
+    <tr><td><strong>② 4회차 결과물</strong></td><td>브이로그 · 상품 이미지 · 상황극 프로젝트를 다시 열어 다듬기</td><td>메인 스타일이 ①~④ 중 하나다</td></tr>
+    <tr><td><strong>③ 오늘 실습 결과물</strong></td><td>토크 30초 하이라이트 · 라이브 1분 하이라이트 · AI 20초 광고 초안</td><td>메인 스타일이 ⑤~⑦ 중 하나다</td></tr>
+    <tr><td><strong>④ AI 컷</strong></td><td>⑦의 마스터 프롬프트로 부족한 장면을 만들기(4절)</td><td>찍을 수 없는 장면 · 모자란 장면이 있다</td></tr>
+  </table>
+  <div class="tip"><strong>재료 폴더 하나 = 대표작 프로젝트 하나.</strong> 쓸 파일을 먼저 한 폴더에 모은 다음 CapCut으로 가져오고, 가져온 뒤에는 원본 파일을 옮기거나 이름을 바꾸지 마세요. CapCut은 원본이 있던 자리를 기억하기 때문에, 옮기면 타임라인의 클립이 "미디어 없음"으로 바뀝니다. 4회차 프로젝트를 다시 쓸 때는 <strong>복제</strong>부터 하고 손대세요.</div>
+
+  <h2><span class="num">2</span>⑤ 토크 · 인터뷰 A to Z</h2>
+  <div class="cyc">슬라이드 따라하기 01 · 02 · 워크북 카테고리 카드 ⑤ · 질문지</div>
+  <h3><span class="step">A 정의</span>사람을 보러 오는 영상</h3>
+  <p>토크 · 인터뷰는 <strong>말이 내용이 되는</strong> 카테고리입니다. 시청자는 정보보다 <strong>"이 사람"</strong>을 보러 옵니다. 같은 노하우도 누가, 어떤 말투와 표정으로, 어떤 경험을 담아 말하느냐에 따라 전혀 다르게 들립니다. 그래서 편집의 목표도 하나입니다. <strong>그 사람이 가장 잘 보이게.</strong> 강사 진로(강의 맛보기 · 자기소개), 취업 포트폴리오(자기소개 영상), 가게 사장님 · 고객 이야기처럼 이 과정의 목적과 가장 직접 닿아 있는 카테고리이기도 합니다.</p>
+  <div class="three">
+    <div><b>1인 토크</b>카메라를 보고 내 이야기 · 노하우를 말한다. 자기소개, 직무 이야기, "제가 ○○을 하는 이유"</div>
+    <div><b>인터뷰</b>질문하고 듣는다. 가게 사장님 · 고객 · 동료 · 전문가. 진행자는 화면에 나오지 않아도 된다</div>
+    <div><b>대담 · 팟캐스트형</b>두 사람이 주고받는다. 길게, 편하게. 화면보다 소리가 중심인 오디오 형식도 포함</div>
+  </div>
+  <table>
+    <tr><th style="width:24mm"></th><th>유튜브 롱폼</th><th>릴스 · 쇼츠 · 틱톡</th></tr>
+    <tr><td><strong>길이</strong></td><td>5~30분 (대담 · 팟캐스트는 더 길게). 수업 실습은 1~3분</td><td>20~40초. <strong>센 한 문장</strong> 하나</td></tr>
+    <tr><td><strong>비율</strong></td><td>16:9 가로</td><td>9:16 세로. 얼굴을 가운데로 다시 맞추기</td></tr>
+    <tr><td><strong>모양</strong></td><td>소개 → 질문 → 이야기 → 한마디</td><td>인용 자막 + 표정 클로즈업. 첫 1초에 그 문장</td></tr>
+    <tr><td><strong>찾아지는 법</strong></td><td>제목의 인용 · 질문마다 챕터</td><td>커버의 인용 3~5단어 · 캡션</td></tr>
+  </table>
+  <div class="box line">
+    <h3 style="margin-top:0">얼굴이 부담이라면</h3>
+    <p style="margin-bottom:1.5mm">토크 · 인터뷰라고 꼭 얼굴이 나와야 하는 것은 아닙니다. 사람이 보이는 것은 얼굴보다 <strong>말투 · 멈춤 · 웃음 · 손</strong>입니다.</p>
+    <ul class="tight" style="margin-bottom:0">
+      <li><strong>손</strong>: 일하는 손, 커피를 내리는 손, 노트에 쓰는 손을 탑뷰로 찍고 목소리를 얹습니다. 사장님 인터뷰에 특히 잘 맞습니다.</li>
+      <li><strong>뒷모습 · 옆모습</strong>: 창가 실루엣, 걷는 뒷모습, 어깨 너머 시점. 빛을 뒤에 두면 얼굴이 어둡게 가려집니다.</li>
+      <li><strong>화면 + 목소리</strong>: 슬라이드 · 작업 화면 · 사진을 보여 주며 말합니다(4장 ② 화면 녹화).</li>
+      <li><strong>오디오 형식</strong>: 팟캐스트처럼 소리가 중심. 정지 이미지 한 장이나 파형 위에 큰 자막을 얹으면 숏폼으로도 올릴 수 있습니다.</li>
+    </ul>
+  </div>
+  <h3><span class="step">B 레퍼런스</span>말의 길이와 화면의 길이를 잰다</h3>
+  <p>수업에서는 강사가 고른 토크 · 인터뷰 영상을 틀어 놓고, 워크북 타임라인 칸에 몇 초에 무엇이 나오는지 구간을 그립니다. 토크 영상은 화면이 단순해 보여서 "그냥 말하는 영상"으로 넘기기 쉬운데, 시간을 재 보면 잘된 영상일수록 <strong>질문은 짧고, 답은 길고, 화면은 생각보다 자주 바뀝니다</strong>.</p>
+  <ol class="tight">
+    <li>처음 30초 안에 <strong>이 사람이 누구인지</strong> 알게 되나? 이름 · 하는 일 · 오늘의 이야기 한 줄이 어디서 나오나?</li>
+    <li>질문은 몇 초, 답은 몇 초인가? 질문을 말로 하나, 자막으로 띄우나?</li>
+    <li>같은 화면이 몇 초마다 바뀌나? 카메라 각도 · 클로즈업 · B롤 중 무엇으로?</li>
+    <li>가장 센 한마디는 어디에 있나? 제목 · 썸네일 · 숏폼에 그 말이 다시 쓰였나?</li>
+  </ol>
+  <div class="ref">
+    <div class="ln"><span>영상 · 채널</span><i></i></div>
+    <div class="ln"><span>누구인지 나오는 곳</span><i></i></div>
+    <div class="ln"><span>센 한마디 · 위치</span><i></i></div>
+    <div class="ln"><span>내가 가져올 것 하나</span><i></i></div>
+  </div>
+  <h3><span class="step">C 기획</span>누구인지 → 질문 1 · 2 · 3 → 가장 센 한마디</h3>
+  <p>토크 · 인터뷰의 뼈대는 하나입니다. 처음에 <strong>누구인지</strong> 알리고, 질문 세 개로 이야기를 끌어낸 뒤, <strong>가장 센 한마디</strong>로 끝냅니다. 3분 인터뷰라면 아래처럼 나눕니다. 질문 셋은 "과거 → 고비 → 지금"의 순서를 따르면 듣는 사람이 그 사람의 시간을 따라갑니다.</p>
+  <table>
+    <tr><th style="width:26mm">구간</th><th style="width:16mm">3분 예</th><th>무엇을</th><th style="width:50mm">질문 예</th></tr>
+    <tr><td><strong>누구인지</strong></td><td>15초</td><td>이름 · 하는 일 · 오늘 이야기 한 줄</td><td>"어떤 일을 하고 계세요?"</td></tr>
+    <tr><td><strong>질문 1</strong></td><td>45초</td><td>시작 계기 · 처음의 기억</td><td>"처음 시작하게 된 날을 기억하세요?"</td></tr>
+    <tr><td><strong>질문 2</strong></td><td>60초</td><td>가장 힘들었던 순간 · 어떻게 넘었나. 가장 긴 구간</td><td>"그만두고 싶었던 때가 있었나요?"</td></tr>
+    <tr><td><strong>질문 3</strong></td><td>45초</td><td>지금 · 노하우 · 보는 사람에게 팁</td><td>"처음 하는 사람에게 하나만 알려 준다면?"</td></tr>
+    <tr><td><strong>한마디</strong></td><td>15초</td><td>가장 센 문장 · 다음 이야기 예고</td><td>"○○이란 한마디로 뭘까요?"</td></tr>
+  </table>
+  <h3>1인 토크: 대본 대신 키워드 메모 5줄</h3>
+  <div class="grid2" style="margin-bottom:4mm">
+    <div class="box" style="margin:0"><strong>대본을 통째로 읽으면</strong>
+      <ul class="tight" style="margin:1mm 0 0">
+        <li>눈이 글자를 따라가서 시선이 렌즈를 벗어납니다</li>
+        <li>글로 쓴 문장은 말로 하면 길고 딱딱합니다</li>
+        <li>한 단어만 틀려도 처음부터 다시 찍게 됩니다</li>
+        <li>"읽는 소리"는 시청자가 바로 알아챕니다</li>
+      </ul>
+    </div>
+    <div class="box gold" style="margin:0"><strong>키워드 메모 5줄이면</strong>
+      <ul class="tight" style="margin:1mm 0 0">
+        <li>한 줄에 <strong>단어 두세 개</strong>만. 문장은 그 자리에서 내 말로</li>
+        <li>예: ① 나는 ○○ 하는 사람 ② 시작한 계기 ③ 가장 힘들었던 일 ④ 그래서 만드는 영상 ⑤ 한마디</li>
+        <li>메모는 카메라 바로 아래에 붙여 시선이 덜 움직이게</li>
+        <li>틀리면 그 줄만 다시. 편집에서 잇습니다</li>
+      </ul>
+    </div>
+  </div>
+  <p>첫 문장과 마지막 문장만은 <strong>외워서</strong> 말해도 좋습니다. 시작이 매끄러우면 긴장이 풀리고, 끝 문장이 정해져 있으면 말이 늘어지지 않습니다. 가운데는 키워드만 보고 친구에게 설명하듯 말하세요.</p>
+  <h3>인터뷰: 질문지 쓰는 법</h3>
+  <p>좋은 인터뷰는 좋은 질문에서 나옵니다. 질문지는 <strong>열린 질문 5개 + 꼬리 질문</strong>으로 씁니다. 열린 질문은 "예 · 아니요"로 끝나지 않고 이야기가 나오게 하는 질문입니다. "어떻게 · 왜 · 언제 · 무엇이"로 시작하면 저절로 열립니다.</p>
+  <table>
+    <tr><th style="width:50%">닫힌 질문 → 한 단어로 끝남</th><th>열린 질문 → 이야기가 나옴</th></tr>
+    <tr><td>"이 일 좋아하세요?" → "네."</td><td>"이 일을 하면서 가장 좋았던 순간은 언제였어요?"</td></tr>
+    <tr><td>"힘드셨어요?" → "조금요."</td><td>"가장 힘들었던 날, 무슨 일이 있었어요?"</td></tr>
+    <tr><td>"손님이 많아요?" → "주말엔요."</td><td>"기억에 남는 손님 이야기 하나 해 주실래요?"</td></tr>
+  </table>
+  <p><strong>꼬리 질문</strong>이 진짜 이야기를 끌어냅니다. 준비한 질문에 대한 첫 답은 대개 정리된 답입니다. 그 답에서 한 단어를 잡아 한 번 더 물으면 그 사람만의 이야기가 나옵니다. 꼬리 질문은 미리 다 쓸 수 없으니, 아래 다섯 개를 질문지 아래에 적어 두고 필요할 때 꺼내 씁니다.</p>
+  <div class="four" style="grid-template-columns: repeat(5, 1fr)">
+    <div><b>기분</b>"그때 어떤 기분이었어요?"</div>
+    <div><b>예시</b>"예를 들면요?"</div>
+    <div><b>다음</b>"그다음엔 어떻게 됐어요?"</div>
+    <div><b>이유</b>"왜 그렇게 하셨어요?"</div>
+    <div><b>지금</b>"지금 다시 한다면요?"</div>
+  </div>
+  <ul class="tight">
+    <li><strong>질문 순서는 쉬운 것 → 깊은 것 → 앞으로.</strong> 처음부터 "가장 힘들었던 순간"을 물으면 말이 막힙니다. 하는 일처럼 쉬운 질문으로 몸을 풉니다.</li>
+    <li><strong>질문지는 미리 보내 주되, 답을 써 오게 하지는 않습니다.</strong> 무엇을 물을지 알면 마음이 편하지만, 써 온 답을 읽으면 대본 읽기와 똑같아집니다.</li>
+    <li><strong>"질문을 넣어서 답해 주세요"</strong>라고 부탁합니다. "언제 시작했어요?"에 "3년 전이요"가 아니라 "제가 이 가게를 연 건 3년 전이에요"로 답하면, 편집에서 질문을 잘라 내도 답만으로 이해됩니다.</li>
+    <li><strong>답하는 동안 "네, 네" 소리를 내지 않습니다.</strong> 맞장구가 답 위에 겹치면 잘라 낼 수 없습니다. 고개를 끄덕이고, 답이 끝난 뒤 1초 기다렸다가 다음 질문을 합니다. 그 1초 뒤에 가장 좋은 말이 나오기도 합니다.</li>
+  </ul>
+  <h3><span class="step">D 촬영</span>눈높이 · 시선 · 두 카메라 · 소리</h3>
+  <p>1장의 구도 · 빛이 그대로 쓰입니다. 다만 토크 · 인터뷰에는 하나가 더 있습니다. <strong>소리가 화면보다 중요합니다.</strong> 화면이 조금 흔들려도 사람들은 보지만, 소리가 나쁘면 바로 끕니다.</p>
+  <div class="side" style="grid-template-columns: 66mm 1fr">
+    <figure>
+      <svg viewBox="0 0 230 214" width="64mm" role="img" aria-label="인터뷰 촬영 배치를 위에서 본 그림">
+        <g font-family="Pretendard, sans-serif">
+          <rect x="8" y="4" width="214" height="20" rx="2" fill="#eef3f0" stroke="#cfd9d3"/>
+          <text x="115" y="18" text-anchor="middle" font-size="10" fill="#7a8c83">배경 · 정리 + 소품 하나</text>
+          <path d="M115 74 L115 128" stroke="#2e7d57" stroke-width="1.3" stroke-dasharray="3 2"/>
+          <path d="M104 70 L66 128" stroke="#c8423b" stroke-width="1.3" stroke-dasharray="3 2"/>
+          <path d="M128 70 L170 114" stroke="#2f6e9e" stroke-width="1.3" stroke-dasharray="3 2"/>
+          <circle cx="115" cy="56" r="18" fill="#173a2b"/>
+          <text x="115" y="60" text-anchor="middle" font-size="10" font-weight="700" fill="#f3dfa2">출연자</text>
+          <circle cx="138" cy="44" r="3.5" fill="#e0a526"/>
+          <text x="145" y="41" font-size="9.5" fill="#c08a10">마이크</text>
+          <text x="145" y="53" font-size="9.5" fill="#c08a10">입에서 한 뼘</text>
+          <rect x="100" y="128" width="30" height="18" rx="3" fill="#2e7d57"/>
+          <text x="115" y="141" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">A</text>
+          <text x="115" y="160" text-anchor="middle" font-size="9.5" fill="#2e7d57">와이드</text>
+          <rect x="164" y="112" width="30" height="18" rx="3" fill="#2f6e9e" transform="rotate(-35 179 121)"/>
+          <text x="179" y="125" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">B</text>
+          <text x="190" y="150" text-anchor="middle" font-size="9.5" fill="#2f6e9e">클로즈업</text>
+          <circle cx="58" cy="138" r="15" fill="#fff" stroke="#c8423b" stroke-width="1.4"/>
+          <text x="58" y="141" text-anchor="middle" font-size="9" fill="#c8423b">진행자</text>
+          <text x="52" y="168" text-anchor="middle" font-size="9.5" fill="#c8423b">렌즈 바로 옆</text>
+          <rect x="8" y="188" width="214" height="20" rx="2" fill="#fbf1d3" stroke="#e0a526"/>
+          <text x="115" y="202" text-anchor="middle" font-size="10" fill="#8a6510">창 · 빛은 얼굴 앞쪽에서</text>
+        </g>
+      </svg>
+      <figcaption>위에서 본 인터뷰 배치. 출연자는 진행자를 봅니다</figcaption>
+    </figure>
+    <table style="margin:0">
+      <tr><th style="width:22mm">요령</th><th>어떻게 · 왜</th></tr>
+      <tr><td><strong>눈높이 · 삼분할</strong></td><td>카메라를 눈높이에, 눈은 화면 <strong>위 1/3 선</strong>에. 머리 위 빈 곳이 너무 넓으면 사람이 작아 보입니다</td></tr>
+      <tr><td><strong>시선</strong></td><td>1인 토크는 <strong>렌즈</strong>, 인터뷰는 <strong>진행자</strong>. 진행자가 렌즈 바로 옆에 앉아야 시선이 화면 밖으로 멀리 빠지지 않습니다</td></tr>
+      <tr><td><strong>두 카메라</strong></td><td>폰 한 대는 와이드(상반신), 한 대는 클로즈업(얼굴). 각도를 조금 다르게. 녹화 시작 후 <strong>박수 한 번</strong></td></tr>
+      <tr><td><strong>소리</strong></td><td>조용한 곳. 폰이나 핀마이크는 <strong>입에서 한 뼘</strong>. 냉장고 · 에어컨 소리도 녹음됩니다</td></tr>
+      <tr><td><strong>빛 · 배경</strong></td><td>창을 얼굴 <strong>앞쪽</strong>에. 등 뒤에 창이 있으면 얼굴이 어두워집니다</td></tr>
+    </table>
+  </div>
+  <p>폰이 한 대뿐이면 와이드 하나로 찍고, 편집에서 <strong>확대(약 120~130%)</strong>로 클로즈업을 만듭니다. 4K로 찍어 두면 확대해도 덜 흐려집니다. 녹화는 질문 하나가 끝날 때마다 끊지 말고 <strong>계속 켜 두세요</strong>. 중간에 끊으면 두 카메라를 맞추는 박수를 매번 다시 쳐야 하고, 끊긴 사이에 가장 좋은 말이 나오기도 합니다. 그리고 촬영 전에 <strong>출연 동의</strong>를 받습니다. 어디에 올리는지, 얼굴 · 이름 · 가게 이름이 나오는지, 나중에 내려 달라고 하면 내린다는 것까지 말로 확인하고, 가능하면 메시지로 남겨 둡니다.</p>
+  <h3><span class="step">E 편집 ①</span>군말 · 공백 지우기</h3>
+  <div class="cyc" style="margin-top:0">슬라이드 따라하기 01</div>
+  <p>말이 많은 영상은 <strong>"빈 곳"을 줄이는 게 편집의 반</strong>입니다. "음, 어, 그" 같은 군말과 긴 침묵만 지워도 같은 내용이 1.5배 빨라진 느낌이 납니다. 3장 7절의 자동 캡션 기능을 그대로 씁니다.</p>
+  <ol class="tight">
+    <li>토크 클립을 선택하고 텍스트(또는 캡션) 탭에서 <strong>자동 캡션</strong>(Auto captions)을 만듭니다. 언어는 한국어. 음악이 깔려 있으면 끄고 만들어야 정확합니다.</li>
+    <li>옵션에 <strong>군말 찾기</strong>(Filler words)가 있으면 켭니다. 버전에 따라 이름이 다르거나 없을 수도 있습니다.</li>
+    <li>자막 목록에서 "음 · 어 · 그"로 표시된 곳을 확인하고 지웁니다. <strong>대본으로 편집</strong>(텍스트 기반 편집) 기능이 있으면 자막 줄을 지울 때 영상의 그 부분도 함께 잘립니다.</li>
+    <li>기능이 없거나 표시되지 않은 긴 침묵은 <strong>파형이 평평한 곳</strong>을 찾아 <kbd>Ctrl</kbd>+<kbd>B</kbd>로 앞뒤를 자르고 지웁니다.</li>
+    <li>처음부터 다시 보며, 너무 빨라져 숨이 막히는 곳은 <kbd>Ctrl</kbd>+<kbd>Z</kbd>로 되돌립니다.</li>
+  </ol>
+  <p><strong>다 지우지 마세요.</strong> 생각하느라 멈춘 한 박자, 웃음, 숨 고르기는 그 사람을 <strong>진짜처럼</strong> 보이게 합니다. 기준은 "보는 사람이 기다리게 되는 침묵"만 지우는 것입니다. 질문을 받고 잠시 생각하는 1초는 남기고, 같은 말을 두 번 하다 끊긴 곳은 지웁니다. 지우기 전에는 프로젝트를 <strong>복제</strong>해 두세요. 자막 줄을 지워 영상까지 잘랐다면 되돌리기가 번거롭습니다.</p>
+  <h3><span class="step">E 편집 ②</span>두 카메라로 화면 바꾸기</h3>
+  <div class="cyc" style="margin-top:0">슬라이드 따라하기 02</div>
+  <figure>
+    <svg viewBox="0 0 560 150" width="150mm" role="img" aria-label="두 카메라 클립을 위아래 트랙에 놓고 클로즈업만 골라 남긴 타임라인">
+      <g font-family="Pretendard, sans-serif">
+        <text x="6" y="28" font-size="9" fill="#2f6e9e">위 트랙</text>
+        <text x="6" y="40" font-size="8" fill="#7a8c83">클로즈업 · 음소거</text>
+        <rect x="150" y="18" width="80" height="24" rx="3" fill="#2f6e9e"/><text x="190" y="34" text-anchor="middle" font-size="9" fill="#fff">감정이 커짐</text>
+        <rect x="330" y="18" width="96" height="24" rx="3" fill="#2f6e9e"/><text x="378" y="34" text-anchor="middle" font-size="9" fill="#fff">센 문장 + 강조 자막</text>
+        <text x="6" y="66" font-size="9" fill="#2e7d57">메인 트랙</text>
+        <text x="6" y="78" font-size="8" fill="#7a8c83">와이드 · 소리 O</text>
+        <rect x="90" y="56" width="460" height="24" rx="3" fill="#2e7d57"/><text x="120" y="72" font-size="9" fill="#fff">와이드 (처음부터 끝까지 한 클립)</text>
+        <text x="6" y="104" font-size="9" fill="#7a8c83">소리</text>
+        <polyline points="90,100 100,96 108,104 116,94 126,102 140,97 150,103 162,95 176,101 190,93 204,104 218,97 232,102 246,96 260,101 276,95 290,103 306,98 320,102 334,92 350,104 366,95 380,101 396,93 412,103 426,97 440,101 456,96 470,102 486,98 500,101 516,96 530,102 550,99" fill="none" stroke="#2e7d57" stroke-width="1.3"/>
+        <line x1="96" y1="86" x2="96" y2="112" stroke="#c8423b" stroke-width="1.4"/>
+        <text x="100" y="124" font-size="8.5" fill="#c8423b">박수 = 싱크 맞추는 점</text>
+        <rect x="6" y="132" width="548" height="16" rx="3" fill="#eef3f0"/>
+        <text x="280" y="143" text-anchor="middle" font-size="9" fill="#173a2b">소리는 와이드 하나로 끊김 없이 흐르고, 화면만 와이드 ↔ 클로즈업으로 바뀝니다</text>
+      </g>
+    </svg>
+    <figcaption>위 트랙의 클로즈업은 필요한 곳만 남기고 잘라 냅니다. 위 트랙이 보이는 동안은 위 트랙이 화면을 덮습니다</figcaption>
+  </figure>
+  <ol class="tight">
+    <li>와이드 클립은 메인 트랙에, 클로즈업 클립은 <strong>바로 위 트랙</strong>에 놓습니다.</li>
+    <li>두 클립의 파형에서 <strong>박수 소리</strong>(뾰족하게 튀어나온 곳)를 찾아 같은 위치로 맞춥니다. 타임라인을 크게 확대하면 맞추기 쉽습니다.</li>
+    <li>클로즈업 클립의 소리는 <strong>음소거</strong>합니다. 소리는 와이드 하나만. 두 소리가 겹치면 울리는 소리가 납니다.</li>
+    <li>감정이 커지는 곳, 센 문장에서만 클로즈업이 보이도록 나머지 부분은 <kbd>Ctrl</kbd>+<kbd>B</kbd>로 잘라 지웁니다.</li>
+    <li>센 문장 위에 강조 자막을 하나 얹습니다(③).</li>
+  </ol>
+  <p>화면을 바꾸는 기준은 "말하는 사람"과 "감정"입니다. 대담이라면 말하는 사람을 따라 바꾸고, 1인 토크 · 인터뷰라면 이야기가 깊어지는 순간에 클로즈업으로 들어갑니다. 아무 데서나 바꾸면 산만하고, 너무 안 바꾸면 같은 화면이 1분을 넘깁니다. 문장이 끝나는 자리에서 바꾸면 컷이 가장 자연스럽습니다.</p>
+  <h3><span class="step">E 편집 ③</span>센 문장 강조 · B롤로 덮기 (L컷)</h3>
+  <ul class="tight">
+    <li><strong>강조 자막</strong>: 가장 센 문장 하나만 크게, 핵심 단어 하나만 색을 다르게(3장 자막 강조). 모든 문장을 강조하면 아무것도 강조되지 않습니다.</li>
+    <li><strong>천천히 줌인</strong>: 센 문장이 시작될 때 키프레임 두 개로 100% → 110%. 시청자는 줌을 알아채지 못해도 "중요한 말"로 느낍니다(3장 키프레임).</li>
+    <li><strong>B롤 + L컷</strong>: 말이 이어지는 동안 화면은 그 말이 가리키는 것(가게 · 손 · 사진 · 작업 화면)으로 넘깁니다. 4장 ① 브이로그의 L컷 그대로입니다. 말하는 얼굴만 1분 넘게 가지 않게 하는 가장 쉬운 방법이고, 군말을 잘라 낸 자리(점프 컷)를 덮어 주는 역할도 합니다.</li>
+  </ul>
+  <p><strong>숏폼 버전</strong>은 롱폼 프로젝트를 복제해 9:16으로 바꾸고, 센 문장 하나만 남겨 20~40초로 만듭니다. 그 문장을 <strong>첫 1초</strong>에 두고(결과 먼저), 이어서 그 말이 나오게 된 이야기를 짧게 붙입니다. 세로 화면은 작으니 와이드보다 클로즈업 위주로, 자막은 롱폼보다 크게, 얼굴 아래 세로 안전 영역 안에 둡니다.</p>
+  <h3><span class="step">F 발행</span>사람 + 인용 한 문장</h3>
+  <p>사람 영상은 제목과 썸네일에 <strong>"그 사람의 한마디"</strong>가 들어가야 눌립니다. 시청자는 모르는 사람의 이름보다 그 사람이 한 말에 끌려 들어옵니다.</p>
+  <table>
+    <tr><th style="width:24mm">항목</th><th>요령</th></tr>
+    <tr><td><strong>제목</strong></td><td>사람 + 인용 한 문장. "15년 차 미용사가 말하는 '다듬기만요'의 진실"처럼 <strong>누구인지(숫자 · 직업)</strong>와 <strong>그 사람의 말</strong>을 함께</td></tr>
+    <tr><td><strong>썸네일</strong></td><td>표정 클로즈업 + 인용 3~5단어. 말하는 도중의 표정(웃음 · 놀람 · 진지함)이 정면 증명사진보다 강합니다</td></tr>
+    <tr><td><strong>챕터</strong></td><td><strong>질문 = 챕터</strong>. 00:00 소개 / 01:10 시작 계기 / 02:05 가장 힘들었던 날 … 질문이 곧 목차가 됩니다(4장 챕터 규칙)</td></tr>
+    <tr><td><strong>숏폼</strong></td><td>센 문장 하나 = 숏폼 하나, 첫 1초에 그 문장. <strong>롱폼 인터뷰 하나에서 숏폼 세 개</strong>가 나옵니다</td></tr>
+    <tr><td><strong>동의 · 사실</strong></td><td>출연자 동의, 이름 · 숫자 · 사실 확인 (아래)</td></tr>
+  </table>
+  <div class="mist">
+    <h3 style="margin-top:0">출연 동의 · 사실 확인</h3>
+    <ul class="tight" style="margin-bottom:0">
+      <li><strong>완성본을 먼저 보여 줍니다.</strong> 촬영 전 동의에 더해, 올리기 전에 출연자에게 완성본을 보여 주고 빼고 싶은 말이 있는지 묻습니다. 편집으로 앞뒤를 자르면 원래 뜻과 다르게 들릴 수 있기 때문입니다.</li>
+      <li><strong>이름 · 숫자 · 사실을 확인합니다.</strong> 경력 연수, 가게 이름, 가격, 날짜는 자막에 들어가기 전에 본인에게 다시 묻습니다. 자동 캡션은 이름과 숫자를 특히 자주 틀립니다.</li>
+      <li><strong>남에 대한 말은 조심합니다.</strong> 인터뷰 중에 다른 가게 · 사람을 깎아내리는 말이 나왔다면 빼는 것이 출연자를 지키는 일입니다. 확인할 수 없는 주장("우리 동네에서 유일하게")도 마찬가지입니다.</li>
+      <li><strong>배경 속 사람</strong>: 가게 손님 · 동료 · 아이의 얼굴이 뒤에 비치면 동의를 받거나 가립니다.</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3><span class="tag">카테고리 카드 ⑤</span>토크 · 인터뷰</h3>
+    <div class="catcard">
+      <table>
+        <tr><td>A</td><td>사람을 보러 · 롱폼 5~30분 / 숏폼 20~40초</td></tr>
+        <tr><td>B</td><td>누구인지 나오는 곳 · 질문/답 길이 · 화면 바뀌는 간격 · 센 한마디</td></tr>
+        <tr><td>C</td><td>누구 → 질문 1 · 2 · 3 → 센 한마디 · 키워드 5줄 / 열린 질문 5 + 꼬리</td></tr>
+        <tr><td>D</td><td>눈높이 · 시선 · 두 카메라 · 박수 · 입에서 한 뼘 · 창을 앞에</td></tr>
+        <tr><td>E</td><td>군말 · 공백 지우기 · 두 카메라 · 강조 자막 + 줌 + B롤(L컷)</td></tr>
+        <tr><td>F</td><td>사람 + 인용 제목 · 표정 썸네일 · 질문 = 챕터 · 센 문장 숏폼</td></tr>
+      </table>
+      <div>
+        <h4>G 체크 · 올리기 전 다섯</h4>
+        <ul class="check">
+          <li>첫 30초에 이 사람이 누구인지</li>
+          <li>소리가 깨끗함(파형 · 폰으로 확인)</li>
+          <li>같은 화면이 1분 넘게 가지 않음</li>
+          <li>출연자 동의</li>
+          <li>이름 · 숫자 · 사실 확인</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="tip">실습은 둘 중 하나입니다. 혼자라면 <strong>셀프 토크 1분</strong>("제 메인 스타일과 그 이유"), 옆자리와 함께라면 <strong>서로 인터뷰 3분씩</strong>(폰 두 대). 워크북에 키워드 5줄 또는 질문 5개를 쓰고 → 눈높이 · 조용한 곳 · 입에서 한 뼘 · 박수 한 번으로 찍고(10분) → 군말 지우기 → (두 카메라) → 센 문장 강조로 <strong>30초 하이라이트</strong>를 만듭니다(15분). 다 만들면 옆자리에게 보여 주고 "가장 센 한마디가 뭐였어?"를 듣습니다. 옆자리가 고른 문장이 제목 · 썸네일 · 숏폼의 첫 문장 후보입니다. 대표작이 토크 · 인터뷰라면 이 촬영본이 바로 대표작 재료입니다.</div>
+
+  <h2><span class="num">3</span>⑥ 라이브 · 라이브커머스 A to Z</h2>
+  <div class="cyc">슬라이드 따라하기 03 · 워크북 카테고리 카드 ⑥ · 큐시트</div>
+  <h3><span class="step">A 정의</span>지금 같이 있는 영상</h3>
+  <p>라이브는 녹화해서 다듬는 영상이 아니라 <strong>지금 같이 있는</strong> 영상입니다. 시청자는 채팅으로 묻고, 진행자는 그 자리에서 답합니다. 라이브에는 편집이 없는 대신 <strong>준비가 편집</strong>입니다. 무엇을 몇 분에 보여 줄지, 무슨 말을 할지, 상품을 어디에 둘지가 미리 정해져 있어야 합니다. 그리고 끝나면 <strong>다시보기와 하이라이트 숏폼</strong>이 남아 한 번의 방송이 두 번 일합니다. 사업 홍보 · 판매에 가장 직접적인 카테고리입니다.</p>
+  <div class="three">
+    <div><b>소통 라이브</b>질문 받기 · 작업 과정 공개 · 같이 보기. 단골과 팬을 만드는 방송</div>
+    <div><b>라이브커머스</b>상품을 보여 주며 실시간으로 판매. 오늘의 혜택 · 질문 답변 · 바로 구매</div>
+    <div><b>하이라이트</b>라이브 다시보기에서 잘라 낸 숏폼. 방송을 못 본 사람을 다음 방송으로 데려옴</div>
+  </div>
+  <table>
+    <tr><th style="width:36mm">어디서</th><th>특징</th></tr>
+    <tr><td><strong>쇼핑 플랫폼 라이브</strong></td><td>스토어와 연결된 판매 방송. 방송 예약 · 알림 · 상품 연결 · 라이브 전용 혜택. 내 가게가 그 플랫폼에 입점해 있어야 하는 경우가 많습니다</td></tr>
+    <tr><td><strong>유튜브 · 인스타 · 틱톡 라이브</strong></td><td>구독자 · 팔로워와 소통하고 다시보기로 남깁니다. 폰으로 라이브를 켜는 데 계정 인증이나 구독자 · 팔로워 수 조건이 붙을 수 있습니다</td></tr>
+  </table>
+  <p class="muted" style="margin-top:-2mm">라이브 기능 · 조건은 플랫폼마다 다르고 자주 바뀝니다. 실제 방송 전에 내 계정에서 라이브가 켜지는지, 다시보기가 남는지 미리 확인하세요.</p>
+  <div class="formula">
+    <div><b>라이브 한 번</b>30분~1시간 · 가로 또는 세로</div><span>→</span>
+    <div><b>다시보기 1</b>롱폼처럼: 상품별 챕터 · 설명에 상품 링크</div><span>→</span>
+    <div class="res"><b>하이라이트 숏폼 3</b>9:16 · 30초~1분 · 끝에 다음 라이브 일정</div>
+  </div>
+  <p>유튜브에서는 라이브가 끝나면 다시보기가 채널에 롱폼처럼 남고, 릴스 · 쇼츠 · 틱톡에는 하이라이트를 잘라 올립니다. 그래서 라이브의 <strong>롱폼 버전 = 다시보기</strong>, <strong>숏폼 버전 = 하이라이트</strong>입니다. 처음 라이브를 고를 때 가로 · 세로를 정하는 기준도 여기서 나옵니다. 유튜브 다시보기가 중심이면 가로, 인스타 · 틱톡 · 쇼핑 앱이 중심이면 세로입니다.</p>
+  <h3><span class="step">B 레퍼런스</span>흐름과 반복을 센다</h3>
+  <p>수업에서는 강사가 고른 라이브커머스 다시보기의 처음 몇 분과 상품 소개 한 바퀴를 봅니다. 라이브는 길어서 처음부터 끝까지 볼 수 없으니, <strong>한 바퀴(오프닝 → 상품 → 마감)</strong>가 몇 분이고 그 안에서 무엇이 반복되는지를 봅니다.</p>
+  <ol class="tight">
+    <li>처음 1분에 무엇을 말하나? 인사 · 오늘의 혜택 · 상품 중 무엇이 먼저인가?</li>
+    <li>상품을 어떻게 보여 주나? 손 · 클로즈업 · 비교 · 직접 써 보기 중 무엇으로?</li>
+    <li>혜택 · 가격은 몇 번 말하나? 화면 글자로도 띄우나?</li>
+    <li>마감 멘트는 어떻게 하나? 질문에 어떻게 답하고, 무엇으로 끝내나?</li>
+  </ol>
+  <div class="ref">
+    <div class="ln"><span>방송 · 채널</span><i></i></div>
+    <div class="ln"><span>한 바퀴 길이 · 반복</span><i></i></div>
+    <div class="ln"><span>혜택을 말한 횟수</span><i></i></div>
+    <div class="ln"><span>내가 가져올 것 하나</span><i></i></div>
+  </div>
+  <h3><span class="step">C 기획</span>큐시트 · 판매 멘트 구조</h3>
+  <p><strong>큐시트</strong>는 라이브의 대본 겸 스토리보드입니다. 방송 순서를 한 줄씩 <strong>시간 · 내용 · 화면 · 멘트 · 준비물</strong>로 적습니다. 멘트는 문장을 다 쓰지 말고 토크처럼 키워드만 적습니다. 3분 리허설이라도 큐시트가 있으면 말이 길을 잃지 않습니다.</p>
+  <table>
+    <tr><th style="width:15mm">시간</th><th style="width:22mm">내용</th><th style="width:34mm">화면</th><th>멘트 (키워드)</th><th style="width:28mm">준비물</th></tr>
+    <tr><td>00:00</td><td><strong>오프닝</strong></td><td>얼굴 + 상품 살짝</td><td>인사 · 오늘 혜택 한 줄 · "끝까지 보시면 ○○"</td><td>혜택 카드</td></tr>
+    <tr><td>01:00</td><td><strong>문제</strong></td><td>얼굴</td><td>"이런 적 있죠?" 공감 한마디</td><td></td></tr>
+    <tr><td>02:00</td><td><strong>보여 주기</strong></td><td>손 · 클로즈업</td><td>열고 · 만지고 · 써 보기. 크기는 손과 비교</td><td>상품 · 작은 조명</td></tr>
+    <tr><td>05:00</td><td><strong>증거</strong></td><td>클로즈업 · 비교</td><td>그 자리에서 확인 · 허락받은 후기 · 만드는 과정</td><td>비교할 물건</td></tr>
+    <tr><td>07:00</td><td><strong>혜택</strong></td><td>얼굴 + 가격 카드</td><td>가격 · 사은품 · 기간을 정확히</td><td>가격 카드</td></tr>
+    <tr><td>08:00</td><td><strong>질문 · 마감</strong></td><td>얼굴 + 채팅 화면</td><td>질문 두세 개 답하기 · 지금 사야 하는 이유 · 다음 라이브</td><td>두 번째 화면</td></tr>
+  </table>
+  <p class="muted" style="margin-top:-2mm">10분 한 바퀴 예. 30분 라이브라면 이 흐름을 <strong>두세 번 반복</strong>합니다. 라이브는 중간에 들어오는 사람이 많습니다.</p>
+  <p>판매 멘트는 <strong>"왜 필요한지"에서 시작해 "왜 지금인지"로 끝냅니다.</strong> 처음부터 가격을 말하면 아직 필요를 느끼지 않은 사람에게는 그냥 숫자입니다. 아래 다섯 칸은 4장 ② 리뷰의 흐름(문제 → 보여 주기 → 결론)을 판매에 맞게 늘린 것입니다.</p>
+  <div class="formula sm">
+    <div><b>① 문제</b>"출근길에 산 커피, 회사 도착하면 다 식어 있죠?"</div><span>→</span>
+    <div><b>② 보여 주기</b>뚜껑을 열고 닫고, 손에 쥐고, 가방에 넣어 보기</div><span>→</span>
+    <div><b>③ 증거</b>아침에 담은 물을 방송 중에 직접 따라 보기</div><span>→</span>
+    <div><b>④ 혜택</b>가격 · 사은품 · 기간을 화면 카드와 같게</div><span>→</span>
+    <div class="res"><b>⑤ 지금 사야 하는 이유</b>라이브 중에만 있는 혜택이 <u>사실일 때만</u></div>
+  </div>
+  <p class="muted" style="margin-top:-2mm">예시 상품은 보온 텀블러(가상). 내 상품 · 가게로 바꿔 쓰세요.</p>
+  <p><strong>혜택은 여러 번 말합니다.</strong> 녹화 영상에서는 같은 말을 두 번 하면 지루하지만, 라이브에서는 5분 전에 들어온 사람이 아까 한 말을 듣지 못했습니다. 한 바퀴마다 혜택을 다시 말하고, 화면 한쪽에 가격 · 혜택 카드를 계속 띄워 둡니다. 증거는 <strong>그 자리에서 보여 줄 수 있는 것</strong>이 가장 강합니다. 말로 "정말 좋아요"를 열 번 하는 것보다 한 번 직접 써 보는 것이 낫습니다.</p>
+  <h3><span class="step">D 촬영</span>다시 찍을 수 없으니 세팅이 전부</h3>
+  <table>
+    <tr><th style="width:30mm">요령</th><th>어떻게 · 왜</th></tr>
+    <tr><td><strong>폰 고정</strong></td><td>거치대 · 삼각대. 세로 / 가로를 미리 정하기. <strong>화면 꺼짐 방지 · 알림 끄기(방해 금지)</strong>. 전화가 오면 방송이 끊길 수 있습니다. 충전기를 꽂아 둡니다</td></tr>
+    <tr><td><strong>빛 하나</strong></td><td>얼굴 앞 조명 하나 또는 창가. 상품 클로즈업용 작은 조명이 있으면 색이 살아납니다</td></tr>
+    <tr><td><strong>상품 자리</strong></td><td>카메라 앞에 <strong>표시해 둔 자리</strong>(테이프 하나)에 들고 오면 초점 · 크기가 매번 같습니다. 상품은 꺼낼 순서대로 정리</td></tr>
+    <tr><td><strong>두 번째 화면</strong></td><td>채팅을 보는 폰 · 태블릿. 방송하는 폰의 작은 화면으로는 질문을 놓칩니다</td></tr>
+    <tr><td><strong>소리 · 리허설</strong></td><td>조용한 곳 · 마이크 테스트. 시작 <strong>10분 전 혼자 리허설</strong>로 소리 · 빛 · 상품 자리 · 인터넷 연결을 확인</td></tr>
+  </table>
+  <p>리허설은 <strong>녹화해서 들어 봅니다.</strong> 말하는 동안에는 내 목소리가 작은지, 에어컨 소리가 들어가는지 모릅니다. 1분만 녹화해 이어폰으로 들으면 바로 보입니다. 그리고 큐시트 · 상품 · 조명 · 채팅 화면이 모두 <strong>손이 닿는 곳</strong>에 있어야 합니다. 방송 중에 일어나 무언가를 가지러 가면 그 사이에 시청자가 나갑니다.</p>
+  <h3><span class="step">E 편집</span>다시보기에서 숏폼으로</h3>
+  <div class="cyc" style="margin-top:0">슬라이드 따라하기 03</div>
+  <p>라이브 자체는 편집하지 않지만, 끝난 뒤의 편집이 라이브를 두 번 일하게 합니다. 30분짜리 녹화본에서 쓸 장면을 찾을 때는 <strong>자동 캡션이 지도</strong>가 됩니다. 영상을 처음부터 다시 보는 대신 자막 목록을 글처럼 훑어 "오늘만", "직접 써 보면", "이거 보세요" 같은 말이 나온 곳으로 바로 갑니다.</p>
+  <div class="three">
+    <div><b>① 하이라이트 찾기</b>자동 캡션 → 자막 목록에서 보여 주기 · 혜택 문장 찾기. 상품이 가장 잘 보이는 구간</div>
+    <div><b>② 숏폼으로</b>하이라이트 3구간을 9:16으로. 첫 1초에 가장 센 장면. 상품은 가운데</div>
+    <div><b>③ 정보 카드</b>가격 · 혜택 · 기간 카드. 4장 ② 정보 카드처럼 한 번 만든 디자인을 복사해 재사용</div>
+  </div>
+  <ol class="tight">
+    <li>리허설 녹화본을 16:9(또는 9:16) 프로젝트로 가져옵니다.</li>
+    <li><strong>자동 캡션</strong>을 만들고 자막 목록을 훑어 '보여 주기 · 혜택' 문장을 찾습니다.</li>
+    <li>그 문장 앞뒤를 <kbd>Ctrl</kbd>+<kbd>B</kbd>로 잘라 <strong>하이라이트 3구간</strong>만 남깁니다. 나머지는 지웁니다.</li>
+    <li>비율을 9:16으로 바꾸고, 클립마다 상품이 가운데 오게 위치를 맞춥니다. 위아래 빈 곳은 배경 흐림으로 채웁니다.</li>
+    <li>가격 · 혜택 정보 카드를 하나 얹고(텍스트 템플릿 또는 직접 디자인), 1분 안팎으로 내보냅니다.</li>
+  </ol>
+  <p>숏폼 끝에는 <strong>"다음 라이브 ○일 ○시"</strong> 한 줄을 넣습니다. 하이라이트의 목적은 그 자체로 파는 것보다 <strong>다음 방송으로 데려오는 것</strong>입니다. 가로 라이브를 세로로 바꾸면 양옆이 잘리니, 상품을 들고 있는 손이 잘리지 않았는지 컷마다 확인하세요. 하이라이트에 쓰는 자막은 말을 그대로 옮기기보다 <strong>핵심 한 줄</strong>로 줄이는 편이 세로 화면에서 잘 읽힙니다.</p>
+  <h3><span class="step">F 발행</span>알리고 → 방송하고 → 잘라서 다시 쓰기</h3>
+  <table>
+    <tr><th style="width:26mm">항목</th><th>요령</th></tr>
+    <tr><td><strong>예고</strong></td><td>날짜 · 시간 · 혜택 한 줄 + 예고 숏폼 · 썸네일. 라이브는 "언제 하는지"를 알리는 것부터가 발행입니다. 방송 예약 · 알림 기능이 있으면 켭니다</td></tr>
+    <tr><td><strong>다시보기</strong></td><td>제목 · 상품별 챕터 · 설명에 상품 링크. 지난 혜택이 끝났다면 설명에 "방송 당시 혜택"이라고 적습니다</td></tr>
+    <tr><td><strong>하이라이트</strong></td><td>숏폼 3편, 끝에 다음 라이브 일정</td></tr>
+    <tr><td><strong>표시</strong></td><td>광고 · 협찬 · 제공 표시. 가격 · 혜택 · 기간을 정확히</td></tr>
+    <tr><td><strong>개인정보</strong></td><td>채팅 닉네임 · 주문 정보 · 다른 사람 얼굴 가리기</td></tr>
+  </table>
+  <div class="mist">
+    <h3 style="margin-top:0">표시 · 개인정보 · 과장 표현</h3>
+    <ul class="tight" style="margin-bottom:2mm">
+      <li><strong>광고 표시</strong>: 브랜드에게 돈 · 상품 · 할인을 받고 하는 방송이라면 시작할 때 말로 밝히고, 화면 글자와 플랫폼의 광고(유료 프로모션 · 유료 파트너십 등) 표시 기능을 함께 씁니다. 다시보기 · 하이라이트에도 표시가 남아야 합니다. 내 가게 상품을 내가 파는 방송이라면 그 사실이 분명히 보이게 합니다.</li>
+      <li><strong>가격 · 혜택은 말과 카드가 같게</strong>: 할인 전 가격, 할인율, 기간, 수량, 배송비. 말로 한 숫자와 화면 카드의 숫자가 다르면 시청자는 더 불리한 쪽을 믿지 않고 항의합니다.</li>
+      <li><strong>개인정보 가리기</strong>: 다시보기 · 하이라이트에 채팅 닉네임, 주문 번호, 주소 · 전화번호가 담긴 화면, 시청자나 지나가는 사람 얼굴이 나오면 흐림 · 모자이크 효과를 그 부분에만 얹거나(3장 마스크) 잘라 냅니다. 방송 중에 채팅을 읽어 줄 때도 닉네임 대신 "방금 질문 주신 분"으로 부르면 나중에 가릴 일이 줄어듭니다.</li>
+    </ul>
+    <table style="margin-bottom:0">
+      <tr><th style="width:50%">이렇게 말하지 않기</th><th>이렇게 바꾸기</th></tr>
+      <tr><td>"먹으면 ○○병이 낫는다" · 식품을 약처럼</td><td>재료 · 맛 · 먹는 방법 등 확인된 사실만</td></tr>
+      <tr><td>"무조건 최저가" · "판매 1위" (근거 없이)</td><td>근거가 있을 때만, 기준(언제 · 어디서)과 함께</td></tr>
+      <tr><td>"오늘이 마지막" (다음 주에도 같은 혜택)</td><td>"이번 라이브 혜택은 ○일까지"처럼 사실대로</td></tr>
+      <tr><td>지어낸 후기 · 시청자인 척하는 채팅</td><td>허락받은 실제 후기 · 방송 중 직접 써 보기</td></tr>
+    </table>
+  </div>
+  <div class="card">
+    <h3><span class="tag">카테고리 카드 ⑥</span>라이브 · 라이브커머스</h3>
+    <div class="catcard">
+      <table>
+        <tr><td>A</td><td>지금 같이 · 라이브 + 다시보기 + 하이라이트 숏폼 3</td></tr>
+        <tr><td>B</td><td>처음 1분 · 보여 주는 법 · 혜택 횟수 · 마감 멘트</td></tr>
+        <tr><td>C</td><td>큐시트 · 오프닝 → 문제 → 보여 주기 → 증거 → 혜택 → 마감</td></tr>
+        <tr><td>D</td><td>폰 고정 · 빛 하나 · 상품 자리 · 채팅 화면 · 리허설</td></tr>
+        <tr><td>E</td><td>자막으로 하이라이트 찾기 · 9:16 · 정보 카드</td></tr>
+        <tr><td>F</td><td>예고 · 다시보기 챕터 · 광고 표시 · 개인정보 가리기</td></tr>
+      </table>
+      <div>
+        <h4>G 체크 · 올리기 전 다섯</h4>
+        <ul class="check">
+          <li>큐시트대로 흘러갔나</li>
+          <li>가격 · 혜택 · 기간 정확히</li>
+          <li>광고 · 협찬 표시</li>
+          <li>채팅 닉네임 · 개인정보 가림</li>
+          <li>소리 테스트 · 리허설</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="tip">실습은 <strong>혼자 3분 라이브 리허설</strong>입니다. 실제로 방송하지 않고 녹화만 합니다. 내 상품(없으면 소지품 하나)으로 큐시트 5줄(오프닝 · 문제 · 보여 주기 · 혜택 · 마감)을 5분 안에 쓰고 → 폰 고정 · 빛 · 상품 자리를 잡고 → 3분 녹화합니다. 옆자리는 시청자처럼 질문을 하나 던져 줍니다. 그다음 따라하기 03으로 <strong>1분 하이라이트</strong>를 만들고, 옆자리에게 "사고 싶어진 순간이 언제였어?"를 듣습니다. 그 순간이 하이라이트의 첫 1초입니다. 실제 라이브는 집에서 한 번 해 보세요. 오늘은 준비와 하이라이트까지입니다.</div>
+
+  <h2><span class="num">4</span>⑦ AI 영상 A to Z</h2>
+  <div class="cyc">슬라이드 따라하기 04 · 워크북 카테고리 카드 ⑦ · AI 6컷 표 · AI 숏드라마 광고 마스터 프롬프트(한 장)</div>
+  <h3><span class="step">A 정의</span>찍을 수 없는 장면을 만드는 영상</h3>
+  <p>AI 영상은 찍기 어렵거나 찍을 수 없는 장면, 곧 지나간 과거 · 상상 속 장면 · 큰 세트가 필요한 장면을 <strong>만들어서</strong> 보여 주는 카테고리입니다. 이 과정에서는 수강생이 가장 많이 원한 <strong>AI 숏드라마 광고</strong>를 중심으로 다룹니다. 역할은 분명하게 나눕니다. <strong>이야기 · 기획 · 검수는 사람, 장면 · 목소리는 AI.</strong> AI가 아무리 예쁜 장면을 만들어도 무엇을 왜 보여 줄지는 내가 정해야 한 편이 됩니다.</p>
+  <div class="three">
+    <div><b>AI 숏드라마 광고</b>짧은 이야기 + 제품 · 가게 · 서비스. 인물이 문제를 겪고 제품으로 달라진다</div>
+    <div><b>브랜드 필름</b>말보다 분위기 · 세계관. 4회차 ③ 상품 이미지 영상의 확장</div>
+    <div><b>AI 단편 · 설명</b>상상 장면 · 과정 설명 · 뮤직비디오. 찍을 수 없는 것을 보여 주는 이야기</div>
+  </div>
+  <table>
+    <tr><th style="width:24mm"></th><th>④ 공감 상황극 (4장)</th><th>⑦ AI 숏드라마 광고</th></tr>
+    <tr><td><strong>목적</strong></td><td>공감 · 공유. "완전 내 얘기"</td><td>제품 · 가게를 <strong>기억하게</strong></td></tr>
+    <tr><td><strong>끝</strong></td><td>반전 한마디. <strong>한 편으로 끝</strong></td><td>제품이 해결 → 엔딩 카드. 숏드라마는 <strong>다음 편</strong>이 궁금하게</td></tr>
+    <tr><td><strong>화면</strong></td><td>일러스트 4컷 + 말풍선</td><td>실사풍 6컷 + 내레이션</td></tr>
+  </table>
+  <table>
+    <tr><th style="width:24mm"></th><th>유튜브 롱폼</th><th>릴스 · 쇼츠 · 틱톡</th></tr>
+    <tr><td><strong>형식</strong></td><td>브랜드 필름 · AI 단편 1~3분, 16:9</td><td>AI 광고 20~30초 · 숏드라마 회차 30초~1분, 9:16</td></tr>
+    <tr><td><strong>리듬</strong></td><td>컷이 길고, 음악과 내레이션이 끌고 간다</td><td>컷당 3~5초, 첫 1초에 문제 장면이나 결과</td></tr>
+    <tr><td><strong>끝</strong></td><td>세계관 · 메시지 한 줄 + 채널 · 브랜드</td><td>엔딩 카드(제품명 · 한 줄 · 어디서) 또는 다음 편</td></tr>
+  </table>
+  <h3><span class="step">B 레퍼런스</span>메이킹 해부 · 3회차 한강 단풍 샘플</h3>
+  <p>3회차에 편집한 공통 샘플 <strong>"한강 단풍, 지금이에요"</strong>는 사실 처음부터 끝까지 AI로 만든 영상입니다. 오늘 실습도 같은 순서로 갑니다. 대본 · 스토리보드 문서는 단톡방에 있으니, 3회차 샘플 파일과 나란히 놓고 각 단계에서 무엇이 정해졌는지 봅니다.</p>
+  <div class="side" style="grid-template-columns: 30mm 1fr">
+    <figure><img src="../assets/images/s3/sample_R1.jpg" alt="공통 샘플 주인공 기준 이미지" style="width:30mm;border-radius:2mm"><figcaption>기준 이미지 R1<br>AI 생성 · 가상 인물</figcaption></figure>
+    <div>
+      <table style="margin-bottom:2mm">
+        <tr><th style="width:30mm">단계</th><th>한강 단풍에서 정한 것</th></tr>
+        <tr><td><strong>① 대본</strong></td><td>장면 순서 · 내레이션 문장 · 컷마다 길이</td></tr>
+        <tr><td><strong>② 스토리보드</strong></td><td>컷마다 화면 · 카메라(샷 크기 · 앵글 · 움직임)</td></tr>
+        <tr><td><strong>③ 기준 이미지</strong></td><td>인물 · 장소를 <strong>먼저 고정</strong>. 남색 코트 · 크림색 머플러 · 단발의 R1 한 장</td></tr>
+        <tr><td><strong>④ 이미지 → 영상</strong></td><td>기준 이미지를 넣고 <strong>움직임만</strong> 프롬프트로(줍기 · 걷기 · 떨어지는 잎)</td></tr>
+        <tr><td><strong>⑤ 목소리 · 편집</strong></td><td>Fish Audio 내레이션 · CapCut에서 잇기 · 자막 · 음악</td></tr>
+      </table>
+    </div>
+  </div>
+  <p>가장 중요한 단계는 <strong>③ 기준 이미지</strong>입니다. 기준 이미지가 흔들리면 모든 컷이 흔들립니다. 한강 단풍의 컷들이 같은 사람처럼 보이는 이유는 영상을 만들기 전에 인물 이미지 한 장을 먼저 정하고, 모든 인물 컷에 그 이미지를 참고로 넣었기 때문입니다. 강사가 고른 AI 광고 · 숏드라마 레퍼런스를 볼 때도 같은 질문을 던집니다.</p>
+  <ol class="tight">
+    <li>인물이 컷마다 같은 사람으로 보이나? 무엇(옷 · 머리 · 색)이 같게 유지되나?</li>
+    <li>제품은 몇 번째 컷, 몇 초에 처음 나오나? 제품이 문제를 해결하는 순간은 어디인가?</li>
+    <li>말(내레이션 · 대사)과 글자(자막 · 엔딩 카드) 중 무엇이 이야기를 끌고 가나?</li>
+    <li>AI 생성 표시는 어디에 어떻게 되어 있나?</li>
+  </ol>
+  <div class="ref">
+    <div class="ln"><span>영상 · 채널</span><i></i></div>
+    <div class="ln"><span>제품 첫 등장 · 몇 초</span><i></i></div>
+    <div class="ln"><span>내가 가져올 것 하나</span><i></i></div>
+  </div>
+  <h3><span class="step">C 기획</span>이야기 한 줄 · 20~30초 6컷</h3>
+  <p>광고는 짧은 이야기입니다. 시청자가 <strong>"나도 저래"</strong>(상황 · 문제)에서 <strong>"저거 좋네"</strong>(제품 · 변화)로 따라오게 만듭니다. 먼저 이야기를 한 줄로 씁니다. 프롬프트는 이야기를 대신 만들어 주지 않습니다. <strong>이 한 줄은 내가</strong> 씁니다.</p>
+  <div class="formula">
+    <div><b>[누가]</b>겨울 아침 출근하는 직장인</div><span>+</span>
+    <div><b>[어떤 문제]</b>찬 바람에 손이 거칠어 따갑다</div><span>→</span>
+    <div><b>[제품으로]</b>가방 속 핸드크림 하나</div><span>=</span>
+    <div class="res"><b>[어떻게 달라짐]</b>따뜻한 커피를 편하게 감싸 쥔다</div>
+  </div>
+  <p>한 줄이 정해지면 <strong>6컷</strong>으로 나눕니다. 24초 광고라면 4초 × 6컷, 20초라면 컷당 3~4초입니다. 이야기의 중심은 <strong>제품이 문제를 해결하는 순간</strong>(3 · 4컷)이고, 나머지 컷은 그 순간을 위해 있습니다.</p>
+  <div class="cut6">
+    <div><i>1 · 0~4초</i><b>상황</b>누가 · 어디서. 평범한 하루<em>출근길 횡단보도, 찬 바람</em></div>
+    <div><i>2 · 4~8초</i><b>문제</b>불편 · 고민을 표정으로<em>손등을 보며 찡그림 (클로즈업)</em></div>
+    <div class="hl"><i>3 · 8~12초</i><b>제품 등장</b>손 · 클로즈업, 가장 예쁜 순간<em>가방에서 꺼낸 핸드크림 (내 제품 사진)</em></div>
+    <div class="hl"><i>4 · 12~16초</i><b>변화</b>써 본 뒤 달라진 모습<em>바르고 손을 비비는 손 클로즈업</em></div>
+    <div><i>5 · 16~20초</i><b>감정</b>웃음 · 여유 한 장면<em>카페에서 컵을 감싸 쥐고 미소</em></div>
+    <div class="res"><i>6 · 20~24초</i><b>엔딩 카드</b>제품명 · 한 줄 · 어디서<em>제품 + "겨울 손에 한 번" + 가게 이름</em></div>
+  </div>
+  <p class="muted" style="margin-top:-2mm">예시는 가상의 핸드크림 광고입니다. 워크북 AI 6컷 표에 내 제품으로 채웁니다.</p>
+  <p>숏드라마 회차형이라면 6컷 끝의 엔딩 카드 대신 <strong>다음 편으로 이어지는 고리</strong>(문제가 다 풀리기 직전, 새 인물 등장)로 끝내고, 제품은 이야기 안에 자연스럽게 놓습니다. 롱폼 브랜드 필름이라면 같은 6단계를 컷 두세 개씩으로 늘려 1분 이상으로 만듭니다.</p>
+  <h3><span class="step">D 생성</span>일관성이 전부</h3>
+  <p>⑦에서 D는 촬영 대신 <strong>생성</strong>입니다. AI 컷은 하나하나는 예뻐도, 컷마다 얼굴 · 옷 · 빛이 바뀌면 여섯 장면이 여섯 개의 다른 영상처럼 보입니다. <strong>같은 인물 · 같은 제품 · 같은 빛 = 한 편의 광고.</strong></p>
+  <table>
+    <tr><th style="width:32mm">규칙</th><th>어떻게 · 왜</th></tr>
+    <tr><td><strong>① 기준 인물 1장</strong></td><td>얼굴 · 머리 · 옷을 한 장으로 고정하고, 모든 인물 컷에 <strong>참고 이미지</strong>로 넣습니다. 프롬프트에도 옷 · 머리를 매번 같은 말로 적습니다</td></tr>
+    <tr><td><strong>② 제품은 내 사진</strong></td><td>제품 모양 · 색 · 라벨은 내가 찍은 사진 그대로. AI가 제품을 새로 그리면 실물과 달라집니다(4장 ③ 상품 프롬프트 규칙). 제품 컷은 사진을 넣고 "제품은 바꾸지 말 것"을 적습니다</td></tr>
+    <tr><td><strong>③ 카메라를 말로</strong></td><td>1회차 촬영 용어를 영어로. close-up · wide shot · low angle · slow push-in. 말하지 않으면 AI가 아무 앵글이나 고릅니다</td></tr>
+    <tr><td><strong>④ 움직임은 하나</strong></td><td>한 컷에 동작 하나, 카메라 움직임 하나. "걷다가 앉아서 컵을 들고 웃는다"를 한 컷에 넣으면 손 · 몸이 꼬입니다</td></tr>
+    <tr><td><strong>⑤ 2~3번 만들고 고르기</strong></td><td>같은 프롬프트로 컷마다 2~3번. 손 · 얼굴 · 글자가 이상하면 다시. 생성할 때마다 크레딧이 드니 프롬프트를 먼저 다듬고 누릅니다</td></tr>
+  </table>
+  <p>프롬프트는 3회차의 <strong>프롬프트 공식 여섯 칸</strong>으로 씁니다. 영어로 쓰면 결과가 더 안정적이고, 우리말로 쓴 뒤 ChatGPT에 "영상 생성 프롬프트로 영어로 바꿔 줘"라고 해도 됩니다. 아래는 위 6컷 중 4번 컷의 예입니다.</p>
+  <table>
+    <tr><th style="width:28mm">칸</th><th style="width:48mm">우리말</th><th>영어 프롬프트 예</th></tr>
+    <tr><td><strong>누가 · 무엇</strong></td><td>기준 인물의 두 손 · 내 핸드크림</td><td>the same woman's hands (beige wool coat sleeves), holding the hand cream tube from the reference photo</td></tr>
+    <tr><td><strong>어디서</strong></td><td>카페 창가 테이블</td><td>at a wooden cafe table by the window</td></tr>
+    <tr><td><strong>동작</strong></td><td>크림을 바르고 천천히 비빈다</td><td>gently rubs the cream into the back of her hands</td></tr>
+    <tr><td><strong>카메라</strong></td><td>클로즈업 · 천천히 다가가기</td><td>close-up, slow push-in</td></tr>
+    <tr><td><strong>빛 · 분위기</strong></td><td>겨울 아침 햇빛 · 따뜻하게</td><td>soft winter morning sunlight, warm and calm</td></tr>
+    <tr><td><strong>하지 말 것</strong></td><td>글자 · 로고 금지, 제품 바꾸지 않기</td><td>no text, no logos, keep the product exactly as in the photo, natural hands</td></tr>
+  </table>
+  <p>순서는 한강 단풍과 같습니다. <strong>이미지를 먼저</strong> 만들어 고르고, 고른 이미지를 넣어 <strong>영상은 움직임만</strong> 적습니다. 텍스트만으로 영상을 바로 만들면 컷마다 얼굴이 바뀌기 쉽습니다. 시간이 모자라면 이미지만 만들고 CapCut에서 키프레임으로 천천히 줌 · 이동을 줘도 됩니다(4장 ④ 살아 있는 컷). 고를 때는 <strong>손가락 수, 얼굴이 기준 이미지와 같은지, 글자 · 라벨이 깨지지 않았는지, 물건이 갑자기 생기거나 사라지지 않는지</strong>를 봅니다.</p>
+  <h3>AI 숏드라마 광고 마스터 프롬프트</h3>
+  <p>4회차 상품 영상 프롬프트의 이야기 버전입니다. 제품 사진 한 장과 이야기 한 줄을 넣으면 아래 여섯 단계를 차례로 진행합니다. 한 장짜리 배포물 · 원문 파일은 단톡방에 있습니다. 한 번에 다 받지 말고 <strong>단계마다 확인하고 고친 뒤</strong> 다음으로 넘어갑니다. 아래 상자는 앞의 두 단계만 줄여 쓴 맛보기이고, 실습에서는 배포물 원문을 통째로 붙여 넣어 씁니다.</p>
+  <div class="formula sm">
+    <div><b>① 이야기 한 줄</b>[누가][어떤 문제] → [제품으로][어떻게]</div><span>→</span>
+    <div><b>② 인물 기준 이미지</b>얼굴 · 옷 · 분위기 고정</div><span>→</span>
+    <div><b>③ 6컷 이미지</b>한 장씩, 제품은 사진 그대로</div><span>→</span>
+    <div><b>④ 영상 프롬프트</b>컷마다 5초, 움직임 하나</div><span>→</span>
+    <div><b>⑤ 내레이션 · 자막</b>Fish Audio용 대본 · 엔딩 카드</div><span>→</span>
+    <div class="res"><b>⑥ 편집표</b>순서 · 초 · 효과 · 음악</div>
+  </div>
+  <div class="prompt">첨부한 사진은 내 제품 <b>[제품 이름 · 무엇인지]</b>야. 이 제품으로 <b>9:16, [24]초 안팎, 6컷</b> AI 숏드라마 광고를 만들 거야.<br>
+  이야기 한 줄: <b>[누가] [어떤 문제] → [제품으로] [어떻게 달라짐]</b><br>
+  한 단계씩 진행해 줘. 지금은 ①과 ②만: ① 6컷 표(컷 · 초 · 장면 · 카메라 · 내레이션 한 줄). 구조는 상황 → 문제 → 제품 등장 → 변화 → 감정 → 엔딩 카드 ② 인물 기준 이미지 프롬프트(영어, 얼굴 · 머리 · 옷을 구체적으로). 제품은 사진과 모양 · 색 · 라벨이 똑같아야 하고, 실존 인물 · 유명인 · 남의 상표는 넣지 마. 제품 효과는 내가 알려 준 것만 쓰고, 모르는 효과 · 숫자는 지어내지 말고 "확인 필요"로 표시해 줘. 내가 "다음"이라고 하면 ③ 6컷 이미지 프롬프트로 넘어가.</div>
+  <h3><span class="step">E 편집 ①</span>AI 컷 잇기 · 색 통일</h3>
+  <div class="cyc" style="margin-top:0">슬라이드 따라하기 04</div>
+  <p>AI 컷은 붙이면 따로 노는 경우가 많습니다. 색 · 소리 · 글자로 <strong>"한 편"</strong>으로 묶는 것이 ⑦에서 편집이 하는 일입니다.</p>
+  <ol class="tight">
+    <li>9:16 새 프로젝트에 AI 영상 6컷을 순서대로 메인 트랙에 놓습니다. 컷당 3~4초.</li>
+    <li>손 · 얼굴 · 글자가 이상한 프레임이 있는 부분은 재생헤드를 두고 <kbd>Q</kbd> · <kbd>W</kbd>(재생헤드 왼쪽 · 오른쪽 지우기)나 <kbd>Ctrl</kbd>+<kbd>B</kbd>로 잘라 냅니다. <strong>0.5초라도</strong> 잘라 냅니다.</li>
+    <li>한 클립에서 조정(밝기 · 색온도 · 채도)을 맞추고, 같은 설정을 나머지 클립에 적용합니다. 3회차 사이클 7(색 맞추기)과 같습니다.</li>
+    <li>내레이션 mp3를 오디오 트랙에 놓고 자동 캡션 → 강조 단어 하나(②③).</li>
+    <li>음악을 깔고 −20dB 안팎으로 낮춘 뒤, 끝에 엔딩 카드(③)를 붙입니다.</li>
+  </ol>
+  <p>이상한 프레임은 생각보다 오래 남습니다. 재생할 때는 못 보다가 커버 · 썸네일로 멈춘 화면에서 손가락이 여섯 개인 것이 드러나기도 합니다. 컷마다 한 번씩은 <strong>멈춰서</strong> 보세요. 색은 모든 컷을 똑같이 만들기보다 <strong>하나의 톤</strong>(따뜻하게 · 차갑게)으로 맞추는 것이 목표입니다. 필터를 하나 골라 약하게 전체에 얹는 방법도 있습니다.</p>
+  <h3><span class="step">E 편집 ②</span>내레이션 · 효과음 · 음악</h3>
+  <ul class="tight">
+    <li><strong>내레이션</strong>: 6컷 표의 내레이션 한 줄씩을 대본으로 Fish Audio에서 한국어 목소리를 골라 mp3로 받습니다(3장 8절). 길이가 영상 길이를 정합니다. 1초에 4~5글자 안팎이 기준이라, 20초 광고라면 소리 내 읽어 <strong>18초 안에 끝나는 대본</strong>이어야 엔딩 카드에 숨 쉴 틈이 남습니다. 길면 말을 빠르게 하지 말고 문장을 줄입니다. CapCut 텍스트 읽기(TTS)로 만들어도 됩니다.</li>
+    <li><strong>효과음</strong>: 장면마다 <strong>하나</strong>. 바람 소리(1컷) · 뚜껑 딸깍(3컷) · 카페 웅성거림(5컷). AI 영상은 대개 소리가 없거나 어색하니, 효과음 하나가 화면을 진짜처럼 만듭니다.</li>
+    <li><strong>음악</strong>: 잔잔한 곡 하나. 내레이션이 있을 때 <strong>−15 ~ −20dB</strong>, 내레이션이 없는 엔딩 카드에서는 조금 올립니다(4장 ① 덕킹). 말은 0dB 기준입니다.</li>
+  </ul>
+  <h3><span class="step">E 편집 ③</span>자막 · 엔딩 카드</h3>
+  <p>내레이션에 <strong>자동 캡션</strong>을 만들고, 이름 · 숫자를 고친 뒤 핵심 단어 하나만 강조합니다. 마지막 2~3초는 <strong>엔딩 카드</strong>입니다. 제품 사진(실물) + 제품명 + 한 줄 + 어디서(가게 이름 · 온라인 스토어). 엔딩 카드는 텍스트 템플릿으로 빠르게 만들 수 있지만, 채널 브랜딩 한 장의 색 · 글꼴(6절)로 맞추면 다음 광고에도 그대로 씁니다.</p>
+  <h3><span class="step">F 발행</span>AI 표시 · 지킬 선</h3>
+  <p>AI 광고는 <strong>"진짜처럼 보이는 것"이 장점이자 위험</strong>입니다. 실제와 다른 효과 · 후기 · 인물로 오해하게 만들면 과장 광고, 기만 광고가 됩니다.</p>
+  <div class="grid2" style="margin-bottom:3mm">
+    <div class="box" style="margin:0"><strong>꼭 할 것</strong>
+      <ul class="check" style="margin:1.5mm 0 0">
+        <li>플랫폼의 <strong>AI 생성 표시</strong> 켜기(메뉴 이름은 앱마다 다름)</li>
+        <li>제품 모양 · 색 · 크기는 <strong>실물대로</strong></li>
+        <li>광고 · 협찬이면 <strong>표시</strong></li>
+        <li>쓴 도구 · 음원의 <strong>이용 조건</strong> 확인</li>
+      </ul>
+    </div>
+    <div class="box gold" style="margin:0"><strong>하지 않을 것</strong>
+      <ul class="check" style="margin:1.5mm 0 0">
+        <li>실존 인물 · 유명인을 닮은 얼굴 · 목소리</li>
+        <li>남의 상표 · 캐릭터 · 작품</li>
+        <li>없는 효과 · 가짜 후기 · 가짜 전문가</li>
+        <li>실제 고객인 척하는 AI 인물</li>
+      </ul>
+    </div>
+  </div>
+  <ul class="tight">
+    <li><strong>AI로 만들었다고 밝혀도, 거짓 정보는 거짓 정보입니다.</strong> AI 생성 표시는 "이 장면은 만든 것"이라는 뜻일 뿐, 그 안의 효과 · 숫자까지 괜찮다는 뜻이 아닙니다. 화장품이라면 "주름이 사라진다", 식품이라면 "살이 빠진다"처럼 확인되지 않은 효과를 장면으로 보여 주는 것도 과장 광고입니다.</li>
+    <li><strong>남의 목소리는 쓰지 않습니다.</strong> 목소리 복제 기능은 내 목소리나 허락받은 목소리로만. 유명인 · 성우 목소리를 흉내 낸 AI 목소리는 쓰지 않습니다.</li>
+    <li><strong>이용 조건</strong>: 이미지 · 영상 · 목소리 도구마다 상업적 이용 가능 여부, 무료 플랜의 워터마크 · 사용 제한이 다릅니다. 광고로 쓸 영상이라면 쓴 도구의 약관을 한 번 확인하고, 음원도 상업 이용이 되는지 봅니다.</li>
+  </ul>
+  <div class="card">
+    <h3><span class="tag">카테고리 카드 ⑦</span>AI 영상</h3>
+    <div class="catcard">
+      <table>
+        <tr><td>A</td><td>찍을 수 없는 장면 · 숏드라마 광고 20~30초 · 브랜드 필름</td></tr>
+        <tr><td>B</td><td>한강 단풍 메이킹 다섯 단계 · 인물 일관성 · 제품 첫 등장</td></tr>
+        <tr><td>C</td><td>이야기 한 줄 · 상황 → 문제 → 제품 → 변화 → 감정 → 엔딩</td></tr>
+        <tr><td>D</td><td>기준 이미지 · 내 제품 사진 · 카메라를 말로 · 움직임 하나 · 2~3번</td></tr>
+        <tr><td>E</td><td>잇기 · 색 통일 · 내레이션 · 효과음 · 음악 · 자막 · 엔딩 카드</td></tr>
+        <tr><td>F</td><td>AI 표시 · 실물대로 · 광고 표시 · 이용 조건 · 하지 않을 것</td></tr>
+      </table>
+      <div>
+        <h4>G 체크 · 올리기 전 다섯</h4>
+        <ul class="check">
+          <li>인물이 컷마다 같은 사람</li>
+          <li>손 · 얼굴 · 글자 오류 없음</li>
+          <li>이야기가 한 줄로 설명됨</li>
+          <li>AI 생성 표시 켬</li>
+          <li>실존 인물 · 남의 상표 · 거짓 효과 없음</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <h3>자동화는 어디까지 맡기나</h3>
+  <p>수업에서는 강사가 <strong>기획 → 프롬프트 → 이미지 · 영상 생성 → 편집</strong>까지를 AI 도구로 잇는 흐름을 시연합니다(실습 없이 보기만). 버튼 몇 번으로 광고 한 편이 나오는 것처럼 보이지만, 중요한 것은 그 흐름 안에서 <strong>사람이 꼭 보는 지점</strong>입니다.</p>
+  <table class="who">
+    <tr><th>기획</th><th>대본 · 프롬프트</th><th>이미지 · 영상</th><th>고르기 · 검수</th><th>편집 · 자막</th><th>올리기 · 표시</th></tr>
+    <tr><td class="h">사람</td><td class="m">AI 초안 → 사람</td><td class="a">AI</td><td class="h">사람</td><td class="m">AI 도움 → 사람 마무리</td><td class="h">사람</td></tr>
+  </table>
+  <ul class="tight">
+    <li><strong>기획</strong>: 누구에게, 무엇을, 왜. 이야기 한 줄은 AI가 대신 정할 수 없습니다. 내 가게 · 내 제품 · 내 손님을 아는 사람은 나입니다.</li>
+    <li><strong>검수</strong>: 손 · 얼굴 · 글자 오류, 제품이 실물과 같은지, 인물이 실존 인물을 닮지 않았는지. AI는 자기가 만든 것의 오류를 잘 보지 못합니다.</li>
+    <li><strong>사실 · 책임</strong>: 가격 · 효과 · 혜택, 광고 · AI 표시. 영상이 나가면 책임지는 사람은 올린 사람입니다.</li>
+  </ul>
+  <p>어두운 칸이 사람이 꼭 하는 일입니다. 자동화가 늘어날수록 손으로 하는 일은 줄지만, 이 세 칸은 오히려 더 중요해집니다. 8절의 제작 노트에 "사람이 한 것"을 적는 이유이기도 합니다.</p>
+  <div class="tip">실습은 <strong>20초 AI 광고 초안</strong>입니다. 워크북에 이야기 한 줄을 쓰고 → 내 상품 사진을 첨부해 마스터 프롬프트를 실행하고 → 인물 기준 이미지 → 6컷 이미지 → (가능하면) 영상, 컷마다 2~3번 → 따라하기 04로 잇기 · 색 · 내레이션 · 엔딩. 시간 안에 6컷이 어려우면 <strong>4컷도 괜찮고</strong>, 이미지만 만들어 키프레임으로 움직여도 됩니다. 다 만들면 옆자리에게 보여 주고 <strong>"무슨 광고인지 한 줄로 말해 줘"</strong>라고 부탁합니다. 내가 쓴 이야기 한 줄과 같은 말이 나오면 성공입니다. 대표작이 AI 영상이라면 이 초안을 5 · 6교시에 완성합니다.</div>
+
+  <h2><span class="num">5</span>끝까지 보게 하는 법</h2>
+  <div class="cyc">4교시 · 2회차 훅 · 4장 롱폼 문법을 대표작에 다시</div>
+  <p>지금까지는 한 편을 <strong>잘 만드는 법</strong>이었다면, 이제는 사람들이 <strong>계속 보게 만드는 법</strong>입니다. 시청자는 "다음이 궁금할 때" 남습니다. 그 궁금함을 만드는 첫 장치가 <strong>훅</strong>이고, 이어 가는 장치가 열린 고리 · 장면 바꾸기 · 챕터 · 다음 편입니다. 훅이 걸리는 시간은 플랫폼마다 다릅니다. <strong>숏폼은 첫 3초, 롱폼은 첫 30초</strong>입니다.</p>
+  <h3>훅 공식 다섯</h3>
+  <table style="break-inside:avoid">
+    <tr><th style="width:22mm">공식</th><th>숏폼 첫 3초</th><th>롱폼 첫 30초</th><th style="width:30mm">잘 맞는 카테고리</th></tr>
+    <tr><td><strong>① 질문</strong></td><td>"이거 나만 그래요?" 화면 글자 한 줄</td><td>"왜 다들 ○○할까?" 질문으로 열고, 답을 영상 안에서</td><td>④ · ② · ⑤</td></tr>
+    <tr><td><strong>② 결과 먼저</strong></td><td>완성된 모습 · 비포 애프터를 첫 장면에</td><td>완성본 5초 미리보기 → "어떻게 만들었는지 처음부터"</td><td>② · ③ · ⑦</td></tr>
+    <tr><td><strong>③ 반전</strong></td><td>예상과 다른 한마디 · 장면</td><td>"다들 ○○라고 하는데, 사실은…"</td><td>④ · ⑤</td></tr>
+    <tr><td><strong>④ 숫자</strong></td><td>"3가지만" · "10분 만에"</td><td>"15년 차가 알려 주는 세 가지" + 챕터로 셋 나누기</td><td>② · ⑤ · ⑥</td></tr>
+    <tr><td><strong>⑤ 공감</strong></td><td>"월요일 아침 직장인" — 내 얘기 같은 상황</td><td>시청자의 고민을 내 말로 먼저 말해 주기</td><td>④ · ① · ⑥</td></tr>
+  </table>
+  <p><strong>훅은 약속입니다.</strong> 첫 3초 · 30초에 약속한 것을 영상 안에서 반드시 지켜야 합니다. "끝에 반전이 있어요"라고 해 놓고 없으면, 그 영상은 끝까지 보였어도 다음 영상부터 믿지 않습니다. 약속을 크게 할수록 지키기도 어려워지니, 내 영상이 실제로 줄 수 있는 만큼만 약속하세요.</p>
+  <p>대표작의 첫 문장 · 첫 장면을 공식 셋 이상으로 <strong>다시 써 보고</strong>(워크북 훅 3안) 가장 센 것 하나를 고릅니다. 예를 들어 ⑤ 사장님 인터뷰를 다섯 공식으로 모두 써 보면 ① "왜 이 동네에 가게를 열었을까?" ② 손님으로 꽉 찬 가게 장면부터 ③ "처음 1년은 손님이 하루 세 명이었어요" ④ "8년, 가게를 지킨 세 가지" ⑤ "가게 문 열기 전날 밤, 잠 못 잔 적 있죠?". 같은 영상도 첫 문장이 바뀌면 전혀 다른 영상이 됩니다.</p>
+  <h3>끝까지 보게 하는 장치 넷</h3>
+  <div class="four">
+    <div><b>열린 고리</b>"마지막에 ○○도 보여 드릴게요." 뒤를 예고해 궁금함을 남기고, 반드시 보여 준다</div>
+    <div><b>장면 바꾸기</b>같은 화면 10초 이상 그대로 두지 않기. B롤 · 줌 · 각도 · 자막 하나라도</div>
+    <div><b>챕터</b>롱폼은 구간을 나눠 "얼마나 남았는지" 보이게. 숏폼은 한 메시지</div>
+    <div><b>다음 편</b>끝에 시리즈 다음 편 · 관련 영상. 끝까지 본 사람에게 갈 곳을 준다</div>
+  </div>
+  <ul class="tight">
+    <li><strong>장면 바꾸기의 10초와 1분</strong>: ⑤의 G 체크는 "같은 화면이 1분 넘게 가지 않음"이었습니다. 1분은 카메라 · 장면 자체가 바뀌는 최소 기준이고, 10초는 화면 안에서 <strong>무언가</strong>(줌 · 자막 · B롤 한 컷)가 바뀌는 기준입니다. 숏폼은 3~5초마다, 토크 롱폼은 10~20초마다 작은 변화가 있으면 충분합니다.</li>
+    <li><strong>카테고리마다 장치가 다릅니다</strong>: ⑤ 토크는 "가장 힘들었던 순간은 뒤에서" 같은 열린 고리와 질문 챕터, ⑥ 라이브는 "10분 뒤 깜짝 혜택" 예고와 상품별 챕터, ⑦ 숏드라마는 다음 편으로 이어지는 고리가 핵심입니다.</li>
+    <li><strong>숏폼에서는</strong> 열린 고리 대신 <strong>루프</strong>(끝이 처음으로 이어지게 · 4장)가, 챕터 대신 <strong>한 영상 한 메시지</strong>가 같은 일을 합니다.</li>
+  </ul>
+  <p>끝까지 본 사람이 다음 영상을 누릅니다. 다음 영상을 누른 사람이 구독 · 팔로우를 합니다. <strong>끝까지 보게 하는 것이 곧 채널이 자라는 길</strong>이고, 그래서 다음 절이 채널입니다.</p>
+
+  <h2><span class="num">6</span>채널로 묶기</h2>
+  <div class="cyc">4교시 · 워크북 성공 채널 해부 · 채널 브랜딩 한 장 · 수익화 경로 지도</div>
+  <p>영상 한 편은 한 번 보이고 지나가지만, <strong>채널은 쌓입니다.</strong> 같은 얼굴(썸네일 · 커버 규칙), 같은 말투, 같은 시리즈로 꾸준히 보이면 사람들이 "이 채널은 이런 곳"이라고 기억합니다. 채널이 곧 브랜드이고, 강사 · 취업 · 사업 어느 쪽이든 <strong>나의 포트폴리오</strong>가 됩니다.</p>
+  <h3>성공 채널 해부하는 법</h3>
+  <p>한 편을 해부하던 눈을 채널 전체로 넓힙니다. 강사가 고른 예시를 함께 본 뒤, 각자 <strong>내 메인 스타일과 같은 카테고리</strong>의 채널 하나를 골라 해부합니다. 채널 첫 화면과 영상 목록을 열고 아래 네 질문에 답합니다.</p>
+  <table>
+    <tr><th style="width:44mm">질문</th><th>어디서 · 어떻게 보나</th></tr>
+    <tr><td><strong>① 채널 소개 한 줄은?</strong></td><td>채널 이름 아래 소개 · 프로필 첫 줄. 누구에게 무엇을 주는 채널인지 한 줄로 말하고 있나</td></tr>
+    <tr><td><strong>② 썸네일 · 커버 규칙은?</strong></td><td>최근 영상 10개를 한 화면에 놓고 반복되는 것 찾기. 색 · 글꼴 · 글자 위치 · 얼굴/제품 위치</td></tr>
+    <tr><td><strong>③ 시리즈 이름 · 업로드 주기는?</strong></td><td>제목에 반복되는 말(코너 이름), 재생목록. 올린 날짜로 간격 세기</td></tr>
+    <tr><td><strong>④ 내가 가져올 것 하나는?</strong></td><td>위 셋 중 내 채널에 바로 쓸 것 하나만</td></tr>
+  </table>
+  <p>가장 많이 본 영상(인기순)과 최근 영상을 <strong>따로</strong> 보면 더 많이 보입니다. 인기 영상은 그 채널이 어떻게 알려졌는지를, 최근 영상은 지금 무엇을 꾸준히 하고 있는지를 보여 줍니다. 그리고 가져올 것은 <strong>틀</strong>입니다. 썸네일 배치 · 시리즈 방식 · 업로드 리듬은 가져와도 되지만, 그 채널의 글꼴 조합 · 캐릭터 · 문구를 그대로 쓰면 따라 한 채널로 보입니다.</p>
+  <h3>채널 브랜딩 한 장</h3>
+  <p>워크북 한 장에 다섯 칸을 채우고, 7교시에 채널 소개 · 프로필에 반영합니다. 규칙이 있으면 다음 영상이 빨라집니다. 썸네일을 만들 때마다 색 · 글꼴을 고민하지 않아도 되기 때문입니다.</p>
+  <div class="side" style="grid-template-columns: 1fr 62mm">
+    <table style="margin:0">
+      <tr><th style="width:30mm">칸</th><th>기준</th></tr>
+      <tr><td><strong>① 이름</strong></td><td>기억하기 쉽게, 무엇을 하는지 보이게. 소리 내 읽어 한 번에 알아듣는 말</td></tr>
+      <tr><td><strong>② 소개 한 줄</strong></td><td><strong>누구에게 · 무엇을 · 어떻게</strong></td></tr>
+      <tr><td><strong>③ 썸네일 · 커버 규칙</strong></td><td>색 2개 · 글꼴 1개 · 글자 위치 · 얼굴/제품 위치</td></tr>
+      <tr><td><strong>④ 시리즈</strong></td><td>반복되는 코너 이름(예: "사장님의 월요일")</td></tr>
+      <tr><td><strong>⑤ 업로드 주기</strong></td><td>지킬 수 있는 만큼. 예: 주 1회 롱폼 + 숏폼 2</td></tr>
+    </table>
+    <div class="stamp" style="margin:0"><b>예시 (가상 채널)</b><br><b>이름</b> 골목가게 연구소<br><b>소개</b> 동네 작은 가게 사장님을 3분 인터뷰로 만나는 채널<br><b>규칙</b> 진초록 + 노랑 · 굵은 고딕 하나 · 글자는 왼쪽 위 · 얼굴은 오른쪽<br><b>시리즈</b> 사장님의 월요일<br><b>주기</b> 매주 화요일 롱폼 1 + 숏폼 2</div>
+  </div>
+  <p>업로드 주기는 <strong>욕심보다 지킬 수 있는 만큼</strong>입니다. 주 3회를 약속하고 한 달 뒤 멈추는 것보다 2주에 1회를 1년 지키는 채널이 더 큽니다. 처음 정할 때는 이번 대표작을 만드는 데 걸린 시간을 기준으로 잡으세요.</p>
+  <h3>유튜브 · 인스타 역할 나누기</h3>
+  <table>
+    <tr><th style="width:24mm"></th><th>유튜브</th><th>인스타그램</th></tr>
+    <tr><td><strong>강점</strong></td><td>깊이 · 검색 · 쌓이는 영상. 오래전 영상도 검색으로 계속 보임</td><td>브랜드 · 소식 · 단골. 지금의 분위기와 관계</td></tr>
+    <tr><td><strong>올리는 것</strong></td><td>롱폼 1편 + 쇼츠로 연결</td><td>릴스 + 피드 + 스토리</td></tr>
+    <tr><td><strong>역할</strong></td><td>채널 = 나의 포트폴리오. 원본이 사는 곳</td><td>프로필 링크 · 위치 · DM. 사람과 가게가 만나는 곳</td></tr>
+  </table>
+  <p>둘 다 할 때는 같은 일을 두 번 하지 말고 <strong>역할을 나눕니다.</strong> 원본은 유튜브에, 조각은 릴스 · 쇼츠에. 4장의 "한 번 찍고 여러 번 쓰기"를 플랫폼별로 펼친 것입니다. 인스타그램 프로필 링크에 유튜브 채널을, 유튜브 설명란에 인스타 계정 · 가게 위치를 서로 걸어 둡니다.</p>
+  <h3>롱폼 1 → 숏폼 3</h3>
+  <table>
+    <tr><th style="width:30mm">카테고리</th><th>숏폼 셋은 무엇으로</th></tr>
+    <tr><td><strong>①~④</strong></td><td>4장 2절: 하이라이트 · 핵심 한 가지 · 비하인드</td></tr>
+    <tr><td><strong>⑤ 토크 · 인터뷰</strong></td><td>센 문장 셋. 문장마다 첫 1초에 그 말 + 표정 클로즈업</td></tr>
+    <tr><td><strong>⑥ 라이브</strong></td><td>하이라이트 셋: 보여 주기 · 증거 · 혜택. 끝에 다음 라이브 일정</td></tr>
+    <tr><td><strong>⑦ AI 영상</strong></td><td>15초 줄인 버전 · 메이킹(기준 이미지 → 완성) · 다음 편 예고</td></tr>
+  </table>
+  <p>만드는 순서는 4장과 같습니다. 롱폼 프로젝트를 <strong>복제</strong> → 9:16으로 바꾸기 → 컷마다 얼굴 · 제품을 가운데로 → 첫 1초를 가장 센 장면으로 → 자막을 세로 안전 영역으로. 쇼츠로 올릴 때는 <strong>관련 동영상에 원본 롱폼</strong>을 연결해 숏폼이 롱폼의 예고편이 되게 합니다.</p>
+  <h3>수익화 경로 지도</h3>
+  <p>콘텐츠로 돈이 되는 길은 여러 개입니다. 광고 집행 · 예산 같은 마케팅은 마케팅실무 과목에서 다루고, 이 수업은 <strong>"콘텐츠 안에서" 무엇을 할지</strong>만 봅니다. 조건 · 기준은 플랫폼마다 다르고 자주 바뀌니, 숫자는 그때그때 공식 안내에서 확인하세요.</p>
+  <table>
+    <tr><th style="width:30mm">경로</th><th style="width:46mm">어떻게</th><th>콘텐츠에서 할 일</th><th style="width:20mm">잘 맞는</th></tr>
+    <tr><td><strong>플랫폼 광고 수익</strong></td><td>조건을 채우면 영상에 광고가 붙음</td><td>꾸준한 업로드 · 시청 시간. 5절의 끝까지 보게 하는 장치</td><td>①②⑤</td></tr>
+    <tr><td><strong>협찬 · 브랜디드</strong></td><td>브랜드가 제작을 의뢰</td><td><strong>광고 · 협찬 표시</strong>(뒷광고 금지). 영상 처음 · 설명란 · 플랫폼 표시 기능</td><td>②③⑦</td></tr>
+    <tr><td><strong>제휴 마케팅</strong></td><td>내 링크로 판매되면 수수료</td><td>링크 고지 · 솔직한 리뷰. 좋은 점만 말하면 신뢰를 잃음</td><td>②</td></tr>
+    <tr><td><strong>내 사업 판매</strong></td><td>가게 · 상품 · 예약으로 연결</td><td>상품 영상 · 라이브 · 위치 · 링크</td><td>③⑥①</td></tr>
+    <tr><td><strong>강의 · 디지털 상품</strong></td><td>노하우를 강의 · 자료로</td><td>정보성 · 토크로 신뢰 쌓기. 영상이 맛보기 강의가 됨</td><td>②⑤</td></tr>
+    <tr><td><strong>제작 대행 · 프리랜서</strong></td><td>남의 영상 · AI 영상을 만들어 줌</td><td>포트폴리오 = 내 채널. 대표작이 곧 견본</td><td>⑦③</td></tr>
+  </table>
+  <p>워크북 지도에서 <strong>내 메인 스타일에 맞는 경로 하나</strong>에 동그라미를 칩니다. 처음부터 여러 길을 노리면 영상의 목적이 흐려집니다. 그리고 어떤 경로든 공통 조건은 같습니다. <strong>표시는 정직하게.</strong> 돈 · 제품 · 할인을 받았다면 밝히고, 내 링크로 수수료를 받는다면 알립니다. 시청자가 그 사실을 안다고 덜 사지 않지만, 숨긴 것을 알게 되면 채널 전체를 믿지 않습니다.</p>
+
+  <h2><span class="num">7</span>대표작 만들기</h2>
+  <div class="cyc">5 · 6교시 · 슬라이드 따라하기 05 · 워크북 대표작 체크</div>
+  <p>오늘 배운 것을 모두 대표작 한 편에 씁니다. 6회차 상영 시간은 1인 <strong>3분 안팎</strong>이니, 그 안에 보여 줄 수 있는 길이로 만듭니다. 형식은 메인 스타일이 정합니다.</p>
+  <div class="three">
+    <div><b>롱폼 1편</b>16:9 · 2~4분<br>브이로그 · 정보성 · 리뷰 · 토크<br><span class="muted">+ 숏폼 1편</span></div>
+    <div><b>숏폼 시리즈 3편</b>9:16 · 15~30초 × 3<br>상품 이미지 · 상황극 · 정보 카드<br><span class="muted">같은 시리즈 이름</span></div>
+    <div><b>AI 영상 1편</b>9:16 또는 16:9 · 30초~1분<br>AI 숏드라마 광고 · 브랜드 필름<br><span class="muted">+ 메이킹 숏폼 (선택)</span></div>
+  </div>
+  <p>망설여지면 <strong>숏폼 시리즈</strong>가 가장 빠릅니다. 한 편이 짧아 끝내기 쉽고, 세 편을 같은 틀로 만들면 저절로 시리즈 연습이 됩니다. ⑥ 라이브가 메인 스타일이라면 오늘 리허설 녹화본으로 <strong>하이라이트 숏폼 시리즈 3편</strong>을 만들면 됩니다.</p>
+  <h3>카테고리 카드 순서대로</h3>
+  <p>4 · 5장의 카테고리 카드 한 장이 그대로 제작 순서입니다. <strong>C(구조)를 먼저 워크북에 쓰고</strong> 편집에 들어가면 헤매지 않습니다.</p>
+  <table style="break-inside:avoid">
+    <tr><th style="width:12mm"></th><th style="width:28mm">단계</th><th>무엇을</th><th style="width:22mm">언제</th></tr>
+    <tr><td><strong>1</strong></td><td><strong>C 구조</strong></td><td>카드의 구조 막대에 내 장면을 한 칸씩 넣기. 장면 이름과 초를 적는다</td><td>5교시 · 5분</td></tr>
+    <tr><td><strong>2</strong></td><td><strong>재료 정리</strong></td><td>한 폴더에 모으고 가져오기. 쓰지 않을 컷은 이때 빼기</td><td>5교시</td></tr>
+    <tr><td><strong>3</strong></td><td><strong>가편집</strong></td><td>구조 순서대로 클립을 늘어놓고 <strong>길이부터</strong> 맞추기. 자막 · 효과는 아직</td><td>5교시 끝까지</td></tr>
+    <tr><td><strong>4</strong></td><td><strong>E 편집</strong></td><td>카드의 핵심 기법 <strong>2~3개만</strong> 깊게</td><td>6교시</td></tr>
+    <tr><td><strong>5</strong></td><td><strong>F · G</strong></td><td>제목 · 썸네일 · 커버 · 체크 다섯</td><td>6교시 끝</td></tr>
+  </table>
+  <p><strong>가편집</strong>은 완성하기 전의 거친 편집입니다. 자막도 음악도 없이 순서와 길이만 맞춘 상태로 처음부터 끝까지 한 번 봅니다. 여기서 "이 장면은 길다", "이 순서가 어색하다"를 고치는 것이 가장 싸게 고치는 방법입니다. 자막을 다 달고 나서 순서를 바꾸면 자막까지 다시 옮겨야 합니다. <strong>5교시 끝 = 가편집 완료, 6교시 = 다듬기 · 숏폼 · 썸네일.</strong></p>
+  <table>
+    <tr><th style="width:30mm">메인 스타일</th><th>E에서 고를 핵심 기법 (2~3개)</th></tr>
+    <tr><td>① 브이로그</td><td>J컷 · L컷 · 덕킹 · 이동 압축 · 색 하나</td></tr>
+    <tr><td>② 정보성 · 리뷰</td><td>확대 키프레임 · 정보 카드 · 화면 속 화면 · 분할</td></tr>
+    <tr><td>③ 상품 이미지</td><td>비트 컷 · 스피드 램프 · 색 하나 · 매치 컷</td></tr>
+    <tr><td>④ 공감 상황극</td><td>살아 있는 컷 · 말풍선 타이밍 · 반전 한 박자</td></tr>
+    <tr><td>⑤ 토크 · 인터뷰</td><td>군말 · 공백 지우기 · 두 카메라 · 강조 자막 + 줌 + B롤</td></tr>
+    <tr><td>⑥ 라이브</td><td>자막으로 하이라이트 찾기 · 9:16 · 정보 카드</td></tr>
+    <tr><td>⑦ AI 영상</td><td>잇기 · 색 통일 · 내레이션 + 효과음 + 음악 · 엔딩 카드</td></tr>
+  </table>
+  <h3>대표작에 꼭 넣을 것</h3>
+  <div class="grid2" style="margin-bottom:4mm">
+    <div class="box" style="margin:0"><strong>기본 여섯 · 모두</strong>
+      <ul class="check" style="margin:1.5mm 0 0">
+        <li><strong>훅</strong>: 첫 3초 · 첫 30초에 훅 공식 하나(5절)</li>
+        <li><strong>구조</strong>: 카테고리 카드 C대로</li>
+        <li><strong>카테고리 핵심 기법</strong>: 카드 E에서 2개 이상</li>
+        <li><strong>자막 · 소리</strong>: 말 0dB · 음악 −15 ~ −20dB</li>
+        <li><strong>시리즈 인트로 · 엔딩</strong>: 따라하기 05</li>
+        <li><strong>체크 다섯</strong>: 카드 G</li>
+      </ul>
+    </div>
+    <div class="box gold" style="margin:0"><strong>+ 도전</strong>
+      <ul class="check" style="margin:1.5mm 0 0">
+        <li><strong>숏폼 1편 더</strong>: 대표작에서 센 장면 · 9:16</li>
+        <li><strong>썸네일 · 커버 3안</strong>: 옆자리 1초 테스트(4장 8절)</li>
+        <li><strong>보이스오버</strong>: 내 목소리 또는 TTS</li>
+      </ul>
+      <p style="margin:2mm 0 0">기본을 먼저 채우고 도전합니다. 소리는 여전히 <strong>파형 · dB · 폰</strong>으로 확인합니다(교실 PC는 소리가 안 날 수 있음).</p>
+    </div>
+  </div>
+  <h3>시리즈 첫 편처럼: 인트로 · 엔딩 · 자막 고정</h3>
+  <div class="cyc" style="margin-top:0">슬라이드 따라하기 05</div>
+  <p>대표작은 <strong>시리즈의 첫 편</strong>처럼 만듭니다. 처음 2초, 끝 2초, 자막 스타일이 브랜딩 한 장의 규칙대로 고정되어 있으면, 다음 영상은 그 세 가지를 붙여넣기만 해도 같은 시리즈로 보입니다.</p>
+  <ol class="tight">
+    <li>대표작 <strong>처음 2초</strong>에 시리즈 이름 텍스트를 넣고 등장 애니메이션을 하나만 줍니다.</li>
+    <li><strong>끝 2초</strong>에 엔딩 카드: 채널 이름 · 다음 편 한 줄 · (구독 · 팔로우 안내).</li>
+    <li>자막 하나를 브랜딩 한 장의 <strong>색 · 글꼴</strong>로 꾸미고 전체 자막에 적용합니다.</li>
+    <li>인트로 · 엔딩 · 자막 클립을 한꺼번에 선택해 <strong>복사</strong>해 둡니다. 이 프로젝트를 "시리즈 틀"로 복제해 남겨 두면 더 안전합니다.</li>
+    <li>다음 영상 프로젝트에 <strong>붙여넣기</strong>만 하면 같은 시리즈가 됩니다.</li>
+  </ol>
+  <p>인트로는 짧을수록 좋습니다. 숏폼에서 2초 넘는 로고 인트로는 첫 1초 문법을 깹니다. 숏폼이라면 시리즈 이름을 <strong>첫 장면 위에 얹고</strong>, 따로 인트로 화면을 만들지 않는 편이 낫습니다. 롱폼은 훅(첫 장면 · 첫 문장) 뒤에 2초 인트로를 두는 방법도 많이 씁니다. 훅으로 붙잡고, 인트로로 "이 채널의 이 시리즈"를 알립니다.</p>
+  <h3>재료가 모자랄 때</h3>
+  <table>
+    <tr><th style="width:42mm">모자란 것</th><th>이렇게 채우기</th></tr>
+    <tr><td><strong>영상 전체 길이</strong></td><td>억지로 늘리지 말고 형식을 바꿉니다. 2분 롱폼이 안 되면 <strong>숏폼 시리즈 3편</strong>으로</td></tr>
+    <tr><td><strong>장면 · B롤</strong></td><td>4회차 소스 · 오늘 실습 결과물에서 가져오기. 손 · 물건 · 화면 녹화는 교실에서도 바로 찍을 수 있음</td></tr>
+    <tr><td><strong>찍을 수 없는 장면</strong></td><td>AI 컷(4절 마스터 프롬프트). 단, <strong>제품 자체는 실물</strong>을 찍고 AI는 배경 · 분위기 · 상상 장면만</td></tr>
+    <tr><td><strong>사진만 있음</strong></td><td>키프레임 줌 · 이동으로 살아 있는 컷(4장 ④)</td></tr>
+    <tr><td><strong>말할 거리</strong></td><td>셀프 토크 1분을 찍어 보이스오버로 깔거나, 키워드 5줄로 TTS 내레이션</td></tr>
+  </table>
+  <div class="tip"><strong>완벽보다 완성.</strong> 6회차에 보여 줄 수 있는 한 편이 목표입니다. 6교시가 끝날 때 80% 완성본이라도 내보내기를 한 번 해 두세요. 고칠 시간이 남으면 고치고, 남지 않으면 그 파일이 상영작입니다. 완성하지 못한 100점짜리 프로젝트보다 끝까지 이어진 70점짜리 한 편이 피드백을 받을 수 있습니다.</div>
+
+  <h2><span class="num">8</span>올리기 · 6회차 상영 준비 · 제작 노트</h2>
+  <div class="cyc">7교시 · 워크북 마지막 쪽 제작 노트</div>
+  <h3>업로드 · 채널 정리</h3>
+  <p>4장 8절의 업로드 체크를 그대로 쓰고, 채널 소개 · 프로필을 오늘 만든 브랜딩 한 장으로 바꿉니다. 목표는 하나입니다. <strong>채널을 처음 보는 사람이 10초 안에 무슨 채널인지 알게.</strong></p>
+  <table style="break-inside:avoid">
+    <tr><th style="width:10mm"></th><th style="width:34mm">할 일</th><th>요령</th></tr>
+    <tr><td><strong>1</strong></td><td><strong>대표작 업로드</strong></td><td>제목 · 설명 첫 두 줄 · 챕터 · 썸네일 · AI · 협찬 표시. 공개 범위는 일부 공개도 괜찮습니다</td></tr>
+    <tr><td><strong>2</strong></td><td><strong>숏폼 업로드</strong></td><td>커버 · 첫 1초 · 음원은 앱 안에서 · 해시태그 3~5개</td></tr>
+    <tr><td><strong>3</strong></td><td><strong>채널 소개</strong></td><td>소개 한 줄 · 프로필 사진 · 배너(선택)</td></tr>
+    <tr><td><strong>4</strong></td><td><strong>재생목록 · 시리즈</strong></td><td>시리즈 이름으로 재생목록 하나. 대표작을 첫 영상으로</td></tr>
+    <tr><td><strong>5</strong></td><td><strong>링크 제출</strong></td><td>대표작 · 숏폼 링크를 공용 폴더(또는 폼)에</td></tr>
+  </table>
+  <h3>6회차 상영 준비</h3>
+  <p>6회차(12/10)는 우리끼리 <strong>보고, 듣고, 나누는 날</strong>입니다. 한 사람에 3분 안팎, 대표작을 틀고 한마디를 합니다. 파일은 당일 정해진 시간까지 드라이브 상영 폴더 한 곳에 모읍니다.</p>
+  <div class="grid2" style="margin-bottom:4mm">
+    <div class="box line" style="margin:0"><strong>상영 준비</strong>
+      <ul class="check" style="margin:1.5mm 0 0">
+        <li>상영작 하나 정하기(대표작 또는 올린 영상)</li>
+        <li>파일 이름: <strong>이름_제목.mp4</strong></li>
+        <li>드라이브 상영 폴더에 제출</li>
+        <li>한마디 30초 준비(무엇을 · 왜)</li>
+      </ul>
+    </div>
+    <div class="box line" style="margin:0"><strong>상영 파일 확인</strong>
+      <ul class="tight" style="margin:1.5mm 0 0">
+        <li>플랫폼에서 내려받지 말고 <strong>CapCut에서 내보낸 원본</strong>(1080p 이상)으로</li>
+        <li>첫 프레임이 검은 화면이 아닌지, 끝 엔딩 카드가 잘리지 않았는지</li>
+        <li>소리: 말 0dB 기준, 폰 스피커로 한 번 들어 보기</li>
+        <li>숏폼 시리즈라면 세 편을 이어 붙인 상영용 파일 하나로</li>
+      </ul>
+    </div>
+  </div>
+  <p><strong>한마디 30초</strong>는 이 틀로 준비하면 충분합니다. "이 영상은 [누구]에게 [무엇]을 보여 주려고 만들었습니다. [○번 카테고리]를 고른 이유는 [한 줄]. 가장 신경 쓴 곳은 [장면 · 기법]이고, 다음 편은 [한 줄]입니다." 말로 해 보면 내 영상의 의도가 정리되고, 듣는 사람은 무엇을 보고 피드백할지 알게 됩니다.</p>
+  <h3>제작 노트</h3>
+  <p>제작 노트는 워크북 마지막 쪽에 쓰고 6회차에 가져옵니다. 네 칸입니다.</p>
+  <div class="four">
+    <div><b>사람이 한 것 3줄</b>기획 · 촬영 · 고르기 · 편집 판단 · 사실 확인 중 내가 한 일</div>
+    <div><b>AI가 도운 것 3줄</b>대본 초안 · 이미지 · 영상 · 목소리 · 자동 캡션 등 도구와 쓴 곳</div>
+    <div><b>가져온 채널 · 레퍼런스</b>해부한 채널 · 영상과 거기서 가져온 것 하나</div>
+    <div><b>처음과 지금</b>1회차의 나와 지금의 나, 달라진 것 한 줄</div>
+  </div>
+  <p>"사람이 한 것"과 "AI가 도운 것"을 나눠 적는 이유는 4절 자동화와 같습니다. AI 도구가 많아질수록 <strong>내가 무엇을 판단했는지</strong> 말할 수 있는 사람이 일을 맡습니다. 포트폴리오 · 강의 · 제작 대행 어디서든 "이 영상에서 제가 한 일은 이것입니다"라고 말하는 연습이 됩니다. 그리고 영상에 AI 생성 표시를 켜야 하는지도 이 노트로 한 번 더 확인할 수 있습니다.</p>
+  <div class="stamp"><b>예시 (가상)</b> · <b>사람</b> 이야기 한 줄과 6컷 구성 · 기준 이미지 3안 중 고르기 · 손가락 오류 컷 잘라 내고 가격 · 가게 이름 확인 / <b>AI</b> 6컷 이미지 · 영상 생성 · Fish Audio 내레이션 · 자동 캡션 / <b>가져온 것</b> 해부한 채널의 "엔딩 카드에 다음 편 한 줄" / <b>달라진 것</b> 예쁜 장면보다 이야기 한 줄을 먼저 쓰게 됐다</div>
+
+  <h2 style="break-before:page;page-break-before:always;border-top:none;padding-top:0;margin-top:0"><span class="num">9</span>장 정리 체크리스트</h2>
+  <p>6회차 전에 한 번 펼쳐 표시해 보세요. 표시하지 못한 칸은 해당 절로 돌아가면 됩니다.</p>
+  <div class="sumgrid">
+    <div class="card">
+      <h3>⑤ 토크 · 인터뷰 · 2절</h3>
+      <ul class="check">
+        <li>키워드 메모 5줄로 1분 셀프 토크를 할 수 있다</li>
+        <li>열린 질문 5개 + 꼬리 질문으로 질문지를 쓸 수 있다</li>
+        <li>박수로 두 카메라를 맞추고 화면만 바꿀 수 있다</li>
+        <li>자동 캡션으로 군말 · 공백을 지울 수 있다</li>
+        <li>출연 동의 · 사실 확인을 했다</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>⑥ 라이브 · 라이브커머스 · 3절</h3>
+      <ul class="check">
+        <li>시간 · 내용 · 화면 · 멘트 · 준비물로 큐시트를 쓸 수 있다</li>
+        <li>문제 → 보여 주기 → 증거 → 혜택 → 지금 순서로 말할 수 있다</li>
+        <li>녹화본에서 자막으로 하이라이트 1분을 만들 수 있다</li>
+        <li>광고 표시 · 가격 정확 · 닉네임 가리기를 안다</li>
+        <li>과장 표현을 사실대로 바꿔 말할 수 있다</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>⑦ AI 영상 · 4절</h3>
+      <ul class="check">
+        <li>이야기 한 줄을 6컷(상황 ~ 엔딩 카드)으로 나눌 수 있다</li>
+        <li>기준 이미지 · 내 제품 사진으로 일관성을 지킨다</li>
+        <li>프롬프트 공식 여섯 칸으로 컷 프롬프트를 쓸 수 있다</li>
+        <li>AI 컷을 색 · 내레이션 · 엔딩 카드로 한 편으로 묶는다</li>
+        <li>AI 표시를 켜고 하지 않을 것 넷을 지킨다</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>끝까지 · 채널 · 5 · 6절</h3>
+      <ul class="check">
+        <li>훅 공식으로 대표작 첫 문장 3안을 써 보고 하나를 골랐다</li>
+        <li>열린 고리 · 장면 바꾸기 · 챕터 · 다음 편 중 둘 이상을 넣었다</li>
+        <li>성공 채널 하나를 해부하고 가져올 것 하나를 정했다</li>
+        <li>채널 브랜딩 한 장 다섯 칸을 채웠다</li>
+        <li>내 메인 스타일에 맞는 수익화 경로 하나를 골랐다</li>
+      </ul>
+    </div>
+    <div class="card" style="grid-column: 1 / span 2">
+      <h3>대표작 · 6회차 · 7 · 8절</h3>
+      <div class="grid2" style="gap:5mm">
+        <ul class="check">
+          <li>대표작 1편을 세 형식 중 하나로 완성했다</li>
+          <li>대표작에 꼭 넣을 기본 여섯을 모두 채웠다</li>
+          <li>인트로 · 엔딩 · 자막을 시리즈 틀로 저장했다</li>
+          <li>대표작에서 숏폼 1편을 잘라 올렸다</li>
+        </ul>
+        <ul class="check">
+          <li>채널 소개 · 재생목록을 브랜딩 한 장대로 바꿨다</li>
+          <li>상영 파일 <strong>이름_제목.mp4</strong>를 상영 폴더에 냈다</li>
+          <li>한마디 30초를 준비했다</li>
+          <li>제작 노트 네 칸을 채웠다</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="box dark" style="margin-top:4mm">
+    <h3 style="margin-top:0">한 편에서 채널로</h3>
+    <p style="margin:0">1회차에 보는 눈을, 2회차에 무엇을 찍을지를, 3회차에 붙이는 손을 익혔고, 4 · 5회차에는 일곱 카테고리를 A부터 G까지 돌려 내 메인 스타일로 대표작 한 편을 만들었습니다. 대표작은 끝이 아니라 <strong>시리즈의 첫 편</strong>입니다. 오늘 고정한 인트로 · 엔딩 · 자막과 브랜딩 한 장이 있으면 둘째 편은 훨씬 빨라집니다. 다음 시간, 그동안 만든 영상으로 트리에 불을 켭니다. 6회차 상영회에서 만나요.</p>
+  </div>
+</section>
+
+</body>
+</html>

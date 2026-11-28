@@ -97,7 +97,7 @@ async function main() {
     k.card(s, rx, cy, rw, ch, { fill: C.text2 });
     k.text(s, "확인", { x: rx + 0.3, y: cy + 0.15, w: rw - 0.6, h: 0.35, fontSize: 14, bold: true, color: C.accent1 });
     k.text(s, check, { x: rx + 0.3, y: cy + 0.5, w: rw - 0.6, h: ch - 1.05, fontSize: 18, bold: true, color: C.background1, valign: "top" });
-    k.text(s, "크루 전원이 되면 완료 카드", { x: rx + 0.3, y: cy + ch - 0.5, w: rw - 0.6, h: 0.35, fontSize: 11.5, color: C.accent6 });
+    k.text(s, "내 화면이 같아지면 완료 카드", { x: rx + 0.3, y: cy + ch - 0.5, w: rw - 0.6, h: 0.35, fontSize: 11.5, color: C.accent6 });
     return s;
   };
 
