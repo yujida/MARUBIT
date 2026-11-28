@@ -1,0 +1,1683 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>촬영편집 5회차 워크북 — 카테고리 A to Z ② 말하는 · 만드는 영상</title>
+<link rel="stylesheet" href="../assets/print.css">
+<style>
+  h3.top { margin-top: 0; }
+  .opt { color: var(--sage); font-size: 9pt; font-weight: 400; }
+  td.lab { font-weight: 700; color: var(--pine); }
+  .cb { display: inline-block; width: 3.6mm; height: 3.6mm; border: 1.3px solid var(--pine); border-radius: 0.8mm; vertical-align: -0.5mm; margin-right: 1.2mm; background: #fff; }
+  kbd { font-family: "Pretendard", sans-serif; font-weight: 700; font-size: 9pt; color: var(--pine); background: #fff; border: 1.2px solid var(--pine); border-bottom-width: 2.2px; border-radius: 1.2mm; padding: 0.1mm 1.6mm; white-space: nowrap; }
+  .note { font-size: 9pt; color: var(--sage); margin: 0 0 3mm; }
+  .note b { color: var(--pine); }
+  .db { display: inline-block; background: var(--pine); color: #fff; border-radius: 1.2mm; padding: 0 1.6mm; font-weight: 700; font-size: 8.8pt; white-space: nowrap; }
+
+  /* 표지 */
+  .today { display: grid; grid-template-columns: 1fr auto 1fr; gap: 4mm; align-items: stretch; margin-top: 12mm; }
+  .today > div.c { border: 1.5px solid var(--pale); border-radius: 3mm; padding: 4mm 5mm; }
+  .today > div.c b { display: block; font-size: 17pt; color: var(--gold); margin-bottom: 1mm; }
+  .today > div.c span { font-size: 10pt; color: #fff; line-height: 1.5; }
+  .today > div.p { align-self: center; font-size: 22pt; font-weight: 800; color: var(--gold); }
+  .cover .orn { margin-top: 4mm; color: var(--pale); font-size: 11pt; font-weight: 700; }
+
+  /* 오늘의 방식 */
+  .loop { display: flex; align-items: stretch; gap: 2mm; margin: 0 0 3mm; }
+  .loop .st { flex: 1; border: 1.5px solid var(--pine); border-radius: 3mm; padding: 2.5mm 3.5mm; background: #fff; }
+  .loop .st b { display: block; font-size: 12pt; color: var(--pine); }
+  .loop .st span { font-size: 8.8pt; color: var(--sage); line-height: 1.4; display: block; }
+  .loop .st.on { background: #fbf1d3; border-color: var(--gold); }
+  .loop .ar { align-self: center; font-size: 15pt; font-weight: 800; color: var(--gold); }
+  .day { display: grid; grid-template-columns: repeat(7, 1fr); gap: 1.5mm; margin: 0 0 4mm; }
+  .day div { background: var(--mist); border-radius: 2mm; padding: 1.8mm 2mm; font-size: 8.4pt; line-height: 1.35; color: var(--sage); }
+  .day div b { display: block; color: var(--pine); font-size: 9.2pt; }
+  .day div i { font-style: normal; display: block; color: var(--green); font-weight: 800; font-size: 8pt; }
+  .cmp td:first-child { width: 30mm; font-weight: 700; color: var(--pine); }
+  .cmp td { padding: 1.4mm 2.5mm; font-size: 9.4pt; }
+  .cmp th { padding: 1.6mm 2.5mm; }
+  .three { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5mm; margin: 0 0 3.5mm; }
+  .three > div { border: 1.2px solid var(--line); border-radius: 2.5mm; padding: 2mm 3mm; font-size: 8.8pt; line-height: 1.45; background: #fff; }
+  .three > div b { display: block; color: var(--pine); font-size: 10pt; }
+  .gram { border-radius: 3mm; padding: 3mm 4mm; }
+  .gram h3 { margin: 0 0 1.5mm; }
+  .gram ol { margin: 0; padding-left: 5mm; font-size: 9.2pt; line-height: 1.45; }
+  .gram ol li { margin-bottom: 0.8mm; }
+  .gram ol li b { color: var(--pine); }
+  .gram.dk { background: var(--pine); color: #fff; }
+  .gram.dk h3, .gram.dk ol li b { color: var(--pale); }
+  .gram.lt { background: var(--mist); }
+
+  /* 카테고리 지도 */
+  .cats { display: grid; grid-template-columns: 1fr 1fr; gap: 2mm 4mm; margin: 0 0 3mm; }
+  .cats div { display: flex; align-items: center; gap: 3mm; border-radius: 2.5mm; padding: 2mm 3mm; background: var(--mist); }
+  .cats div.n5 { background: #fff; border: 1.2px solid var(--line); }
+  .cats div.goal { background: #fbf1d3; font-weight: 700; color: var(--pine); justify-content: center; font-size: 10pt; }
+  .cats .n { font-size: 16pt; font-weight: 800; color: var(--gold); width: 7mm; text-align: center; }
+  .cats .n5 .n { color: var(--sage); }
+  .cats .t { flex: 1; line-height: 1.3; }
+  .cats .t b { display: block; color: var(--pine); font-size: 10.5pt; }
+  .cats .t span { font-size: 8.5pt; color: var(--sage); }
+  .cats .w { font-size: 8.5pt; font-weight: 700; color: var(--green); text-align: right; white-space: nowrap; }
+  .cats .n5 .w { color: var(--sage); }
+  .mapto { font-size: 9pt; margin: 0 0 3.5mm; }
+  .mapto td { padding: 1.2mm 2.5mm; }
+  .mapto td:first-child { width: 32mm; font-weight: 700; color: var(--pine); }
+  .az { display: grid; grid-template-columns: repeat(7, 1fr); gap: 1.5mm; margin: 0 0 1.5mm; }
+  .az div { border-radius: 2mm; padding: 2mm 2.2mm; background: var(--mist); font-size: 8.2pt; line-height: 1.35; color: var(--sage); min-height: 21mm; }
+  .az div b { display: block; font-size: 17pt; color: var(--gold); line-height: 1.1; }
+  .az div strong { display: block; font-size: 10pt; color: var(--pine); margin-bottom: 0.5mm; }
+  .az div.e { background: var(--pine); color: var(--pale); }
+  .az div.e strong { color: #fff; }
+  .pickme td { padding: 2mm 2.5mm; vertical-align: middle; }
+  .pickme td:first-child { width: 34mm; font-weight: 700; color: var(--pine); }
+  .pickme td.write { height: 11mm; }
+  .circ { display: inline-flex; gap: 2.2mm; flex-wrap: wrap; }
+  .circ span { display: inline-block; border: 1.2px solid var(--line); border-radius: 5mm; padding: 0.6mm 2.6mm; font-size: 9pt; font-weight: 600; color: var(--pine); }
+  .opts { display: inline-flex; gap: 4mm; flex-wrap: wrap; font-size: 9.3pt; }
+
+  /* 촬영 체크 */
+  .shoot { display: grid; grid-template-columns: repeat(5, 1fr); gap: 2mm; margin: 0 0 3.5mm; }
+  .shoot div { border: 1.4px solid var(--pine); border-radius: 2.5mm; padding: 2.2mm 2.5mm; background: #fff; font-size: 8.6pt; line-height: 1.4; color: var(--sage); }
+  .shoot div b { display: block; color: var(--pine); font-size: 10pt; margin: 1mm 0 0.5mm; line-height: 1.3; }
+  .count { display: grid; grid-template-columns: repeat(10, 1fr); gap: 1.5mm; margin: 0 0 1.5mm; }
+  .count div { border: 1.2px solid var(--line); border-radius: 1.5mm; height: 10.5mm; padding: 0.8mm 1.2mm; font-size: 8pt; color: var(--sage); position: relative; background: #fff; }
+  .count div b { font-size: 10pt; color: var(--pine); }
+  .count div i { font-style: normal; position: absolute; right: 1mm; top: 1mm; width: 3mm; height: 3mm; border: 1.2px solid var(--pine); border-radius: 0.6mm; }
+  .count div.v { background: #dbe7f1; }
+  .places td { height: 6.6mm; vertical-align: middle; padding: 1mm 2.5mm; }
+  .places td:first-child { width: 10mm; text-align: center; font-weight: 700; color: var(--pine); }
+  .places td.ck { width: 38mm; white-space: nowrap; }
+  .selfie { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3mm; margin: 0 0 3.5mm; }
+  .selfie div { background: #fff; border-radius: 2mm; padding: 2mm 3mm; font-size: 9pt; }
+  .selfie div b { color: var(--pine); }
+  .selfie div .ln { border-bottom: 1px solid var(--line); height: 6mm; }
+
+  /* 카테고리 카드 */
+  .cchd { display: flex; align-items: center; gap: 4mm; margin: 0 0 3mm; }
+  .cchd .big { flex: 0 0 15mm; height: 15mm; border-radius: 50%; background: var(--pine); color: var(--gold); font-size: 24pt; font-weight: 800; text-align: center; line-height: 15mm; }
+  .cchd h1 { margin: 0; font-size: 20pt; }
+  .cchd .tags { display: flex; gap: 1.5mm; flex-wrap: wrap; margin-top: 1mm; }
+  .cchd .tags span { background: var(--mist); border-radius: 3mm; padding: 0.3mm 2.6mm; font-size: 8.6pt; font-weight: 700; color: var(--pine); }
+  .cchd .tags span.g { background: #fbf1d3; }
+  .cc { display: grid; grid-template-columns: 12mm 1fr; gap: 0; border: 1.4px solid var(--line); border-radius: 3mm; overflow: hidden; background: #fff; }
+  .cc > .L { background: var(--pine); color: var(--gold); text-align: center; padding-top: 2mm; font-size: 16pt; font-weight: 800; line-height: 1; border-bottom: 1px solid #2c5442; }
+  .cc > .L small { display: block; font-size: 7.6pt; color: var(--pale); font-weight: 600; margin-top: 1mm; }
+  .cc > .L.e { background: var(--gold); color: var(--pine); border-bottom-color: #c99220; }
+  .cc > .L.e small { color: var(--pine); }
+  .cc > .R { padding: 2.2mm 3.5mm; border-bottom: 1px solid var(--line); font-size: 9.2pt; line-height: 1.45; }
+  .cc > .L.last, .cc > .R.last { border-bottom: none; }
+  .cc .R p { margin: 0; }
+  .cc .R .def { font-size: 11pt; font-weight: 800; color: var(--pine); }
+  .cc .R .kinds { color: var(--sage); font-size: 8.8pt; }
+  .spec { display: flex; gap: 1.5mm; flex-wrap: wrap; margin-top: 1mm; }
+  .spec span { border: 1.1px solid var(--line); border-radius: 1.5mm; padding: 0.2mm 2mm; font-size: 8.5pt; }
+  .spec span b { color: var(--green); margin-right: 1mm; }
+  .ref { display: grid; grid-template-columns: 1fr 58mm; gap: 4mm; }
+  .ref .hd { font-size: 8.5pt; font-weight: 700; color: var(--gold); }
+  .wl { display: flex; align-items: flex-end; gap: 2mm; font-size: 8.6pt; color: var(--sage); margin-top: 1mm; }
+  .wl div { flex: 1; border-bottom: 1px solid var(--line); height: 6.2mm; }
+  .tl { display: grid; grid-template-columns: repeat(12, 1fr); border: 1.1px solid var(--sage); height: 6.5mm; margin-top: 1.5mm; }
+  .tl div + div { border-left: 1px solid var(--line); }
+  .tlx { display: flex; justify-content: space-between; font-size: 7.5pt; color: var(--sage); }
+  .look { font-size: 8.4pt; color: var(--sage); line-height: 1.4; background: var(--mist); border-radius: 2mm; padding: 1.8mm 2.5mm; }
+  .look b { color: var(--pine); display: block; font-size: 8.8pt; }
+  .bar { display: flex; border-radius: 2mm; overflow: hidden; margin: 1mm 0 0.5mm; }
+  .bar > div { padding: 1.6mm 2mm 1.8mm; color: #fff; font-size: 8pt; line-height: 1.3; border-right: 1.5px solid #fff; min-height: 17mm; }
+  .bar > div:last-child { border-right: none; }
+  .bar > div b { display: block; font-size: 9.6pt; margin-bottom: 0.4mm; }
+  .bar .c1 { background: #173a2b; } .bar .c2 { background: #2e7d57; } .bar .c3 { background: #3e6b57; }
+  .bar .c4 { background: #e0a526; color: var(--pine); } .bar .c5 { background: #6e8f7e; } .bar .c6 { background: #b9a26a; }
+  .bar .op { flex: 0 0 auto !important; background: #fff; color: var(--gold); font-size: 16pt; font-weight: 800; display: flex; align-items: center; padding: 0 1.5mm; border-right: none; }
+  .bartop { display: flex; justify-content: space-between; font-size: 8.5pt; }
+  .bartop b { color: var(--pine); }
+  .bartop span { color: var(--green); font-weight: 700; }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 1mm 5mm; }
+  .two.c3 { grid-template-columns: 1fr 1fr 1fr; }
+  ul.dl { list-style: none; padding: 0; margin: 0; }
+  ul.dl li { position: relative; padding-left: 3.2mm; margin-bottom: 0.4mm; }
+  ul.dl li::before { content: ""; position: absolute; left: 0; top: 0.62em; width: 1.4mm; height: 1.4mm; border-radius: 50%; background: var(--gold); }
+  ul.dl li b { color: var(--pine); }
+  .ed { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2mm; }
+  .ed div { background: var(--mist); border-radius: 2mm; padding: 1.6mm 2.5mm; font-size: 8.6pt; line-height: 1.4; }
+  .ed div b { display: block; color: var(--pine); font-size: 9.6pt; }
+  .ed div em { font-style: normal; display: inline-block; background: var(--gold); color: var(--pine); font-weight: 800; font-size: 7.8pt; border-radius: 1mm; padding: 0 1.4mm; margin-top: 0.6mm; }
+  .fpub { display: grid; grid-template-columns: 1fr 1fr; gap: 3mm; }
+  .fpub > div { border-radius: 2mm; padding: 1.6mm 2.5mm; font-size: 8.7pt; line-height: 1.42; }
+  .fpub > div.lo { background: var(--mist); }
+  .fpub > div.sh { background: #fbf1d3; }
+  .fpub > div > b { display: block; color: var(--pine); font-size: 9.4pt; }
+  ul.gck { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 0.6mm 5mm; }
+  ul.gck li { font-size: 9.3pt; font-weight: 600; }
+  .ccfoot { margin: 2.5mm 0 0; font-size: 8.6pt; color: var(--sage); }
+  .ccfoot b { color: var(--pine); }
+
+  /* 따라하기 카드 */
+  .cyc { border: 1.4px solid var(--line); border-radius: 3mm; padding: 3mm 4mm 2.5mm; margin: 0 0 3.5mm; break-inside: avoid; background: #fff; }
+  .cyc .hd { display: flex; align-items: center; gap: 3mm; margin-bottom: 1.8mm; }
+  .cyc .no { flex: 0 0 11mm; height: 11mm; border-radius: 50%; background: var(--pine); color: #fff; font-weight: 800; text-align: center; line-height: 11mm; font-size: 11.5pt; }
+  .cyc .hd h3 { margin: 0; font-size: 12.5pt; line-height: 1.25; }
+  .cyc .hd .why { display: block; font-size: 8.8pt; color: var(--sage); font-weight: 400; line-height: 1.35; }
+  .cyc .hd .tag { margin-left: auto; background: #fbf1d3; color: var(--pine); font-size: 8.3pt; font-weight: 700; border-radius: 3mm; padding: 0.4mm 2.5mm; white-space: nowrap; }
+  .cyc .body { display: grid; grid-template-columns: 1fr 62mm; gap: 4mm; }
+  ol.steps { list-style: none; counter-reset: s; padding: 0; margin: 0 0 2mm; font-size: 9.8pt; line-height: 1.5; }
+  ol.steps li { counter-increment: s; position: relative; padding-left: 7mm; margin-bottom: 1mm; }
+  ol.steps li::before { content: counter(s); position: absolute; left: 0; top: 0.35mm; width: 4.8mm; height: 4.8mm; line-height: 4.8mm; border-radius: 1mm; background: var(--mist); color: var(--pine); font-weight: 800; font-size: 8.5pt; text-align: center; }
+  .aside { background: var(--mist); border-radius: 2mm; padding: 2.5mm 3mm; font-size: 8.8pt; line-height: 1.45; align-self: start; }
+  .aside b { color: var(--pine); display: block; font-size: 9.3pt; margin-bottom: 0.5mm; }
+  .aside.gold { background: #fbf1d3; }
+  .ok { display: flex; justify-content: space-between; align-items: center; border-top: 1.2px dashed var(--line); padding-top: 1.8mm; font-size: 9.8pt; }
+  .ok .t { font-weight: 700; color: var(--green); margin-right: 1.5mm; }
+  .ok .done { font-size: 8.5pt; color: var(--sage); white-space: nowrap; }
+  .memo { display: flex; align-items: flex-end; gap: 2mm; margin-top: 1.2mm; font-size: 8.5pt; color: var(--sage); }
+  .memo div { flex: 1; border-bottom: 1px solid var(--line); height: 6mm; }
+
+  /* J컷 · L컷 도식 */
+  .jl { display: grid; grid-template-columns: 1fr 1fr; gap: 5mm; margin: 0 0 3.5mm; }
+  .jl .t { font-size: 9.5pt; font-weight: 700; color: var(--pine); margin-bottom: 1mm; }
+  .jl .t span { font-weight: 400; color: var(--sage); font-size: 8.5pt; }
+  .trk { display: flex; height: 7mm; margin-bottom: 1mm; font-size: 8pt; font-weight: 700; }
+  .trk div { display: flex; align-items: center; padding-left: 2mm; border-radius: 1mm; }
+  .trk .va { background: #3d6e8f; color: #fff; } .trk .vb { background: #5e7f62; color: #fff; }
+  .trk .aa { background: #9cc3d9; color: var(--pine); } .trk .ab { background: #b7d3b9; color: var(--pine); }
+
+  /* 기획 시트 */
+  .sheet td { vertical-align: middle; padding: 1.6mm 2.5mm; }
+  .sheet td.lab { width: 24mm; }
+  .sheet td.write { height: 13mm; }
+  .sheet td.write.s { height: 9mm; }
+  .sheet th { padding: 1.6mm 2.5mm; }
+  .sheet.s4 td { padding: 1mm 2.5mm; line-height: 1.3; }
+  .sheet.s4 td.write.s { height: 8.5mm; }
+
+  /* 컷 리스트 */
+  .cut td { height: 7.2mm; padding: 0.8mm 2mm; vertical-align: middle; font-size: 9pt; }
+  .cut th { padding: 1.4mm 2mm; font-size: 9pt; }
+  .cut td.blk { width: 24mm; font-weight: 700; color: var(--pine); background: var(--mist) !important; border-right: 1px solid var(--line); line-height: 1.3; }
+  .cut td.blk span { display: block; font-weight: 400; font-size: 8pt; color: var(--sage); }
+  .cut td.no { width: 8mm; text-align: center; color: var(--sage); }
+  .cut td.sec { width: 14mm; text-align: right; color: var(--sage); }
+  .cut td.mv { width: 44mm; }
+  .cut tr td { background: #fff !important; }
+  .rule2 { display: grid; grid-template-columns: 1fr 1fr; gap: 3mm; }
+  .rule2 > div { border-radius: 2mm; padding: 2mm 3mm; font-size: 8.8pt; line-height: 1.45; }
+  .rule2 > div b.h { display: block; font-size: 9.8pt; margin-bottom: 0.5mm; }
+  .rule2 .ok1 { background: var(--mist); } .rule2 .ok1 b.h { color: var(--green); }
+  .rule2 .no1 { background: var(--pine); color: #fff; } .rule2 .no1 b.h { color: var(--pale); }
+
+  /* 공감 상황극 */
+  .formula { display: grid; grid-template-columns: 1fr auto 1fr auto 0.8fr; gap: 2mm; align-items: stretch; margin: 0 0 2.5mm; }
+  .formula > div.f { border: 1.5px solid var(--pine); border-radius: 2.5mm; padding: 1.8mm 3mm; background: #fff; }
+  .formula > div.f b { display: block; font-size: 9pt; color: var(--green); }
+  .formula > div.f .ln { border-bottom: 1px solid var(--line); height: 6.5mm; }
+  .formula > div.f.me { background: #fbf1d3; border-color: var(--gold); }
+  .formula > div.op { align-self: center; font-size: 17pt; font-weight: 800; color: var(--gold); }
+  .exg { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2mm; margin: 0 0 3.5mm; }
+  .exg div { background: var(--mist); border-radius: 2mm; padding: 1.6mm 2.5mm; font-size: 8.5pt; line-height: 1.35; color: var(--ink); }
+  .exg div b { display: block; color: var(--pine); font-size: 9.2pt; }
+  .ex td { padding: 1.2mm 2.5mm; font-size: 9pt; }
+  .ex td:first-child { width: 40mm; font-weight: 700; color: var(--pine); }
+  .run td { vertical-align: middle; padding: 1.5mm 2.5mm; font-size: 9.2pt; }
+  .run td:first-child { width: 8mm; text-align: center; font-weight: 800; color: var(--pine); }
+  .run td:nth-child(2) { width: 28mm; font-weight: 700; color: var(--pine); }
+  .run td.tm { width: 16mm; text-align: center; color: var(--sage); }
+  .run td.c { width: 12mm; text-align: center; }
+  ol.up { counter-reset: u; list-style: none; padding: 0; margin: 0; }
+  ol.up li { counter-increment: u; position: relative; padding: 1.4mm 0 1.4mm 15mm; border-bottom: 1px dashed var(--line); font-size: 9.6pt; }
+  ol.up li:last-child { border-bottom: none; }
+  ol.up li::before { content: counter(u); position: absolute; left: 5.5mm; top: 1.3mm; width: 5.4mm; height: 5.4mm; line-height: 5.4mm; border-radius: 50%; background: var(--pine); color: #fff; font-weight: 800; font-size: 8.5pt; text-align: center; }
+  ol.up li .cb { position: absolute; left: 0; top: 2.2mm; }
+
+  /* 제작 · 업로드 */
+  .must { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.8mm; margin: 0 0 2mm; }
+  .must div { background: #fff; border-radius: 2mm; padding: 1.6mm 2.5mm 1.6mm 8mm; font-size: 8.5pt; line-height: 1.35; color: var(--sage); position: relative; }
+  .must div b { display: block; color: var(--pine); font-size: 9.6pt; }
+  .must div .cb { position: absolute; left: 2.5mm; top: 2.3mm; }
+  .must.ch div { background: var(--pine); color: var(--pale); }
+  .must.ch div b { color: #fff; }
+  .sound { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2.5mm; margin-top: 1.5mm; }
+  .sound > div { background: #fff; border-radius: 2mm; padding: 2mm 2.5mm; font-size: 8.8pt; line-height: 1.45; }
+  .sound > div b { display: block; color: var(--pine); font-size: 9.8pt; margin-bottom: 0.5mm; }
+  .thumbs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4mm; margin: 0 0 3mm; }
+  .thumbs .fr { aspect-ratio: 16 / 9; border: 1.4px dashed var(--sage); border-radius: 2mm; background: #fff; position: relative; }
+  .thumbs .fr span { position: absolute; left: 2mm; top: 1.2mm; font-size: 9pt; font-weight: 800; color: var(--gold); }
+  .thumbs .fr i { position: absolute; left: 33.3%; top: 0; bottom: 0; border-left: 1px dotted var(--line); }
+  .thumbs .fr i + i { left: 66.6%; }
+  .thumbs .cap { font-size: 8.6pt; color: var(--sage); margin-top: 1mm; display: flex; gap: 2mm; align-items: flex-end; }
+  .thumbs .cap div { flex: 1; border-bottom: 1px solid var(--line); height: 6mm; }
+  .thumbs .vote { font-size: 8.6pt; color: var(--pine); font-weight: 700; margin-top: 1mm; }
+  .pair td { height: 9.5mm; vertical-align: middle; padding: 1mm 2.5mm; }
+  .pair td:first-child { text-align: center; font-weight: 700; color: var(--pine); }
+  .ch td { vertical-align: middle; padding: 1mm 2.5mm; height: 8mm; }
+  .ch td:first-child { width: 26mm; color: var(--sage); }
+  .lf td { vertical-align: middle; padding: 1.4mm 2.5mm; font-size: 9.3pt; }
+  .lf td:first-child { width: 30mm; font-weight: 700; color: var(--pine); }
+  .lf td.write { height: 10mm; }
+  .sf { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3mm; }
+  .sf > div { border: 1.4px solid var(--pine); border-radius: 2.5mm; padding: 2.2mm 3mm; background: #fff; font-size: 8.8pt; line-height: 1.4; }
+  .sf > div b.t { display: block; font-size: 11pt; color: var(--pine); margin-bottom: 1mm; }
+  .sf .check { margin: 0 0 1.5mm; }
+  .sf .check li { margin-bottom: 0.8mm; padding-left: 5.5mm; }
+  .sf .check li::before { width: 3.2mm; height: 3.2mm; }
+  .sf .pick { font-weight: 700; color: var(--pine); border-top: 1px dashed var(--line); padding-top: 1.2mm; }
+
+  /* 레퍼런스 해부 */
+  .lookbar { display: flex; gap: 1.5mm; flex-wrap: wrap; align-items: center; background: var(--mist); border-radius: 2mm; padding: 1.6mm 2.5mm; margin: 0 0 3mm; font-size: 8.5pt; color: var(--sage); }
+  .lookbar b { color: var(--pine); margin-right: 1mm; }
+  .lookbar span { background: #fff; border-radius: 3mm; padding: 0.2mm 2.4mm; color: var(--pine); font-weight: 600; }
+  .rf { border: 1.4px solid var(--line); border-radius: 3mm; background: #fff; padding: 2.6mm 3.5mm 2.2mm; margin: 0 0 3mm; break-inside: avoid; }
+  .rf .top { display: flex; gap: 3mm; align-items: flex-start; margin-bottom: 1.6mm; }
+  .rf .no { flex: 0 0 8.5mm; height: 8.5mm; border-radius: 50%; background: var(--gold); color: var(--pine); font-weight: 800; text-align: center; line-height: 8.5mm; font-size: 10.5pt; }
+  .rf h3 { margin: 0; font-size: 11pt; line-height: 1.3; }
+  .rf .meta { font-size: 8.2pt; color: var(--sage); line-height: 1.4; margin-top: 0.4mm; }
+  .rf .meta b { color: var(--pine); font-weight: 700; }
+  .rf .meta .url { color: var(--blue); font-weight: 600; word-break: break-all; }
+  .rf .meta .fm { display: inline-block; background: #fbf1d3; color: var(--pine); font-weight: 700; border-radius: 1mm; padding: 0 1.6mm; }
+  table.rtl { margin: 0 0 1.6mm; font-size: 8.4pt; }
+  table.rtl th { padding: 1mm 2mm; font-size: 8.2pt; }
+  table.rtl td { padding: 0.8mm 2mm; line-height: 1.36; }
+  table.rtl td.t { width: 13mm; font-weight: 700; color: var(--pine); white-space: nowrap; }
+  table.rtl td.k { width: 62mm; color: var(--ink); }
+  .az1 { display: inline-block; min-width: 4.2mm; text-align: center; background: var(--pine); color: var(--gold); font-weight: 800; font-size: 7.6pt; border-radius: 1mm; padding: 0 1mm; margin-right: 1mm; }
+  .rf .fx { display: grid; grid-template-columns: 1fr; gap: 0; font-size: 8.4pt; line-height: 1.4; }
+  .rf .fx ul.dl li { margin-bottom: 0.2mm; }
+  .rf .take { display: flex; align-items: flex-end; gap: 2mm; font-size: 8.6pt; font-weight: 700; color: var(--green); margin-top: 1.2mm; }
+  .rf .take div { flex: 1; border-bottom: 1px solid var(--line); height: 6mm; }
+  .vs td { padding: 1mm 2mm; font-size: 8.4pt; line-height: 1.36; }
+  .vs th { padding: 1mm 2mm; font-size: 8.4pt; }
+  .vs td:first-child { width: 20mm; font-weight: 700; color: var(--pine); }
+  .four { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2mm; }
+  .four > div { border-radius: 2mm; padding: 1.8mm 2.5mm; font-size: 8.6pt; line-height: 1.4; background: var(--mist); }
+  .four > div b { display: block; color: var(--pine); font-size: 9.4pt; }
+  .four > div .ln { border-bottom: 1px solid var(--line); height: 6.5mm; }
+
+  /* 메인 스타일 */
+  .styl { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2.5mm; margin: 0 0 2mm; }
+  .styl > div { border: 1.4px solid var(--pine); border-radius: 2.5mm; padding: 2.2mm 3mm; background: #fff; font-size: 8.6pt; line-height: 1.4; color: var(--sage); }
+  .styl > div b { display: block; color: var(--pine); font-size: 10.5pt; margin: 0.6mm 0 0.4mm; }
+  .styl > div .ln { border-bottom: 1px solid var(--line); height: 6mm; }
+  .next { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5mm; margin: 0 0 2mm; }
+  .next div { background: var(--mist); border-radius: 2mm; padding: 1.8mm 3mm; font-size: 8.8pt; color: var(--sage); }
+  .next div b { display: block; color: var(--pine); font-size: 10pt; }
+  .idea td { height: 8.6mm; vertical-align: middle; padding: 1mm 2.5mm; }
+  .idea td:first-child { width: 10mm; text-align: center; font-weight: 700; color: var(--pine); }
+  .idea tr td { background: #fff !important; }
+  .wln { border-bottom: 1px solid var(--line); height: 7mm; }
+
+  /* ── 5회차 추가 ── */
+  .today.t3 { grid-template-columns: 1fr auto 1fr auto 1fr; }
+  .today.t3 > div.c b { font-size: 15pt; }
+  .today.t3 > div.c span { font-size: 9.2pt; }
+  .day div.on { background: #fbf1d3; }
+  .bridge { display: grid; grid-template-columns: 1fr auto 1fr auto 1.1fr; gap: 2mm; align-items: stretch; margin: 0 0 3mm; }
+  .bridge > div.s { border-radius: 2.5mm; padding: 2mm 3mm; font-size: 8.8pt; line-height: 1.4; background: var(--mist); color: var(--sage); }
+  .bridge > div.s b { display: block; color: var(--pine); font-size: 10pt; }
+  .bridge > div.s.on { background: var(--pine); color: var(--pale); }
+  .bridge > div.s.on b { color: #fff; }
+  .bridge > div.s.gd { background: #fbf1d3; }
+  .bridge > div.ar { align-self: center; font-size: 15pt; font-weight: 800; color: var(--gold); }
+  .one { font-size: 10.2pt; line-height: 2.1; margin: 0; }
+  .one .blank { min-width: 18mm; }
+  .mat td { vertical-align: middle; padding: 1.6mm 2.5mm; font-size: 9.2pt; }
+  .mat td:first-child { width: 8mm; text-align: center; font-weight: 800; color: var(--pine); }
+  .mat td.nm { width: 30mm; font-weight: 700; color: var(--pine); }
+  .mat td.hv { width: 15mm; text-align: center; white-space: nowrap; }
+  .mat td.write { height: 18mm; width: 64mm; }
+  .mat tr td { background: #fff !important; }
+
+  /* 빈 레퍼런스 칸 */
+  .rf.rfb .top { margin-bottom: 1.2mm; }
+  .rf.rfb .wl { margin-top: 0.6mm; }
+  .rf .kind { font-size: 8.4pt; color: var(--sage); margin-top: 1.2mm; display: flex; gap: 3.5mm; flex-wrap: wrap; align-items: center; }
+  .rf .kind b { color: var(--pine); }
+  table.rtl.bl td { height: 6.8mm; background: #fff !important; }
+  table.rtl.bl td.t { color: var(--sage); font-weight: 400; }
+  .tlh { font-size: 8.2pt; font-weight: 700; color: var(--pine); margin-top: 1.4mm; }
+  .four.ans { margin-top: 1.8mm; }
+  .four.ans > div { padding: 1.5mm 2.3mm; font-size: 8.2pt; line-height: 1.3; color: var(--sage); }
+  .four.ans > div b { font-size: 8.8pt; }
+  .four.ans > div .ln { height: 6mm; }
+  .six { display: grid; grid-template-columns: repeat(6, 1fr); gap: 1.5mm; margin-top: 1.6mm; }
+  .six > div { border-radius: 2mm; padding: 1.4mm 2mm; font-size: 8pt; line-height: 1.3; background: var(--mist); color: var(--sage); }
+  .six > div b { display: block; color: var(--pine); font-size: 8.8pt; }
+  .six > div .ln { border-bottom: 1px solid var(--line); height: 6mm; }
+
+  /* 질문지 · 키워드 */
+  .qs td { vertical-align: middle; padding: 1.2mm 2.5mm; font-size: 9pt; }
+  .qs td.n { width: 8mm; text-align: center; font-weight: 800; color: var(--pine); }
+  .qs td.lab2 { width: 27mm; font-weight: 700; color: var(--pine); line-height: 1.3; }
+  .qs td.lab2 span { display: block; font-weight: 400; font-size: 7.8pt; color: var(--sage); }
+  .qs td.w { height: 10.5mm; }
+  .qs tr td { background: #fff !important; }
+  .qs th { padding: 1.4mm 2.5mm; font-size: 9pt; }
+  .pick2 { display: grid; grid-template-columns: 1fr 1fr; gap: 3mm; margin: 0 0 2.5mm; }
+  .pick2 > div { border: 1.4px solid var(--pine); border-radius: 2.5mm; padding: 2mm 3mm; background: #fff; font-size: 8.8pt; line-height: 1.4; color: var(--sage); }
+  .pick2 > div b { color: var(--pine); font-size: 10.2pt; }
+  .oq { display: grid; grid-template-columns: 1fr 1fr; gap: 2mm; font-size: 8.6pt; margin: 0 0 2mm; }
+  .oq > div { border-radius: 2mm; padding: 1.4mm 2.5mm; line-height: 1.4; }
+  .oq .x { background: #f6e3e1; } .oq .o { background: var(--mist); }
+  .oq b { color: var(--pine); }
+  .oq .x b { color: var(--red); }
+
+  /* 하이라이트 기록 */
+  .hl td { vertical-align: middle; padding: 1mm 2.5mm; font-size: 9pt; height: var(--h, 8.6mm); }
+  .hl td:first-child { width: 8mm; text-align: center; font-weight: 800; color: var(--pine); }
+  .hl td.tm { width: 18mm; color: var(--sage); text-align: center; }
+  .hl td.c { width: 13mm; text-align: center; }
+  .hl tr td { background: #fff !important; }
+  .hl th { padding: 1.4mm 2.5mm; font-size: 9pt; }
+  .len { display: flex; align-items: center; gap: 2mm; font-size: 9.2pt; flex-wrap: wrap; }
+  .len .box2 { border: 1.4px solid var(--pine); border-radius: 2mm; padding: 1mm 3mm; background: #fff; }
+  .len .box2 b { color: var(--pine); }
+  .len .ar { font-size: 13pt; font-weight: 800; color: var(--gold); }
+
+  /* 큐시트 */
+  .cue td { vertical-align: top; padding: 1.2mm 2mm; font-size: 8.8pt; height: 19.5mm; }
+  .cue th { padding: 1.4mm 2mm; font-size: 8.8pt; }
+  .cue td.st { width: 23mm; font-weight: 700; color: var(--pine); background: var(--mist) !important; line-height: 1.3; }
+  .cue td.st span { display: block; font-weight: 400; font-size: 7.8pt; color: var(--sage); }
+  .cue td.tm { width: 17mm; color: var(--sage); font-size: 8pt; }
+  .cue tr td { background: #fff; }
+  .say { display: grid; grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr auto 1fr; gap: 1.2mm; align-items: stretch; margin: 0 0 1.5mm; }
+  .say > div.f { border: 1.4px solid var(--pine); border-radius: 2.2mm; padding: 1.5mm 2.2mm; background: #fff; font-size: 7.9pt; line-height: 1.3; color: var(--sage); }
+  .say > div.f b { display: block; color: var(--pine); font-size: 9.2pt; }
+  .say > div.f .ln { border-bottom: 1px solid var(--line); height: 6.5mm; }
+  .say > div.f.me { background: #fbf1d3; border-color: var(--gold); }
+  .say > div.op { align-self: center; font-size: 12pt; font-weight: 800; color: var(--gold); }
+  .eg { font-size: 8.4pt; color: var(--sage); margin: 0 0 3mm; }
+  .eg b { color: var(--pine); }
+
+  /* AI 영상 */
+  .mk { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1.5mm; margin: 0 0 1.5mm; }
+  .mk > div { border-radius: 2mm; padding: 2mm 2.4mm; background: var(--mist); font-size: 8.3pt; line-height: 1.38; color: var(--ink); }
+  .mk > div i { font-style: normal; display: block; font-size: 15pt; font-weight: 800; color: var(--gold); line-height: 1.1; }
+  .mk > div b { display: block; color: var(--pine); font-size: 9.8pt; margin-bottom: 0.4mm; }
+  .mk > div.e { background: var(--pine); color: var(--pale); }
+  .mk > div.e b { color: #fff; }
+  .mk > div .ln { border-bottom: 1px solid var(--line); height: 6mm; }
+  .mk > div.e .ln { border-bottom-color: #3c6150; }
+  .story { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1.5mm; margin: 0 0 2mm; }
+  .story > div { border: 1.5px solid var(--pine); border-radius: 2.5mm; padding: 1.6mm 2.4mm; background: #fff; font-size: 8pt; color: var(--sage); line-height: 1.3; }
+  .story > div b { display: block; font-size: 9.6pt; color: var(--green); }
+  .story > div .ln { border-bottom: 1px solid var(--line); height: 7mm; }
+  .story > div.me { background: #fbf1d3; border-color: var(--gold); }
+  .ai6 td { height: 14.5mm; padding: 1mm 2mm; vertical-align: middle; font-size: 9pt; background: #fff !important; }
+  .ai6 th { padding: 1.4mm 2mm; font-size: 8.8pt; }
+  .ai6 td.no { width: 7mm; text-align: center; font-weight: 800; color: var(--pine); }
+  .ai6 td.blk { width: 25mm; font-weight: 700; color: var(--pine); background: var(--mist) !important; line-height: 1.3; }
+  .ai6 td.blk span { display: block; font-weight: 400; font-size: 7.8pt; color: var(--sage); }
+  .ai6 td.cam { width: 34mm; color: var(--sage); font-size: 7.8pt; vertical-align: bottom; }
+  .ai6 td.sec { width: 11mm; text-align: right; color: var(--sage); }
+  .ai6 td.c { width: 13mm; text-align: center; }
+  .chips { display: flex; gap: 1.5mm; flex-wrap: wrap; align-items: center; font-size: 8.4pt; color: var(--sage); margin: 0 0 3mm; }
+  .chips span { border: 1.1px solid var(--line); border-radius: 3mm; padding: 0.2mm 2.4mm; background: #fff; color: var(--pine); font-weight: 600; }
+  .chips b { color: var(--pine); margin-right: 1mm; }
+  .mp { display: grid; grid-template-columns: repeat(6, 1fr); gap: 1.5mm; margin: 0 0 2mm; }
+  .mp > div { background: #fff; border-radius: 2mm; padding: 1.6mm 2.2mm; font-size: 8pt; line-height: 1.35; color: var(--sage); }
+  .mp > div b { display: block; color: var(--pine); font-size: 9pt; }
+  .who { display: grid; grid-template-columns: repeat(6, 1fr); gap: 1.2mm; margin: 0 0 1mm; }
+  .who > div { border-radius: 2mm; padding: 1.4mm 2mm; font-size: 7.9pt; line-height: 1.3; text-align: center; background: var(--mist); color: var(--sage); }
+  .who > div b { display: block; font-size: 8.8pt; color: var(--pine); }
+  .who > div.h { background: var(--pine); color: var(--pale); }
+  .who > div.h b { color: #fff; }
+  .rule2 .check { margin: 0; }
+  .rule2 .check li { margin-bottom: 0.6mm; }
+  .rule2 .no1 .check li::before { border-color: var(--pale); }
+
+  /* 4교시 */
+  .hook5 { display: grid; grid-template-columns: repeat(5, 1fr); gap: 2mm; margin: 0 0 3mm; }
+  .hook5 > div { border: 1.4px solid var(--pine); border-radius: 2.5mm; padding: 2mm 2.5mm; background: #fff; font-size: 8.4pt; line-height: 1.4; color: var(--sage); }
+  .hook5 > div i { font-style: normal; font-size: 15pt; font-weight: 800; color: var(--gold); line-height: 1; display: block; }
+  .hook5 > div b { display: block; color: var(--pine); font-size: 10.5pt; margin: 0.6mm 0 0.4mm; }
+  .hk td { vertical-align: middle; padding: 1mm 2.2mm; font-size: 8.8pt; height: 21mm; background: #fff !important; }
+  .hk th { padding: 1.4mm 2.2mm; font-size: 8.8pt; }
+  .hk td:first-child { width: 9mm; text-align: center; font-weight: 800; color: var(--pine); }
+  .hk td.f { width: 24mm; color: var(--pine); font-size: 10pt; white-space: nowrap; line-height: 1.5; }
+  .hk td.c { width: 14mm; text-align: center; }
+  .keep { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2mm; margin: 0 0 3mm; }
+  .keep > div { border-radius: 2.5mm; padding: 2mm 2.6mm; background: var(--mist); font-size: 8.4pt; line-height: 1.4; color: var(--sage); }
+  .keep > div b { display: block; color: var(--pine); font-size: 10pt; margin-bottom: 0.4mm; }
+  .keep > div .ln { border-bottom: 1px solid var(--line); height: 7.5mm; }
+  .keep > div .q { color: var(--green); font-weight: 700; font-size: 8pt; margin-top: 1mm; }
+  .chan td { vertical-align: middle; padding: 1.3mm 2.5mm; font-size: 9.2pt; background: #fff !important; }
+  .chan td.lab { width: 32mm; }
+  .chan td.write { height: 12.5mm; }
+  .chan td.lab span { display: block; font-weight: 400; font-size: 7.8pt; color: var(--sage); }
+  .money td { vertical-align: middle; padding: 1.1mm 2.5mm; font-size: 8.9pt; }
+  .money td:first-child { width: 34mm; font-weight: 700; color: var(--pine); }
+  .money td.c { width: 12mm; text-align: center; }
+
+  /* 브랜딩 한 장 */
+  .brand { border: 2px solid var(--pine); border-radius: 3.5mm; overflow: hidden; background: #fff; margin: 0 0 3mm; }
+  .brand .bh { background: var(--pine); color: #fff; padding: 2.2mm 4mm; display: flex; justify-content: space-between; align-items: center; }
+  .brand .bh b { font-size: 12pt; color: var(--pale); }
+  .brand .bh span { font-size: 8.6pt; color: var(--pale); }
+  .brand .row { display: grid; grid-template-columns: 34mm 1fr; border-bottom: 1px solid var(--line); }
+  .brand .row:last-child { border-bottom: none; }
+  .brand .row > .k { background: var(--mist); padding: 3.2mm 3mm; font-weight: 800; color: var(--pine); font-size: 10pt; line-height: 1.3; }
+  .brand .row > .k i { font-style: normal; color: var(--gold); margin-right: 1mm; }
+  .brand .row > .k span { display: block; font-weight: 400; font-size: 7.8pt; color: var(--sage); margin-top: 0.4mm; }
+  .brand .row > .v { padding: 3.2mm 3.5mm; font-size: 9pt; color: var(--sage); line-height: 2; }
+  .brand .row > .v .ln { border-bottom: 1px solid var(--line); height: 8mm; }
+  .brand .row > .v b { color: var(--pine); }
+  .frames { display: grid; grid-template-columns: 1.75fr 0.55fr 1fr; gap: 3mm; align-items: end; margin-top: 1mm; }
+  .frames .fr { border: 1.4px dashed var(--sage); border-radius: 2mm; background: #fff; position: relative; }
+  .frames .fr.w { aspect-ratio: 16 / 9; }
+  .frames .fr.t { aspect-ratio: 9 / 16; }
+  .frames .fr span { position: absolute; left: 1.5mm; top: 1mm; font-size: 7.8pt; font-weight: 800; color: var(--gold); }
+  .frames .rules { font-size: 8.6pt; line-height: 1.3; }
+  .frames .rules p { margin: 0 0 2.6mm; display: flex; gap: 1.5mm; align-items: flex-end; }
+  .frames .rules p b { white-space: nowrap; }
+  .frames .rules p i { flex: 1; border-bottom: 1px solid var(--line); height: 5.5mm; }
+  .sw { display: inline-block; width: 9mm; height: 5mm; border: 1.2px solid var(--line); border-radius: 1mm; vertical-align: middle; margin-right: 1mm; }
+  .yt2 { display: grid; grid-template-columns: 1fr 1fr; gap: 3mm; margin: 0 0 3mm; }
+  .yt2 > div { border-radius: 2.5mm; padding: 2mm 3.2mm; font-size: 8.6pt; line-height: 1.42; }
+  .yt2 > div.y { background: var(--mist); }
+  .yt2 > div.i { background: #fbf1d3; }
+  .yt2 > div > b { display: block; color: var(--pine); font-size: 10pt; }
+  .yt2 .ln { border-bottom: 1px solid var(--line); height: 8mm; }
+
+  /* 대표작 */
+  .fmt { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3mm; margin: 0 0 1.5mm; }
+  .fmt > div { border: 1.5px solid var(--pine); border-radius: 2.5mm; padding: 2.2mm 3mm; background: #fff; font-size: 8.7pt; line-height: 1.42; color: var(--sage); }
+  .fmt > div b.t { display: block; font-size: 11.5pt; color: var(--pine); margin: 0.6mm 0 0.3mm; }
+  .fmt > div .sp { display: inline-block; background: #fbf1d3; color: var(--pine); font-weight: 700; border-radius: 1mm; padding: 0 1.6mm; font-size: 8.4pt; margin-bottom: 0.6mm; }
+  .order { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1.5mm; margin: 0 0 1.5mm; }
+  .order > div { border-radius: 2mm; padding: 1.6mm 2.4mm 1.6mm 7.5mm; background: var(--mist); font-size: 8.2pt; line-height: 1.35; color: var(--sage); position: relative; }
+  .order > div b { display: block; color: var(--pine); font-size: 9.4pt; }
+  .order > div .cb { position: absolute; left: 2.2mm; top: 2.2mm; }
+  .order > div.on { background: #fbf1d3; }
+  .st td { vertical-align: middle; padding: 1mm 2.2mm; font-size: 8.9pt; height: 11.5mm; background: #fff !important; }
+  .st th { padding: 1.4mm 2.2mm; font-size: 8.8pt; }
+  .st td:first-child { width: 8mm; text-align: center; font-weight: 800; color: var(--pine); }
+  .st td.g { width: 28mm; }
+  .st td.src { width: 44mm; font-size: 7.6pt; color: var(--sage); white-space: nowrap; }
+  .st td.sec { width: 13mm; text-align: right; color: var(--sage); }
+  .st td.c { width: 10mm; text-align: center; }
+  .ser td { vertical-align: middle; padding: 1mm 2.2mm; font-size: 8.9pt; height: 10.5mm; background: #fff !important; }
+  .ser td:first-child { width: 12mm; text-align: center; font-weight: 700; color: var(--pine); }
+  .ser th { padding: 1.2mm 2.2mm; font-size: 8.6pt; }
+  .upl td { vertical-align: middle; padding: 1.2mm 2.5mm; font-size: 9pt; }
+  .upl td:first-child { width: 30mm; font-weight: 700; color: var(--pine); }
+  .upl td.write { height: 9.5mm; }
+  .upl td.c { width: 11mm; text-align: center; }
+  .note2 { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5mm; margin: 0 0 3mm; }
+  .note2 > div { border: 1.4px solid var(--line); border-radius: 2.5mm; padding: 2.2mm 3.5mm; background: #fff; }
+  .note2 > div h3 { margin: 0 0 0.5mm; font-size: 10.5pt; }
+  .note2 .nl { display: flex; align-items: flex-end; gap: 2mm; font-size: 9pt; font-weight: 700; color: var(--gold); }
+  .note2 .nl div { flex: 1; border-bottom: 1px solid var(--line); height: 12mm; }
+  .scr .check li { font-size: 9.4pt; margin-bottom: 1.8mm; }
+</style>
+</head>
+<body>
+
+<!-- 1. 표지 -->
+<section class="page">
+  <div class="cover">
+    <div class="series">AI콘텐츠 크리에이터 실무 · 촬영편집</div>
+    <h1>5회차 워크북<br>카테고리 A to Z ②<br>말하는 · 만드는 영상</h1>
+    <div class="sub">그리고 나의 대표작 · 2026. 12. 1 (화)</div>
+    <div class="fill"><div>이름</div><div>메인 스타일 (①~⑦)</div><div>대표작 형식</div></div>
+    <div class="today t3">
+      <div class="c"><b>대표작 1편</b><span>메인 스타일 카테고리로<br>롱폼 2~4분 · 숏폼 시리즈 3편 · AI 영상 30초~1분 중 하나<br>→ 6회차 상영작 후보</span></div>
+      <div class="p">+</div>
+      <div class="c"><b>숏폼 1편</b><span>대표작에서 센 장면을 잘라 세로 9:16<br>→ 릴스 · 쇼츠 · 틱톡 중 하나</span></div>
+      <div class="p">+</div>
+      <div class="c"><b>브랜딩 한 장</b><span>채널 이름 · 소개 한 줄 · 썸네일 · 커버 규칙 · 시리즈 이름 · 업로드 주기</span></div>
+    </div>
+    <div class="orn">오늘 남는 것 = 대표작 1 + 숏폼 1 + 채널 브랜딩 한 장 · 6회차에 트리에 불을 켤 한 편</div>
+    <div class="meta">4회차에는 ① 브이로그 ② 정보성 · 리뷰 ③ 상품 이미지 영상 ④ 공감 상황극을 A to Z로 한 번씩 돌리고, 내 콘텐츠의 메인 스타일을 정했어요. 오늘은 남은 세 카테고리 ⑤ 토크 · 인터뷰 ⑥ 라이브 · 라이브커머스 ⑦ AI 영상을 같은 방식으로 배우고, 끝까지 보게 하는 법과 채널로 묶는 법을 더해 메인 스타일로 대표작 한 편을 만듭니다. 실습은 모두 각자, 막히면 옆자리와 서로 돕기.</div>
+  </div>
+</section>
+
+<!-- 2. 오늘의 흐름 · 메인 스타일 한 줄 · 대표작 재료 점검 -->
+<section class="page">
+  <div class="kicker">시작</div>
+  <h1>오늘의 흐름 · 대표작 재료 점검</h1>
+  <div class="loop">
+    <div class="st"><b>① 카테고리 카드</b><span>A 정의부터 G 체크까지 한 장에. 강사 설명 · 레퍼런스 해부를 들으며 빈칸 채우기</span></div>
+    <div class="ar">→</div>
+    <div class="st"><b>② 따라하기</b><span>그 카테고리의 CapCut 핵심 기법을 번호 순서대로 · 오늘은 01~05</span></div>
+    <div class="ar">→</div>
+    <div class="st on"><b>③ 확인 · 실습</b><span>확인 □ 체크 → 모두 완료면 다음. 실습은 각자, 막히면 옆자리와 서로 돕기</span></div>
+  </div>
+  <div class="day">
+    <div><i>1교시</i><b>⑤ 토크 · 인터뷰</b>30초 하이라이트</div>
+    <div><i>2교시</i><b>⑥ 라이브커머스</b>1분 하이라이트</div>
+    <div><i>3교시</i><b>⑦ AI 영상</b>20초 광고 초안</div>
+    <div><i>4교시</i><b>끝까지 · 채널</b>브랜딩 한 장</div>
+    <div class="on"><i>5교시</i><b>대표작 ①</b>가편집</div>
+    <div class="on"><i>6교시</i><b>대표작 ②</b>완성 · 숏폼</div>
+    <div><i>7교시</i><b>업로드</b>제작 노트</div>
+  </div>
+
+  <h3 class="top">4회차 → 5회차 · 메인 스타일에서 대표작으로</h3>
+  <div class="bridge">
+    <div class="s"><b>4회차 · 보여주는 영상</b>① 브이로그 ② 정보성 · 리뷰 ③ 상품 이미지 ④ 공감 상황극</div>
+    <div class="ar">+</div>
+    <div class="s on"><b>5회차 · 말하는 · 만드는 영상</b>⑤ 토크 · 인터뷰 ⑥ 라이브커머스 ⑦ AI 영상</div>
+    <div class="ar">→</div>
+    <div class="s gd"><b>대표작</b>일곱 중 메인 스타일 하나로 한 편 → 6회차 (12. 10) 상영</div>
+  </div>
+
+  <div class="box gold" style="padding:3mm 4.5mm;margin-bottom:3.5mm">
+    <h3 class="top" style="margin-bottom:1mm">내 메인 스타일 한 줄 <span class="opt">4회차 마지막 쪽에서 정한 것 · 오늘 배우는 것이 더 맞으면 바꿔도 OK · 정하는 건 5교시 전까지</span></h3>
+    <p class="one">"제 메인 스타일은 <span class="blank" style="min-width:8mm"></span>번 <span class="blank" style="min-width:28mm"></span>이고, 대표작은 <span class="blank" style="min-width:22mm"></span>에 올릴 <span class="blank" style="min-width:34mm"></span>입니다."</p>
+    <p style="margin:0;font-size:9.2pt;color:var(--sage)">5교시 전에 바꿨다면 → <span class="blank" style="min-width:60mm"></span> &nbsp;바꾼 이유 <span class="blank" style="min-width:52mm"></span></p>
+  </div>
+
+  <h3 class="top">대표작 재료 점검 <span class="opt">무엇으로 만들지 미리 보기 · 있는 것에 체크하고 무엇이 어디에 있는지 메모</span></h3>
+  <table class="mat">
+    <tr><th>#</th><th>재료</th><th>할 일</th><th style="text-align:center">있음</th><th>메모 (무엇 · 어디에 · 몇 개)</th></tr>
+    <tr><td>1</td><td class="nm">찍어 온 소스</td><td>준비해 온 사람은 노트북에 폴더 하나로 옮기기</td><td class="hv"><span class="cb"></span></td><td class="write"></td></tr>
+    <tr><td>2</td><td class="nm">4회차 결과물</td><td>브이로그 · 상품 이미지 · 상황극 프로젝트를 다시 열어 다듬기</td><td class="hv"><span class="cb"></span></td><td class="write"></td></tr>
+    <tr><td>3</td><td class="nm">오늘 실습 결과물</td><td>토크 하이라이트 · 라이브 하이라이트 · AI 광고 초안 <span class="opt">(오늘 채워짐)</span></td><td class="hv"><span class="cb"></span></td><td class="write"></td></tr>
+    <tr><td>4</td><td class="nm">AI 컷</td><td>⑦ AI 영상 마스터 프롬프트로 부족한 장면 만들기</td><td class="hv"><span class="cb"></span></td><td class="write"></td></tr>
+  </table>
+  <div class="box dark" style="margin:0;padding:2.6mm 4.5mm">
+    <p style="margin:0;font-size:9.4pt"><strong>재료 폴더 하나 = 대표작 프로젝트 하나.</strong> 폴더 이름 <span style="color:var(--pale)">"5회차_대표작_내이름"</span> · 가져온 뒤에는 원본 파일을 옮기거나 이름을 바꾸지 않기 (미디어 없음 방지) · 재료가 모자라면 5 · 6교시에 4회차 소스 · 오늘 실습 결과물 · AI 컷으로 보충</p>
+  </div>
+</section>
+
+<!-- 3. 카테고리 카드 ⑤ 토크 · 인터뷰 -->
+<section class="page">
+  <div class="kicker">1교시 · 카테고리 카드 ⑤</div>
+  <div class="cchd">
+    <span class="big">⑤</span>
+    <div><h1>토크 · 인터뷰</h1><div class="tags"><span>유튜브 롱폼 5~30분</span><span>숏폼 20~40초 · 센 한 문장</span><span class="g">사람을 보러 오는 영상</span></div></div>
+  </div>
+  <div class="cc">
+    <div class="L">A<small>정의</small></div>
+    <div class="R">
+      <p class="def">사람을 보러 오는 영상 — 말이 내용이 된다</p>
+      <p class="kinds"><b style="color:var(--pine)">1인 토크</b> (카메라를 보고 내 이야기 · 노하우) · <b style="color:var(--pine)">인터뷰</b> (질문하고 듣기 · 사장님 · 고객 · 전문가) · <b style="color:var(--pine)">대담 · 팟캐스트</b> (두 사람이 주고받기 · 오디오 중심도 OK). 강사 진로 · 자기소개 포트폴리오 · 가게 사장 · 고객 인터뷰. 얼굴이 부담이면 손 · 뒷모습 · 화면 + 목소리로.</p>
+      <div class="spec"><span><b>롱폼</b>5~30분 (대담은 더 길게) · 소개 → 질문 → 이야기 → 한마디</span><span><b>숏폼</b>20~40초 · 인용 자막 + 표정 클로즈업</span></div>
+    </div>
+    <div class="L">B<small>레퍼런스</small></div>
+    <div class="R">
+      <div class="ref">
+        <div>
+          <div class="hd">강사가 고른 레퍼런스 <span class="opt">· 수업에서 함께 보고 다음 쪽 레퍼런스 해부에 채우기</span></div>
+          <div class="wl">① 제목 · 채널<div></div></div>
+          <div class="wl">② 제목 · 채널<div></div></div>
+          <div class="wl">내 토크 · 인터뷰에 가져올 것 1개<div></div></div>
+        </div>
+        <div class="look"><b>보면서 찾을 것</b>① 처음 30초에 이 사람이 누구인지 알게 되나<br>② 질문은 몇 초, 답은 몇 초?<br>③ 같은 화면이 몇 초마다 바뀌나 (카메라 · B롤)<br>④ 가장 센 한마디는 어디에?</div>
+      </div>
+    </div>
+    <div class="L">C<small>구조</small></div>
+    <div class="R">
+      <div class="bartop"><b>누구인지 → 질문 1 · 2 · 3 → 센 한마디</b><span>3분 인터뷰 예: 15초 · 45초 · 60초 · 45초 · 15초</span></div>
+      <div class="bar">
+        <div class="c1" style="flex:0.9"><b>누구인지</b>이름 · 하는 일<br>오늘 이야기 한 줄</div>
+        <div class="c2" style="flex:1.4"><b>질문 1</b>시작 계기<br>처음의 기억</div>
+        <div class="c3" style="flex:1.7"><b>질문 2</b>가장 힘들었던 순간<br>어떻게 넘었나</div>
+        <div class="c5" style="flex:1.4"><b>질문 3</b>지금 · 노하우<br>보는 사람에게 팁</div>
+        <div class="c4" style="flex:0.9"><b>한마디</b>가장 센 문장<br>다음 이야기 예고</div>
+      </div>
+      <p class="muted" style="margin:0.5mm 0 0"><b style="color:var(--pine)">1인 토크</b> = 키워드 메모 5줄 (대본 통째로 읽기 X) · <b style="color:var(--pine)">인터뷰</b> = 열린 질문 5 + 꼬리 질문. 꼬리 질문이 진짜 이야기를 끌어낸다.</p>
+    </div>
+    <div class="L">D<small>촬영</small></div>
+    <div class="R">
+      <ul class="dl two">
+        <li><b>눈높이 · 삼분할</b> · 카메라를 눈높이에, 얼굴은 위 1/3 선에</li>
+        <li><b>시선</b> · 1인 토크는 렌즈, 인터뷰는 진행자 쪽 (렌즈 옆)</li>
+        <li><b>두 카메라</b> · 폰 한 대는 와이드 (상반신), 한 대는 클로즈업 (얼굴)</li>
+        <li><b>소리</b> · 조용한 곳 · 폰 · 핀마이크는 입에서 한 뼘 · 박수 한 번 (싱크)</li>
+        <li><b>빛 · 배경</b> · 창을 얼굴 앞쪽에 · 배경 정리 + 의미 있는 소품 하나</li>
+        <li style="color:var(--sage)">화면이 흔들려도 보지만, 소리가 나쁘면 끕니다</li>
+      </ul>
+    </div>
+    <div class="L e">E<small>편집</small></div>
+    <div class="R">
+      <div class="ed">
+        <div><b>군말 · 공백 지우기</b>"음, 어" · 긴 침묵을 지우면 1.5배 빨라진 느낌. 자동 캡션 → 군말 찾기 (3회차 연결)<br><em>따라하기 01</em></div>
+        <div><b>두 카메라 컷</b>와이드 · 클로즈업을 위아래 트랙에, 말하는 사람 · 감정에 따라 바꾸기<br><em>따라하기 02</em></div>
+        <div><b>센 문장 강조</b>강조 자막 + 천천히 줌인 + 그 말 위에 B롤 (L컷, 4회차 따라하기 01)</div>
+      </div>
+      <p class="muted" style="margin:1mm 0 0">다 지우지 말기: 생각하는 한 박자는 진짜처럼 보이게 남겨 두기.</p>
+    </div>
+    <div class="L">F<small>발행</small></div>
+    <div class="R">
+      <div class="fpub">
+        <div class="lo"><b>롱폼</b>제목: 사람 + 인용 한 문장 ("15년 차 미용사가 말하는 '다듬기만요'의 진실") · 썸네일: 표정 클로즈업 + 인용 3~5단어 · 챕터: 질문 = 챕터 (00:00 소개 / 01:10 시작 계기 …)</div>
+        <div class="sh"><b>숏폼 · 동의</b>센 문장 하나 = 숏폼 하나, 첫 1초에 그 문장 · 롱폼 인터뷰 하나에서 숏폼 세 개 · <strong>출연자 동의</strong>, 이름 · 숫자 · 사실 확인</div>
+      </div>
+    </div>
+    <div class="L last">G<small>체크</small></div>
+    <div class="R last">
+      <ul class="check gck">
+        <li>첫 30초에 이 사람이 누구인지</li>
+        <li>소리가 깨끗함 (파형 · 폰으로 확인)</li>
+        <li>같은 화면이 1분 넘게 가지 않음</li>
+        <li>출연자 동의</li>
+        <li>이름 · 숫자 · 사실 확인</li>
+      </ul>
+    </div>
+  </div>
+  <p class="ccfoot"><b>내 토크 · 인터뷰 한 줄 메모</b> 가장 센 한마디가 될 문장 <span class="blank" style="min-width:104mm"></span></p>
+</section>
+
+<!-- 3-2. 레퍼런스 해부 ⑤ (강사가 수업에서 채움) -->
+<section class="page">
+  <div class="kicker">1교시 · ⑤ 토크 · 인터뷰 · B 레퍼런스</div>
+  <h1>레퍼런스 해부 · 토크 · 인터뷰</h1>
+  <div class="lookbar"><b>보면서 찾을 것</b><span>① 처음 30초에 이 사람이 누구인지 알게 되나</span><span>② 질문은 몇 초, 답은 몇 초?</span><span>③ 같은 화면이 몇 초마다 바뀌나</span><span>④ 가장 센 한마디는 어디에?</span></div>
+  <p class="note" style="margin:-1mm 0 2.5mm">강사가 고른 영상을 함께 보며 채우는 칸이에요. <b>제목 · 링크는 화면에 띄운 것을 받아 적고</b>, 시간 · 장면은 멈춰 가며 같이 적기.</p>
+  <div class="rf rfb">
+    <div class="top"><span class="no">1</span><div style="flex:1">
+      <div class="wl" style="margin-top:0"><b style="color:var(--pine);font-size:9pt">영상 제목</b><div></div></div>
+      <div class="wl">채널<div style="flex:0.55"></div>링크<div></div></div>
+      <div class="kind"><span><span class="cb"></span>1인 토크</span><span><span class="cb"></span>인터뷰</span><span><span class="cb"></span>대담 · 팟캐스트</span><span><span class="cb"></span>롱폼 <span class="cb"></span>숏폼 · 길이 <span class="blank" style="min-width:14mm"></span></span></div>
+    </div></div>
+    <table class="rtl bl"><tr><th>시간</th><th>장면</th><th>무엇을 배울까 <span style="font-weight:400">(A~G)</span></th></tr><tr><td class="t">:</td><td></td><td class="k"></td></tr><tr><td class="t">:</td><td></td><td class="k"></td></tr><tr><td class="t">:</td><td></td><td class="k"></td></tr><tr><td class="t">:</td><td></td><td class="k"></td></tr></table>
+    <div class="tlh">타임라인에 구간을 그려 보기 <span class="opt">(몇 초에 무엇이)</span></div><div class="tl"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div><div class="tlx"><span>0초</span><span>끝</span></div>
+    <div class="four ans"><div><b>① 누구인지</b>처음 30초에 알게 되나 · 몇 초에<div class="ln"></div></div><div><b>② 질문 · 답</b>질문 몇 개 · 답은 몇 초<div class="ln"></div></div><div><b>③ 화면 바뀜</b>컷이 몇 초마다 (카메라 · B롤)<div class="ln"></div></div><div><b>④ 센 한마디</b>어디에 · 무슨 말<div class="ln"></div></div></div>
+    
+    <div class="take">내 영상에 가져올 것 1개<div></div></div>
+  </div>
+  <div class="rf rfb" style="margin:0">
+    <div class="top"><span class="no">2</span><div style="flex:1">
+      <div class="wl" style="margin-top:0"><b style="color:var(--pine);font-size:9pt">영상 제목</b><div></div></div>
+      <div class="wl">채널<div style="flex:0.55"></div>링크<div></div></div>
+      <div class="kind"><span><span class="cb"></span>1인 토크</span><span><span class="cb"></span>인터뷰</span><span><span class="cb"></span>대담 · 팟캐스트</span><span><span class="cb"></span>롱폼 <span class="cb"></span>숏폼 · 길이 <span class="blank" style="min-width:14mm"></span></span></div>
+    </div></div>
+    <table class="rtl bl"><tr><th>시간</th><th>장면</th><th>무엇을 배울까 <span style="font-weight:400">(A~G)</span></th></tr><tr><td class="t">:</td><td></td><td class="k"></td></tr><tr><td class="t">:</td><td></td><td class="k"></td></tr><tr><td class="t">:</td><td></td><td class="k"></td></tr><tr><td class="t">:</td><td></td><td class="k"></td></tr></table>
+    <div class="tlh">타임라인에 구간을 그려 보기 <span class="opt">(몇 초에 무엇이)</span></div><div class="tl"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div><div class="tlx"><span>0초</span><span>끝</span></div>
+    <div class="four ans"><div><b>① 누구인지</b>처음 30초에 알게 되나 · 몇 초에<div class="ln"></div></div><div><b>② 질문 · 답</b>질문 몇 개 · 답은 몇 초<div class="ln"></div></div><div><b>③ 화면 바뀜</b>컷이 몇 초마다 (카메라 · B롤)<div class="ln"></div></div><div><b>④ 센 한마디</b>어디에 · 무슨 말<div class="ln"></div></div></div>
+    
+    <div class="take">내 영상에 가져올 것 1개<div></div></div>
+  </div>
+
+</section>
+
+<!-- 4. ⑤ 질문지 · 키워드 메모 · 세팅 체크 -->
+<section class="page">
+  <div class="kicker">1교시 · ⑤ 토크 · 인터뷰 · C 기획 · D 촬영</div>
+  <h1>질문지 · 키워드 메모 · 세팅 체크</h1>
+  <p class="lead" style="margin-bottom:2mm;font-size:10.2pt">실습은 둘 중 하나. 고른 쪽의 표만 채우면 돼요. 나머지 표는 대표작이 토크 · 인터뷰일 때 다시 쓰기.</p>
+  <div class="pick2">
+    <div><span class="cb"></span><b>A · 셀프 토크 1분</b> &nbsp;"제 메인 스타일과 이유" · 카메라(렌즈)를 보고 혼자 · 키워드 메모 5줄</div>
+    <div><span class="cb"></span><b>B · 옆자리 인터뷰 3분</b> &nbsp;서로 묻고 답하기 · 열린 질문 5 + 꼬리 질문 · 찍기 전에 동의</div>
+  </div>
+
+  <h3 class="top">A · 1인 토크 키워드 메모 5줄 <span class="opt">문장이 아니라 한두 단어 · 대본을 통째로 읽으면 눈이 종이로 가요</span></h3>
+  <table class="qs" style="margin-bottom:3mm">
+    <tr><th style="width:8mm">#</th><th style="width:27mm">구조</th><th>키워드 (한두 단어)</th><th style="width:52mm">보여 줄 것 (B롤 · 손 · 화면)</th></tr>
+    <tr><td class="n">1</td><td class="lab2">누구인지<span>이름 · 하는 일</span></td><td class="w"></td><td class="w"></td></tr>
+    <tr><td class="n">2</td><td class="lab2">시작 계기<span>왜 이 스타일?</span></td><td class="w"></td><td class="w"></td></tr>
+    <tr><td class="n">3</td><td class="lab2">힘들었던 순간<span>또는 잘 되던 순간</span></td><td class="w"></td><td class="w"></td></tr>
+    <tr><td class="n">4</td><td class="lab2">지금 · 노하우<span>보는 사람에게 팁</span></td><td class="w"></td><td class="w"></td></tr>
+    <tr><td class="n">5</td><td class="lab2">센 한마디<span>마지막 문장</span></td><td class="w"></td><td class="w"></td></tr>
+  </table>
+
+  <h3 class="top">B · 인터뷰 질문지 · 열린 질문 5 + 꼬리 질문 <span class="opt">"예 · 아니요"로 끝나지 않게 · 꼬리 질문은 답을 듣고 바로</span></h3>
+  <div class="oq">
+    <div class="x"><b>닫힌 질문</b> "힘드셨어요?" → "네." 하고 끝</div>
+    <div class="o"><b>열린 질문</b> "가장 힘들었던 날은 어땠어요?" · 꼬리: "그때 뭐가 제일 떠올랐어요?" "예를 들면요?"</div>
+  </div>
+  <table class="qs" style="margin-bottom:3mm">
+    <tr><th style="width:8mm">#</th><th style="width:27mm">구조</th><th>열린 질문</th><th style="width:52mm">꼬리 질문 (답을 듣고)</th></tr>
+    <tr><td class="n">1</td><td class="lab2">누구인지<span>소개 부탁</span></td><td class="w"></td><td class="w"></td></tr>
+    <tr><td class="n">2</td><td class="lab2">질문 1<span>시작 계기 · 처음</span></td><td class="w"></td><td class="w"></td></tr>
+    <tr><td class="n">3</td><td class="lab2">질문 2<span>힘들었던 순간</span></td><td class="w"></td><td class="w"></td></tr>
+    <tr><td class="n">4</td><td class="lab2">질문 3<span>지금 · 노하우 · 팁</span></td><td class="w"></td><td class="w"></td></tr>
+    <tr><td class="n">5</td><td class="lab2">한마디<span>"한 문장으로 하면?"</span></td><td class="w"></td><td class="w"></td></tr>
+  </table>
+
+  <div class="box" style="padding:2.6mm 4mm;margin:0">
+    <h3 class="top" style="margin-bottom:1mm">세팅 체크 <span class="opt">찍기 전 1분 · 화면이 흔들려도 보지만, 소리가 나쁘면 끕니다</span></h3>
+    <ul class="check" style="margin:0;display:grid;grid-template-columns:1fr 1fr;gap:0 5mm;font-size:9.2pt">
+      <li><strong>눈높이</strong> · 폰을 눈높이에, 얼굴은 위 1/3 선</li>
+      <li><strong>시선</strong> · 토크는 렌즈, 인터뷰는 진행자 쪽 (렌즈 옆)</li>
+      <li><strong>두 카메라</strong> · 와이드 (상반신) + 클로즈업 (얼굴) <span class="opt">· 한 대면 와이드만</span></li>
+      <li><strong>소리</strong> · 조용한 곳 · 폰은 입에서 한 뼘 · 시작할 때 박수 한 번</li>
+      <li><strong>빛</strong> · 창을 얼굴 앞쪽에 (등 뒤 창 X)</li>
+      <li><strong>배경</strong> · 정리하고 의미 있는 소품 하나 · 얼굴이 부담이면 손 · 뒷모습</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 5. ⑤ 따라하기 01 · 02 -->
+<section class="page">
+  <div class="kicker">1교시 · ⑤ 토크 · 인터뷰 · E 편집</div>
+  <h1>군말 지우기 · 두 카메라 · 센 문장 강조</h1>
+  <div class="cyc">
+    <div class="hd"><span class="no">01</span><h3>군말 · 공백 지우기<span class="why">"음, 어" · 긴 침묵을 지우면 1.5배 빨라진 느낌 · 3회차 자동 캡션 · 대본으로 편집의 응용</span></h3><span class="tag">따라하기 01 / 5</span></div>
+    <div class="body">
+      <ol class="steps">
+        <li>토크 클립 선택 → 텍스트(또는 캡션) → 자동 캡션 → 한국어</li>
+        <li>옵션에서 '군말 찾기' 켜기 (있으면)</li>
+        <li>자막 목록에서 "음 · 어 · 그" 표시된 곳 확인 → 지우기</li>
+        <li>긴 침묵은 파형이 평평한 곳 → <kbd>Ctrl</kbd> + <kbd>B</kbd>로 자르고 지우기</li>
+        <li>처음부터 다시 보며 너무 빨라진 곳은 되돌리기 (<kbd>Ctrl</kbd> + <kbd>Z</kbd>)</li>
+      </ol>
+      <div class="aside gold"><b>다 지우지 말기</b>생각하는 한 박자는 진짜처럼 보이게 남겨 두기<br><b style="margin-top:1mm">메뉴 이름</b>군말 찾기 · 대본으로 편집 같은 기능은 버전 · 시기마다 이름 · 위치가 다를 수 있음 (없으면 파형으로)<br>원본 <span class="blank" style="min-width:10mm"></span>초 → <span class="blank" style="min-width:10mm"></span>초</div>
+    </div>
+    <div class="ok"><span><span class="cb"></span><span class="t">확인</span>말이 끊기지 않고 빈 곳 없이 이어짐</span><span class="done">모두 완료 <span class="cb"></span></span></div>
+    <div class="memo">내 메모<div></div></div>
+  </div>
+
+  <div class="cyc">
+    <div class="hd"><span class="no">02</span><h3>두 카메라로 화면 바꾸기<span class="why">와이드 ↔ 클로즈업 · 3회차 레이어 원리(위 트랙이 앞에 보임)를 그대로</span></h3><span class="tag">따라하기 02 / 5</span></div>
+    <div class="body">
+      <ol class="steps">
+        <li>와이드 클립은 메인 트랙, 클로즈업 클립은 바로 위 트랙에</li>
+        <li>박수 소리(파형의 뾰족한 곳)를 두 클립에서 같은 위치로 맞추기</li>
+        <li>클로즈업 클립의 소리는 음소거 (소리는 와이드 하나만)</li>
+        <li>감정이 커지는 곳 · 센 문장에서만 클로즈업이 보이게, 나머지는 잘라내기</li>
+        <li>센 문장 위에 강조 자막 하나</li>
+      </ol>
+      <div class="aside"><b>폰이 한 대뿐이면</b>와이드 클립을 복사해 위 트랙에 놓고 크기 120% 정도로 키우면 클로즈업처럼 (화질이 깨지지 않는 만큼만)<br><b style="margin-top:1mm">박수를 못 쳤으면</b>같은 단어의 파형 모양으로 맞추기</div>
+    </div>
+    <div class="ok"><span><span class="cb"></span><span class="t">확인</span>소리는 끊기지 않고 화면만 와이드 ↔ 클로즈업</span><span class="done">모두 완료 <span class="cb"></span></span></div>
+    <div class="memo">내 메모<div></div></div>
+  </div>
+
+  <div class="box" style="padding:3mm 4mm;margin:0">
+    <h3 class="top">③ 센 문장 강조 <span class="opt">따라하기 02의 5번에 이어서 · 영상 하나에 두세 번만</span></h3>
+    <div class="ed">
+      <div><b>강조 자막</b>센 문장만 크게 · 색 하나 · 그 말이 나오는 순간에 등장</div>
+      <div><b>천천히 줌인</b>크기 키프레임 두 개로 100% → 110% (3회차 키프레임)</div>
+      <div><b>그 말 위에 B롤</b>말은 이어지고 화면만 B롤로 = L컷 (4회차 따라하기 01)</div>
+    </div>
+    <p style="margin:1.5mm 0 0;font-size:9.2pt">내 영상의 센 문장 <span class="blank" style="min-width:96mm"></span> &nbsp;몇 초에 <span class="blank" style="min-width:12mm"></span></p>
+  </div>
+
+  <div class="box line" style="padding:3mm 4mm;margin:3.5mm 0 0">
+    <h3 class="top">얼굴이 부담이면 <span class="opt">토크 · 인터뷰는 얼굴 없이도 됩니다 · 내가 쓸 방법에 체크</span></h3>
+    <div class="ed">
+      <div><span class="cb"></span><b style="display:inline">손 · 작업 화면</b><br>말하는 동안 손 · 만드는 과정 · 화면 녹화를 B롤로 계속</div>
+      <div><span class="cb"></span><b style="display:inline">뒷모습 · 실루엣</b><br>창가 역광 · 뒤에서 · 어깨 너머 · 목소리는 입에서 한 뼘</div>
+      <div><span class="cb"></span><b style="display:inline">오디오 + 사진 · 자막</b><br>팟캐스트형: 사진 · 자료 화면 위에 큰 인용 자막</div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. ⑤ 실습 · 30초 하이라이트 -->
+<section class="page">
+  <div class="kicker">1교시 · ⑤ 토크 · 인터뷰 · 실습</div>
+  <h1>실습 · 30초 하이라이트 기록표</h1>
+  <p class="lead" style="margin-bottom:2.5mm;font-size:10.2pt">셀프 토크 1분 또는 옆자리 인터뷰 3분을 찍고, 가장 센 부분만 남겨 <strong>30초 하이라이트</strong>로. 얼굴이 부담이면 손 · 뒷모습 · 화면 + 목소리로.</p>
+  <table class="run">
+    <tr><th>#</th><th>단계</th><th>할 일</th><th style="text-align:center">기준</th><th style="text-align:center">체크</th></tr>
+    <tr><td>1</td><td>고르기</td><td>A 셀프 토크 1분 "제 메인 스타일과 이유" / B 옆자리 인터뷰 3분</td><td class="tm"></td><td class="c"><span class="cb"></span></td></tr>
+    <tr><td>2</td><td>메모</td><td>키워드 5줄 또는 질문 5개 (앞쪽 표)</td><td class="tm">5분</td><td class="c"><span class="cb"></span></td></tr>
+    <tr><td>3</td><td>촬영</td><td>눈높이 · 조용한 곳 · 폰 입에서 한 뼘 · 박수 한 번</td><td class="tm">5분</td><td class="c"><span class="cb"></span></td></tr>
+    <tr><td>4</td><td>편집</td><td>군말 지우기 → (두 카메라) → 센 문장 강조 → 30초</td><td class="tm">15분</td><td class="c"><span class="cb"></span></td></tr>
+    <tr><td>5</td><td>보기</td><td>옆자리에게 보여 주고 "가장 센 한마디" 듣기</td><td class="tm"></td><td class="c"><span class="cb"></span></td></tr>
+  </table>
+
+  <h3 class="top">길이 기록 <span class="opt">줄어드는 만큼 보는 사람이 편해져요</span></h3>
+  <div class="len" style="margin:0 0 3.5mm">
+    <span class="box2"><b>찍은 원본</b> <span class="blank" style="min-width:14mm"></span></span><span class="ar">→</span>
+    <span class="box2"><b>군말 · 공백 지운 뒤</b> <span class="blank" style="min-width:14mm"></span></span><span class="ar">→</span>
+    <span class="box2"><b>하이라이트</b> <span class="blank" style="min-width:14mm"></span> <span class="opt">(30초 안팎)</span></span>
+  </div>
+
+  <h3 class="top">하이라이트 후보 구간 <span class="opt">자막 목록을 훑으며 센 문장 찾기 · 남길 구간에 체크</span></h3>
+  <table class="hl">
+    <tr><th>#</th><th style="width:18mm;text-align:center">시작</th><th style="width:18mm;text-align:center">끝</th><th>무슨 말 (한 줄)</th><th style="width:13mm;text-align:center">남김</th></tr>
+    <tr><td>1</td><td class="tm">:</td><td class="tm">:</td><td></td><td class="c"><span class="cb"></span></td></tr>
+    <tr><td>2</td><td class="tm">:</td><td class="tm">:</td><td></td><td class="c"><span class="cb"></span></td></tr>
+    <tr><td>3</td><td class="tm">:</td><td class="tm">:</td><td></td><td class="c"><span class="cb"></span></td></tr>
+    <tr><td>4</td><td class="tm">:</td><td class="tm">:</td><td></td><td class="c"><span class="cb"></span></td></tr>
+    <tr><td>5</td><td class="tm">:</td><td class="tm">:</td><td></td><td class="c"><span class="cb"></span></td></tr>
+  </table>
+
+  <h3 class="top" style="margin-bottom:1mm">30초로 묶는 순서 <span class="opt">숏폼은 첫 1초에 그 문장 · 4교시 훅 공식과 이어짐</span></h3>
+  <div class="bar" style="margin:0 0 3.5mm">
+    <div class="c4" style="flex:1"><b>센 문장 먼저</b>첫 1~3초 · 강조 자막</div>
+    <div class="c1" style="flex:1"><b>누구인지</b>이름 · 하는 일 한 줄</div>
+    <div class="c2" style="flex:1.6"><b>이야기</b>왜 그 말이 나왔나 · B롤 · 클로즈업</div>
+    <div class="c5" style="flex:1"><b>한마디</b>마무리 · 다음 이야기</div>
+  </div>
+
+  <div class="grid2" style="gap:4mm">
+    <div class="box line" style="margin:0;padding:2.6mm 4mm">
+      <h3 class="top">옆자리가 고른 가장 센 한마디</h3>
+      <div class="wln"></div><div class="wln"></div>
+      <p style="margin:1.5mm 0 0;font-size:9pt">내가 고른 것과 <span class="cb"></span>같음 <span class="cb"></span>다름</p>
+    </div>
+    <div class="box line" style="margin:0;padding:2.6mm 4mm">
+      <h3 class="top">G 체크 <span class="opt">카테고리 카드 ⑤</span></h3>
+      <ul class="check" style="margin:0;font-size:9pt">
+        <li style="margin-bottom:0.6mm">첫 30초(숏폼은 첫 3초)에 누구인지</li>
+        <li style="margin-bottom:0.6mm">소리가 깨끗함 (파형 · 폰)</li>
+        <li style="margin-bottom:0.6mm">같은 화면이 오래 가지 않음</li>
+        <li style="margin-bottom:0.6mm">출연자 동의 · 사실 확인</li>
+        <li style="margin:0"><strong>대표작 재료로 쓸까?</strong> <span class="opt">재료 점검 3번에 체크</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 7. 카테고리 카드 ⑥ 라이브 · 라이브커머스 -->
+<section class="page">
+  <div class="kicker">2교시 · 카테고리 카드 ⑥</div>
+  <div class="cchd">
+    <span class="big">⑥</span>
+    <div><h1>라이브 · 라이브커머스</h1><div class="tags"><span>라이브 방송 · 다시보기</span><span>하이라이트 숏폼 9:16</span><span class="g">지금 같이 있는 영상</span></div></div>
+  </div>
+  <div class="cc">
+    <div class="L">A<small>정의</small></div>
+    <div class="R">
+      <p class="def">지금 같이 있는 영상 — 큐시트로 준비하고, 하이라이트로 남긴다</p>
+      <p class="kinds"><b style="color:var(--pine)">소통 라이브</b> (질문 받기 · 작업 과정 공개 · 같이 보기) · <b style="color:var(--pine)">라이브커머스</b> (상품을 보여 주며 실시간 판매 · 혜택) · <b style="color:var(--pine)">하이라이트</b> (라이브 다시보기에서 잘라 낸 숏폼). 쇼핑 플랫폼 라이브는 스토어와 연결된 판매 방송 · 예약 · 알림, 유튜브 · 인스타 · 틱톡 라이브는 구독자 · 팔로워와 소통하고 다시보기로 남김 <span class="opt">(기능 · 조건은 바뀔 수 있으니 확인)</span>.</p>
+      <div class="spec"><span><b>공식</b>라이브 한 번 = 다시보기 1 + 하이라이트 숏폼 3</span><span><b>오늘</b>혼자 3분 리허설 → 1분 하이라이트</span></div>
+    </div>
+    <div class="L">B<small>레퍼런스</small></div>
+    <div class="R">
+      <div class="ref">
+        <div>
+          <div class="hd">강사가 고른 레퍼런스 <span class="opt">· 다음 쪽 레퍼런스 해부에 채우기</span></div>
+          <div class="wl">① 제목 · 채널<div></div></div>
+          <div class="wl">② 제목 · 채널<div></div></div>
+          <div class="wl">내 라이브에 가져올 것 1개<div></div></div>
+        </div>
+        <div class="look"><b>보면서 찾을 것</b>① 처음 1분에 무엇을 말하나 (인사 · 혜택 · 상품)<br>② 상품을 어떻게 보여 주나 (손 · 클로즈업 · 비교)<br>③ 혜택 · 가격은 몇 번 말하나<br>④ 마감 멘트는 어떻게 하나</div>
+      </div>
+    </div>
+    <div class="L">C<small>기획</small></div>
+    <div class="R">
+      <div class="bartop"><b>큐시트 · 판매 멘트 구조</b><span>30분 라이브라면 이 흐름을 두세 번 반복 (새로 들어온 사람을 위해)</span></div>
+      <div class="bar">
+        <div class="c1" style="flex:1"><b>오프닝</b>인사 · 오늘 혜택 한 줄 예고</div>
+        <div class="c3" style="flex:1"><b>문제</b>이런 적 있죠? 공감</div>
+        <div class="c2" style="flex:1.2"><b>보여 주기</b>상품 · 손 · 클로즈업 · 써 보기</div>
+        <div class="c5" style="flex:1"><b>증거</b>후기 · 비교 · 과정</div>
+        <div class="c4" style="flex:1"><b>혜택</b>가격 · 사은품 · 오늘만</div>
+        <div class="c6" style="flex:1.1"><b>질문 · 마감</b>질문 받기 · 지금 사야 하는 이유</div>
+      </div>
+      <p class="muted" style="margin:0.5mm 0 0">큐시트 = 시간 · 내용 · 화면 · 멘트 · 준비물. 혜택은 여러 번 말하기 — 라이브는 중간에 들어오는 사람이 많다.</p>
+    </div>
+    <div class="L">D<small>촬영</small></div>
+    <div class="R">
+      <ul class="dl two">
+        <li><b>폰 고정</b> · 거치대 · 세로/가로 정하기 · 화면 꺼짐 방지 · 알림 끄기</li>
+        <li><b>빛 하나</b> · 얼굴 앞 조명 또는 창가 · 상품 클로즈업용 작은 조명</li>
+        <li><b>상품 자리</b> · 카메라 앞 표시된 자리 · 꺼낼 순서대로 정리</li>
+        <li><b>두 번째 화면</b> · 채팅 보는 폰 · 태블릿 (질문 놓치지 않기)</li>
+        <li><b>소리 · 리허설</b> · 조용한 곳 · 마이크 테스트 · 10분 전 혼자 리허설</li>
+        <li style="color:var(--sage)">큐시트 · 상품 · 조명 · 채팅 화면이 손 닿는 곳에</li>
+      </ul>
+    </div>
+    <div class="L e">E<small>편집</small></div>
+    <div class="R">
+      <div class="ed">
+        <div><b>하이라이트 찾기</b>자동 캡션 → 자막 목록에서 "오늘만" "직접 써 보면" 같은 말 찾기<br><em>따라하기 03</em></div>
+        <div><b>숏폼으로</b>하이라이트 3개를 9:16으로, 첫 1초에 가장 센 장면<br><em>따라하기 03</em></div>
+        <div><b>정보 카드</b>가격 · 혜택 · 기간 카드 (4회차 따라하기 04처럼 같은 디자인)</div>
+      </div>
+      <p class="muted" style="margin:1mm 0 0">숏폼 끝에 "다음 라이브 ○일 ○시" 한 줄.</p>
+    </div>
+    <div class="L">F<small>발행</small></div>
+    <div class="R">
+      <div class="fpub">
+        <div class="lo"><b>알리고 → 방송하고 → 잘라서 다시 쓰기</b>예고: 날짜 · 시간 · 혜택 한 줄 + 예고 숏폼 · 썸네일 · 다시보기: 제목 · 챕터 (상품별) · 설명에 상품 링크 · 하이라이트: 숏폼 3편, 끝에 다음 라이브 일정</div>
+        <div class="sh"><b>표시 · 개인정보</b><strong>광고 · 협찬 · 제공 표시</strong>, 가격 · 혜택 · 기간 정확히 · <strong>채팅 닉네임 · 주문 정보 · 다른 사람 얼굴 가리기</strong> (다시보기 · 하이라이트 모두)</div>
+      </div>
+    </div>
+    <div class="L last">G<small>체크</small></div>
+    <div class="R last">
+      <ul class="check gck">
+        <li>큐시트대로 흘러갔나</li>
+        <li>가격 · 혜택 · 기간 정확히</li>
+        <li>광고 · 협찬 표시</li>
+        <li>채팅 닉네임 · 개인정보 가림</li>
+        <li>소리 테스트 · 리허설</li>
+      </ul>
+    </div>
+  </div>
+  <p class="ccfoot"><b>내 라이브 한 줄 메모</b> 오늘 들고 할 상품 (또는 소지품) <span class="blank" style="min-width:96mm"></span></p>
+</section>
+
+<!-- 7-2. 레퍼런스 해부 ⑥ (강사가 수업에서 채움) -->
+<section class="page">
+  <div class="kicker">2교시 · ⑥ 라이브 · 라이브커머스 · B 레퍼런스</div>
+  <h1>레퍼런스 해부 · 라이브커머스</h1>
+  <div class="lookbar"><b>보면서 찾을 것</b><span>① 처음 1분에 무엇을 말하나</span><span>② 상품을 어떻게 보여 주나</span><span>③ 혜택 · 가격은 몇 번 말하나</span><span>④ 마감 멘트는 어떻게 하나</span></div>
+  <p class="note" style="margin:-1mm 0 2.5mm">긴 라이브는 강사가 고른 구간만 함께 봐요. <b>C 흐름(오프닝 → 문제 → 보여 주기 → 증거 → 혜택 → 질문 · 마감)이 몇 분에 나오는지</b> 적어 보면 큐시트가 보입니다.</p>
+  <div class="rf rfb">
+    <div class="top"><span class="no">1</span><div style="flex:1">
+      <div class="wl" style="margin-top:0"><b style="color:var(--pine);font-size:9pt">영상 제목</b><div></div></div>
+      <div class="wl">채널<div style="flex:0.55"></div>링크<div></div></div>
+      <div class="kind"><span><span class="cb"></span>쇼핑 플랫폼 라이브</span><span><span class="cb"></span>유튜브 · 인스타 · 틱톡 라이브</span><span><span class="cb"></span>하이라이트 숏폼</span><span>본 구간 <span class="blank" style="min-width:12mm"></span> ~ <span class="blank" style="min-width:12mm"></span></span></div>
+    </div></div>
+    <table class="rtl bl"><tr><th>시간</th><th>장면</th><th>무엇을 배울까 <span style="font-weight:400">(A~G)</span></th></tr><tr><td class="t">:</td><td></td><td class="k"></td></tr><tr><td class="t">:</td><td></td><td class="k"></td></tr><tr><td class="t">:</td><td></td><td class="k"></td></tr><tr><td class="t">:</td><td></td><td class="k"></td></tr></table>
+    
+    <div class="four ans"><div><b>① 처음 1분</b>인사 · 혜택 · 상품 중 무엇을<div class="ln"></div></div><div><b>② 보여 주는 법</b>손 · 클로즈업 · 비교<div class="ln"></div></div><div><b>③ 혜택 · 가격</b>몇 번 말하나 · 정보 카드는<div class="ln"></div></div><div><b>④ 마감 멘트</b>지금 사야 하는 이유는<div class="ln"></div></div></div>
+    <div class="six"><div><b>오프닝</b>몇 분에<div class="ln"></div></div><div><b>문제</b>몇 분에<div class="ln"></div></div><div><b>보여 주기</b>몇 분에<div class="ln"></div></div><div><b>증거</b>몇 분에<div class="ln"></div></div><div><b>혜택</b>몇 분에<div class="ln"></div></div><div><b>질문 · 마감</b>몇 분에<div class="ln"></div></div></div>
+    <div class="take">내 영상에 가져올 것 1개<div></div></div>
+  </div>
+  <div class="rf rfb" style="margin:0">
+    <div class="top"><span class="no">2</span><div style="flex:1">
+      <div class="wl" style="margin-top:0"><b style="color:var(--pine);font-size:9pt">영상 제목</b><div></div></div>
+      <div class="wl">채널<div style="flex:0.55"></div>링크<div></div></div>
+      <div class="kind"><span><span class="cb"></span>쇼핑 플랫폼 라이브</span><span><span class="cb"></span>유튜브 · 인스타 · 틱톡 라이브</span><span><span class="cb"></span>하이라이트 숏폼</span><span>본 구간 <span class="blank" style="min-width:12mm"></span> ~ <span class="blank" style="min-width:12mm"></span></span></div>
+    </div></div>
+    <table class="rtl bl"><tr><th>시간</th><th>장면</th><th>무엇을 배울까 <span style="font-weight:400">(A~G)</span></th></tr><tr><td class="t">:</td><td></td><td class="k"></td></tr><tr><td class="t">:</td><td></td><td class="k"></td></tr><tr><td class="t">:</td><td></td><td class="k"></td></tr></table>
+    
+    <div class="four ans"><div><b>① 처음 1분</b>인사 · 혜택 · 상품 중 무엇을<div class="ln"></div></div><div><b>② 보여 주는 법</b>손 · 클로즈업 · 비교<div class="ln"></div></div><div><b>③ 혜택 · 가격</b>몇 번 말하나 · 정보 카드는<div class="ln"></div></div><div><b>④ 마감 멘트</b>지금 사야 하는 이유는<div class="ln"></div></div></div>
+    <div class="six"><div><b>오프닝</b>몇 분에<div class="ln"></div></div><div><b>문제</b>몇 분에<div class="ln"></div></div><div><b>보여 주기</b>몇 분에<div class="ln"></div></div><div><b>증거</b>몇 분에<div class="ln"></div></div><div><b>혜택</b>몇 분에<div class="ln"></div></div><div><b>질문 · 마감</b>몇 분에<div class="ln"></div></div></div>
+    <div class="take">내 영상에 가져올 것 1개<div></div></div>
+  </div>
+
+</section>
+
+<!-- 8. ⑥ 큐시트 · 판매 멘트 구조 -->
+<section class="page">
+  <div class="kicker">2교시 · ⑥ 라이브 · 라이브커머스 · C 기획</div>
+  <h1>3분 리허설 큐시트 · 판매 멘트</h1>
+  <p class="lead" style="margin-bottom:2mm;font-size:10.2pt">내 상품(없으면 오늘 가방 속 소지품 하나)으로 <strong>혼자 3분 라이브 리허설</strong>. 큐시트는 5분 안에, 멘트는 문장 말고 키워드로.<br>오늘 들고 할 상품 <span class="blank" style="min-width:70mm"></span> &nbsp;가격 · 혜택 <span class="blank" style="min-width:44mm"></span></p>
+
+  <h3 class="top">판매 멘트 구조 먼저 <span class="opt">이 다섯 칸이 큐시트의 '멘트' 칸으로 들어갑니다</span></h3>
+  <div class="say">
+    <div class="f"><b>문제</b>이런 적 있죠?<div class="ln"></div><div class="ln"></div></div>
+    <div class="op">→</div>
+    <div class="f"><b>보여 주기</b>손 · 클로즈업 · 써 보기<div class="ln"></div><div class="ln"></div></div>
+    <div class="op">→</div>
+    <div class="f"><b>증거</b>후기 · 비교 · 과정<div class="ln"></div><div class="ln"></div></div>
+    <div class="op">→</div>
+    <div class="f"><b>혜택</b>가격 · 사은품 · 오늘만<div class="ln"></div><div class="ln"></div></div>
+    <div class="op">→</div>
+    <div class="f me"><b>지금 사야 하는 이유</b>마감 한마디<div class="ln"></div><div class="ln"></div></div>
+  </div>
+  <p class="eg"><b>예 · 핸드크림</b> "손 씻고 나면 금방 당기죠?" → 손등에 짜서 바르는 클로즈업 → 내가 한 달 써 본 손등 사진 · 다른 제품과 발림 비교 → "라이브 중에만 미니 하나 더" → "방송 끝나면 혜택도 끝나요". <span class="opt">혜택 · 증거는 사실만 · 없는 효과 X</span></p>
+
+  <h3 class="top">큐시트 · 3분 리허설용 <span class="opt">시간은 예시 · 증거가 없으면 보여 주기를 늘리기 · 혜택은 두 번 이상</span></h3>
+  <table class="cue">
+    <tr><th style="width:23mm">순서</th><th style="width:17mm">시간</th><th style="width:32mm">내용</th><th style="width:27mm">화면</th><th>멘트 (키워드)</th><th style="width:22mm">준비물</th></tr>
+    <tr><td class="st">오프닝<span>인사 · 혜택 예고</span></td><td class="tm">0:00~0:20</td><td></td><td></td><td></td><td></td></tr>
+    <tr><td class="st">문제<span>공감</span></td><td class="tm">0:20~0:40</td><td></td><td></td><td></td><td></td></tr>
+    <tr><td class="st">보여 주기<span>손 · 클로즈업</span></td><td class="tm">0:40~1:40</td><td></td><td></td><td></td><td></td></tr>
+    <tr><td class="st">증거<span>있으면</span></td><td class="tm">1:40~2:10</td><td></td><td></td><td></td><td></td></tr>
+    <tr><td class="st">혜택<span>가격 · 오늘만</span></td><td class="tm">2:10~2:40</td><td></td><td></td><td></td><td></td></tr>
+    <tr><td class="st">질문 · 마감<span>지금 사야 하는 이유</span></td><td class="tm">2:40~3:00</td><td></td><td></td><td></td><td></td></tr>
+  </table>
+  <div class="box gold" style="margin:0;padding:2.4mm 4mm">
+    <ul class="check" style="margin:0;display:grid;grid-template-columns:1fr 1fr 1fr;gap:0 4mm;font-size:9pt">
+      <li style="margin:0">혜택을 두 번 이상 넣음</li>
+      <li style="margin:0">옆자리 질문 하나 받을 자리</li>
+      <li style="margin:0">가격 · 혜택 · 기간 숫자 확인</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 9. ⑥ 세팅 체크 · 따라하기 03 -->
+<section class="page">
+  <div class="kicker">2교시 · ⑥ 라이브 · 라이브커머스 · D 촬영 · E 편집</div>
+  <h1>라이브 세팅 · 녹화본에서 하이라이트</h1>
+  <h3 class="top">라이브 세팅 체크 <span class="opt">리허설 전 · 큐시트 · 상품 · 조명 · 채팅 화면이 손 닿는 곳에</span></h3>
+  <div class="shoot">
+    <div><span class="cb"></span><b>폰 고정</b>거치대 · 세로/가로 정하기 · 화면 꺼짐 방지 · 알림 끄기</div>
+    <div><span class="cb"></span><b>빛 하나</b>얼굴 앞 조명 또는 창가 · 상품용 작은 조명</div>
+    <div><span class="cb"></span><b>상품 자리</b>카메라 앞 표시된 자리 · 꺼낼 순서대로</div>
+    <div><span class="cb"></span><b>두 번째 화면</b>채팅 보는 폰 · 태블릿 (오늘은 옆자리 질문)</div>
+    <div><span class="cb"></span><b>소리 · 리허설</b>조용한 곳 · 마이크 테스트 · 10분 전 혼자 한 번</div>
+  </div>
+  <p style="margin:0 0 3.5mm;font-size:9.2pt">내 화면 방향 <span class="cb"></span>세로 9:16 <span class="cb"></span>가로 16:9 &nbsp; · 상품 자리 표시 (테이프 · 종이) <span class="cb"></span> &nbsp; · 녹화 시작 전 박수 한 번 <span class="cb"></span></p>
+
+  <div class="cyc">
+    <div class="hd"><span class="no">03</span><h3>녹화본에서 하이라이트 1분<span class="why">긴 녹화본은 눈으로 다 보지 말고 자막으로 훑기 · 3회차 자동 캡션 + 배경 흐림 응용</span></h3><span class="tag">따라하기 03 / 5</span></div>
+    <div class="body">
+      <ol class="steps">
+        <li>리허설 녹화본을 16:9(또는 9:16) 프로젝트에</li>
+        <li>자동 캡션 → 자막 목록을 훑어 '보여 주기 · 혜택' 문장 찾기</li>
+        <li>그 문장 앞뒤로 <kbd>Ctrl</kbd> + <kbd>B</kbd>, 하이라이트 3구간만 남기기</li>
+        <li>9:16으로 바꾸고 상품이 가운데 오게 위치 조정 (배경 흐림)</li>
+        <li>가격 · 혜택 정보 카드 하나 → 1분 안팎으로 내보내기</li>
+      </ol>
+      <div class="aside gold"><b>찾을 말</b>"오늘만" · "직접 써 보면" · "보세요" · 가격 숫자<br><b style="margin-top:1mm">정보 카드</b>4회차 따라하기 04의 내 카드 디자인을 복사해 글자만 바꾸기<br><b style="margin-top:1mm">메뉴 이름</b>버전 · 시기마다 다를 수 있음</div>
+    </div>
+    <div class="ok"><span><span class="cb"></span><span class="t">확인</span>3구간 · 1분 · 상품이 가운데 · 정보 카드</span><span class="done">모두 완료 <span class="cb"></span></span></div>
+    <div class="memo">내 메모<div></div></div>
+  </div>
+
+  <div class="box line" style="padding:3mm 4mm;margin-bottom:3mm">
+    <h3 class="top">정보 카드 쓰기 <span class="opt">숫자는 정확히 · 다시보기 · 하이라이트 모두 같은 카드</span></h3>
+    <div class="grid3" style="gap:4mm">
+      <p style="margin:0;font-size:9.2pt">가격 <span class="blank" style="min-width:34mm"></span></p>
+      <p style="margin:0;font-size:9.2pt">혜택 <span class="blank" style="min-width:34mm"></span></p>
+      <p style="margin:0;font-size:9.2pt">기간 <span class="blank" style="min-width:34mm"></span></p>
+    </div>
+    <p style="margin:2mm 0 0;font-size:9.2pt">숏폼 끝 한 줄 "다음 라이브 <span class="blank" style="min-width:12mm"></span>일 <span class="blank" style="min-width:12mm"></span>시 <span class="blank" style="min-width:50mm"></span>"</p>
+  </div>
+  <div class="grid2" style="gap:4mm;margin-bottom:3mm">
+    <div class="box" style="margin:0;padding:2.6mm 4mm">
+      <h3 class="top">하이라이트 숏폼 3편 계획 <span class="opt">편마다 한 장면</span></h3>
+      <p style="margin:0 0 1.2mm;font-size:9pt">① <span class="blank" style="min-width:66mm"></span></p>
+      <p style="margin:0 0 1.2mm;font-size:9pt">② <span class="blank" style="min-width:66mm"></span></p>
+      <p style="margin:0;font-size:9pt">③ <span class="blank" style="min-width:66mm"></span></p>
+    </div>
+    <div class="box" style="margin:0;padding:2.6mm 4mm">
+      <h3 class="top">다시보기 챕터 <span class="opt">상품별 · 설명란에</span></h3>
+      <p style="margin:0 0 1.2mm;font-size:9pt">00:00 <span class="blank" style="min-width:56mm"></span></p>
+      <p style="margin:0 0 1.2mm;font-size:9pt"><span class="blank" style="min-width:10mm"></span> <span class="blank" style="min-width:56mm"></span></p>
+      <p style="margin:0;font-size:9pt"><span class="blank" style="min-width:10mm"></span> <span class="blank" style="min-width:56mm"></span></p>
+    </div>
+  </div>
+  <div class="box dark" style="margin:0;padding:2.8mm 4.5mm">
+    <p style="margin:0;font-size:9.4pt"><strong>라이브 한 번 = 다시보기 1 + 하이라이트 숏폼 3.</strong> 오늘은 하이라이트 1분 하나만. 나머지 두 개는 같은 방법으로 집에서. 실제 라이브는 집에서 한 번 — 오늘은 준비와 하이라이트까지.</p>
+  </div>
+</section>
+
+<!-- 10. ⑥ 실습 · 3분 라이브 리허설 → 1분 하이라이트 -->
+<section class="page">
+  <div class="kicker">2교시 · ⑥ 라이브 · 라이브커머스 · F 발행 · 실습</div>
+  <h1>실습 · 3분 리허설 → 1분 하이라이트</h1>
+  <table class="run">
+    <tr><th>#</th><th>단계</th><th>할 일</th><th style="text-align:center">기준</th><th style="text-align:center">체크</th></tr>
+    <tr><td>1</td><td>큐시트</td><td>오프닝 · 문제 · 보여 주기 · 혜택 · 마감 5줄 (앞쪽 큐시트)</td><td class="tm">5분</td><td class="c"><span class="cb"></span></td></tr>
+    <tr><td>2</td><td>세팅</td><td>폰 고정 · 빛 · 상품 자리 · 조용한 곳</td><td class="tm"></td><td class="c"><span class="cb"></span></td></tr>
+    <tr><td>3</td><td>녹화</td><td>3분 리허설 (옆자리 질문 하나 받기)</td><td class="tm">3분</td><td class="c"><span class="cb"></span></td></tr>
+    <tr><td>4</td><td>편집</td><td>자동 캡션으로 하이라이트 3구간 → 9:16 1분 (따라하기 03)</td><td class="tm">15분</td><td class="c"><span class="cb"></span></td></tr>
+    <tr><td>5</td><td>보기</td><td>옆자리에게 "사고 싶어진 순간" 듣기</td><td class="tm"></td><td class="c"><span class="cb"></span></td></tr>
+  </table>
+
+  <h3 class="top">1분 하이라이트 기록 <span class="opt">세 구간 · 각 구간이 C 흐름의 어디인지 동그라미</span></h3>
+  <table class="hl" style="--h:11mm">
+    <tr><th>#</th><th style="width:18mm;text-align:center">시작</th><th style="width:18mm;text-align:center">끝</th><th>자막에서 찾은 문장</th><th style="width:46mm">흐름</th></tr>
+    <tr><td>1</td><td class="tm">:</td><td class="tm">:</td><td></td><td class="opt">문제 · 보여 주기 · 증거 · 혜택 · 마감</td></tr>
+    <tr><td>2</td><td class="tm">:</td><td class="tm">:</td><td></td><td class="opt">문제 · 보여 주기 · 증거 · 혜택 · 마감</td></tr>
+    <tr><td>3</td><td class="tm">:</td><td class="tm">:</td><td></td><td class="opt">문제 · 보여 주기 · 증거 · 혜택 · 마감</td></tr>
+  </table>
+  <div class="grid2" style="gap:4mm;margin-bottom:3.5mm">
+    <div class="box line" style="margin:0;padding:2.6mm 4mm">
+      <h3 class="top">옆자리 한마디</h3>
+      <p style="margin:0 0 1.2mm;font-size:9.2pt">"사고 싶어진 순간" <span class="blank" style="min-width:42mm"></span></p>
+      <p style="margin:0 0 1.2mm;font-size:9.2pt">첫 1초에 둘 장면 <span class="blank" style="min-width:44mm"></span></p>
+      <p style="margin:0;font-size:9.2pt">큐시트에서 빠진 것 <span class="blank" style="min-width:42mm"></span></p>
+    </div>
+    <div class="box line" style="margin:0;padding:2.6mm 4mm">
+      <h3 class="top">G 체크 <span class="opt">카테고리 카드 ⑥</span></h3>
+      <ul class="check" style="margin:0;font-size:9pt">
+        <li style="margin-bottom:0.6mm">큐시트대로 흘러갔나</li>
+        <li style="margin-bottom:0.6mm">가격 · 혜택 · 기간 정확히</li>
+        <li style="margin-bottom:0.6mm">소리 테스트 · 리허설</li>
+        <li style="margin:0"><strong>대표작 재료로 쓸까?</strong> <span class="opt">재료 점검 3번</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="box line" style="padding:2.6mm 4mm;margin:0 0 3mm">
+    <h3 class="top" style="margin-bottom:1mm">다음 라이브 예고 한 줄 <span class="opt">F 발행 · 날짜 · 시간 · 혜택 + 예고 숏폼 · 썸네일</span></h3>
+    <p style="margin:0;font-size:9.2pt"><span class="blank" style="min-width:12mm"></span>월 <span class="blank" style="min-width:10mm"></span>일 <span class="blank" style="min-width:10mm"></span>시 · 혜택 <span class="blank" style="min-width:52mm"></span> · 썸네일 문구 <span class="blank" style="min-width:36mm"></span></p>
+  </div>
+  <h3 class="top">올리기 전 · 표시와 개인정보 <span class="opt">하이라이트 숏폼도 다시보기도 똑같이 · 메뉴 위치는 버전 · 시기마다 다를 수 있음</span></h3>
+  <div class="rule2">
+    <div class="ok1"><b class="h">광고 · 협찬 표시</b>
+      <ul class="check" style="font-size:9pt">
+        <li>대가(협찬 · 제공 · 할인)를 받았다면 처음에 "광고" "협찬" 표시 + 플랫폼 유료 광고 표시</li>
+        <li>내 가게 · 내 상품이면 내 것임을 밝히기</li>
+        <li>가격 · 혜택 · 기간은 말과 카드가 같은지</li>
+      </ul>
+    </div>
+    <div class="no1"><b class="h">개인정보 가리기</b>
+      <ul class="check" style="font-size:9pt">
+        <li>채팅 닉네임 · 프로필 사진 (모자이크 · 스티커 · 잘라내기)</li>
+        <li>주문 정보 · 전화번호 · 주소가 보이는 화면</li>
+        <li>동의하지 않은 다른 사람 얼굴</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 11. 카테고리 카드 ⑦ AI 영상 -->
+<section class="page">
+  <div class="kicker">3교시 · 카테고리 카드 ⑦</div>
+  <div class="cchd">
+    <span class="big">⑦</span>
+    <div><h1>AI 영상</h1><div class="tags"><span>AI 숏드라마 광고 20~30초</span><span>9:16 · 6컷 + 내레이션</span><span class="g">찍을 수 없는 장면을 만드는 영상</span></div></div>
+  </div>
+  <div class="cc">
+    <div class="L">A<small>정의</small></div>
+    <div class="R">
+      <p class="def">찍을 수 없는 장면을 만드는 영상 — 이야기는 사람이, 장면은 AI가</p>
+      <p class="kinds"><b style="color:var(--pine)">AI 숏드라마 광고</b> (짧은 이야기 + 제품 · 가게 · 서비스) · <b style="color:var(--pine)">브랜드 필름</b> (말보다 분위기 · 세계관, 4회차 상품 영상의 확장) · <b style="color:var(--pine)">AI 단편 · 설명</b> (상상 장면 · 과정 설명 · 뮤직비디오). 이야기 · 기획 · 검수는 사람, 장면 · 목소리는 AI.</p>
+      <div class="spec"><span><b>④ 상황극</b>공감 · 공유 · 반전 한마디로 끝 · 일러스트 4컷 + 말풍선</span><span><b>⑦ 숏드라마 광고</b>제품 · 가게를 기억하게 · 제품이 해결 → 엔딩 카드 · 실사풍 6컷 + 내레이션</span></div>
+    </div>
+    <div class="L">B<small>레퍼런스</small></div>
+    <div class="R">
+      <div class="ref">
+        <div>
+          <div class="hd">메이킹 해부 · 3회차 한강 단풍 + 강사가 고른 AI 광고 <span class="opt">· 다음 쪽</span></div>
+          <p style="margin:0.5mm 0 0;font-size:8.8pt">대본 → 스토리보드 → 기준 이미지 → 이미지 → 영상 → 목소리 · 편집. <b style="color:var(--pine)">가장 중요한 단계는 기준 이미지</b> — 흔들리면 모든 컷이 흔들린다.</p>
+          <div class="wl">레퍼런스 제목 · 채널<div></div></div>
+          <div class="wl">내 AI 광고에 가져올 것 1개<div></div></div>
+        </div>
+        <div class="look"><b>보면서 찾을 것</b>① 이야기가 한 줄로 설명되나<br>② 제품은 몇 초에 등장하나<br>③ 컷 수 · 한 컷 몇 초<br>④ 인물 · 빛이 컷마다 같은가</div>
+      </div>
+    </div>
+    <div class="L">C<small>기획</small></div>
+    <div class="R">
+      <div class="bartop"><b>20~30초 AI 광고 구조 · 6컷</b><span>24초 예: 4초 × 6컷</span></div>
+      <div class="bar">
+        <div class="c1" style="flex:1"><b>상황</b>누가 · 어디서<br>평범한 하루</div>
+        <div class="c3" style="flex:1"><b>문제</b>불편 · 고민<br>표정으로</div>
+        <div class="c4" style="flex:1"><b>제품 등장</b>손 · 클로즈업<br>가장 예쁜 순간</div>
+        <div class="c2" style="flex:1"><b>변화</b>써 본 뒤<br>달라진 모습</div>
+        <div class="c5" style="flex:1"><b>감정</b>웃음 · 여유<br>한 장면</div>
+        <div class="c6" style="flex:1"><b>엔딩 카드</b>제품명 · 한 줄<br>어디서</div>
+      </div>
+      <p class="muted" style="margin:0.5mm 0 0">제품이 문제를 해결하는 순간이 이야기의 중심. 감정 컷은 변화의 두 번째 컷 (변화 1~2컷).</p>
+    </div>
+    <div class="L">D<small>생성</small></div>
+    <div class="R">
+      <ul class="dl two">
+        <li><b>기준 인물 1장</b> · 얼굴 · 머리 · 옷 고정, 모든 컷에 참고 이미지로</li>
+        <li><b>제품은 내 사진</b> · 모양 · 라벨은 사진 그대로 (4회차 상품 프롬프트 규칙)</li>
+        <li><b>카메라를 말로</b> · close-up · wide shot · low angle · slow push-in (1회차 용어)</li>
+        <li><b>움직임은 하나</b> · 한 컷에 동작 하나 · 카메라 움직임 하나</li>
+        <li><b>2~3번 만들고 고르기</b> · 손 · 얼굴 · 글자가 이상하면 다시</li>
+        <li><b>프롬프트 공식 여섯 칸</b> · 누가 · 어디서 · 동작 · 카메라 · 빛 · 하지 말 것 (3회차)</li>
+      </ul>
+    </div>
+    <div class="L e">E<small>편집</small></div>
+    <div class="R">
+      <div class="ed">
+        <div><b>잇기 · 색 통일</b>컷 순서대로 붙이고 필터 · 조정 하나로 같은 톤 (3회차 사이클 7)<br><em>따라하기 04</em></div>
+        <div><b>내레이션 · 효과음</b>Fish Audio 내레이션 + 장면마다 효과음 하나 + 잔잔한 음악 (덕킹)<br><em>따라하기 04</em></div>
+        <div><b>자막 · 엔딩 카드</b>내레이션 자동 캡션 → 강조 단어 하나 → 제품명 · 한 줄 · 어디서</div>
+      </div>
+      <p class="muted" style="margin:1mm 0 0">이상한 손 · 얼굴이 보이는 프레임은 잘라 내기 (0.5초라도).</p>
+    </div>
+    <div class="L">F<small>발행</small></div>
+    <div class="R">
+      <div class="fpub">
+        <div class="lo"><b>꼭 할 것</b>플랫폼의 AI 생성 표시 켜기 · 제품 모양 · 색 · 크기는 실물대로 · 광고 · 협찬이면 표시 · 쓴 도구 · 음원 이용 조건 확인</div>
+        <div class="sh"><b>하지 않을 것</b>실존 인물 · 유명인 닮은 얼굴 · 목소리 · 남의 상표 · 캐릭터 · 작품 · 없는 효과 · 가짜 후기 · 가짜 전문가 · 실제 고객인 척하는 AI 인물</div>
+      </div>
+    </div>
+    <div class="L last">G<small>체크</small></div>
+    <div class="R last">
+      <ul class="check gck">
+        <li>인물이 컷마다 같은 사람</li>
+        <li>손 · 얼굴 · 글자 오류 없음</li>
+        <li>이야기가 한 줄로 설명됨</li>
+        <li>AI 생성 표시 켬</li>
+        <li>실존 인물 · 남의 상표 · 거짓 효과 없음</li>
+      </ul>
+    </div>
+  </div>
+  <p class="ccfoot"><b>AI로 만들었다고 밝혀도, 거짓 정보는 거짓 정보.</b> 오늘 쓸 제품 사진 <span class="cb" style="margin-left:1mm"></span>있음 · 무엇 <span class="blank" style="min-width:70mm"></span></p>
+</section>
+
+<!-- 11-2. 메이킹 해부 + 레퍼런스 ⑦ -->
+<section class="page">
+  <div class="kicker">3교시 · ⑦ AI 영상 · B 레퍼런스</div>
+  <h1>메이킹 해부 · 3회차 한강 단풍 샘플</h1>
+  <p class="note" style="margin-bottom:2mm">3회차에 함께 편집한 공통 샘플 "한강 단풍, 지금이에요"가 어떤 순서로 만들어졌는지 다시 보기. <b>단계마다 강사 화면에서 본 것을 한 줄씩</b>.</p>
+  <div class="mk">
+    <div><i>1</i><b>대본</b>장면 순서 · 내레이션<div class="ln"></div></div>
+    <div><i>2</i><b>스토리보드</b>컷마다 화면 · 카메라 · 길이 (12컷)<div class="ln"></div></div>
+    <div class="e"><i>3</i><b>기준 이미지</b>인물 · 장소 먼저 고정 (기준 이미지 5장)<div class="ln"></div></div>
+    <div><i>4</i><b>이미지 → 영상</b>움직임만 프롬프트로 · 공통 스타일 한 줄<div class="ln"></div></div>
+    <div><i>5</i><b>목소리 · 편집</b>Fish Audio · CapCut · 글자는 편집에서<div class="ln"></div></div>
+  </div>
+  <p class="muted" style="margin:0 0 3.5mm">가장 중요한 단계는 3번: 기준 이미지가 흔들리면 모든 컷이 흔들린다. 영상 안에는 글자 · 로고를 넣지 않고, 글자는 CapCut에서.</p>
+  <div class="rf rfb">
+    <div class="top"><span class="no">1</span><div style="flex:1">
+      <div class="wl" style="margin-top:0"><b style="color:var(--pine);font-size:9pt">영상 제목</b><div></div></div>
+      <div class="wl">채널<div style="flex:0.55"></div>링크<div></div></div>
+      <div class="kind"><span><span class="cb"></span>AI 숏드라마 광고</span><span><span class="cb"></span>브랜드 필름</span><span><span class="cb"></span>AI 단편 · 설명</span><span>길이 <span class="blank" style="min-width:14mm"></span> 컷 수 <span class="blank" style="min-width:10mm"></span></span></div>
+    </div></div>
+    
+    
+    <div class="four ans"><div><b>① 이야기 한 줄</b>무슨 광고인지 한 줄로<div class="ln"></div></div><div><b>② 제품 등장</b>몇 초에 · 어떻게<div class="ln"></div></div><div><b>③ 컷 · 길이</b>컷 수 · 한 컷 몇 초<div class="ln"></div></div><div><b>④ 같은 인물 · 빛</b>컷마다 같은가<div class="ln"></div></div></div>
+    <div class="tlh">이 광고를 6컷 구조로 나누면 <span class="opt">C 기획과 맞춰 보기 · 없는 블록은 비워 두기</span></div><div class="six"><div><b>상황</b>몇 초 · 무엇<div class="ln"></div></div><div><b>문제</b>몇 초 · 무엇<div class="ln"></div></div><div><b>제품 등장</b>몇 초 · 무엇<div class="ln"></div></div><div><b>변화</b>몇 초 · 무엇<div class="ln"></div></div><div><b>감정</b>몇 초 · 무엇<div class="ln"></div></div><div><b>엔딩 카드</b>몇 초 · 무엇<div class="ln"></div></div></div>
+    <div class="take">내 영상에 가져올 것 1개<div></div></div>
+  </div>
+  <div class="rf rfb">
+    <div class="top"><span class="no">2</span><div style="flex:1">
+      <div class="wl" style="margin-top:0"><b style="color:var(--pine);font-size:9pt">영상 제목</b><div></div></div>
+      <div class="wl">채널<div style="flex:0.55"></div>링크<div></div></div>
+      <div class="kind"><span><span class="cb"></span>AI 숏드라마 광고</span><span><span class="cb"></span>브랜드 필름</span><span><span class="cb"></span>AI 단편 · 설명</span><span>길이 <span class="blank" style="min-width:14mm"></span> 컷 수 <span class="blank" style="min-width:10mm"></span></span></div>
+    </div></div>
+    
+    
+    <div class="four ans"><div><b>① 이야기 한 줄</b>무슨 광고인지 한 줄로<div class="ln"></div></div><div><b>② 제품 등장</b>몇 초에 · 어떻게<div class="ln"></div></div><div><b>③ 컷 · 길이</b>컷 수 · 한 컷 몇 초<div class="ln"></div></div><div><b>④ 같은 인물 · 빛</b>컷마다 같은가<div class="ln"></div></div></div>
+    <div class="tlh">이 광고를 6컷 구조로 나누면 <span class="opt">C 기획과 맞춰 보기 · 없는 블록은 비워 두기</span></div><div class="six"><div><b>상황</b>몇 초 · 무엇<div class="ln"></div></div><div><b>문제</b>몇 초 · 무엇<div class="ln"></div></div><div><b>제품 등장</b>몇 초 · 무엇<div class="ln"></div></div><div><b>변화</b>몇 초 · 무엇<div class="ln"></div></div><div><b>감정</b>몇 초 · 무엇<div class="ln"></div></div><div><b>엔딩 카드</b>몇 초 · 무엇<div class="ln"></div></div></div>
+    <div class="take">내 영상에 가져올 것 1개<div></div></div>
+  </div>
+
+  <div class="box gold" style="padding:2.4mm 4mm;margin:0">
+    <p style="margin:0;font-size:9.2pt"><strong style="color:var(--pine)">자동화 맛보기 (강사 시연)</strong> 기획 → 대본 · 프롬프트 → 이미지 · 영상 → 고르기 · 검수 → 편집 · 자막 → 올리기 · 표시를 AI 도구로 이어도, <strong style="color:var(--pine)">기획 · 검수 · 책임</strong>은 사람이 꼭 하는 일. 시연에서 사람이 멈춰 본 곳 <span class="blank" style="min-width:52mm"></span></p>
+  </div>
+</section>
+
+<!-- 12. ⑦ 이야기 한 줄 · AI 6컷 표 · 일관성 체크 -->
+<section class="page">
+  <div class="kicker">3교시 · ⑦ AI 영상 · C 기획 · D 생성</div>
+  <h1>이야기 한 줄 · AI 6컷 표</h1>
+  <h3 class="top">이야기 한 줄 <span class="opt">프롬프트는 이야기를 대신 만들어 주지 않는다 — 이야기 한 줄은 내가 · 마스터 프롬프트의 맨 처음 칸</span></h3>
+  <div class="story">
+    <div><b>[ 누가 ]</b>나이대 · 하는 일<div class="ln"></div></div>
+    <div><b>[ 어디서 ]</b>평범한 하루의 장소<div class="ln"></div></div>
+    <div><b>[ 문제 ]</b>불편 · 고민<div class="ln"></div></div>
+    <div class="me"><b>[ 제품 ]</b>내 제품 · 가게 · 서비스<div class="ln"></div></div>
+    <div><b>[ 변화 ]</b>어떻게 달라지나<div class="ln"></div></div>
+  </div>
+  <p class="eg" style="margin-bottom:2.5mm"><b>예</b> [퇴근길 30대 직장인] [만원 지하철에서] [손이 트고 당겨서 신경 쓰임] → [핸드크림 한 번] [손을 펴고 웃으며 창밖을 봄] · 옆자리에게 읽어 주고 "무슨 광고인지" 한 줄로 돌아오면 통과 <span class="cb"></span></p>
+
+  <h3 class="top">AI 6컷 표 <span class="opt">24초 = 4초 × 6컷 · 이미지 OK 다음에 영상 · 컷마다 2~3번 만들고 고르기</span></h3>
+  <table class="ai6">
+    <tr><th style="width:7mm">컷</th><th style="width:25mm">블록</th><th>장면 (무엇이 보이나 · 인물 행동 · 표정)</th><th style="width:34mm">카메라 (영어로)</th><th style="width:11mm;text-align:right">초</th><th style="width:13mm;text-align:center">이미지<br>OK</th><th style="width:13mm;text-align:center">영상<br>OK</th></tr>
+    <tr><td class="no">1</td><td class="blk">상황<span>누가 · 어디서 · 와이드</span></td><td></td><td class="cam">wide shot · eye-level</td><td class="sec">4초</td><td class="c"><span class="cb"></span></td><td class="c"><span class="cb"></span></td></tr>
+    <tr><td class="no">2</td><td class="blk">문제<span>불편 · 표정 클로즈업</span></td><td></td><td class="cam">close-up</td><td class="sec">4초</td><td class="c"><span class="cb"></span></td><td class="c"><span class="cb"></span></td></tr>
+    <tr><td class="no">3</td><td class="blk">제품 등장<span>손 · 라벨이 보이게</span></td><td></td><td class="cam">close-up · slow push-in</td><td class="sec">4초</td><td class="c"><span class="cb"></span></td><td class="c"><span class="cb"></span></td></tr>
+    <tr><td class="no">4</td><td class="blk">변화<span>써 본 뒤 달라진 모습</span></td><td></td><td class="cam">medium shot</td><td class="sec">4초</td><td class="c"><span class="cb"></span></td><td class="c"><span class="cb"></span></td></tr>
+    <tr><td class="no">5</td><td class="blk">감정<span>변화 2 · 웃음 · 여유</span></td><td></td><td class="cam">medium close-up</td><td class="sec">4초</td><td class="c"><span class="cb"></span></td><td class="c"><span class="cb"></span></td></tr>
+    <tr><td class="no">6</td><td class="blk">엔딩 카드<span>제품 + 글자 넣을 빈 공간</span></td><td></td><td class="cam">static · product on one side</td><td class="sec">4초</td><td class="c"><span class="cb"></span></td><td class="c"><span class="cb"></span></td></tr>
+  </table>
+  <div class="chips"><b>프롬프트 공식 여섯 칸 (3회차)</b><span>누가 · 무엇</span><span>어디서</span><span>동작</span><span>카메라</span><span>빛 · 분위기</span><span>하지 말 것</span> · 마스터 프롬프트가 영어로 바꿔 줌</div>
+
+  <div class="grid2" style="gap:4mm;grid-template-columns:1.1fr 1fr">
+    <div class="box" style="margin:0;padding:2.6mm 4mm">
+      <h3 class="top">일관성 체크 <span class="opt">같은 인물 · 같은 제품 · 같은 빛 = 한 편의 광고</span></h3>
+      <ul class="check" style="margin:0;font-size:9pt">
+        <li style="margin-bottom:0.8mm">인물 기준 이미지 한 장을 정하고 저장</li>
+        <li style="margin-bottom:0.8mm">모든 컷에 기준 이미지 + 제품 사진 첨부</li>
+        <li style="margin-bottom:0.8mm">제품 모양 · 라벨이 사진 그대로</li>
+        <li style="margin-bottom:0.8mm">6컷이 같은 시간대 · 빛 · 색 톤</li>
+        <li style="margin:0">한 컷에 동작 하나 · 카메라 움직임 하나</li>
+      </ul>
+    </div>
+    <div class="box line" style="margin:0;padding:2.6mm 4mm">
+      <h3 class="top">내레이션 · 엔딩 카드 <span class="opt">컷마다 한 문장 이하</span></h3>
+      <p style="margin:0 0 1.2mm;font-size:9pt">마지막 문장 (제품 이름) <span class="blank" style="min-width:34mm"></span></p>
+      <p style="margin:0 0 1.2mm;font-size:9pt">목소리 느낌 <span class="blank" style="min-width:52mm"></span></p>
+      <p style="margin:0 0 1.2mm;font-size:9pt">엔딩 카드 · 제품명 <span class="blank" style="min-width:40mm"></span></p>
+      <p style="margin:0;font-size:9pt">한 줄 <span class="blank" style="min-width:22mm"></span> 어디서 <span class="blank" style="min-width:22mm"></span></p>
+    </div>
+  </div>
+</section>
+
+<!-- 13. ⑦ 마스터 프롬프트 · 따라하기 04 · 지킬 선 -->
+<section class="page">
+  <div class="kicker">3교시 · ⑦ AI 영상 · D 생성 · E 편집 · 실습</div>
+  <h1>마스터 프롬프트 · 6컷 → 20초 광고</h1>
+  <div class="box" style="padding:3mm 4mm;margin-bottom:3mm">
+    <h3 class="top">마스터 프롬프트 쓰는 법 <span class="opt">프롬프트 전문은 따로 나눠 준 한 장 배포물 "AI 숏드라마 광고 마스터 프롬프트" · 단톡방 파일 "AI숏드라마광고_만들기_프롬프트"</span></h3>
+    <div class="mp">
+      <div><b>① 이야기 한 줄</b>앞쪽 다섯 칸 · 내가 씀</div>
+      <div><b>② 인물 기준 이미지</b>얼굴 · 옷 · 분위기 고정</div>
+      <div><b>③ 6컷 이미지</b>한 장씩, 제품은 사진 그대로</div>
+      <div><b>④ 영상 프롬프트</b>컷마다 5초, 움직임 하나</div>
+      <div><b>⑤ 내레이션 · 자막</b>Fish Audio용 대본 · 엔딩 카드</div>
+      <div><b>⑥ 편집표</b>순서 · 초 · 효과 · 음악</div>
+    </div>
+    <ol class="steps" style="margin:0;font-size:9.3pt">
+      <li>ChatGPT 새 채팅 → 제품 사진 한 장 첨부 + 배포물의 프롬프트를 통째로 붙여 넣기</li>
+      <li>맨 아래 [내 정보]만 내 것으로 바꾸기 · 이야기 한 줄은 앞쪽 다섯 칸 그대로</li>
+      <li>한 단계씩: 이상하면 "다시", 괜찮으면 "다음" · 이미지가 나올 때마다 6컷 표의 '이미지 OK'에 체크</li>
+      <li>이미지 + 영상 프롬프트 → CapCut 이미지 → 영상 · 내레이션 대본 → Fish Audio · 편집표대로 따라하기 04</li>
+    </ol>
+  </div>
+
+  <div class="cyc">
+    <div class="hd"><span class="no">04</span><h3>AI 6컷 → 20초 광고 잇기<span class="why">3회차 색 · 키프레임 · 자동 캡션 + 4회차 덕킹을 한 번에</span></h3><span class="tag">따라하기 04 / 5</span></div>
+    <div class="body">
+      <ol class="steps">
+        <li>9:16 새 프로젝트 → AI 영상 6컷을 순서대로 메인 트랙 (컷당 3~4초)</li>
+        <li>이상한 프레임(손 · 얼굴 · 글자) 있는 부분은 <kbd>Q</kbd> · <kbd>W</kbd>로 잘라 내기</li>
+        <li>조정으로 밝기 · 색온도 맞추고 전체에 복사 (같은 톤)</li>
+        <li>내레이션 mp3 → 오디오 트랙 → 자동 캡션 → 강조 단어 하나</li>
+        <li>음악 <strong>−20dB</strong> + 엔딩 카드 (제품명 · 한 줄 · 어디서)</li>
+      </ol>
+      <div class="aside gold"><b>영상이 안 만들어지면</b>이미지 6장에 천천히 줌인 키프레임 (4회차 따라하기 06처럼)으로도 초안 OK<br><b style="margin-top:1mm">0.5초라도</b>이상한 손 · 얼굴 프레임은 잘라 내기<br>총 길이 <span class="blank" style="min-width:12mm"></span>초</div>
+    </div>
+    <div class="ok"><span><span class="cb"></span><span class="t">확인</span>6컷이 한 톤으로 이어지고 내레이션 · 자막 · 엔딩 카드까지 20초</span><span class="done">모두 완료 <span class="cb"></span></span></div>
+  </div>
+
+  <h3 class="top">실습 · 20초 AI 광고 초안 <span class="opt">대표작이 AI 영상이면 이 초안을 5 · 6교시에 완성</span></h3>
+  <table class="run">
+    <tr><th>#</th><th>단계</th><th>할 일</th><th style="text-align:center">체크</th></tr>
+    <tr><td>1</td><td>이야기 한 줄</td><td>[누가] [어디서] [문제] → [제품] [변화] (앞쪽)</td><td class="c"><span class="cb"></span></td></tr>
+    <tr><td>2</td><td>마스터 프롬프트</td><td>사진 첨부 + 프롬프트 붙여 넣기 → 인물 기준 이미지</td><td class="c"><span class="cb"></span></td></tr>
+    <tr><td>3</td><td>6컷</td><td>이미지 → (가능하면) 영상, 컷마다 2~3번</td><td class="c"><span class="cb"></span></td></tr>
+    <tr><td>4</td><td>편집</td><td>따라하기 04: 잇기 · 색 · 내레이션 · 엔딩</td><td class="c"><span class="cb"></span></td></tr>
+    <tr><td>5</td><td>보기</td><td>옆자리에게 "무슨 광고인지 한 줄로" 들어 보기 <span class="blank" style="min-width:44mm"></span></td><td class="c"><span class="cb"></span></td></tr>
+  </table>
+
+  <h3 class="top" style="margin-bottom:1mm">지킬 선 <span class="opt">올리기 전에 하나씩 · AI로 만들었다고 밝혀도, 거짓 정보는 거짓 정보</span></h3>
+  <div class="rule2">
+    <div class="ok1"><b class="h">꼭 할 것</b>
+      <ul class="check" style="font-size:8.9pt">
+        <li>플랫폼의 AI 생성 표시 켜기</li>
+        <li>제품 모양 · 색 · 크기는 실물대로</li>
+        <li>광고 · 협찬이면 표시 · 쓴 도구 · 음원 이용 조건 확인</li>
+      </ul>
+    </div>
+    <div class="no1"><b class="h">하지 않을 것 (없으면 체크)</b>
+      <ul class="check" style="font-size:8.9pt">
+        <li>실존 인물 · 유명인 닮은 얼굴 · 목소리</li>
+        <li>남의 상표 · 캐릭터 · 작품</li>
+        <li>없는 효과 · 가짜 후기 · 실제 고객인 척하는 AI 인물</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 14. 4교시 · 훅 공식 다섯 · 끝까지 보게 하는 장치 -->
+<section class="page">
+  <div class="kicker">4교시 · 끝까지 보게 하는 법</div>
+  <h1>훅 공식 다섯 · 내 대표작 훅 3안</h1>
+  <p class="lead" style="margin-bottom:2.5mm;font-size:10.2pt">숏폼은 <strong>첫 3초</strong>, 롱폼은 <strong>첫 30초</strong>가 승부. 훅은 약속 — 약속한 것을 영상 안에서 반드시 지키기.</p>
+  <div class="hook5">
+    <div><i>1</i><b>질문</b>"이거 나만 그래요?" · "왜 다들 ○○할까?"</div>
+    <div><i>2</i><b>결과 먼저</b>완성된 모습 · 비포 애프터를 첫 장면에</div>
+    <div><i>3</i><b>반전</b>예상과 다른 한마디 · 장면 (④ 상황극)</div>
+    <div><i>4</i><b>숫자</b>"3가지만" · "15년 차" · "10분 만에"</div>
+    <div><i>5</i><b>공감</b>"월요일 아침 직장인" — 내 얘기 같은 상황</div>
+  </div>
+
+  <h3 class="top">내 대표작 훅 3안 <span class="opt">공식을 다르게 골라 세 개 · 옆자리에게 읽어 주고 "다음이 궁금한" 안에 체크</span> &nbsp; <span style="font-size:9pt;font-weight:400"><span class="cb"></span>첫 3초 (숏폼) <span class="cb"></span>첫 30초 (롱폼)</span></h3>
+  <table class="hk">
+    <tr><th style="width:9mm">안</th><th style="width:24mm">공식</th><th>화면 (첫 장면에 무엇이 보이나)</th><th>말 · 자막 (첫 문장)</th><th style="width:34mm">약속을 지키는 곳</th><th style="width:14mm;text-align:center">고름</th></tr>
+    <tr><td>1</td><td class="f">① ② ③ ④ ⑤</td><td></td><td></td><td class="opt" style="vertical-align:bottom">몇 초 · 어느 장면</td><td class="c"><span class="cb"></span></td></tr>
+    <tr><td>2</td><td class="f">① ② ③ ④ ⑤</td><td></td><td></td><td class="opt" style="vertical-align:bottom">몇 초 · 어느 장면</td><td class="c"><span class="cb"></span></td></tr>
+    <tr><td>3</td><td class="f">① ② ③ ④ ⑤</td><td></td><td></td><td class="opt" style="vertical-align:bottom">몇 초 · 어느 장면</td><td class="c"><span class="cb"></span></td></tr>
+  </table>
+  <p class="muted" style="margin:-2mm 0 3.5mm">로고 · 인사 · "안녕하세요 오늘은"으로 시작하지 않기. 카테고리별로: ⑤ 센 한마디 먼저 · ⑥ 혜택 · 결과 먼저 · ⑦ 문제 표정 클로즈업 · ③ 가장 예쁜 움직임 · ④ 첫 1초에 누가 · 어디서.</p>
+
+  <h3 class="top">끝까지 보게 하는 장치 <span class="opt">내 대표작에 넣을 것에 체크하고 어디에 넣을지 한 줄</span></h3>
+  <div class="keep">
+    <div><span class="cb"></span><b>열린 고리</b>"마지막에 ○○도 보여 드릴게요"<div class="q">내 대표작에서는</div><div class="ln"></div><div class="ln"></div></div>
+    <div><span class="cb"></span><b>장면 바꾸기</b>같은 화면 10초 이상 X · B롤 · 줌 · 각도<div class="q">내 대표작에서는</div><div class="ln"></div><div class="ln"></div></div>
+    <div><span class="cb"></span><b>챕터</b>롱폼은 구간 나누기, 숏폼은 한 메시지<div class="q">내 대표작에서는</div><div class="ln"></div><div class="ln"></div></div>
+    <div><span class="cb"></span><b>다음 편</b>끝에 시리즈 다음 편 · 관련 영상<div class="q">내 대표작에서는</div><div class="ln"></div><div class="ln"></div></div>
+  </div>
+  <div class="box line" style="margin:0 0 3mm;padding:2.6mm 4mm">
+    <h3 class="top" style="margin-bottom:1mm">옆자리 3초 테스트 <span class="opt">고른 훅으로 첫 장면만 보여 주거나 읽어 주고 반응 듣기</span></h3>
+    <p style="margin:0 0 1mm;font-size:9.2pt">"다음이 궁금해요?" <span class="cb"></span>네 <span class="cb"></span>글쎄 &nbsp; · 무슨 영상인지 3초 안에 알았나 <span class="cb"></span>네 <span class="cb"></span>아니요</p>
+    <p style="margin:0;font-size:9.2pt">옆자리 한마디 <span class="blank" style="min-width:70mm"></span> → 고칠 곳 <span class="blank" style="min-width:48mm"></span></p>
+  </div>
+  <div class="box dark" style="margin:0;padding:2.8mm 4.5mm">
+    <p style="margin:0;font-size:9.6pt"><strong>끝까지 본 사람이 다음 영상을 누른다 = 채널이 자란다.</strong> 오늘 고른 훅 한 안은 6교시 "꼭 넣을 것"의 첫 칸, 장치는 따라하기 05의 엔딩 카드(다음 편 한 줄)로 이어집니다.</p>
+  </div>
+</section>
+
+<!-- 15. 4교시 · 성공 채널 해부 · 수익화 경로 -->
+<section class="page">
+  <div class="kicker">4교시 · 채널로 묶기 · B 레퍼런스</div>
+  <h1>성공 채널 해부 · 수익화 경로</h1>
+  <div class="lookbar"><b>보면서 찾을 것</b><span>① 채널 소개 한 줄은?</span><span>② 썸네일 · 커버에 반복되는 규칙은?</span><span>③ 시리즈 이름 · 업로드 주기는?</span><span>④ 내가 가져올 것 하나는?</span></div>
+  <p class="note" style="margin:-1mm 0 2mm">강사 예시 채널을 함께 본 뒤, <b>내 메인 스타일과 같은 카테고리의 채널 하나</b>를 각자 골라 해부해요. 영상 한 편이 아니라 채널 홈 · 영상 목록 · 쇼츠 탭을 봅니다. &nbsp; 강사 예시 채널 <span class="blank" style="min-width:46mm"></span></p>
+  <table class="sheet chan" style="margin-bottom:3mm">
+    <tr><th style="width:32mm">칸</th><th>쓰기</th></tr>
+    <tr><td class="lab">채널명<span>카테고리 ①~⑦</span></td><td class="write"><span class="opt">채널 이름 · 링크</span></td></tr>
+    <tr><td class="lab">구독자 · 영상 수</td><td class="write" style="height:8.5mm"><span class="opt">구독자 (팔로워) <span class="blank" style="min-width:24mm"></span> &nbsp; 영상 <span class="blank" style="min-width:16mm"></span>개 &nbsp; 가장 많이 본 영상 <span class="blank" style="min-width:40mm"></span></span></td></tr>
+    <tr><td class="lab">채널 소개 한 줄</td><td class="write"></td></tr>
+    <tr><td class="lab">업로드 주기<span>최근 영상 날짜로</span></td><td class="write" style="height:8.5mm"><span class="opt">롱폼 주 <span class="blank" style="min-width:10mm"></span>회 · 숏폼 주 <span class="blank" style="min-width:10mm"></span>회 · 요일 · 시간 <span class="blank" style="min-width:30mm"></span></span></td></tr>
+    <tr><td class="lab">썸네일 · 커버 규칙<span>최근 6개를 나란히</span></td><td class="write" style="height:15mm"><span class="opt">색 · 글꼴 · 글자 위치 · 얼굴 / 제품 위치 · 늘 같은 것</span></td></tr>
+    <tr><td class="lab">시리즈<span>반복되는 코너</span></td><td class="write"><span class="opt">시리즈 이름 · 재생목록</span></td></tr>
+    <tr><td class="lab">가져올 것 하나</td><td class="write" style="height:12mm;background:#fbf1d3 !important"><span class="opt">내 채널 브랜딩 한 장(다음 쪽)에 바로 옮기기</span></td></tr>
+  </table>
+
+  <h3 class="top">수익화 경로 지도 <span class="opt">오늘은 콘텐츠 안에서 할 일까지 · 내 메인 스타일에 맞는 경로 하나에 체크</span></h3>
+  <table class="money" style="margin-bottom:2.5mm">
+    <tr><th>경로</th><th>어떻게</th><th>콘텐츠에서 할 일</th><th style="width:12mm;text-align:center">내 것</th></tr>
+    <tr><td>플랫폼 광고 수익</td><td>조건을 채우면 영상에 광고</td><td>꾸준한 업로드 · 시청 시간</td><td class="c"><span class="cb"></span></td></tr>
+    <tr><td>협찬 · 브랜디드</td><td>브랜드가 제작 의뢰</td><td>광고 · 협찬 표시 (뒷광고 금지)</td><td class="c"><span class="cb"></span></td></tr>
+    <tr><td>제휴 마케팅</td><td>링크로 판매되면 수수료</td><td>링크 고지 · 솔직한 리뷰</td><td class="c"><span class="cb"></span></td></tr>
+    <tr><td>내 사업 판매</td><td>가게 · 상품 · 예약으로 연결</td><td>상품 영상 · 라이브 · 위치 · 링크</td><td class="c"><span class="cb"></span></td></tr>
+    <tr><td>강의 · 디지털 상품</td><td>노하우를 강의 · 자료로</td><td>정보성 · 토크로 신뢰 쌓기</td><td class="c"><span class="cb"></span></td></tr>
+    <tr><td>제작 대행 · 프리랜서</td><td>남의 영상 · AI 영상 제작</td><td>포트폴리오 = 내 채널</td><td class="c"><span class="cb"></span></td></tr>
+  </table>
+  <p style="margin:0;font-size:9.3pt">그래서 내 대표작 · 채널에 꼭 들어가야 할 것 <span class="blank" style="min-width:100mm"></span></p>
+  <p class="muted" style="margin:1mm 0 0">광고 수익 조건 · 제휴 프로그램 규칙은 플랫폼 · 시기마다 다를 수 있음. 신청 전에 공식 안내에서 확인.</p>
+</section>
+
+<!-- 16. 4교시 · 채널 브랜딩 한 장 -->
+<section class="page">
+  <div class="kicker">4교시 · 채널로 묶기 · 실습</div>
+  <h1>채널 브랜딩 한 장</h1>
+  <p class="lead" style="margin-bottom:2.5mm;font-size:10.2pt">규칙이 있으면 다음 영상이 빨라진다. 이 한 장이 따라하기 05(인트로 · 엔딩 · 자막)와 7교시 채널 정리의 기준이에요.</p>
+  <div class="brand">
+    <div class="bh"><b>내 채널 브랜딩 한 장</b><span>메인 스타일 <span class="blank" style="min-width:8mm;border-color:var(--pale)"></span>번 · 주력 플랫폼 <span class="blank" style="min-width:24mm;border-color:var(--pale)"></span></span></div>
+    <div class="row"><div class="k"><i>1</i>이름<span>기억하기 쉽게 · 무엇을 하는지 보이게</span></div><div class="v">후보 ① <span class="blank" style="min-width:34mm"></span> ② <span class="blank" style="min-width:34mm"></span> ③ <span class="blank" style="min-width:34mm"></span><p style="margin:1.5mm 0 0"><b>정한 이름</b> <span class="blank" style="min-width:60mm"></span> &nbsp; 핸들 @<span class="blank" style="min-width:34mm"></span></p></div></div>
+    <div class="row"><div class="k"><i>2</i>소개 한 줄<span>누구에게 · 무엇을 · 어떻게</span></div><div class="v">"<span class="blank" style="min-width:26mm"></span>에게 <span class="blank" style="min-width:30mm"></span>을(를) <span class="blank" style="min-width:28mm"></span>(으)로 보여 주는 채널"<div class="ln"></div></div></div>
+    <div class="row"><div class="k"><i>3</i>썸네일 · 커버 규칙<span>색 2개 · 글꼴 1개 · 글자 위치 · 얼굴 / 제품 위치</span></div><div class="v">
+      <div class="frames">
+        <div class="fr w"><span>썸네일 16:9 · 위치 스케치</span></div>
+        <div class="fr t"><span>커버</span></div>
+        <div class="rules">
+          <p><b>색 ①</b> <span class="sw"></span><i></i></p>
+          <p><b>색 ②</b> <span class="sw"></span><i></i></p>
+          <p><b>글꼴</b><i></i></p>
+          <p><b>글자 위치</b><i></i></p>
+          <p style="margin:0"><b>얼굴 · 제품</b><i></i></p>
+        </div>
+      </div>
+    </div></div>
+    <div class="row"><div class="k"><i>4</i>시리즈<span>반복되는 코너 이름</span></div><div class="v">예: "사장님의 월요일" &nbsp; <b>내 시리즈</b> <span class="blank" style="min-width:56mm"></span><p style="margin:1.5mm 0 0">1편 <span class="blank" style="min-width:42mm"></span> 2편 <span class="blank" style="min-width:42mm"></span> 3편 <span class="blank" style="min-width:30mm"></span></p></div></div>
+    <div class="row"><div class="k"><i>5</i>업로드 주기<span>지킬 수 있는 만큼</span></div><div class="v">예: 주 1회 롱폼 + 숏폼 2 &nbsp; <b>내 주기</b> 롱폼 주 <span class="blank" style="min-width:10mm"></span>회 · 숏폼 주 <span class="blank" style="min-width:10mm"></span>회 · <span class="blank" style="min-width:14mm"></span>요일 <span class="blank" style="min-width:12mm"></span>시</div></div>
+  </div>
+
+  <h3 class="top">유튜브 · 인스타 같이 쓰기 <span class="opt">롱폼 1 → 숏폼 3: 유튜브에 원본, 릴스 · 쇼츠에 조각</span></h3>
+  <div class="yt2">
+    <div class="y"><b>유튜브</b>깊이 · 검색 · 쌓이는 영상 · 롱폼 1편 + 쇼츠로 연결 · 채널 = 나의 포트폴리오<div class="ln"></div><div class="ln"></div><span class="opt">내 유튜브 역할 한 줄</span></div>
+    <div class="i"><b>인스타그램</b>브랜드 · 소식 · 단골 · 릴스 + 피드 + 스토리 · 프로필 링크 · 위치 · DM<div class="ln"></div><div class="ln"></div><span class="opt">내 인스타 역할 한 줄</span></div>
+  </div>
+  <p style="margin:0;font-size:9.3pt"><strong style="color:var(--pine)">롱폼 1 → 숏폼 3</strong> &nbsp; ① <span class="blank" style="min-width:42mm"></span> ② <span class="blank" style="min-width:42mm"></span> ③ <span class="blank" style="min-width:42mm"></span></p>
+</section>
+
+<!-- 17. 5교시 · 대표작 형식 · 구조표 -->
+<section class="page">
+  <div class="kicker">5교시 · 대표작 제작 ①</div>
+  <h1>대표작 · 형식 고르고 구조 짜기</h1>
+  <p style="margin:0 0 2mm;font-size:9.6pt"><strong style="color:var(--pine)">가제</strong> <span class="blank" style="min-width:70mm"></span> &nbsp; <strong style="color:var(--pine)">카테고리</strong> <span class="blank" style="min-width:10mm"></span>번 &nbsp; <strong style="color:var(--pine)">올릴 곳</strong> <span class="blank" style="min-width:30mm"></span></p>
+  <div class="fmt">
+    <div><span class="cb"></span><b class="t">롱폼 1편</b><span class="sp">16:9 · 2~4분</span><br>브이로그 · 정보성 · 리뷰 · 토크<br>+ 숏폼 1편 (잘라 내기)</div>
+    <div><span class="cb"></span><b class="t">숏폼 시리즈 3편</b><span class="sp">9:16 · 15~30초 × 3</span><br>상품 이미지 · 상황극 · 정보 카드<br>같은 시리즈 이름</div>
+    <div><span class="cb"></span><b class="t">AI 영상 1편</b><span class="sp">9:16 또는 16:9 · 30초~1분</span><br>AI 숏드라마 광고 · 브랜드 필름<br>+ 숏폼 1편 (짧게 줄인 버전)</div>
+  </div>
+  <p class="muted" style="margin:0 0 3mm">형식은 메인 스타일이 정한다. 망설여지면 숏폼 시리즈가 가장 빠름.</p>
+
+  <h3 class="top">대표작 순서 · 카테고리 카드대로 <span class="opt">5교시 끝 = 가편집 완료 · 6교시 = 다듬기 · 숏폼 · 썸네일</span></h3>
+  <div class="order">
+    <div><span class="cb"></span><b>1 C 구조</b>카드의 구조 막대에 내 장면 넣기 (5분 · 아래 표)</div>
+    <div><span class="cb"></span><b>2 재료 정리</b>한 폴더 · 가져오기 · 안 쓸 컷 빼기</div>
+    <div class="on"><span class="cb"></span><b>3 가편집</b>구조 순서대로 · 길이 먼저 맞추기</div>
+    <div><span class="cb"></span><b>4 E 편집</b>카드의 핵심 기법 2~3개만</div>
+    <div><span class="cb"></span><b>5 F · G</b>제목 · 썸네일 · 커버 · 체크 다섯</div>
+  </div>
+  <div style="height:2mm"></div>
+
+  <h3 class="top">구조표 <span class="opt">내 카테고리 카드 C의 구조 막대를 그대로 옮겨 적기 · 재료는 어디서 오는지 동그라미</span></h3>
+  <p class="note" style="margin:0 0 1.5mm">예: ① 인트로 · 흐름 · 하이라이트 · 아웃트로 &nbsp;② 문제 · 약속 · 핵심 1 · 2 · 3 · 요약 &nbsp;③ 훅 · 디테일 · 쓰는 장면 · 히어로 · 엔딩 카드 &nbsp;④ 상황 · 전개 · 공감 · 반전 &nbsp;⑤ 누구인지 · 질문 1 · 2 · 3 · 한마디 &nbsp;⑥ 오프닝 ~ 마감 &nbsp;⑦ 상황 ~ 엔딩 카드</p>
+  <table class="st">
+    <tr><th>#</th><th style="width:28mm">구간 (C 구조)</th><th>장면 · 내용</th><th style="width:44mm">재료</th><th style="width:13mm;text-align:right">초</th><th style="width:10mm;text-align:center">✓</th></tr>
+    <tr><td>1</td><td class="g"></td><td></td><td class="src">찍은 · 4회차 · 오늘 · AI</td><td class="sec">초</td><td class="c"><span class="cb"></span></td></tr>
+    <tr><td>2</td><td class="g"></td><td></td><td class="src">찍은 · 4회차 · 오늘 · AI</td><td class="sec">초</td><td class="c"><span class="cb"></span></td></tr>
+    <tr><td>3</td><td class="g"></td><td></td><td class="src">찍은 · 4회차 · 오늘 · AI</td><td class="sec">초</td><td class="c"><span class="cb"></span></td></tr>
+    <tr><td>4</td><td class="g"></td><td></td><td class="src">찍은 · 4회차 · 오늘 · AI</td><td class="sec">초</td><td class="c"><span class="cb"></span></td></tr>
+    <tr><td>5</td><td class="g"></td><td></td><td class="src">찍은 · 4회차 · 오늘 · AI</td><td class="sec">초</td><td class="c"><span class="cb"></span></td></tr>
+    <tr><td>6</td><td class="g"></td><td></td><td class="src">찍은 · 4회차 · 오늘 · AI</td><td class="sec">초</td><td class="c"><span class="cb"></span></td></tr>
+    <tr><td colspan="4" style="text-align:right;font-weight:700;color:var(--pine)">합계</td><td class="sec">초</td><td></td></tr>
+  </table>
+
+  <h3 class="top">숏폼 시리즈 3편이면 <span class="opt">같은 시리즈 이름 · 같은 인트로 · 엔딩 · 편마다 한 메시지</span></h3>
+  <table class="ser" style="margin:0">
+    <tr><th style="width:12mm">편</th><th>제목 (한 메시지)</th><th style="width:52mm">첫 3초 훅</th><th style="width:16mm">길이</th></tr>
+    <tr><td>1</td><td></td><td></td><td></td></tr>
+    <tr><td>2</td><td></td><td></td><td></td></tr>
+    <tr><td>3</td><td></td><td></td><td></td></tr>
+  </table>
+</section>
+
+<!-- 18. 6교시 · 따라하기 05 · 꼭 넣을 것 · 숏폼 1편 -->
+<section class="page">
+  <div class="kicker">6교시 · 대표작 제작 ②</div>
+  <h1>시리즈처럼 다듬기 · 꼭 넣을 것</h1>
+  <div class="cyc">
+    <div class="hd"><span class="no">05</span><h3>시리즈처럼 · 인트로 · 엔딩 고정<span class="why">브랜딩 한 장의 규칙을 화면에 · 한 번 만들면 다음 영상은 붙여넣기만</span></h3><span class="tag">따라하기 05 / 5</span></div>
+    <div class="body">
+      <ol class="steps">
+        <li>대표작 처음 2초에 시리즈 이름 텍스트 + 등장 애니메이션 하나</li>
+        <li>끝 2초에 엔딩 카드: 채널 이름 · 다음 편 한 줄 · (구독)</li>
+        <li>자막 하나를 브랜딩 한 장의 색 · 글꼴로 꾸미고 전체에 적용</li>
+        <li>인트로 · 엔딩 · 자막 클립을 한꺼번에 선택 → 복사해 두기</li>
+        <li>다음 영상에 붙여넣기만 하면 같은 시리즈가 됨</li>
+      </ol>
+      <div class="aside gold"><b>엔딩 카드 한 줄</b>다음 편 <span class="blank" style="min-width:36mm"></span><br><b style="margin-top:1mm">저장해 두기</b>복사한 클립을 빈 프로젝트 "시리즈_틀"에 붙여 두면 다음에 찾기 쉬움 (텍스트 템플릿 · 프리셋 저장 기능은 버전마다 다를 수 있음)</div>
+    </div>
+    <div class="ok"><span><span class="cb"></span><span class="t">확인</span>처음 · 끝 · 자막이 브랜딩 한 장의 규칙대로</span><span class="done">모두 완료 <span class="cb"></span></span></div>
+  </div>
+
+  <div class="box gold" style="padding:3mm 4mm">
+    <h3 class="top">꼭 넣을 것 <span class="opt">기본 여섯은 모두 · 그다음 도전 · 막히면 해당 따라하기 · 카드로 돌아가기</span></h3>
+    <div class="must">
+      <div><span class="cb"></span><b>훅</b>첫 3초 · 첫 30초 (훅 공식 하나)</div>
+      <div><span class="cb"></span><b>구조</b>카테고리 카드 C대로</div>
+      <div><span class="cb"></span><b>카테고리 핵심 기법</b>카드 E에서 2개 이상</div>
+      <div><span class="cb"></span><b>자막 · 소리</b>자막 + 말 0dB · 음악 −15~−20dB</div>
+      <div><span class="cb"></span><b>시리즈 인트로 · 엔딩</b>따라하기 05</div>
+      <div><span class="cb"></span><b>체크 다섯</b>카드 G</div>
+    </div>
+    <div class="must ch" style="margin:0">
+      <div><span class="cb" style="border-color:var(--pale);background:transparent"></span><b>+ 숏폼 1편 더</b>대표작에서 센 장면 · 9:16</div>
+      <div><span class="cb" style="border-color:var(--pale);background:transparent"></span><b>+ 썸네일 · 커버 3안</b>옆자리 1초 테스트</div>
+      <div><span class="cb" style="border-color:var(--pale);background:transparent"></span><b>+ 보이스오버</b>내 목소리 또는 TTS</div>
+    </div>
+  </div>
+
+  <div class="box" style="padding:3mm 4mm;margin-bottom:3mm">
+    <h3 class="top">숏폼 1편 잘라 내기 <span class="opt">롱폼 · AI 영상이 대표작이면 오늘 남는 숏폼 1편 · 숏폼 시리즈면 그중 한 편이 곧 숏폼</span></h3>
+    <ol class="steps" style="margin:0 0 1.5mm;font-size:9.2pt">
+      <li>대표작 프로젝트 복사 → 비율 9:16 → 인물 · 제품을 가운데로 다시 맞추기 (배경 흐림)</li>
+      <li>센 장면 하나만 남기기 (15~30초) · 첫 1초에 가장 센 장면</li>
+      <li>자막은 크게, 화면 위아래 1/5은 비워 두기 (앱 버튼 자리) · 끝에 "전체 영상은 채널에서" 한 줄</li>
+    </ol>
+    <p style="margin:0;font-size:9.2pt">대표작 <span class="blank" style="min-width:14mm"></span> ~ <span class="blank" style="min-width:14mm"></span> 구간 &nbsp; · 첫 1초 장면 <span class="blank" style="min-width:46mm"></span> &nbsp; · 길이 <span class="blank" style="min-width:12mm"></span>초</p>
+  </div>
+  <h3 class="top">썸네일 · 커버 3안 <span class="opt">브랜딩 한 장의 규칙대로 · 점선 = 화면 1/3 · 옆자리가 1초 안에 고르기</span></h3>
+  <div class="thumbs">
+    <div><div class="fr"><span>1안</span><i></i><i></i></div><div class="cap">문구<div></div></div><div class="vote"><span class="cb"></span>옆자리가 고름 &nbsp; <span class="cb"></span>채택</div></div>
+    <div><div class="fr"><span>2안</span><i></i><i></i></div><div class="cap">문구<div></div></div><div class="vote"><span class="cb"></span>옆자리가 고름 &nbsp; <span class="cb"></span>채택</div></div>
+    <div><div class="fr"><span>3안</span><i></i><i></i></div><div class="cap">문구<div></div></div><div class="vote"><span class="cb"></span>옆자리가 고름 &nbsp; <span class="cb"></span>채택</div></div>
+  </div>
+  <div class="box line" style="margin:0;padding:2.6mm 4mm">
+    <p style="margin:0;font-size:9.4pt"><strong style="color:var(--pine)">내보내기</strong> &nbsp; 대표작 <span class="cb"></span>16:9 <span class="cb"></span>9:16 · 길이 <span class="blank" style="min-width:14mm"></span> &nbsp;&nbsp; 숏폼 9:16 <span class="cb"></span> 길이 <span class="blank" style="min-width:14mm"></span> &nbsp;&nbsp; 폰에서 소리 켜고 재생 <span class="cb"></span> &nbsp;&nbsp; <strong style="color:var(--pine)">완벽보다 완성</strong></p>
+  </div>
+</section>
+
+<!-- 19. 7교시 · 업로드 · 채널 정리 -->
+<section class="page">
+  <div class="kicker">7교시 · 업로드</div>
+  <h1>업로드 · 채널 정리</h1>
+  <p class="lead" style="margin-bottom:2.5mm;font-size:10.2pt">채널을 처음 보는 사람이 <strong>10초 안에</strong> 무슨 채널인지 알게. 4회차 업로드 체크(제목 · 챕터 · 썸네일 · 표시)와 같은 순서예요.</p>
+  <h3 class="top">1 · 대표작 업로드</h3>
+  <table class="upl">
+    <tr><td>제목</td><td class="write"><span class="opt">카테고리 카드 F 기준 · 검색될 말을 앞쪽에</span></td><td class="c"><span class="cb"></span></td></tr>
+    <tr><td>설명 첫 두 줄</td><td class="write" style="height:13mm"><span class="opt">무엇을 · 누구에게 · 다음 편 · 링크</span></td><td class="c"><span class="cb"></span></td></tr>
+    <tr><td>챕터<span class="opt" style="display:block;font-weight:400">롱폼만</span></td><td class="write"><span class="opt">00:00 <span class="blank" style="min-width:22mm"></span> &nbsp; <span class="blank" style="min-width:10mm"></span> <span class="blank" style="min-width:22mm"></span> &nbsp; <span class="blank" style="min-width:10mm"></span> <span class="blank" style="min-width:22mm"></span></span></td><td class="c"><span class="cb"></span></td></tr>
+    <tr><td>썸네일</td><td>브랜딩 한 장의 규칙대로 · 옆자리가 1초 안에 고른 안</td><td class="c"><span class="cb"></span></td></tr>
+    <tr><td>AI 표시</td><td>AI로 만든 사실적인 장면 · AI 목소리(TTS · Fish Audio)를 썼다면 업로드 때 공개</td><td class="c"><span class="cb"></span></td></tr>
+    <tr><td>협찬 표시</td><td>협찬 · 제공을 받았다면 유료 광고 표시 + 영상 처음에 표시</td><td class="c"><span class="cb"></span></td></tr>
+    <tr><td>공개 범위</td><td><span class="cb"></span>공개 &nbsp; <span class="cb"></span>일부 공개 &nbsp; <span class="cb"></span>비공개 <span class="opt">· 얼굴이 나온 사람이 있거나 부담되면 일부 공개도 OK</span></td><td class="c"><span class="cb"></span></td></tr>
+  </table>
+  <div class="grid2" style="gap:4mm;margin-bottom:3mm">
+    <div class="box line" style="margin:0;padding:2.6mm 4mm">
+      <h3 class="top">2 · 숏폼 업로드</h3>
+      <ul class="check" style="margin:0 0 1mm;font-size:9pt;display:grid;grid-template-columns:1fr 1fr;gap:0 3mm">
+        <li style="margin-bottom:0.6mm">커버 (핵심은 가운데)</li>
+        <li style="margin-bottom:0.6mm">첫 1초 = 센 장면</li>
+        <li style="margin-bottom:0.6mm">음원은 앱 안에서</li>
+        <li style="margin-bottom:0.6mm">해시태그 3~5</li>
+      </ul>
+      <p style="margin:0 0 1mm;font-size:9pt">캡션 한 줄 <span class="blank" style="min-width:56mm"></span></p>
+      <p style="margin:0;font-size:9pt"># <span class="blank" style="min-width:16mm"></span> # <span class="blank" style="min-width:16mm"></span> # <span class="blank" style="min-width:16mm"></span></p>
+    </div>
+    <div class="box line" style="margin:0;padding:2.6mm 4mm">
+      <h3 class="top">3 · 채널 소개 · 4 · 재생목록</h3>
+      <ul class="check" style="margin:0 0 1mm;font-size:9pt">
+        <li style="margin-bottom:0.6mm">소개 한 줄 (브랜딩 한 장 2번)</li>
+        <li style="margin-bottom:0.6mm">프로필 사진 · 배너 (선택)</li>
+        <li style="margin-bottom:0.6mm">시리즈 이름으로 재생목록 하나</li>
+      </ul>
+      <p style="margin:0;font-size:9pt">재생목록 이름 <span class="blank" style="min-width:50mm"></span></p>
+    </div>
+  </div>
+  <div class="box" style="padding:2.6mm 4mm;margin-bottom:3mm">
+    <h3 class="top">10초 테스트 <span class="opt">옆자리에게 내 채널 홈을 10초만 보여 주고 "무슨 채널 같아요?"</span></h3>
+    <p style="margin:0;font-size:9.2pt">옆자리 답 <span class="blank" style="min-width:64mm"></span> &nbsp; 내 소개 한 줄과 <span class="cb"></span>맞음 <span class="cb"></span>다름 → 고칠 곳 <span class="blank" style="min-width:24mm"></span></p>
+  </div>
+  <h3 class="top">숏폼 · 어디에 올릴까 <span class="opt">브랜딩 한 장의 역할 나누기대로 · 기능은 앱 화면에서 확인</span></h3>
+  <div class="sf" style="margin-bottom:3mm">
+    <div><b class="t">릴스</b>
+      <ul class="check"><li>커버 (핵심은 가운데)</li><li>위치 태그 · 프로필 링크</li><li>AI · 광고 표시</li></ul>
+      <div class="pick"><span class="cb"></span>여기에 올림</div></div>
+    <div><b class="t">쇼츠</b>
+      <ul class="check"><li>제목 · 시리즈 이름</li><li>관련 영상에 대표작 연결</li><li>AI · 광고 표시</li></ul>
+      <div class="pick"><span class="cb"></span>여기에 올림</div></div>
+    <div><b class="t">틱톡</b>
+      <ul class="check"><li>앱 음원 · 커버</li><li>해시태그</li><li>AI · 광고 표시</li></ul>
+      <div class="pick"><span class="cb"></span>여기에 올림</div></div>
+  </div>
+  <div class="box dark" style="margin:0;padding:3mm 4.5mm">
+    <h3 class="top" style="margin-bottom:1.5mm">5 · 링크 제출 <span class="opt" style="color:var(--pale)">공용 폴더 (또는 폼)에 · 일부 공개로 올려도 OK</span></h3>
+    <div class="grid2" style="gap:5mm">
+      <p style="margin:0;font-size:9.4pt"><span class="cb" style="border-color:var(--pale);background:transparent"></span>대표작 링크</p>
+      <p style="margin:0;font-size:9.4pt"><span class="cb" style="border-color:var(--pale);background:transparent"></span>숏폼 링크</p>
+    </div>
+    <div class="grid2" style="gap:5mm">
+      <div style="border-bottom:1px solid var(--pale);height:7mm"></div>
+      <div style="border-bottom:1px solid var(--pale);height:7mm"></div>
+    </div>
+  </div>
+</section>
+
+<!-- 20. 6회차 상영 준비 · 제작 노트 (마지막 쪽) -->
+<section class="page">
+  <div class="kicker">7교시 · 6회차 준비 · 마지막 쪽</div>
+  <h1>6회차 상영 준비 · 제작 노트</h1>
+  <p class="lead" style="margin-bottom:2.5mm;font-size:10.2pt">6회차(12. 10)는 상영회. 각자 한 편을 틀고, 30초 한마디와 제작 노트로 이야기합니다. <strong>이 쪽을 6회차에 가져오기.</strong></p>
+  <div class="box gold scr" style="padding:3mm 4.5mm;margin-bottom:3.5mm">
+    <h3 class="top" style="margin-bottom:1.5mm">상영 준비</h3>
+    <div class="grid2" style="gap:5mm">
+      <ul class="check" style="margin:0">
+        <li>상영작 하나 정하기 (대표작 또는 올린 영상)</li>
+        <li>파일 이름: <strong>이름_제목.mp4</strong></li>
+      </ul>
+      <ul class="check" style="margin:0">
+        <li>드라이브 상영 폴더에 제출 (당일 한 폴더)</li>
+        <li>한마디 30초 준비 (무엇을 · 왜)</li>
+      </ul>
+    </div>
+    <p style="margin:2mm 0 1.5mm;font-size:9.4pt"><strong style="color:var(--pine)">상영작</strong> <span class="blank" style="min-width:66mm"></span> &nbsp; 길이 <span class="blank" style="min-width:14mm"></span> &nbsp; <span class="cb"></span>16:9 <span class="cb"></span>9:16</p>
+    <p style="margin:0 0 1.5mm;font-size:9.4pt"><strong style="color:var(--pine)">30초 한마디 · 무엇을</strong> <span class="blank" style="min-width:122mm"></span></p>
+    <p style="margin:0 0 1.5mm;font-size:9.4pt"><strong style="color:var(--pine)">30초 한마디 · 왜</strong> <span class="blank" style="min-width:128mm"></span></p>
+    <p style="margin:0;font-size:9.4pt"><strong style="color:var(--pine)">상영회에서 듣고 싶은 피드백 한 가지</strong> <span class="blank" style="min-width:94mm"></span></p>
+  </div>
+
+  <h3 class="top">제작 노트 <span class="opt">사람이 한 일과 AI가 도운 일을 나눠 적기 · 6회차에 이 노트로 이야기</span></h3>
+  <div class="note2">
+    <div><h3>사람이 한 것 3줄 <span class="opt">기획 · 촬영 · 고르기 · 검수 · 편집 판단</span></h3>
+      <div class="nl">1<div></div></div><div class="nl">2<div></div></div><div class="nl">3<div></div></div></div>
+    <div><h3>AI가 도운 것 3줄 <span class="opt">대본 초안 · 이미지 · 영상 · 목소리 · 자막</span></h3>
+      <div class="nl">1<div></div></div><div class="nl">2<div></div></div><div class="nl">3<div></div></div></div>
+  </div>
+  <table class="lf" style="margin-bottom:3.5mm">
+    <tr><td>가져온 채널 · 레퍼런스</td><td class="write" style="height:16mm"><span class="opt">채널 · 영상 이름과 무엇을 가져왔는지</span></td></tr>
+    <tr><td>처음과 지금<br>달라진 것 한 줄</td><td class="write" style="height:16mm"><span class="opt">1회차의 나와 지금의 나 · 영상을 보는 눈 · 만드는 순서</span></td></tr>
+  </table>
+
+  <div class="box" style="margin:0 0 3.5mm;padding:2.6mm 4.5mm">
+    <h3 class="top" style="margin-bottom:1mm">6회차에 챙길 것</h3>
+    <ul class="check" style="margin:0;display:grid;grid-template-columns:repeat(4,1fr);gap:0 3mm;font-size:9pt">
+      <li style="margin:0">워크북 이 쪽</li>
+      <li style="margin:0">상영 파일 백업 (폰)</li>
+      <li style="margin:0">올린 영상 링크</li>
+      <li style="margin:0">이어폰</li>
+    </ul>
+  </div>
+  <div class="box dark" style="margin:0;padding:3.5mm 5mm">
+    <p style="margin:0 0 1mm;font-size:12pt;font-weight:800;color:var(--pale)">한 편에서 채널로</p>
+    <p style="margin:0;font-size:9.6pt">다음 시간, 트리에 불을 켭니다 — 6회차 상영회. 오늘 만든 대표작 · 숏폼 · 브랜딩 한 장이 내 채널의 첫 페이지예요. 수업 후 단톡방에 핸드북 5장 · 워크북 · AI 숏드라마 광고 프롬프트가 올라와요.</p>
+  </div>
+</section>
+
+</body>
+</html>
